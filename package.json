@@ -1,0 +1,14 @@
+{
+  "name": "df-hack-rpc-client",
+  "version": "0.44.12-r2.0",
+  "description": "a dfhack rpc client",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "Unlicense",
+  "dependencies": {
+    "grpc": "^1.22.2"
+  }
+}
