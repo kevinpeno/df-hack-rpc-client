@@ -13,8 +13,8 @@
     "dfhack:update": "npm run dfhack:mktmp && npm run dfhack:apply && npm run dfhack:clean",
     "proto:setup": "make-dir .tmp/protoc",
     "proto:clean": "rimraf .tmp",
-    "proto:generate": "protoc --plugin=node_modules/.bin/protoc-gen-ts.cmd --js_out=import_style=commonjs,binary:.tmp/protoc --ts_out=.tmp/protoc src/service.proto",
-    "proto:mv": "cpy --no-overwrite .tmp/protoc src",
+    "proto:generate": "\"protoc\" --plugin=node_modules/.bin/protoc-gen-ts.cmd --js_out=import_style=commonjs,binary:.tmp/protoc --ts_out=.tmp/protoc --proto_path=./dfhack-protos --proto_path=./src service.proto AdventureControl.proto isoworldremote.proto ItemdefInstrument.proto RemoteFortressReader.proto rename.proto",
+    "proto:mv": "cpy .tmp/protoc src/service",
     "proto:build": "npm run proto:setup && npm run proto:generate && npm run proto:mv && npm run proto:clean"
   },
   "author": "",

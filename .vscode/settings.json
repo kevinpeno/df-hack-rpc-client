@@ -1,7 +1,8 @@
 {
   "protoc": {
       "options": [
-          "--proto_path=${workspaceRoot}/dfhack-protos",
+        "--proto_path=${workspaceRoot}/src",
+        "--proto_path=${workspaceRoot}/dfhack-protos"
       ]
   }
 }

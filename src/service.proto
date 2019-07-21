@@ -1,58 +1,70 @@
 syntax = "proto2";
+option optimize_for = LITE_RUNTIME;
 
-import "AdventureControl.proto";
+// import "AdventureControl.proto";
 import "isoworldremote.proto";
 import "RemoteFortressReader.proto";
 import "rename.proto";
+
+// missing definitions used by dfhack
+message EmptyMessage {}
 
 service SearchService {
   // AdventureControl
   // ???
 
   // isoworldremote
-  rpc GetEmbarkTile(TileRequest) returns (EmbarkTile);
-  rpc GetEmbarkInfo(MapRequest) returns (MapReply);
-  rpc GetRawNames(MapRequest) returns (RawNames);
+  rpc GetEmbarkTile(isoworldremote.TileRequest) returns (isoworldremote.EmbarkTile);
+  rpc GetEmbarkInfo(isoworldremote.MapRequest) returns (isoworldremote.MapReply);
+  rpc GetRawNames(isoworldremote.MapRequest) returns (isoworldremote.RawNames);
 
   // RemoteFortressReader
-  rpc GetMaterialList(EmptyMessage) returns (MaterialList);
-  rpc GetGrowthList(EmptyMessage) returns (MaterialList);
-  rpc GetBlockList(BlockRequest) returns (BlockList);
+  rpc GetMaterialList(EmptyMessage) returns (RemoteFortressReader.MaterialList);
+  rpc GetGrowthList(EmptyMessage) returns (RemoteFortressReader.MaterialList);
+  rpc GetBlockList(RemoteFortressReader.BlockRequest) returns (RemoteFortressReader.BlockList);
   rpc CheckHashes(EmptyMessage) returns (EmptyMessage);
-  rpc GetTiletypeList(EmptyMessage) returns (TiletypeList);
-  rpc GetPlantList(BlockRequest) returns (PlantList);
-  rpc GetUnitList(EmptyMessage) returns (UnitList);
-  rpc GetUnitListInside(BlockRequest) returns (UnitList);
-  rpc GetViewInfo(EmptyMessage) returns (ViewInfo);
-  rpc GetMapInfo(EmptyMessage) returns (MapInfo);
+  rpc GetTiletypeList(EmptyMessage) returns (RemoteFortressReader.TiletypeList);
+  rpc GetPlantList(RemoteFortressReader.BlockRequest) returns (RemoteFortressReader.PlantList);
+  rpc GetUnitList(EmptyMessage) returns (RemoteFortressReader.UnitList);
+  rpc GetUnitListInside(RemoteFortressReader.BlockRequest) returns (RemoteFortressReader.UnitList);
+  rpc GetViewInfo(EmptyMessage) returns (RemoteFortressReader.ViewInfo);
+  rpc GetMapInfo(EmptyMessage) returns (RemoteFortressReader.MapInfo);
   rpc ResetMapHashes(EmptyMessage) returns (EmptyMessage);
-  rpc GetItemList(EmptyMessage) returns (MaterialList);
-  rpc GetBuildingDefList(EmptyMessage) returns (BuildingList);
-  rpc GetWorldMap(EmptyMessage) returns (WorldMap);
-  rpc GetWorldMapNew(EmptyMessage) returns (WorldMap);
-  rpc GetRegionMaps(EmptyMessage) returns (RegionMaps);
-  rpc GetRegionMapsNew(EmptyMessage) returns (RegionMaps);
-  rpc GetCreatureRaws(EmptyMessage) returns (CreatureRawList);
-  rpc GetPartialCreatureRaws(ListRequest) returns (CreatureRawList);
-  rpc GetWorldMapCenter(EmptyMessage) returns (WorldMap);
-  rpc GetPlantRaws(EmptyMessage) returns (PlantRawList);
-  rpc GetPartialPlantRaws(ListRequest) returns (PlantRawList);
-  rpc CopyScreen(EmptyMessage) returns (ScreenCapture);
-  rpc PassKeyboardEvent(KeyboardEvent) returns (EmptyMessage);
-  rpc SendDigCommand(DigCommand) returns (EmptyMessage);
-  rpc SetPauseState(SingleBool) returns (EmptyMessage);
-  rpc GetPauseState(EmptyMessage) returns (SingleBool);
-  rpc GetVersionInfo(EmptyMessage) returns (VersionInfo);
-  rpc GetReports(EmptyMessage) returns (Status);
-  rpc MoveCommand(MoveCommandParams) returns (EmptyMessage);
-  rpc JumpCommand(MoveCommandParams) returns (EmptyMessage);
-  rpc MenuQuery(EmptyMessage) returns (MenuContents);
-  rpc MovementSelectCommand(IntMessage) returns (EmptyMessage);
-  rpc MiscMoveCommand(MiscMoveParams) returns (EmptyMessage);
-  rpc GetLanguage(EmptyMessage) returns (Language);
+  rpc GetItemList(EmptyMessage) returns (RemoteFortressReader.MaterialList);
+  rpc GetBuildingDefList(EmptyMessage) returns (RemoteFortressReader.BuildingList);
+  rpc GetWorldMap(EmptyMessage) returns (RemoteFortressReader.WorldMap);
+  rpc GetWorldMapNew(EmptyMessage) returns (RemoteFortressReader.WorldMap);
+  rpc GetRegionMaps(EmptyMessage) returns (RemoteFortressReader.RegionMaps);
+  rpc GetRegionMapsNew(EmptyMessage) returns (RemoteFortressReader.RegionMaps);
+  rpc GetCreatureRaws(EmptyMessage) returns (RemoteFortressReader.CreatureRawList);
+  rpc GetPartialCreatureRaws(RemoteFortressReader.ListRequest) returns (RemoteFortressReader.CreatureRawList);
+  rpc GetWorldMapCenter(EmptyMessage) returns (RemoteFortressReader.WorldMap);
+  rpc GetPlantRaws(EmptyMessage) returns (RemoteFortressReader.PlantRawList);
+  rpc GetPartialPlantRaws(RemoteFortressReader.ListRequest) returns (RemoteFortressReader.PlantRawList);
+  rpc CopyScreen(EmptyMessage) returns (RemoteFortressReader.ScreenCapture);
+  rpc PassKeyboardEvent(RemoteFortressReader.KeyboardEvent) returns (EmptyMessage);
+  rpc SendDigCommand(RemoteFortressReader.DigCommand) returns (EmptyMessage);
+  rpc SetPauseState(RemoteFortressReader.SingleBool) returns (EmptyMessage);
+  rpc GetPauseState(EmptyMessage) returns (RemoteFortressReader.SingleBool);
+  rpc GetVersionInfo(EmptyMessage) returns (RemoteFortressReader.VersionInfo);
+  rpc GetReports(EmptyMessage) returns (RemoteFortressReader.Status);
+
+  // missing message MoveCommandParams
+  // rpc MoveCommand(RemoteFortressReader.MoveCommandParams) returns (EmptyMessage);
+  // rpc JumpCommand(RemoteFortressReader.MoveCommandParams) returns (EmptyMessage);
+
+  // missing message MenuContents
+  // rpc MenuQuery(EmptyMessage) returns (RemoteFortressReader.MenuContents);
+
+  // missing message IntMessage
+  // rpc MovementSelectCommand(RemoteFortressReader.IntMessage) returns (EmptyMessage);
+  
+  // missing message MiscMoveParams
+  //rpc MiscMoveCommand(RemoteFortressReader.MiscMoveParams) returns (EmptyMessage);
+  rpc GetLanguage(EmptyMessage) returns (RemoteFortressReader.Language);
 
   // rename
-  rpc RenameSquad(RenameSquadIn) returns (EmptyMessage);
-  rpc RenameUnit(RenameUnitIn) returns (EmptyMessage);
-  rpc RenameBuilding(RenameBuildingIn) returns (EmptyMessage);
+  rpc RenameSquad(dfproto.RenameSquadIn) returns (EmptyMessage);
+  rpc RenameUnit(dfproto.RenameUnitIn) returns (EmptyMessage);
+  rpc RenameBuilding(dfproto.RenameBuildingIn) returns (EmptyMessage);
 }
