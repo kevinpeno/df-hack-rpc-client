@@ -56,6 +56,25 @@ const connection = test(client)
 	// .catch(console.log)
 	// .finally(() => client.destroy())
 
+
+/*
+	for a given RPC request:
+	- send bind request ::
+		-- https://github.com/BenLubar/dfhackrpc/blob/3e8251960bc5c9ade00c0756da5fcc4056872b48/method.go#L55
+		-- https://github.com/BenLubar/dfhackrpc/blob/e8757741553812a55fbc10f64d324ea386204acd/dfproto/core/CoreProtocol.proto#L66
+	- use bind response to get request id: 
+		-- https://github.com/BenLubar/dfhackrpc/blob/e8757741553812a55fbc10f64d324ea386204acd/dfproto/core/CoreProtocol.proto#L74
+		-- https://github.com/BenLubar/dfhackrpc/blob/3e8251960bc5c9ade00c0756da5fcc4056872b48/method.go#L92
+	- write a header :: 
+		-- https://github.com/BenLubar/dfhackrpc/blob/aa308501f1a554116dbba46bbcd6bb12f869874c/protocol.go#L75
+	- write a real request ::
+		-- https://github.com/BenLubar/dfhackrpc/blob/aa308501f1a554116dbba46bbcd6bb12f869874c/protocol.go#L86
+	- read the response ::
+		-- https://github.com/BenLubar/dfhackrpc/blob/aa308501f1a554116dbba46bbcd6bb12f869874c/protocol.go#L104
+	- read the message ::
+		-- https://github.com/BenLubar/dfhackrpc/blob/aa308501f1a554116dbba46bbcd6bb12f869874c/protocol.go#L136
+*/
+
 const rpcImpl = (method, message, callback) => {
 	console.log(method, message.toString())
 	connection.then((client) => {
