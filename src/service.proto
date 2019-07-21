@@ -9,16 +9,19 @@ import "rename.proto";
 // missing definitions used by dfhack
 message EmptyMessage {}
 
-message HandshakeRequest {
-  required string message = 1;
+message BindRequest {
+  required string method = 1;
+  required string input_msg = 2;
+  required string output_msg = 3;
+  optional string plugin = 4;
 }
-
-message HandshakeResponse {
-  required string message = 1;
+message BindReply {
+  required int32 assigned_id = 1;
 }
 
 service DFHackRPCService {
-  rpc Handshake(HandshakeRequest) returns (HandshakeResponse);
+  // Core undocumented
+  rpc BindMethod(BindRequest) returns (BindReply);
 
   // AdventureControl
   // ???

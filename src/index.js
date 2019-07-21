@@ -15,7 +15,7 @@ const connect = (host, port) => (client) => new Promise((resolve, reject) => {
 	})
 })
 
-const makeRequest = (client, message) => new Promise((resolve, reject) => {
+const makeRequest = (client, message, handshake=false) => new Promise((resolve, reject) => {
 	client.addListener("data", (response) => {
 		client.removeListener("error", resolve)
 		resolve(response)
@@ -24,6 +24,20 @@ const makeRequest = (client, message) => new Promise((resolve, reject) => {
 		client.removeListener("data", resolve)
 		reject(error)
 	})
+	if( !handshake ) {
+		// currently only creates the header for BindMethod requests
+		// all header fields must be LittleEndian and padded by 2 bytes
+		const header = Buffer.from(new Uint8ClampedArray(8))
+		const size = message.length
+		// method id (int16)
+		header.writeInt16LE(0, 0)
+		// Padding 2 bytes (don't really need this but set just for reference)
+		header.writeInt16LE(0, 2)
+		// "Size" (int32) of the call in bytes
+		header.writeInt32LE(message.length, 4)
+		client.write(header)
+	}
+
 	client.write(message)
 })
 
@@ -37,7 +51,7 @@ const resolveHandshake = (response) => {
 }
 
 const sendHandshake = (client) => {
-	const test = makeRequest(client, "DFHack?\n\x01\x00\x00\x00")
+	const test = makeRequest(client, "DFHack?\n\x01\x00\x00\x00", true)
 		.then(resolveHandshake)
 		.then(console.log)
 		.then(() => client)
@@ -94,7 +108,12 @@ const rpcImpl = (method, message, callback) => {
 const DFHackRPCService = root.DFHackRPCService;
 const service = DFHackRPCService.create(rpcImpl, false, false);
 
-service.getEmbarkInfo({ saveFolder: 'region1-00005-10-01' }, function(error, response) {
+service.bindMethod({
+	method: service.getEmbarkInfo.name,
+	inputMsg: root.isoworldremote.MapRequest.name,
+	outputMsg: root.isoworldremote.MapReply.name,
+	plugin: "isoworldremote"
+}, function(error, response) {
 	if( error ) {
 		console.error(error)
 	}

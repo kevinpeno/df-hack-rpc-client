@@ -169,24 +169,27 @@ $root.EmptyMessage = (function() {
     return EmptyMessage;
 })();
 
-$root.HandshakeRequest = (function() {
+$root.BindRequest = (function() {
 
     /**
-     * Properties of a HandshakeRequest.
-     * @exports IHandshakeRequest
-     * @interface IHandshakeRequest
-     * @property {string} message HandshakeRequest message
+     * Properties of a BindRequest.
+     * @exports IBindRequest
+     * @interface IBindRequest
+     * @property {string} method BindRequest method
+     * @property {string} inputMsg BindRequest inputMsg
+     * @property {string} outputMsg BindRequest outputMsg
+     * @property {string|null} [plugin] BindRequest plugin
      */
 
     /**
-     * Constructs a new HandshakeRequest.
-     * @exports HandshakeRequest
-     * @classdesc Represents a HandshakeRequest.
-     * @implements IHandshakeRequest
+     * Constructs a new BindRequest.
+     * @exports BindRequest
+     * @classdesc Represents a BindRequest.
+     * @implements IBindRequest
      * @constructor
-     * @param {IHandshakeRequest=} [properties] Properties to set
+     * @param {IBindRequest=} [properties] Properties to set
      */
-    function HandshakeRequest(properties) {
+    function BindRequest(properties) {
         if (properties)
             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
@@ -194,186 +197,250 @@ $root.HandshakeRequest = (function() {
     }
 
     /**
-     * HandshakeRequest message.
-     * @member {string} message
-     * @memberof HandshakeRequest
+     * BindRequest method.
+     * @member {string} method
+     * @memberof BindRequest
      * @instance
      */
-    HandshakeRequest.prototype.message = "";
+    BindRequest.prototype.method = "";
 
     /**
-     * Creates a new HandshakeRequest instance using the specified properties.
-     * @function create
-     * @memberof HandshakeRequest
-     * @static
-     * @param {IHandshakeRequest=} [properties] Properties to set
-     * @returns {HandshakeRequest} HandshakeRequest instance
+     * BindRequest inputMsg.
+     * @member {string} inputMsg
+     * @memberof BindRequest
+     * @instance
      */
-    HandshakeRequest.create = function create(properties) {
-        return new HandshakeRequest(properties);
+    BindRequest.prototype.inputMsg = "";
+
+    /**
+     * BindRequest outputMsg.
+     * @member {string} outputMsg
+     * @memberof BindRequest
+     * @instance
+     */
+    BindRequest.prototype.outputMsg = "";
+
+    /**
+     * BindRequest plugin.
+     * @member {string} plugin
+     * @memberof BindRequest
+     * @instance
+     */
+    BindRequest.prototype.plugin = "";
+
+    /**
+     * Creates a new BindRequest instance using the specified properties.
+     * @function create
+     * @memberof BindRequest
+     * @static
+     * @param {IBindRequest=} [properties] Properties to set
+     * @returns {BindRequest} BindRequest instance
+     */
+    BindRequest.create = function create(properties) {
+        return new BindRequest(properties);
     };
 
     /**
-     * Encodes the specified HandshakeRequest message. Does not implicitly {@link HandshakeRequest.verify|verify} messages.
+     * Encodes the specified BindRequest message. Does not implicitly {@link BindRequest.verify|verify} messages.
      * @function encode
-     * @memberof HandshakeRequest
+     * @memberof BindRequest
      * @static
-     * @param {IHandshakeRequest} message HandshakeRequest message or plain object to encode
+     * @param {IBindRequest} message BindRequest message or plain object to encode
      * @param {$protobuf.Writer} [writer] Writer to encode to
      * @returns {$protobuf.Writer} Writer
      */
-    HandshakeRequest.encode = function encode(message, writer) {
+    BindRequest.encode = function encode(message, writer) {
         if (!writer)
             writer = $Writer.create();
-        writer.uint32(/* id 1, wireType 2 =*/10).string(message.message);
+        writer.uint32(/* id 1, wireType 2 =*/10).string(message.method);
+        writer.uint32(/* id 2, wireType 2 =*/18).string(message.inputMsg);
+        writer.uint32(/* id 3, wireType 2 =*/26).string(message.outputMsg);
+        if (message.plugin != null && message.hasOwnProperty("plugin"))
+            writer.uint32(/* id 4, wireType 2 =*/34).string(message.plugin);
         return writer;
     };
 
     /**
-     * Encodes the specified HandshakeRequest message, length delimited. Does not implicitly {@link HandshakeRequest.verify|verify} messages.
+     * Encodes the specified BindRequest message, length delimited. Does not implicitly {@link BindRequest.verify|verify} messages.
      * @function encodeDelimited
-     * @memberof HandshakeRequest
+     * @memberof BindRequest
      * @static
-     * @param {IHandshakeRequest} message HandshakeRequest message or plain object to encode
+     * @param {IBindRequest} message BindRequest message or plain object to encode
      * @param {$protobuf.Writer} [writer] Writer to encode to
      * @returns {$protobuf.Writer} Writer
      */
-    HandshakeRequest.encodeDelimited = function encodeDelimited(message, writer) {
+    BindRequest.encodeDelimited = function encodeDelimited(message, writer) {
         return this.encode(message, writer).ldelim();
     };
 
     /**
-     * Decodes a HandshakeRequest message from the specified reader or buffer.
+     * Decodes a BindRequest message from the specified reader or buffer.
      * @function decode
-     * @memberof HandshakeRequest
+     * @memberof BindRequest
      * @static
      * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
      * @param {number} [length] Message length if known beforehand
-     * @returns {HandshakeRequest} HandshakeRequest
+     * @returns {BindRequest} BindRequest
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    HandshakeRequest.decode = function decode(reader, length) {
+    BindRequest.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.HandshakeRequest();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BindRequest();
         while (reader.pos < end) {
             var tag = reader.uint32();
             switch (tag >>> 3) {
             case 1:
-                message.message = reader.string();
+                message.method = reader.string();
+                break;
+            case 2:
+                message.inputMsg = reader.string();
+                break;
+            case 3:
+                message.outputMsg = reader.string();
+                break;
+            case 4:
+                message.plugin = reader.string();
                 break;
             default:
                 reader.skipType(tag & 7);
                 break;
             }
         }
-        if (!message.hasOwnProperty("message"))
-            throw $util.ProtocolError("missing required 'message'", { instance: message });
+        if (!message.hasOwnProperty("method"))
+            throw $util.ProtocolError("missing required 'method'", { instance: message });
+        if (!message.hasOwnProperty("inputMsg"))
+            throw $util.ProtocolError("missing required 'inputMsg'", { instance: message });
+        if (!message.hasOwnProperty("outputMsg"))
+            throw $util.ProtocolError("missing required 'outputMsg'", { instance: message });
         return message;
     };
 
     /**
-     * Decodes a HandshakeRequest message from the specified reader or buffer, length delimited.
+     * Decodes a BindRequest message from the specified reader or buffer, length delimited.
      * @function decodeDelimited
-     * @memberof HandshakeRequest
+     * @memberof BindRequest
      * @static
      * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @returns {HandshakeRequest} HandshakeRequest
+     * @returns {BindRequest} BindRequest
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    HandshakeRequest.decodeDelimited = function decodeDelimited(reader) {
+    BindRequest.decodeDelimited = function decodeDelimited(reader) {
         if (!(reader instanceof $Reader))
             reader = new $Reader(reader);
         return this.decode(reader, reader.uint32());
     };
 
     /**
-     * Verifies a HandshakeRequest message.
+     * Verifies a BindRequest message.
      * @function verify
-     * @memberof HandshakeRequest
+     * @memberof BindRequest
      * @static
      * @param {Object.<string,*>} message Plain object to verify
      * @returns {string|null} `null` if valid, otherwise the reason why it is not
      */
-    HandshakeRequest.verify = function verify(message) {
+    BindRequest.verify = function verify(message) {
         if (typeof message !== "object" || message === null)
             return "object expected";
-        if (!$util.isString(message.message))
-            return "message: string expected";
+        if (!$util.isString(message.method))
+            return "method: string expected";
+        if (!$util.isString(message.inputMsg))
+            return "inputMsg: string expected";
+        if (!$util.isString(message.outputMsg))
+            return "outputMsg: string expected";
+        if (message.plugin != null && message.hasOwnProperty("plugin"))
+            if (!$util.isString(message.plugin))
+                return "plugin: string expected";
         return null;
     };
 
     /**
-     * Creates a HandshakeRequest message from a plain object. Also converts values to their respective internal types.
+     * Creates a BindRequest message from a plain object. Also converts values to their respective internal types.
      * @function fromObject
-     * @memberof HandshakeRequest
+     * @memberof BindRequest
      * @static
      * @param {Object.<string,*>} object Plain object
-     * @returns {HandshakeRequest} HandshakeRequest
+     * @returns {BindRequest} BindRequest
      */
-    HandshakeRequest.fromObject = function fromObject(object) {
-        if (object instanceof $root.HandshakeRequest)
+    BindRequest.fromObject = function fromObject(object) {
+        if (object instanceof $root.BindRequest)
             return object;
-        var message = new $root.HandshakeRequest();
-        if (object.message != null)
-            message.message = String(object.message);
+        var message = new $root.BindRequest();
+        if (object.method != null)
+            message.method = String(object.method);
+        if (object.inputMsg != null)
+            message.inputMsg = String(object.inputMsg);
+        if (object.outputMsg != null)
+            message.outputMsg = String(object.outputMsg);
+        if (object.plugin != null)
+            message.plugin = String(object.plugin);
         return message;
     };
 
     /**
-     * Creates a plain object from a HandshakeRequest message. Also converts values to other types if specified.
+     * Creates a plain object from a BindRequest message. Also converts values to other types if specified.
      * @function toObject
-     * @memberof HandshakeRequest
+     * @memberof BindRequest
      * @static
-     * @param {HandshakeRequest} message HandshakeRequest
+     * @param {BindRequest} message BindRequest
      * @param {$protobuf.IConversionOptions} [options] Conversion options
      * @returns {Object.<string,*>} Plain object
      */
-    HandshakeRequest.toObject = function toObject(message, options) {
+    BindRequest.toObject = function toObject(message, options) {
         if (!options)
             options = {};
         var object = {};
-        if (options.defaults)
-            object.message = "";
-        if (message.message != null && message.hasOwnProperty("message"))
-            object.message = message.message;
+        if (options.defaults) {
+            object.method = "";
+            object.inputMsg = "";
+            object.outputMsg = "";
+            object.plugin = "";
+        }
+        if (message.method != null && message.hasOwnProperty("method"))
+            object.method = message.method;
+        if (message.inputMsg != null && message.hasOwnProperty("inputMsg"))
+            object.inputMsg = message.inputMsg;
+        if (message.outputMsg != null && message.hasOwnProperty("outputMsg"))
+            object.outputMsg = message.outputMsg;
+        if (message.plugin != null && message.hasOwnProperty("plugin"))
+            object.plugin = message.plugin;
         return object;
     };
 
     /**
-     * Converts this HandshakeRequest to JSON.
+     * Converts this BindRequest to JSON.
      * @function toJSON
-     * @memberof HandshakeRequest
+     * @memberof BindRequest
      * @instance
      * @returns {Object.<string,*>} JSON object
      */
-    HandshakeRequest.prototype.toJSON = function toJSON() {
+    BindRequest.prototype.toJSON = function toJSON() {
         return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
     };
 
-    return HandshakeRequest;
+    return BindRequest;
 })();
 
-$root.HandshakeResponse = (function() {
+$root.BindReply = (function() {
 
     /**
-     * Properties of a HandshakeResponse.
-     * @exports IHandshakeResponse
-     * @interface IHandshakeResponse
-     * @property {string} message HandshakeResponse message
+     * Properties of a BindReply.
+     * @exports IBindReply
+     * @interface IBindReply
+     * @property {number} assignedId BindReply assignedId
      */
 
     /**
-     * Constructs a new HandshakeResponse.
-     * @exports HandshakeResponse
-     * @classdesc Represents a HandshakeResponse.
-     * @implements IHandshakeResponse
+     * Constructs a new BindReply.
+     * @exports BindReply
+     * @classdesc Represents a BindReply.
+     * @implements IBindReply
      * @constructor
-     * @param {IHandshakeResponse=} [properties] Properties to set
+     * @param {IBindReply=} [properties] Properties to set
      */
-    function HandshakeResponse(properties) {
+    function BindReply(properties) {
         if (properties)
             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
@@ -381,166 +448,166 @@ $root.HandshakeResponse = (function() {
     }
 
     /**
-     * HandshakeResponse message.
-     * @member {string} message
-     * @memberof HandshakeResponse
+     * BindReply assignedId.
+     * @member {number} assignedId
+     * @memberof BindReply
      * @instance
      */
-    HandshakeResponse.prototype.message = "";
+    BindReply.prototype.assignedId = 0;
 
     /**
-     * Creates a new HandshakeResponse instance using the specified properties.
+     * Creates a new BindReply instance using the specified properties.
      * @function create
-     * @memberof HandshakeResponse
+     * @memberof BindReply
      * @static
-     * @param {IHandshakeResponse=} [properties] Properties to set
-     * @returns {HandshakeResponse} HandshakeResponse instance
+     * @param {IBindReply=} [properties] Properties to set
+     * @returns {BindReply} BindReply instance
      */
-    HandshakeResponse.create = function create(properties) {
-        return new HandshakeResponse(properties);
+    BindReply.create = function create(properties) {
+        return new BindReply(properties);
     };
 
     /**
-     * Encodes the specified HandshakeResponse message. Does not implicitly {@link HandshakeResponse.verify|verify} messages.
+     * Encodes the specified BindReply message. Does not implicitly {@link BindReply.verify|verify} messages.
      * @function encode
-     * @memberof HandshakeResponse
+     * @memberof BindReply
      * @static
-     * @param {IHandshakeResponse} message HandshakeResponse message or plain object to encode
+     * @param {IBindReply} message BindReply message or plain object to encode
      * @param {$protobuf.Writer} [writer] Writer to encode to
      * @returns {$protobuf.Writer} Writer
      */
-    HandshakeResponse.encode = function encode(message, writer) {
+    BindReply.encode = function encode(message, writer) {
         if (!writer)
             writer = $Writer.create();
-        writer.uint32(/* id 1, wireType 2 =*/10).string(message.message);
+        writer.uint32(/* id 1, wireType 0 =*/8).int32(message.assignedId);
         return writer;
     };
 
     /**
-     * Encodes the specified HandshakeResponse message, length delimited. Does not implicitly {@link HandshakeResponse.verify|verify} messages.
+     * Encodes the specified BindReply message, length delimited. Does not implicitly {@link BindReply.verify|verify} messages.
      * @function encodeDelimited
-     * @memberof HandshakeResponse
+     * @memberof BindReply
      * @static
-     * @param {IHandshakeResponse} message HandshakeResponse message or plain object to encode
+     * @param {IBindReply} message BindReply message or plain object to encode
      * @param {$protobuf.Writer} [writer] Writer to encode to
      * @returns {$protobuf.Writer} Writer
      */
-    HandshakeResponse.encodeDelimited = function encodeDelimited(message, writer) {
+    BindReply.encodeDelimited = function encodeDelimited(message, writer) {
         return this.encode(message, writer).ldelim();
     };
 
     /**
-     * Decodes a HandshakeResponse message from the specified reader or buffer.
+     * Decodes a BindReply message from the specified reader or buffer.
      * @function decode
-     * @memberof HandshakeResponse
+     * @memberof BindReply
      * @static
      * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
      * @param {number} [length] Message length if known beforehand
-     * @returns {HandshakeResponse} HandshakeResponse
+     * @returns {BindReply} BindReply
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    HandshakeResponse.decode = function decode(reader, length) {
+    BindReply.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.HandshakeResponse();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BindReply();
         while (reader.pos < end) {
             var tag = reader.uint32();
             switch (tag >>> 3) {
             case 1:
-                message.message = reader.string();
+                message.assignedId = reader.int32();
                 break;
             default:
                 reader.skipType(tag & 7);
                 break;
             }
         }
-        if (!message.hasOwnProperty("message"))
-            throw $util.ProtocolError("missing required 'message'", { instance: message });
+        if (!message.hasOwnProperty("assignedId"))
+            throw $util.ProtocolError("missing required 'assignedId'", { instance: message });
         return message;
     };
 
     /**
-     * Decodes a HandshakeResponse message from the specified reader or buffer, length delimited.
+     * Decodes a BindReply message from the specified reader or buffer, length delimited.
      * @function decodeDelimited
-     * @memberof HandshakeResponse
+     * @memberof BindReply
      * @static
      * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @returns {HandshakeResponse} HandshakeResponse
+     * @returns {BindReply} BindReply
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    HandshakeResponse.decodeDelimited = function decodeDelimited(reader) {
+    BindReply.decodeDelimited = function decodeDelimited(reader) {
         if (!(reader instanceof $Reader))
             reader = new $Reader(reader);
         return this.decode(reader, reader.uint32());
     };
 
     /**
-     * Verifies a HandshakeResponse message.
+     * Verifies a BindReply message.
      * @function verify
-     * @memberof HandshakeResponse
+     * @memberof BindReply
      * @static
      * @param {Object.<string,*>} message Plain object to verify
      * @returns {string|null} `null` if valid, otherwise the reason why it is not
      */
-    HandshakeResponse.verify = function verify(message) {
+    BindReply.verify = function verify(message) {
         if (typeof message !== "object" || message === null)
             return "object expected";
-        if (!$util.isString(message.message))
-            return "message: string expected";
+        if (!$util.isInteger(message.assignedId))
+            return "assignedId: integer expected";
         return null;
     };
 
     /**
-     * Creates a HandshakeResponse message from a plain object. Also converts values to their respective internal types.
+     * Creates a BindReply message from a plain object. Also converts values to their respective internal types.
      * @function fromObject
-     * @memberof HandshakeResponse
+     * @memberof BindReply
      * @static
      * @param {Object.<string,*>} object Plain object
-     * @returns {HandshakeResponse} HandshakeResponse
+     * @returns {BindReply} BindReply
      */
-    HandshakeResponse.fromObject = function fromObject(object) {
-        if (object instanceof $root.HandshakeResponse)
+    BindReply.fromObject = function fromObject(object) {
+        if (object instanceof $root.BindReply)
             return object;
-        var message = new $root.HandshakeResponse();
-        if (object.message != null)
-            message.message = String(object.message);
+        var message = new $root.BindReply();
+        if (object.assignedId != null)
+            message.assignedId = object.assignedId | 0;
         return message;
     };
 
     /**
-     * Creates a plain object from a HandshakeResponse message. Also converts values to other types if specified.
+     * Creates a plain object from a BindReply message. Also converts values to other types if specified.
      * @function toObject
-     * @memberof HandshakeResponse
+     * @memberof BindReply
      * @static
-     * @param {HandshakeResponse} message HandshakeResponse
+     * @param {BindReply} message BindReply
      * @param {$protobuf.IConversionOptions} [options] Conversion options
      * @returns {Object.<string,*>} Plain object
      */
-    HandshakeResponse.toObject = function toObject(message, options) {
+    BindReply.toObject = function toObject(message, options) {
         if (!options)
             options = {};
         var object = {};
         if (options.defaults)
-            object.message = "";
-        if (message.message != null && message.hasOwnProperty("message"))
-            object.message = message.message;
+            object.assignedId = 0;
+        if (message.assignedId != null && message.hasOwnProperty("assignedId"))
+            object.assignedId = message.assignedId;
         return object;
     };
 
     /**
-     * Converts this HandshakeResponse to JSON.
+     * Converts this BindReply to JSON.
      * @function toJSON
-     * @memberof HandshakeResponse
+     * @memberof BindReply
      * @instance
      * @returns {Object.<string,*>} JSON object
      */
-    HandshakeResponse.prototype.toJSON = function toJSON() {
+    BindReply.prototype.toJSON = function toJSON() {
         return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
     };
 
-    return HandshakeResponse;
+    return BindReply;
 })();
 
 $root.DFHackRPCService = (function() {
@@ -576,35 +643,35 @@ $root.DFHackRPCService = (function() {
     };
 
     /**
-     * Callback as used by {@link DFHackRPCService#handshake}.
+     * Callback as used by {@link DFHackRPCService#bindMethod}.
      * @memberof DFHackRPCService
-     * @typedef HandshakeCallback
+     * @typedef BindMethodCallback
      * @type {function}
      * @param {Error|null} error Error, if any
-     * @param {HandshakeResponse} [response] HandshakeResponse
+     * @param {BindReply} [response] BindReply
      */
 
     /**
-     * Calls Handshake.
-     * @function handshake
+     * Calls BindMethod.
+     * @function bindMethod
      * @memberof DFHackRPCService
      * @instance
-     * @param {IHandshakeRequest} request HandshakeRequest message or plain object
-     * @param {DFHackRPCService.HandshakeCallback} callback Node-style callback called with the error, if any, and HandshakeResponse
+     * @param {IBindRequest} request BindRequest message or plain object
+     * @param {DFHackRPCService.BindMethodCallback} callback Node-style callback called with the error, if any, and BindReply
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(DFHackRPCService.prototype.handshake = function handshake(request, callback) {
-        return this.rpcCall(handshake, $root.HandshakeRequest, $root.HandshakeResponse, request, callback);
-    }, "name", { value: "Handshake" });
+    Object.defineProperty(DFHackRPCService.prototype.bindMethod = function bindMethod(request, callback) {
+        return this.rpcCall(bindMethod, $root.BindRequest, $root.BindReply, request, callback);
+    }, "name", { value: "BindMethod" });
 
     /**
-     * Calls Handshake.
-     * @function handshake
+     * Calls BindMethod.
+     * @function bindMethod
      * @memberof DFHackRPCService
      * @instance
-     * @param {IHandshakeRequest} request HandshakeRequest message or plain object
-     * @returns {Promise<HandshakeResponse>} Promise
+     * @param {IBindRequest} request BindRequest message or plain object
+     * @returns {Promise<BindReply>} Promise
      * @variation 2
      */
 
