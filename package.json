@@ -4,11 +4,20 @@
   "description": "a dfhack rpc client",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dfhack:add-remote": "git remote add -f -t master --no-tags df-hack git@github.com:DFHack/dfhack.git",
+    "dfhack:get": "git fetch df-hack",
+    "dfhack:mktmp": "make-dir .tmp && git read-tree --prefix=.tmp/df-hack/plugins/proto/ -u FETCH_HEAD:plugins/proto",
+    "dfhack:apply": "cpy .tmp/df-hack dfhack-protos",
+    "dfhack:clean": "rimraf .tmp && git reset",
+    "dfhack:update": "npm run dfhack:mktmp && npm run dfhack:apply && npm run dfhack:clean"
   },
   "author": "",
   "license": "Unlicense",
-  "dependencies": {
-    "grpc": "^1.22.2"
+  "dependencies": {},
+  "devDependencies": {
+    "cpy-cli": "^2.0.0",
+    "make-dir-cli": "^2.0.0",
+    "rimraf": "^2.6.3"
   }
 }
