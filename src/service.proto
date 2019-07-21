@@ -1,0 +1,58 @@
+syntax = "proto2";
+
+import "AdventureControl.proto";
+import "isoworldremote.proto";
+import "RemoteFortressReader.proto";
+import "rename.proto";
+
+service SearchService {
+  // AdventureControl
+  // ???
+
+  // isoworldremote
+  rpc GetEmbarkTile(TileRequest) returns (EmbarkTile);
+  rpc GetEmbarkInfo(MapRequest) returns (MapReply);
+  rpc GetRawNames(MapRequest) returns (RawNames);
+
+  // RemoteFortressReader
+  rpc GetMaterialList(EmptyMessage) returns (MaterialList);
+  rpc GetGrowthList(EmptyMessage) returns (MaterialList);
+  rpc GetBlockList(BlockRequest) returns (BlockList);
+  rpc CheckHashes(EmptyMessage) returns (EmptyMessage);
+  rpc GetTiletypeList(EmptyMessage) returns (TiletypeList);
+  rpc GetPlantList(BlockRequest) returns (PlantList);
+  rpc GetUnitList(EmptyMessage) returns (UnitList);
+  rpc GetUnitListInside(BlockRequest) returns (UnitList);
+  rpc GetViewInfo(EmptyMessage) returns (ViewInfo);
+  rpc GetMapInfo(EmptyMessage) returns (MapInfo);
+  rpc ResetMapHashes(EmptyMessage) returns (EmptyMessage);
+  rpc GetItemList(EmptyMessage) returns (MaterialList);
+  rpc GetBuildingDefList(EmptyMessage) returns (BuildingList);
+  rpc GetWorldMap(EmptyMessage) returns (WorldMap);
+  rpc GetWorldMapNew(EmptyMessage) returns (WorldMap);
+  rpc GetRegionMaps(EmptyMessage) returns (RegionMaps);
+  rpc GetRegionMapsNew(EmptyMessage) returns (RegionMaps);
+  rpc GetCreatureRaws(EmptyMessage) returns (CreatureRawList);
+  rpc GetPartialCreatureRaws(ListRequest) returns (CreatureRawList);
+  rpc GetWorldMapCenter(EmptyMessage) returns (WorldMap);
+  rpc GetPlantRaws(EmptyMessage) returns (PlantRawList);
+  rpc GetPartialPlantRaws(ListRequest) returns (PlantRawList);
+  rpc CopyScreen(EmptyMessage) returns (ScreenCapture);
+  rpc PassKeyboardEvent(KeyboardEvent) returns (EmptyMessage);
+  rpc SendDigCommand(DigCommand) returns (EmptyMessage);
+  rpc SetPauseState(SingleBool) returns (EmptyMessage);
+  rpc GetPauseState(EmptyMessage) returns (SingleBool);
+  rpc GetVersionInfo(EmptyMessage) returns (VersionInfo);
+  rpc GetReports(EmptyMessage) returns (Status);
+  rpc MoveCommand(MoveCommandParams) returns (EmptyMessage);
+  rpc JumpCommand(MoveCommandParams) returns (EmptyMessage);
+  rpc MenuQuery(EmptyMessage) returns (MenuContents);
+  rpc MovementSelectCommand(IntMessage) returns (EmptyMessage);
+  rpc MiscMoveCommand(MiscMoveParams) returns (EmptyMessage);
+  rpc GetLanguage(EmptyMessage) returns (Language);
+
+  // rename
+  rpc RenameSquad(RenameSquadIn) returns (EmptyMessage);
+  rpc RenameUnit(RenameUnitIn) returns (EmptyMessage);
+  rpc RenameBuilding(RenameBuildingIn) returns (EmptyMessage);
+}

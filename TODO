@@ -1,12 +1,17 @@
 Real shit:
+  ✔ handshake solution in node? https://stackoverflow.com/questions/20979800/send-byte-array-in-node-js-to-server
+    ✔ probably can design them as `const clientHandshake = Buffer.from("DFHack?\n\x01\x00\x00\x00", 'utf8')`
+    ✔ go docs pr: https://github.com/DFHack/dfhack/pull/1338
+    ✔ go docs: https://godoc.org/github.com/BenLubar/dfhackrpc
+    ✔ magic: https://github.com/BenLubar/dfhackrpc/blob/aa308501f1a554116dbba46bbcd6bb12f869874c/protocol.go#L14
+    ✔ magic: https://github.com/JapaMala/armok-vision/blob/a2e33d483d95bcf2fb145a86d93b9d5a59ff3a27/Assets/RemoteClientLocal/RemoteClient.cs#L52
   ☐ build a service proto file (example: https://github.com/grpc/grpc/blob/master/examples/protos/route_guide.proto)
   ☐ import df-hack protos into that file
-    ☐ go docs pr: https://github.com/DFHack/dfhack/pull/1338
-    ☐ go docs: https://godoc.org/github.com/BenLubar/dfhackrpc
-    ☐ magic: https://github.com/BenLubar/dfhackrpc/blob/aa308501f1a554116dbba46bbcd6bb12f869874c/protocol.go#L14
-    ☐ magic: https://github.com/JapaMala/armok-vision/blob/a2e33d483d95bcf2fb145a86d93b9d5a59ff3a27/Assets/RemoteClientLocal/RemoteClient.cs#L52
-    ☐ handshake solution in node? https://stackoverflow.com/questions/20979800/send-byte-array-in-node-js-to-server
-      ☐ probably can design them as `const clientHandshake = Buffer.from("DFHack?\n\x01\x00\x00\x00", 'utf8')`
+  protoc (build):
+    ✔ install protoc (binaries: https://github.com/protocolbuffers/protobuf)
+      ✔ binary must be installed for dev; I used scoop for windows, it is in the extras package
+    ☐ ts-protoc-gen (https://www.npmjs.com/package/ts-protoc-gen)
+  grpc (dynamic): 
   ☐ expose node interface using grpc? (do I need this or just clean up the exports?)
     ☐ notes: https://www.grpc.io/docs/tutorials/basic/node/
   ☐ profit?

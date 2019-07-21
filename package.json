@@ -10,7 +10,12 @@
     "dfhack:mktmp": "make-dir .tmp && git read-tree --prefix=.tmp/df-hack/plugins/proto/ -u FETCH_HEAD:plugins/proto",
     "dfhack:apply": "cpy .tmp/df-hack dfhack-protos",
     "dfhack:clean": "rimraf .tmp && git reset",
-    "dfhack:update": "npm run dfhack:mktmp && npm run dfhack:apply && npm run dfhack:clean"
+    "dfhack:update": "npm run dfhack:mktmp && npm run dfhack:apply && npm run dfhack:clean",
+    "proto:setup": "make-dir .tmp/protoc",
+    "proto:clean": "rimraf .tmp",
+    "proto:generate": "protoc --plugin=node_modules/.bin/protoc-gen-ts.cmd --js_out=import_style=commonjs,binary:.tmp/protoc --ts_out=.tmp/protoc src/service.proto",
+    "proto:mv": "cpy --no-overwrite .tmp/protoc src",
+    "proto:build": "npm run proto:setup && npm run proto:generate && npm run proto:mv && npm run proto:clean"
   },
   "author": "",
   "license": "Unlicense",
@@ -18,6 +23,7 @@
   "devDependencies": {
     "cpy-cli": "^2.0.0",
     "make-dir-cli": "^2.0.0",
-    "rimraf": "^2.6.3"
+    "rimraf": "^2.6.3",
+    "ts-protoc-gen": "^0.10.0"
   }
 }
