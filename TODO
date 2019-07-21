@@ -10,4 +10,6 @@ Real shit:
   ✔ install protoc (binaries: https://github.com/protocolbuffers/protobuf)
     ✔ binary must be installed for dev; I used scoop for windows, it is in the extras package
   ✔ ts-protoc-gen (https://www.npmjs.com/package/ts-protoc-gen)
-  ☐ integrate handshake with RPC definition
+  ✘ integrate handshake with RPC definition
+  ☐ figure out header negotiations
+  ☐ verify message sending works

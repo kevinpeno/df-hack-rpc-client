@@ -9,7 +9,17 @@ import "rename.proto";
 // missing definitions used by dfhack
 message EmptyMessage {}
 
-service SearchService {
+message HandshakeRequest {
+  required string message = 1;
+}
+
+message HandshakeResponse {
+  required string message = 1;
+}
+
+service DFHackRPCService {
+  rpc Handshake(HandshakeRequest) returns (HandshakeResponse);
+
   // AdventureControl
   // ???
 

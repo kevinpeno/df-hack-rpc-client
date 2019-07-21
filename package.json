@@ -11,15 +11,17 @@
     "dfhack:apply": "cpy .tmp/df-hack dfhack-protos",
     "dfhack:clean": "rimraf .tmp && git reset",
     "dfhack:update": "npm run dfhack:mktmp && npm run dfhack:apply && npm run dfhack:clean",
-    "proto:setup": "make-dir .tmp/protoc",
+    "proto:setup": "make-dir .tmp/protoc && rimraf src/generated",
     "proto:clean": "rimraf .tmp",
-    "proto:generate": "\"protoc\" --plugin=node_modules/.bin/protoc-gen-ts.cmd --js_out=import_style=commonjs,binary:.tmp/protoc --ts_out=.tmp/protoc --proto_path=./dfhack-protos --proto_path=./src service.proto AdventureControl.proto isoworldremote.proto ItemdefInstrument.proto RemoteFortressReader.proto rename.proto",
-    "proto:mv": "cpy .tmp/protoc src/service",
+    "proto:generate": "pbjs -t static-module -p ./dfhack-protos --out ./.tmp/service.js -w commonjs src/service.proto",
+    "proto:mv": "cpy .tmp src/generated",
     "proto:build": "npm run proto:setup && npm run proto:generate && npm run proto:mv && npm run proto:clean"
   },
   "author": "",
   "license": "Unlicense",
-  "dependencies": {},
+  "dependencies": {
+    "protobufjs": "^6.8.8"
+  },
   "devDependencies": {
     "cpy-cli": "^2.0.0",
     "make-dir-cli": "^2.0.0",
