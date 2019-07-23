@@ -169,27 +169,24 @@ $root.EmptyMessage = (function() {
     return EmptyMessage;
 })();
 
-$root.BindRequest = (function() {
+$root.IntMessage = (function() {
 
     /**
-     * Properties of a BindRequest.
-     * @exports IBindRequest
-     * @interface IBindRequest
-     * @property {string} method BindRequest method
-     * @property {string} inputMsg BindRequest inputMsg
-     * @property {string} outputMsg BindRequest outputMsg
-     * @property {string|null} [plugin] BindRequest plugin
+     * Properties of an IntMessage.
+     * @exports IIntMessage
+     * @interface IIntMessage
+     * @property {number} value IntMessage value
      */
 
     /**
-     * Constructs a new BindRequest.
-     * @exports BindRequest
-     * @classdesc Represents a BindRequest.
-     * @implements IBindRequest
+     * Constructs a new IntMessage.
+     * @exports IntMessage
+     * @classdesc Represents an IntMessage.
+     * @implements IIntMessage
      * @constructor
-     * @param {IBindRequest=} [properties] Properties to set
+     * @param {IIntMessage=} [properties] Properties to set
      */
-    function BindRequest(properties) {
+    function IntMessage(properties) {
         if (properties)
             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
@@ -197,59 +194,436 @@ $root.BindRequest = (function() {
     }
 
     /**
-     * BindRequest method.
-     * @member {string} method
-     * @memberof BindRequest
+     * IntMessage value.
+     * @member {number} value
+     * @memberof IntMessage
      * @instance
      */
-    BindRequest.prototype.method = "";
+    IntMessage.prototype.value = 0;
 
     /**
-     * BindRequest inputMsg.
-     * @member {string} inputMsg
-     * @memberof BindRequest
-     * @instance
-     */
-    BindRequest.prototype.inputMsg = "";
-
-    /**
-     * BindRequest outputMsg.
-     * @member {string} outputMsg
-     * @memberof BindRequest
-     * @instance
-     */
-    BindRequest.prototype.outputMsg = "";
-
-    /**
-     * BindRequest plugin.
-     * @member {string} plugin
-     * @memberof BindRequest
-     * @instance
-     */
-    BindRequest.prototype.plugin = "";
-
-    /**
-     * Creates a new BindRequest instance using the specified properties.
+     * Creates a new IntMessage instance using the specified properties.
      * @function create
-     * @memberof BindRequest
+     * @memberof IntMessage
      * @static
-     * @param {IBindRequest=} [properties] Properties to set
-     * @returns {BindRequest} BindRequest instance
+     * @param {IIntMessage=} [properties] Properties to set
+     * @returns {IntMessage} IntMessage instance
      */
-    BindRequest.create = function create(properties) {
-        return new BindRequest(properties);
+    IntMessage.create = function create(properties) {
+        return new IntMessage(properties);
     };
 
     /**
-     * Encodes the specified BindRequest message. Does not implicitly {@link BindRequest.verify|verify} messages.
+     * Encodes the specified IntMessage message. Does not implicitly {@link IntMessage.verify|verify} messages.
      * @function encode
-     * @memberof BindRequest
+     * @memberof IntMessage
      * @static
-     * @param {IBindRequest} message BindRequest message or plain object to encode
+     * @param {IIntMessage} message IntMessage message or plain object to encode
      * @param {$protobuf.Writer} [writer] Writer to encode to
      * @returns {$protobuf.Writer} Writer
      */
-    BindRequest.encode = function encode(message, writer) {
+    IntMessage.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        writer.uint32(/* id 1, wireType 0 =*/8).int32(message.value);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified IntMessage message, length delimited. Does not implicitly {@link IntMessage.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof IntMessage
+     * @static
+     * @param {IIntMessage} message IntMessage message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    IntMessage.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes an IntMessage message from the specified reader or buffer.
+     * @function decode
+     * @memberof IntMessage
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {IntMessage} IntMessage
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    IntMessage.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.IntMessage();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1:
+                message.value = reader.int32();
+                break;
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        if (!message.hasOwnProperty("value"))
+            throw $util.ProtocolError("missing required 'value'", { instance: message });
+        return message;
+    };
+
+    /**
+     * Decodes an IntMessage message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof IntMessage
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {IntMessage} IntMessage
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    IntMessage.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies an IntMessage message.
+     * @function verify
+     * @memberof IntMessage
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    IntMessage.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (!$util.isInteger(message.value))
+            return "value: integer expected";
+        return null;
+    };
+
+    /**
+     * Creates an IntMessage message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof IntMessage
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {IntMessage} IntMessage
+     */
+    IntMessage.fromObject = function fromObject(object) {
+        if (object instanceof $root.IntMessage)
+            return object;
+        var message = new $root.IntMessage();
+        if (object.value != null)
+            message.value = object.value | 0;
+        return message;
+    };
+
+    /**
+     * Creates a plain object from an IntMessage message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof IntMessage
+     * @static
+     * @param {IntMessage} message IntMessage
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    IntMessage.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.defaults)
+            object.value = 0;
+        if (message.value != null && message.hasOwnProperty("value"))
+            object.value = message.value;
+        return object;
+    };
+
+    /**
+     * Converts this IntMessage to JSON.
+     * @function toJSON
+     * @memberof IntMessage
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    IntMessage.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    return IntMessage;
+})();
+
+$root.StringMessage = (function() {
+
+    /**
+     * Properties of a StringMessage.
+     * @exports IStringMessage
+     * @interface IStringMessage
+     * @property {string} value StringMessage value
+     */
+
+    /**
+     * Constructs a new StringMessage.
+     * @exports StringMessage
+     * @classdesc Represents a StringMessage.
+     * @implements IStringMessage
+     * @constructor
+     * @param {IStringMessage=} [properties] Properties to set
+     */
+    function StringMessage(properties) {
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * StringMessage value.
+     * @member {string} value
+     * @memberof StringMessage
+     * @instance
+     */
+    StringMessage.prototype.value = "";
+
+    /**
+     * Creates a new StringMessage instance using the specified properties.
+     * @function create
+     * @memberof StringMessage
+     * @static
+     * @param {IStringMessage=} [properties] Properties to set
+     * @returns {StringMessage} StringMessage instance
+     */
+    StringMessage.create = function create(properties) {
+        return new StringMessage(properties);
+    };
+
+    /**
+     * Encodes the specified StringMessage message. Does not implicitly {@link StringMessage.verify|verify} messages.
+     * @function encode
+     * @memberof StringMessage
+     * @static
+     * @param {IStringMessage} message StringMessage message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    StringMessage.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        writer.uint32(/* id 1, wireType 2 =*/10).string(message.value);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified StringMessage message, length delimited. Does not implicitly {@link StringMessage.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof StringMessage
+     * @static
+     * @param {IStringMessage} message StringMessage message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    StringMessage.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a StringMessage message from the specified reader or buffer.
+     * @function decode
+     * @memberof StringMessage
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {StringMessage} StringMessage
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    StringMessage.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.StringMessage();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1:
+                message.value = reader.string();
+                break;
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        if (!message.hasOwnProperty("value"))
+            throw $util.ProtocolError("missing required 'value'", { instance: message });
+        return message;
+    };
+
+    /**
+     * Decodes a StringMessage message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof StringMessage
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {StringMessage} StringMessage
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    StringMessage.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a StringMessage message.
+     * @function verify
+     * @memberof StringMessage
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    StringMessage.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (!$util.isString(message.value))
+            return "value: string expected";
+        return null;
+    };
+
+    /**
+     * Creates a StringMessage message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof StringMessage
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {StringMessage} StringMessage
+     */
+    StringMessage.fromObject = function fromObject(object) {
+        if (object instanceof $root.StringMessage)
+            return object;
+        var message = new $root.StringMessage();
+        if (object.value != null)
+            message.value = String(object.value);
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a StringMessage message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof StringMessage
+     * @static
+     * @param {StringMessage} message StringMessage
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    StringMessage.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.defaults)
+            object.value = "";
+        if (message.value != null && message.hasOwnProperty("value"))
+            object.value = message.value;
+        return object;
+    };
+
+    /**
+     * Converts this StringMessage to JSON.
+     * @function toJSON
+     * @memberof StringMessage
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    StringMessage.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    return StringMessage;
+})();
+
+$root.CoreBindRequest = (function() {
+
+    /**
+     * Properties of a CoreBindRequest.
+     * @exports ICoreBindRequest
+     * @interface ICoreBindRequest
+     * @property {string} method CoreBindRequest method
+     * @property {string} inputMsg CoreBindRequest inputMsg
+     * @property {string} outputMsg CoreBindRequest outputMsg
+     * @property {string|null} [plugin] CoreBindRequest plugin
+     */
+
+    /**
+     * Constructs a new CoreBindRequest.
+     * @exports CoreBindRequest
+     * @classdesc Represents a CoreBindRequest.
+     * @implements ICoreBindRequest
+     * @constructor
+     * @param {ICoreBindRequest=} [properties] Properties to set
+     */
+    function CoreBindRequest(properties) {
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * CoreBindRequest method.
+     * @member {string} method
+     * @memberof CoreBindRequest
+     * @instance
+     */
+    CoreBindRequest.prototype.method = "";
+
+    /**
+     * CoreBindRequest inputMsg.
+     * @member {string} inputMsg
+     * @memberof CoreBindRequest
+     * @instance
+     */
+    CoreBindRequest.prototype.inputMsg = "";
+
+    /**
+     * CoreBindRequest outputMsg.
+     * @member {string} outputMsg
+     * @memberof CoreBindRequest
+     * @instance
+     */
+    CoreBindRequest.prototype.outputMsg = "";
+
+    /**
+     * CoreBindRequest plugin.
+     * @member {string} plugin
+     * @memberof CoreBindRequest
+     * @instance
+     */
+    CoreBindRequest.prototype.plugin = "";
+
+    /**
+     * Creates a new CoreBindRequest instance using the specified properties.
+     * @function create
+     * @memberof CoreBindRequest
+     * @static
+     * @param {ICoreBindRequest=} [properties] Properties to set
+     * @returns {CoreBindRequest} CoreBindRequest instance
+     */
+    CoreBindRequest.create = function create(properties) {
+        return new CoreBindRequest(properties);
+    };
+
+    /**
+     * Encodes the specified CoreBindRequest message. Does not implicitly {@link CoreBindRequest.verify|verify} messages.
+     * @function encode
+     * @memberof CoreBindRequest
+     * @static
+     * @param {ICoreBindRequest} message CoreBindRequest message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    CoreBindRequest.encode = function encode(message, writer) {
         if (!writer)
             writer = $Writer.create();
         writer.uint32(/* id 1, wireType 2 =*/10).string(message.method);
@@ -261,33 +635,33 @@ $root.BindRequest = (function() {
     };
 
     /**
-     * Encodes the specified BindRequest message, length delimited. Does not implicitly {@link BindRequest.verify|verify} messages.
+     * Encodes the specified CoreBindRequest message, length delimited. Does not implicitly {@link CoreBindRequest.verify|verify} messages.
      * @function encodeDelimited
-     * @memberof BindRequest
+     * @memberof CoreBindRequest
      * @static
-     * @param {IBindRequest} message BindRequest message or plain object to encode
+     * @param {ICoreBindRequest} message CoreBindRequest message or plain object to encode
      * @param {$protobuf.Writer} [writer] Writer to encode to
      * @returns {$protobuf.Writer} Writer
      */
-    BindRequest.encodeDelimited = function encodeDelimited(message, writer) {
+    CoreBindRequest.encodeDelimited = function encodeDelimited(message, writer) {
         return this.encode(message, writer).ldelim();
     };
 
     /**
-     * Decodes a BindRequest message from the specified reader or buffer.
+     * Decodes a CoreBindRequest message from the specified reader or buffer.
      * @function decode
-     * @memberof BindRequest
+     * @memberof CoreBindRequest
      * @static
      * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
      * @param {number} [length] Message length if known beforehand
-     * @returns {BindRequest} BindRequest
+     * @returns {CoreBindRequest} CoreBindRequest
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    BindRequest.decode = function decode(reader, length) {
+    CoreBindRequest.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BindRequest();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CoreBindRequest();
         while (reader.pos < end) {
             var tag = reader.uint32();
             switch (tag >>> 3) {
@@ -318,30 +692,30 @@ $root.BindRequest = (function() {
     };
 
     /**
-     * Decodes a BindRequest message from the specified reader or buffer, length delimited.
+     * Decodes a CoreBindRequest message from the specified reader or buffer, length delimited.
      * @function decodeDelimited
-     * @memberof BindRequest
+     * @memberof CoreBindRequest
      * @static
      * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @returns {BindRequest} BindRequest
+     * @returns {CoreBindRequest} CoreBindRequest
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    BindRequest.decodeDelimited = function decodeDelimited(reader) {
+    CoreBindRequest.decodeDelimited = function decodeDelimited(reader) {
         if (!(reader instanceof $Reader))
             reader = new $Reader(reader);
         return this.decode(reader, reader.uint32());
     };
 
     /**
-     * Verifies a BindRequest message.
+     * Verifies a CoreBindRequest message.
      * @function verify
-     * @memberof BindRequest
+     * @memberof CoreBindRequest
      * @static
      * @param {Object.<string,*>} message Plain object to verify
      * @returns {string|null} `null` if valid, otherwise the reason why it is not
      */
-    BindRequest.verify = function verify(message) {
+    CoreBindRequest.verify = function verify(message) {
         if (typeof message !== "object" || message === null)
             return "object expected";
         if (!$util.isString(message.method))
@@ -357,17 +731,17 @@ $root.BindRequest = (function() {
     };
 
     /**
-     * Creates a BindRequest message from a plain object. Also converts values to their respective internal types.
+     * Creates a CoreBindRequest message from a plain object. Also converts values to their respective internal types.
      * @function fromObject
-     * @memberof BindRequest
+     * @memberof CoreBindRequest
      * @static
      * @param {Object.<string,*>} object Plain object
-     * @returns {BindRequest} BindRequest
+     * @returns {CoreBindRequest} CoreBindRequest
      */
-    BindRequest.fromObject = function fromObject(object) {
-        if (object instanceof $root.BindRequest)
+    CoreBindRequest.fromObject = function fromObject(object) {
+        if (object instanceof $root.CoreBindRequest)
             return object;
-        var message = new $root.BindRequest();
+        var message = new $root.CoreBindRequest();
         if (object.method != null)
             message.method = String(object.method);
         if (object.inputMsg != null)
@@ -380,15 +754,15 @@ $root.BindRequest = (function() {
     };
 
     /**
-     * Creates a plain object from a BindRequest message. Also converts values to other types if specified.
+     * Creates a plain object from a CoreBindRequest message. Also converts values to other types if specified.
      * @function toObject
-     * @memberof BindRequest
+     * @memberof CoreBindRequest
      * @static
-     * @param {BindRequest} message BindRequest
+     * @param {CoreBindRequest} message CoreBindRequest
      * @param {$protobuf.IConversionOptions} [options] Conversion options
      * @returns {Object.<string,*>} Plain object
      */
-    BindRequest.toObject = function toObject(message, options) {
+    CoreBindRequest.toObject = function toObject(message, options) {
         if (!options)
             options = {};
         var object = {};
@@ -410,37 +784,37 @@ $root.BindRequest = (function() {
     };
 
     /**
-     * Converts this BindRequest to JSON.
+     * Converts this CoreBindRequest to JSON.
      * @function toJSON
-     * @memberof BindRequest
+     * @memberof CoreBindRequest
      * @instance
      * @returns {Object.<string,*>} JSON object
      */
-    BindRequest.prototype.toJSON = function toJSON() {
+    CoreBindRequest.prototype.toJSON = function toJSON() {
         return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
     };
 
-    return BindRequest;
+    return CoreBindRequest;
 })();
 
-$root.BindReply = (function() {
+$root.CoreBindReply = (function() {
 
     /**
-     * Properties of a BindReply.
-     * @exports IBindReply
-     * @interface IBindReply
-     * @property {number} assignedId BindReply assignedId
+     * Properties of a CoreBindReply.
+     * @exports ICoreBindReply
+     * @interface ICoreBindReply
+     * @property {number} assignedId CoreBindReply assignedId
      */
 
     /**
-     * Constructs a new BindReply.
-     * @exports BindReply
-     * @classdesc Represents a BindReply.
-     * @implements IBindReply
+     * Constructs a new CoreBindReply.
+     * @exports CoreBindReply
+     * @classdesc Represents a CoreBindReply.
+     * @implements ICoreBindReply
      * @constructor
-     * @param {IBindReply=} [properties] Properties to set
+     * @param {ICoreBindReply=} [properties] Properties to set
      */
-    function BindReply(properties) {
+    function CoreBindReply(properties) {
         if (properties)
             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
@@ -448,35 +822,35 @@ $root.BindReply = (function() {
     }
 
     /**
-     * BindReply assignedId.
+     * CoreBindReply assignedId.
      * @member {number} assignedId
-     * @memberof BindReply
+     * @memberof CoreBindReply
      * @instance
      */
-    BindReply.prototype.assignedId = 0;
+    CoreBindReply.prototype.assignedId = 0;
 
     /**
-     * Creates a new BindReply instance using the specified properties.
+     * Creates a new CoreBindReply instance using the specified properties.
      * @function create
-     * @memberof BindReply
+     * @memberof CoreBindReply
      * @static
-     * @param {IBindReply=} [properties] Properties to set
-     * @returns {BindReply} BindReply instance
+     * @param {ICoreBindReply=} [properties] Properties to set
+     * @returns {CoreBindReply} CoreBindReply instance
      */
-    BindReply.create = function create(properties) {
-        return new BindReply(properties);
+    CoreBindReply.create = function create(properties) {
+        return new CoreBindReply(properties);
     };
 
     /**
-     * Encodes the specified BindReply message. Does not implicitly {@link BindReply.verify|verify} messages.
+     * Encodes the specified CoreBindReply message. Does not implicitly {@link CoreBindReply.verify|verify} messages.
      * @function encode
-     * @memberof BindReply
+     * @memberof CoreBindReply
      * @static
-     * @param {IBindReply} message BindReply message or plain object to encode
+     * @param {ICoreBindReply} message CoreBindReply message or plain object to encode
      * @param {$protobuf.Writer} [writer] Writer to encode to
      * @returns {$protobuf.Writer} Writer
      */
-    BindReply.encode = function encode(message, writer) {
+    CoreBindReply.encode = function encode(message, writer) {
         if (!writer)
             writer = $Writer.create();
         writer.uint32(/* id 1, wireType 0 =*/8).int32(message.assignedId);
@@ -484,33 +858,33 @@ $root.BindReply = (function() {
     };
 
     /**
-     * Encodes the specified BindReply message, length delimited. Does not implicitly {@link BindReply.verify|verify} messages.
+     * Encodes the specified CoreBindReply message, length delimited. Does not implicitly {@link CoreBindReply.verify|verify} messages.
      * @function encodeDelimited
-     * @memberof BindReply
+     * @memberof CoreBindReply
      * @static
-     * @param {IBindReply} message BindReply message or plain object to encode
+     * @param {ICoreBindReply} message CoreBindReply message or plain object to encode
      * @param {$protobuf.Writer} [writer] Writer to encode to
      * @returns {$protobuf.Writer} Writer
      */
-    BindReply.encodeDelimited = function encodeDelimited(message, writer) {
+    CoreBindReply.encodeDelimited = function encodeDelimited(message, writer) {
         return this.encode(message, writer).ldelim();
     };
 
     /**
-     * Decodes a BindReply message from the specified reader or buffer.
+     * Decodes a CoreBindReply message from the specified reader or buffer.
      * @function decode
-     * @memberof BindReply
+     * @memberof CoreBindReply
      * @static
      * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
      * @param {number} [length] Message length if known beforehand
-     * @returns {BindReply} BindReply
+     * @returns {CoreBindReply} CoreBindReply
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    BindReply.decode = function decode(reader, length) {
+    CoreBindReply.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BindReply();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CoreBindReply();
         while (reader.pos < end) {
             var tag = reader.uint32();
             switch (tag >>> 3) {
@@ -528,30 +902,30 @@ $root.BindReply = (function() {
     };
 
     /**
-     * Decodes a BindReply message from the specified reader or buffer, length delimited.
+     * Decodes a CoreBindReply message from the specified reader or buffer, length delimited.
      * @function decodeDelimited
-     * @memberof BindReply
+     * @memberof CoreBindReply
      * @static
      * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @returns {BindReply} BindReply
+     * @returns {CoreBindReply} CoreBindReply
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    BindReply.decodeDelimited = function decodeDelimited(reader) {
+    CoreBindReply.decodeDelimited = function decodeDelimited(reader) {
         if (!(reader instanceof $Reader))
             reader = new $Reader(reader);
         return this.decode(reader, reader.uint32());
     };
 
     /**
-     * Verifies a BindReply message.
+     * Verifies a CoreBindReply message.
      * @function verify
-     * @memberof BindReply
+     * @memberof CoreBindReply
      * @static
      * @param {Object.<string,*>} message Plain object to verify
      * @returns {string|null} `null` if valid, otherwise the reason why it is not
      */
-    BindReply.verify = function verify(message) {
+    CoreBindReply.verify = function verify(message) {
         if (typeof message !== "object" || message === null)
             return "object expected";
         if (!$util.isInteger(message.assignedId))
@@ -560,32 +934,32 @@ $root.BindReply = (function() {
     };
 
     /**
-     * Creates a BindReply message from a plain object. Also converts values to their respective internal types.
+     * Creates a CoreBindReply message from a plain object. Also converts values to their respective internal types.
      * @function fromObject
-     * @memberof BindReply
+     * @memberof CoreBindReply
      * @static
      * @param {Object.<string,*>} object Plain object
-     * @returns {BindReply} BindReply
+     * @returns {CoreBindReply} CoreBindReply
      */
-    BindReply.fromObject = function fromObject(object) {
-        if (object instanceof $root.BindReply)
+    CoreBindReply.fromObject = function fromObject(object) {
+        if (object instanceof $root.CoreBindReply)
             return object;
-        var message = new $root.BindReply();
+        var message = new $root.CoreBindReply();
         if (object.assignedId != null)
             message.assignedId = object.assignedId | 0;
         return message;
     };
 
     /**
-     * Creates a plain object from a BindReply message. Also converts values to other types if specified.
+     * Creates a plain object from a CoreBindReply message. Also converts values to other types if specified.
      * @function toObject
-     * @memberof BindReply
+     * @memberof CoreBindReply
      * @static
-     * @param {BindReply} message BindReply
+     * @param {CoreBindReply} message CoreBindReply
      * @param {$protobuf.IConversionOptions} [options] Conversion options
      * @returns {Object.<string,*>} Plain object
      */
-    BindReply.toObject = function toObject(message, options) {
+    CoreBindReply.toObject = function toObject(message, options) {
         if (!options)
             options = {};
         var object = {};
@@ -597,17 +971,243 @@ $root.BindReply = (function() {
     };
 
     /**
-     * Converts this BindReply to JSON.
+     * Converts this CoreBindReply to JSON.
      * @function toJSON
-     * @memberof BindReply
+     * @memberof CoreBindReply
      * @instance
      * @returns {Object.<string,*>} JSON object
      */
-    BindReply.prototype.toJSON = function toJSON() {
+    CoreBindReply.prototype.toJSON = function toJSON() {
         return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
     };
 
-    return BindReply;
+    return CoreBindReply;
+})();
+
+$root.CoreRunCommandRequest = (function() {
+
+    /**
+     * Properties of a CoreRunCommandRequest.
+     * @exports ICoreRunCommandRequest
+     * @interface ICoreRunCommandRequest
+     * @property {string} c CoreRunCommandRequest c
+     * @property {Array.<string>|null} ["arguments"] CoreRunCommandRequest arguments
+     */
+
+    /**
+     * Constructs a new CoreRunCommandRequest.
+     * @exports CoreRunCommandRequest
+     * @classdesc Represents a CoreRunCommandRequest.
+     * @implements ICoreRunCommandRequest
+     * @constructor
+     * @param {ICoreRunCommandRequest=} [properties] Properties to set
+     */
+    function CoreRunCommandRequest(properties) {
+        this["arguments"] = [];
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * CoreRunCommandRequest c.
+     * @member {string} c
+     * @memberof CoreRunCommandRequest
+     * @instance
+     */
+    CoreRunCommandRequest.prototype.c = "";
+
+    /**
+     * CoreRunCommandRequest arguments.
+     * @member {Array.<string>} arguments
+     * @memberof CoreRunCommandRequest
+     * @instance
+     */
+    CoreRunCommandRequest.prototype["arguments"] = $util.emptyArray;
+
+    /**
+     * Creates a new CoreRunCommandRequest instance using the specified properties.
+     * @function create
+     * @memberof CoreRunCommandRequest
+     * @static
+     * @param {ICoreRunCommandRequest=} [properties] Properties to set
+     * @returns {CoreRunCommandRequest} CoreRunCommandRequest instance
+     */
+    CoreRunCommandRequest.create = function create(properties) {
+        return new CoreRunCommandRequest(properties);
+    };
+
+    /**
+     * Encodes the specified CoreRunCommandRequest message. Does not implicitly {@link CoreRunCommandRequest.verify|verify} messages.
+     * @function encode
+     * @memberof CoreRunCommandRequest
+     * @static
+     * @param {ICoreRunCommandRequest} message CoreRunCommandRequest message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    CoreRunCommandRequest.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        writer.uint32(/* id 1, wireType 2 =*/10).string(message.c);
+        if (message["arguments"] != null && message["arguments"].length)
+            for (var i = 0; i < message["arguments"].length; ++i)
+                writer.uint32(/* id 2, wireType 2 =*/18).string(message["arguments"][i]);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified CoreRunCommandRequest message, length delimited. Does not implicitly {@link CoreRunCommandRequest.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof CoreRunCommandRequest
+     * @static
+     * @param {ICoreRunCommandRequest} message CoreRunCommandRequest message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    CoreRunCommandRequest.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a CoreRunCommandRequest message from the specified reader or buffer.
+     * @function decode
+     * @memberof CoreRunCommandRequest
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {CoreRunCommandRequest} CoreRunCommandRequest
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    CoreRunCommandRequest.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CoreRunCommandRequest();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1:
+                message.c = reader.string();
+                break;
+            case 2:
+                if (!(message["arguments"] && message["arguments"].length))
+                    message["arguments"] = [];
+                message["arguments"].push(reader.string());
+                break;
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        if (!message.hasOwnProperty("c"))
+            throw $util.ProtocolError("missing required 'c'", { instance: message });
+        return message;
+    };
+
+    /**
+     * Decodes a CoreRunCommandRequest message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof CoreRunCommandRequest
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {CoreRunCommandRequest} CoreRunCommandRequest
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    CoreRunCommandRequest.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a CoreRunCommandRequest message.
+     * @function verify
+     * @memberof CoreRunCommandRequest
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    CoreRunCommandRequest.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (!$util.isString(message.c))
+            return "c: string expected";
+        if (message["arguments"] != null && message.hasOwnProperty("arguments")) {
+            if (!Array.isArray(message["arguments"]))
+                return "arguments: array expected";
+            for (var i = 0; i < message["arguments"].length; ++i)
+                if (!$util.isString(message["arguments"][i]))
+                    return "arguments: string[] expected";
+        }
+        return null;
+    };
+
+    /**
+     * Creates a CoreRunCommandRequest message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof CoreRunCommandRequest
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {CoreRunCommandRequest} CoreRunCommandRequest
+     */
+    CoreRunCommandRequest.fromObject = function fromObject(object) {
+        if (object instanceof $root.CoreRunCommandRequest)
+            return object;
+        var message = new $root.CoreRunCommandRequest();
+        if (object.c != null)
+            message.c = String(object.c);
+        if (object["arguments"]) {
+            if (!Array.isArray(object["arguments"]))
+                throw TypeError(".CoreRunCommandRequest.arguments: array expected");
+            message["arguments"] = [];
+            for (var i = 0; i < object["arguments"].length; ++i)
+                message["arguments"][i] = String(object["arguments"][i]);
+        }
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a CoreRunCommandRequest message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof CoreRunCommandRequest
+     * @static
+     * @param {CoreRunCommandRequest} message CoreRunCommandRequest
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    CoreRunCommandRequest.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.arrays || options.defaults)
+            object["arguments"] = [];
+        if (options.defaults)
+            object.c = "";
+        if (message.c != null && message.hasOwnProperty("c"))
+            object.c = message.c;
+        if (message["arguments"] && message["arguments"].length) {
+            object["arguments"] = [];
+            for (var j = 0; j < message["arguments"].length; ++j)
+                object["arguments"][j] = message["arguments"][j];
+        }
+        return object;
+    };
+
+    /**
+     * Converts this CoreRunCommandRequest to JSON.
+     * @function toJSON
+     * @memberof CoreRunCommandRequest
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    CoreRunCommandRequest.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    return CoreRunCommandRequest;
 })();
 
 $root.DFHackRPCService = (function() {
@@ -648,7 +1248,7 @@ $root.DFHackRPCService = (function() {
      * @typedef BindMethodCallback
      * @type {function}
      * @param {Error|null} error Error, if any
-     * @param {BindReply} [response] BindReply
+     * @param {CoreBindReply} [response] CoreBindReply
      */
 
     /**
@@ -656,13 +1256,13 @@ $root.DFHackRPCService = (function() {
      * @function bindMethod
      * @memberof DFHackRPCService
      * @instance
-     * @param {IBindRequest} request BindRequest message or plain object
-     * @param {DFHackRPCService.BindMethodCallback} callback Node-style callback called with the error, if any, and BindReply
+     * @param {ICoreBindRequest} request CoreBindRequest message or plain object
+     * @param {DFHackRPCService.BindMethodCallback} callback Node-style callback called with the error, if any, and CoreBindReply
      * @returns {undefined}
      * @variation 1
      */
     Object.defineProperty(DFHackRPCService.prototype.bindMethod = function bindMethod(request, callback) {
-        return this.rpcCall(bindMethod, $root.BindRequest, $root.BindReply, request, callback);
+        return this.rpcCall(bindMethod, $root.CoreBindRequest, $root.CoreBindReply, request, callback);
     }, "name", { value: "BindMethod" });
 
     /**
@@ -670,8 +1270,107 @@ $root.DFHackRPCService = (function() {
      * @function bindMethod
      * @memberof DFHackRPCService
      * @instance
-     * @param {IBindRequest} request BindRequest message or plain object
-     * @returns {Promise<BindReply>} Promise
+     * @param {ICoreBindRequest} request CoreBindRequest message or plain object
+     * @returns {Promise<CoreBindReply>} Promise
+     * @variation 2
+     */
+
+    /**
+     * Callback as used by {@link DFHackRPCService#runCommand}.
+     * @memberof DFHackRPCService
+     * @typedef RunCommandCallback
+     * @type {function}
+     * @param {Error|null} error Error, if any
+     * @param {EmptyMessage} [response] EmptyMessage
+     */
+
+    /**
+     * Calls RunCommand.
+     * @function runCommand
+     * @memberof DFHackRPCService
+     * @instance
+     * @param {ICoreRunCommandRequest} request CoreRunCommandRequest message or plain object
+     * @param {DFHackRPCService.RunCommandCallback} callback Node-style callback called with the error, if any, and EmptyMessage
+     * @returns {undefined}
+     * @variation 1
+     */
+    Object.defineProperty(DFHackRPCService.prototype.runCommand = function runCommand(request, callback) {
+        return this.rpcCall(runCommand, $root.CoreRunCommandRequest, $root.EmptyMessage, request, callback);
+    }, "name", { value: "RunCommand" });
+
+    /**
+     * Calls RunCommand.
+     * @function runCommand
+     * @memberof DFHackRPCService
+     * @instance
+     * @param {ICoreRunCommandRequest} request CoreRunCommandRequest message or plain object
+     * @returns {Promise<EmptyMessage>} Promise
+     * @variation 2
+     */
+
+    /**
+     * Callback as used by {@link DFHackRPCService#coreResume}.
+     * @memberof DFHackRPCService
+     * @typedef CoreResumeCallback
+     * @type {function}
+     * @param {Error|null} error Error, if any
+     * @param {IntMessage} [response] IntMessage
+     */
+
+    /**
+     * Calls CoreResume.
+     * @function coreResume
+     * @memberof DFHackRPCService
+     * @instance
+     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @param {DFHackRPCService.CoreResumeCallback} callback Node-style callback called with the error, if any, and IntMessage
+     * @returns {undefined}
+     * @variation 1
+     */
+    Object.defineProperty(DFHackRPCService.prototype.coreResume = function coreResume(request, callback) {
+        return this.rpcCall(coreResume, $root.EmptyMessage, $root.IntMessage, request, callback);
+    }, "name", { value: "CoreResume" });
+
+    /**
+     * Calls CoreResume.
+     * @function coreResume
+     * @memberof DFHackRPCService
+     * @instance
+     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @returns {Promise<IntMessage>} Promise
+     * @variation 2
+     */
+
+    /**
+     * Callback as used by {@link DFHackRPCService#getVersion}.
+     * @memberof DFHackRPCService
+     * @typedef GetVersionCallback
+     * @type {function}
+     * @param {Error|null} error Error, if any
+     * @param {StringMessage} [response] StringMessage
+     */
+
+    /**
+     * Calls GetVersion.
+     * @function getVersion
+     * @memberof DFHackRPCService
+     * @instance
+     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @param {DFHackRPCService.GetVersionCallback} callback Node-style callback called with the error, if any, and StringMessage
+     * @returns {undefined}
+     * @variation 1
+     */
+    Object.defineProperty(DFHackRPCService.prototype.getVersion = function getVersion(request, callback) {
+        return this.rpcCall(getVersion, $root.EmptyMessage, $root.StringMessage, request, callback);
+    }, "name", { value: "GetVersion" });
+
+    /**
+     * Calls GetVersion.
+     * @function getVersion
+     * @memberof DFHackRPCService
+     * @instance
+     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @returns {Promise<StringMessage>} Promise
      * @variation 2
      */
 

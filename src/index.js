@@ -15,27 +15,43 @@ const connect = (host, port) => (client) => new Promise((resolve, reject) => {
 	})
 })
 
-const makeRequest = (client, message, handshake=false) => new Promise((resolve, reject) => {
+const writeHeader = (client, method, size) => {
+		// currently only creates the header for GetVersion requests -- need some what to find out binding id
+		// all header fields must be LittleEndian and padded by 2 bytes
+		const header = Buffer.from(new Uint8ClampedArray(8))
+		// method id (int16)
+		header.writeInt16LE(5, 0)
+		// Padding 2 bytes (don't really need this but set just for reference)
+		header.writeInt16LE(0, 2)
+		// "Size" (int32) of the call in bytes
+		header.writeInt32LE(size, 4)
+		console.log(header.toString())
+		client.write(header)
+}
+
+const readHeader = (header) => ({
+	id: header.readInt16LE(0),
+	size: header.writeInt32LE(4)
+})
+
+const makeRequest = (client, method, message) => new Promise((resolve, reject) => {
 	client.addListener("data", (response) => {
 		client.removeListener("error", resolve)
-		resolve(response)
+		if( method === 'handshake') {
+			resolve(response)
+		} else {
+			const header = readHeader(response.slice(0, 8))
+			const message = response.slice(8)	
+	
+			resolve(message)
+		}
 	})
 	client.addListener("error", (error) => {
 		client.removeListener("data", resolve)
 		reject(error)
 	})
-	if( !handshake ) {
-		// currently only creates the header for BindMethod requests
-		// all header fields must be LittleEndian and padded by 2 bytes
-		const header = Buffer.from(new Uint8ClampedArray(8))
-		const size = message.length
-		// method id (int16)
-		header.writeInt16LE(0, 0)
-		// Padding 2 bytes (don't really need this but set just for reference)
-		header.writeInt16LE(0, 2)
-		// "Size" (int32) of the call in bytes
-		header.writeInt32LE(message.length, 4)
-		client.write(header)
+	if( method !== "handshake" ) {
+		writeHeader(client, "GetVersion", message.byteLength)
 	}
 
 	client.write(message)
@@ -51,9 +67,9 @@ const resolveHandshake = (response) => {
 }
 
 const sendHandshake = (client) => {
-	const test = makeRequest(client, "DFHack?\n\x01\x00\x00\x00", true)
+	const test = makeRequest(client, "handshake", "DFHack?\n\x01\x00\x00\x00")
 		.then(resolveHandshake)
-		.then(console.log)
+		.then(res => console.log(res.toString()))
 		.then(() => client)
 
 	return test
@@ -61,7 +77,7 @@ const sendHandshake = (client) => {
 
 const test = pipe(
 	connect("127.0.0.1", 5000),
-	sendHandshake
+	sendHandshake,
 )
 
 const client = new Socket()
@@ -93,9 +109,9 @@ const rpcImpl = (method, message, callback) => {
 	console.log(method, message.toString())
 	connection.then((client) => {
 		console.log("sending request")
-		makeRequest(client, message)
+		makeRequest(client, method.name, message)
 		.then((response) => {
-			console.log(response)
+			console.log(response.toString())
 			callback(null, response)
 		})
 		.catch((err) => {
@@ -108,14 +124,20 @@ const rpcImpl = (method, message, callback) => {
 const DFHackRPCService = root.DFHackRPCService;
 const service = DFHackRPCService.create(rpcImpl, false, false);
 
-service.bindMethod({
-	method: service.getEmbarkInfo.name,
-	inputMsg: root.isoworldremote.MapRequest.name,
-	outputMsg: root.isoworldremote.MapReply.name,
-	plugin: "isoworldremote"
-}, function(error, response) {
+// service.bindMethod({
+// 	method: service.bindMethod.name,
+// 	inputMsg: root.CoreBindRequest.name,
+// 	outputMsg: root.CoreBindReply.name,
+// }, function(error, response) {
+// 	if( error ) {
+// 		console.error(error)
+// 	}
+// 	console.log(response);
+// });
+
+service.getVersion({}, function(error, response) {
 	if( error ) {
 		console.error(error)
 	}
-	console.log(response);
+	console.log(response.value);
 });

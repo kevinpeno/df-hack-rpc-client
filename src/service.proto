@@ -9,20 +9,36 @@ import "rename.proto";
 // missing definitions used by dfhack
 message EmptyMessage {}
 
-message BindRequest {
+message IntMessage {
+  required int32 value = 1;
+}
+
+message StringMessage {
+  required string value = 1;
+}
+
+message CoreBindRequest {
   required string method = 1;
   required string input_msg = 2;
   required string output_msg = 3;
   optional string plugin = 4;
 }
-message BindReply {
+message CoreBindReply {
   required int32 assigned_id = 1;
+}
+
+message CoreRunCommandRequest {
+  required string c = 1;
+  repeated string arguments = 2;
 }
 
 service DFHackRPCService {
   // Core undocumented
-  rpc BindMethod(BindRequest) returns (BindReply);
-
+  rpc BindMethod(CoreBindRequest) returns (CoreBindReply);
+  rpc RunCommand(CoreRunCommandRequest) returns (EmptyMessage);
+  // 
+  rpc CoreResume(EmptyMessage) returns (IntMessage);
+  rpc GetVersion(EmptyMessage) returns (StringMessage);
   // AdventureControl
   // ???
 

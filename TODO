@@ -10,7 +10,11 @@ Real shit:
   ✔ install protoc (binaries: https://github.com/protocolbuffers/protobuf)
     ✔ binary must be installed for dev; I used scoop for windows, it is in the extras package
   ✔ ts-protoc-gen (https://www.npmjs.com/package/ts-protoc-gen)
-  ✘ integrate handshake with RPC definition
   ✔ figure out header negotiations
-    ☐ need to figure out how to pass along ID for BindMethod to subsequent calls
-  ☐ verify message sending works
+    ✘ integrate handshake with RPC definition (can't header is magic)
+    ✔ read headers from responses
+  ✔ verify message sending works
+  ☐ add all core protos that were missed here: https://github.com/DFHack/dfhack/tree/master/library/proto
+  ☐ add switch cases in for handling the stupidity that is dfhack multi return (breaks proto std)
+  ☐ figure out why BindMethod fails to associate the method request and reply values properly
+    ☐ need to figure out how to pass along ID for BindMethod to subsequent calls (need some kinda memoize for method calls)
