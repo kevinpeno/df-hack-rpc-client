@@ -9,1207 +9,6 @@ var $Reader = $protobuf.Reader, $Writer = $protobuf.Writer, $util = $protobuf.ut
 // Exported root namespace
 var $root = $protobuf.roots["default"] || ($protobuf.roots["default"] = {});
 
-$root.EmptyMessage = (function() {
-
-    /**
-     * Properties of an EmptyMessage.
-     * @exports IEmptyMessage
-     * @interface IEmptyMessage
-     */
-
-    /**
-     * Constructs a new EmptyMessage.
-     * @exports EmptyMessage
-     * @classdesc Represents an EmptyMessage.
-     * @implements IEmptyMessage
-     * @constructor
-     * @param {IEmptyMessage=} [properties] Properties to set
-     */
-    function EmptyMessage(properties) {
-        if (properties)
-            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                if (properties[keys[i]] != null)
-                    this[keys[i]] = properties[keys[i]];
-    }
-
-    /**
-     * Creates a new EmptyMessage instance using the specified properties.
-     * @function create
-     * @memberof EmptyMessage
-     * @static
-     * @param {IEmptyMessage=} [properties] Properties to set
-     * @returns {EmptyMessage} EmptyMessage instance
-     */
-    EmptyMessage.create = function create(properties) {
-        return new EmptyMessage(properties);
-    };
-
-    /**
-     * Encodes the specified EmptyMessage message. Does not implicitly {@link EmptyMessage.verify|verify} messages.
-     * @function encode
-     * @memberof EmptyMessage
-     * @static
-     * @param {IEmptyMessage} message EmptyMessage message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    EmptyMessage.encode = function encode(message, writer) {
-        if (!writer)
-            writer = $Writer.create();
-        return writer;
-    };
-
-    /**
-     * Encodes the specified EmptyMessage message, length delimited. Does not implicitly {@link EmptyMessage.verify|verify} messages.
-     * @function encodeDelimited
-     * @memberof EmptyMessage
-     * @static
-     * @param {IEmptyMessage} message EmptyMessage message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    EmptyMessage.encodeDelimited = function encodeDelimited(message, writer) {
-        return this.encode(message, writer).ldelim();
-    };
-
-    /**
-     * Decodes an EmptyMessage message from the specified reader or buffer.
-     * @function decode
-     * @memberof EmptyMessage
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @param {number} [length] Message length if known beforehand
-     * @returns {EmptyMessage} EmptyMessage
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    EmptyMessage.decode = function decode(reader, length) {
-        if (!(reader instanceof $Reader))
-            reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.EmptyMessage();
-        while (reader.pos < end) {
-            var tag = reader.uint32();
-            switch (tag >>> 3) {
-            default:
-                reader.skipType(tag & 7);
-                break;
-            }
-        }
-        return message;
-    };
-
-    /**
-     * Decodes an EmptyMessage message from the specified reader or buffer, length delimited.
-     * @function decodeDelimited
-     * @memberof EmptyMessage
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @returns {EmptyMessage} EmptyMessage
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    EmptyMessage.decodeDelimited = function decodeDelimited(reader) {
-        if (!(reader instanceof $Reader))
-            reader = new $Reader(reader);
-        return this.decode(reader, reader.uint32());
-    };
-
-    /**
-     * Verifies an EmptyMessage message.
-     * @function verify
-     * @memberof EmptyMessage
-     * @static
-     * @param {Object.<string,*>} message Plain object to verify
-     * @returns {string|null} `null` if valid, otherwise the reason why it is not
-     */
-    EmptyMessage.verify = function verify(message) {
-        if (typeof message !== "object" || message === null)
-            return "object expected";
-        return null;
-    };
-
-    /**
-     * Creates an EmptyMessage message from a plain object. Also converts values to their respective internal types.
-     * @function fromObject
-     * @memberof EmptyMessage
-     * @static
-     * @param {Object.<string,*>} object Plain object
-     * @returns {EmptyMessage} EmptyMessage
-     */
-    EmptyMessage.fromObject = function fromObject(object) {
-        if (object instanceof $root.EmptyMessage)
-            return object;
-        return new $root.EmptyMessage();
-    };
-
-    /**
-     * Creates a plain object from an EmptyMessage message. Also converts values to other types if specified.
-     * @function toObject
-     * @memberof EmptyMessage
-     * @static
-     * @param {EmptyMessage} message EmptyMessage
-     * @param {$protobuf.IConversionOptions} [options] Conversion options
-     * @returns {Object.<string,*>} Plain object
-     */
-    EmptyMessage.toObject = function toObject() {
-        return {};
-    };
-
-    /**
-     * Converts this EmptyMessage to JSON.
-     * @function toJSON
-     * @memberof EmptyMessage
-     * @instance
-     * @returns {Object.<string,*>} JSON object
-     */
-    EmptyMessage.prototype.toJSON = function toJSON() {
-        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-    };
-
-    return EmptyMessage;
-})();
-
-$root.IntMessage = (function() {
-
-    /**
-     * Properties of an IntMessage.
-     * @exports IIntMessage
-     * @interface IIntMessage
-     * @property {number} value IntMessage value
-     */
-
-    /**
-     * Constructs a new IntMessage.
-     * @exports IntMessage
-     * @classdesc Represents an IntMessage.
-     * @implements IIntMessage
-     * @constructor
-     * @param {IIntMessage=} [properties] Properties to set
-     */
-    function IntMessage(properties) {
-        if (properties)
-            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                if (properties[keys[i]] != null)
-                    this[keys[i]] = properties[keys[i]];
-    }
-
-    /**
-     * IntMessage value.
-     * @member {number} value
-     * @memberof IntMessage
-     * @instance
-     */
-    IntMessage.prototype.value = 0;
-
-    /**
-     * Creates a new IntMessage instance using the specified properties.
-     * @function create
-     * @memberof IntMessage
-     * @static
-     * @param {IIntMessage=} [properties] Properties to set
-     * @returns {IntMessage} IntMessage instance
-     */
-    IntMessage.create = function create(properties) {
-        return new IntMessage(properties);
-    };
-
-    /**
-     * Encodes the specified IntMessage message. Does not implicitly {@link IntMessage.verify|verify} messages.
-     * @function encode
-     * @memberof IntMessage
-     * @static
-     * @param {IIntMessage} message IntMessage message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    IntMessage.encode = function encode(message, writer) {
-        if (!writer)
-            writer = $Writer.create();
-        writer.uint32(/* id 1, wireType 0 =*/8).int32(message.value);
-        return writer;
-    };
-
-    /**
-     * Encodes the specified IntMessage message, length delimited. Does not implicitly {@link IntMessage.verify|verify} messages.
-     * @function encodeDelimited
-     * @memberof IntMessage
-     * @static
-     * @param {IIntMessage} message IntMessage message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    IntMessage.encodeDelimited = function encodeDelimited(message, writer) {
-        return this.encode(message, writer).ldelim();
-    };
-
-    /**
-     * Decodes an IntMessage message from the specified reader or buffer.
-     * @function decode
-     * @memberof IntMessage
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @param {number} [length] Message length if known beforehand
-     * @returns {IntMessage} IntMessage
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    IntMessage.decode = function decode(reader, length) {
-        if (!(reader instanceof $Reader))
-            reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.IntMessage();
-        while (reader.pos < end) {
-            var tag = reader.uint32();
-            switch (tag >>> 3) {
-            case 1:
-                message.value = reader.int32();
-                break;
-            default:
-                reader.skipType(tag & 7);
-                break;
-            }
-        }
-        if (!message.hasOwnProperty("value"))
-            throw $util.ProtocolError("missing required 'value'", { instance: message });
-        return message;
-    };
-
-    /**
-     * Decodes an IntMessage message from the specified reader or buffer, length delimited.
-     * @function decodeDelimited
-     * @memberof IntMessage
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @returns {IntMessage} IntMessage
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    IntMessage.decodeDelimited = function decodeDelimited(reader) {
-        if (!(reader instanceof $Reader))
-            reader = new $Reader(reader);
-        return this.decode(reader, reader.uint32());
-    };
-
-    /**
-     * Verifies an IntMessage message.
-     * @function verify
-     * @memberof IntMessage
-     * @static
-     * @param {Object.<string,*>} message Plain object to verify
-     * @returns {string|null} `null` if valid, otherwise the reason why it is not
-     */
-    IntMessage.verify = function verify(message) {
-        if (typeof message !== "object" || message === null)
-            return "object expected";
-        if (!$util.isInteger(message.value))
-            return "value: integer expected";
-        return null;
-    };
-
-    /**
-     * Creates an IntMessage message from a plain object. Also converts values to their respective internal types.
-     * @function fromObject
-     * @memberof IntMessage
-     * @static
-     * @param {Object.<string,*>} object Plain object
-     * @returns {IntMessage} IntMessage
-     */
-    IntMessage.fromObject = function fromObject(object) {
-        if (object instanceof $root.IntMessage)
-            return object;
-        var message = new $root.IntMessage();
-        if (object.value != null)
-            message.value = object.value | 0;
-        return message;
-    };
-
-    /**
-     * Creates a plain object from an IntMessage message. Also converts values to other types if specified.
-     * @function toObject
-     * @memberof IntMessage
-     * @static
-     * @param {IntMessage} message IntMessage
-     * @param {$protobuf.IConversionOptions} [options] Conversion options
-     * @returns {Object.<string,*>} Plain object
-     */
-    IntMessage.toObject = function toObject(message, options) {
-        if (!options)
-            options = {};
-        var object = {};
-        if (options.defaults)
-            object.value = 0;
-        if (message.value != null && message.hasOwnProperty("value"))
-            object.value = message.value;
-        return object;
-    };
-
-    /**
-     * Converts this IntMessage to JSON.
-     * @function toJSON
-     * @memberof IntMessage
-     * @instance
-     * @returns {Object.<string,*>} JSON object
-     */
-    IntMessage.prototype.toJSON = function toJSON() {
-        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-    };
-
-    return IntMessage;
-})();
-
-$root.StringMessage = (function() {
-
-    /**
-     * Properties of a StringMessage.
-     * @exports IStringMessage
-     * @interface IStringMessage
-     * @property {string} value StringMessage value
-     */
-
-    /**
-     * Constructs a new StringMessage.
-     * @exports StringMessage
-     * @classdesc Represents a StringMessage.
-     * @implements IStringMessage
-     * @constructor
-     * @param {IStringMessage=} [properties] Properties to set
-     */
-    function StringMessage(properties) {
-        if (properties)
-            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                if (properties[keys[i]] != null)
-                    this[keys[i]] = properties[keys[i]];
-    }
-
-    /**
-     * StringMessage value.
-     * @member {string} value
-     * @memberof StringMessage
-     * @instance
-     */
-    StringMessage.prototype.value = "";
-
-    /**
-     * Creates a new StringMessage instance using the specified properties.
-     * @function create
-     * @memberof StringMessage
-     * @static
-     * @param {IStringMessage=} [properties] Properties to set
-     * @returns {StringMessage} StringMessage instance
-     */
-    StringMessage.create = function create(properties) {
-        return new StringMessage(properties);
-    };
-
-    /**
-     * Encodes the specified StringMessage message. Does not implicitly {@link StringMessage.verify|verify} messages.
-     * @function encode
-     * @memberof StringMessage
-     * @static
-     * @param {IStringMessage} message StringMessage message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    StringMessage.encode = function encode(message, writer) {
-        if (!writer)
-            writer = $Writer.create();
-        writer.uint32(/* id 1, wireType 2 =*/10).string(message.value);
-        return writer;
-    };
-
-    /**
-     * Encodes the specified StringMessage message, length delimited. Does not implicitly {@link StringMessage.verify|verify} messages.
-     * @function encodeDelimited
-     * @memberof StringMessage
-     * @static
-     * @param {IStringMessage} message StringMessage message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    StringMessage.encodeDelimited = function encodeDelimited(message, writer) {
-        return this.encode(message, writer).ldelim();
-    };
-
-    /**
-     * Decodes a StringMessage message from the specified reader or buffer.
-     * @function decode
-     * @memberof StringMessage
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @param {number} [length] Message length if known beforehand
-     * @returns {StringMessage} StringMessage
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    StringMessage.decode = function decode(reader, length) {
-        if (!(reader instanceof $Reader))
-            reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.StringMessage();
-        while (reader.pos < end) {
-            var tag = reader.uint32();
-            switch (tag >>> 3) {
-            case 1:
-                message.value = reader.string();
-                break;
-            default:
-                reader.skipType(tag & 7);
-                break;
-            }
-        }
-        if (!message.hasOwnProperty("value"))
-            throw $util.ProtocolError("missing required 'value'", { instance: message });
-        return message;
-    };
-
-    /**
-     * Decodes a StringMessage message from the specified reader or buffer, length delimited.
-     * @function decodeDelimited
-     * @memberof StringMessage
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @returns {StringMessage} StringMessage
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    StringMessage.decodeDelimited = function decodeDelimited(reader) {
-        if (!(reader instanceof $Reader))
-            reader = new $Reader(reader);
-        return this.decode(reader, reader.uint32());
-    };
-
-    /**
-     * Verifies a StringMessage message.
-     * @function verify
-     * @memberof StringMessage
-     * @static
-     * @param {Object.<string,*>} message Plain object to verify
-     * @returns {string|null} `null` if valid, otherwise the reason why it is not
-     */
-    StringMessage.verify = function verify(message) {
-        if (typeof message !== "object" || message === null)
-            return "object expected";
-        if (!$util.isString(message.value))
-            return "value: string expected";
-        return null;
-    };
-
-    /**
-     * Creates a StringMessage message from a plain object. Also converts values to their respective internal types.
-     * @function fromObject
-     * @memberof StringMessage
-     * @static
-     * @param {Object.<string,*>} object Plain object
-     * @returns {StringMessage} StringMessage
-     */
-    StringMessage.fromObject = function fromObject(object) {
-        if (object instanceof $root.StringMessage)
-            return object;
-        var message = new $root.StringMessage();
-        if (object.value != null)
-            message.value = String(object.value);
-        return message;
-    };
-
-    /**
-     * Creates a plain object from a StringMessage message. Also converts values to other types if specified.
-     * @function toObject
-     * @memberof StringMessage
-     * @static
-     * @param {StringMessage} message StringMessage
-     * @param {$protobuf.IConversionOptions} [options] Conversion options
-     * @returns {Object.<string,*>} Plain object
-     */
-    StringMessage.toObject = function toObject(message, options) {
-        if (!options)
-            options = {};
-        var object = {};
-        if (options.defaults)
-            object.value = "";
-        if (message.value != null && message.hasOwnProperty("value"))
-            object.value = message.value;
-        return object;
-    };
-
-    /**
-     * Converts this StringMessage to JSON.
-     * @function toJSON
-     * @memberof StringMessage
-     * @instance
-     * @returns {Object.<string,*>} JSON object
-     */
-    StringMessage.prototype.toJSON = function toJSON() {
-        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-    };
-
-    return StringMessage;
-})();
-
-$root.CoreBindRequest = (function() {
-
-    /**
-     * Properties of a CoreBindRequest.
-     * @exports ICoreBindRequest
-     * @interface ICoreBindRequest
-     * @property {string} method CoreBindRequest method
-     * @property {string} inputMsg CoreBindRequest inputMsg
-     * @property {string} outputMsg CoreBindRequest outputMsg
-     * @property {string|null} [plugin] CoreBindRequest plugin
-     */
-
-    /**
-     * Constructs a new CoreBindRequest.
-     * @exports CoreBindRequest
-     * @classdesc Represents a CoreBindRequest.
-     * @implements ICoreBindRequest
-     * @constructor
-     * @param {ICoreBindRequest=} [properties] Properties to set
-     */
-    function CoreBindRequest(properties) {
-        if (properties)
-            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                if (properties[keys[i]] != null)
-                    this[keys[i]] = properties[keys[i]];
-    }
-
-    /**
-     * CoreBindRequest method.
-     * @member {string} method
-     * @memberof CoreBindRequest
-     * @instance
-     */
-    CoreBindRequest.prototype.method = "";
-
-    /**
-     * CoreBindRequest inputMsg.
-     * @member {string} inputMsg
-     * @memberof CoreBindRequest
-     * @instance
-     */
-    CoreBindRequest.prototype.inputMsg = "";
-
-    /**
-     * CoreBindRequest outputMsg.
-     * @member {string} outputMsg
-     * @memberof CoreBindRequest
-     * @instance
-     */
-    CoreBindRequest.prototype.outputMsg = "";
-
-    /**
-     * CoreBindRequest plugin.
-     * @member {string} plugin
-     * @memberof CoreBindRequest
-     * @instance
-     */
-    CoreBindRequest.prototype.plugin = "";
-
-    /**
-     * Creates a new CoreBindRequest instance using the specified properties.
-     * @function create
-     * @memberof CoreBindRequest
-     * @static
-     * @param {ICoreBindRequest=} [properties] Properties to set
-     * @returns {CoreBindRequest} CoreBindRequest instance
-     */
-    CoreBindRequest.create = function create(properties) {
-        return new CoreBindRequest(properties);
-    };
-
-    /**
-     * Encodes the specified CoreBindRequest message. Does not implicitly {@link CoreBindRequest.verify|verify} messages.
-     * @function encode
-     * @memberof CoreBindRequest
-     * @static
-     * @param {ICoreBindRequest} message CoreBindRequest message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    CoreBindRequest.encode = function encode(message, writer) {
-        if (!writer)
-            writer = $Writer.create();
-        writer.uint32(/* id 1, wireType 2 =*/10).string(message.method);
-        writer.uint32(/* id 2, wireType 2 =*/18).string(message.inputMsg);
-        writer.uint32(/* id 3, wireType 2 =*/26).string(message.outputMsg);
-        if (message.plugin != null && message.hasOwnProperty("plugin"))
-            writer.uint32(/* id 4, wireType 2 =*/34).string(message.plugin);
-        return writer;
-    };
-
-    /**
-     * Encodes the specified CoreBindRequest message, length delimited. Does not implicitly {@link CoreBindRequest.verify|verify} messages.
-     * @function encodeDelimited
-     * @memberof CoreBindRequest
-     * @static
-     * @param {ICoreBindRequest} message CoreBindRequest message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    CoreBindRequest.encodeDelimited = function encodeDelimited(message, writer) {
-        return this.encode(message, writer).ldelim();
-    };
-
-    /**
-     * Decodes a CoreBindRequest message from the specified reader or buffer.
-     * @function decode
-     * @memberof CoreBindRequest
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @param {number} [length] Message length if known beforehand
-     * @returns {CoreBindRequest} CoreBindRequest
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    CoreBindRequest.decode = function decode(reader, length) {
-        if (!(reader instanceof $Reader))
-            reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CoreBindRequest();
-        while (reader.pos < end) {
-            var tag = reader.uint32();
-            switch (tag >>> 3) {
-            case 1:
-                message.method = reader.string();
-                break;
-            case 2:
-                message.inputMsg = reader.string();
-                break;
-            case 3:
-                message.outputMsg = reader.string();
-                break;
-            case 4:
-                message.plugin = reader.string();
-                break;
-            default:
-                reader.skipType(tag & 7);
-                break;
-            }
-        }
-        if (!message.hasOwnProperty("method"))
-            throw $util.ProtocolError("missing required 'method'", { instance: message });
-        if (!message.hasOwnProperty("inputMsg"))
-            throw $util.ProtocolError("missing required 'inputMsg'", { instance: message });
-        if (!message.hasOwnProperty("outputMsg"))
-            throw $util.ProtocolError("missing required 'outputMsg'", { instance: message });
-        return message;
-    };
-
-    /**
-     * Decodes a CoreBindRequest message from the specified reader or buffer, length delimited.
-     * @function decodeDelimited
-     * @memberof CoreBindRequest
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @returns {CoreBindRequest} CoreBindRequest
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    CoreBindRequest.decodeDelimited = function decodeDelimited(reader) {
-        if (!(reader instanceof $Reader))
-            reader = new $Reader(reader);
-        return this.decode(reader, reader.uint32());
-    };
-
-    /**
-     * Verifies a CoreBindRequest message.
-     * @function verify
-     * @memberof CoreBindRequest
-     * @static
-     * @param {Object.<string,*>} message Plain object to verify
-     * @returns {string|null} `null` if valid, otherwise the reason why it is not
-     */
-    CoreBindRequest.verify = function verify(message) {
-        if (typeof message !== "object" || message === null)
-            return "object expected";
-        if (!$util.isString(message.method))
-            return "method: string expected";
-        if (!$util.isString(message.inputMsg))
-            return "inputMsg: string expected";
-        if (!$util.isString(message.outputMsg))
-            return "outputMsg: string expected";
-        if (message.plugin != null && message.hasOwnProperty("plugin"))
-            if (!$util.isString(message.plugin))
-                return "plugin: string expected";
-        return null;
-    };
-
-    /**
-     * Creates a CoreBindRequest message from a plain object. Also converts values to their respective internal types.
-     * @function fromObject
-     * @memberof CoreBindRequest
-     * @static
-     * @param {Object.<string,*>} object Plain object
-     * @returns {CoreBindRequest} CoreBindRequest
-     */
-    CoreBindRequest.fromObject = function fromObject(object) {
-        if (object instanceof $root.CoreBindRequest)
-            return object;
-        var message = new $root.CoreBindRequest();
-        if (object.method != null)
-            message.method = String(object.method);
-        if (object.inputMsg != null)
-            message.inputMsg = String(object.inputMsg);
-        if (object.outputMsg != null)
-            message.outputMsg = String(object.outputMsg);
-        if (object.plugin != null)
-            message.plugin = String(object.plugin);
-        return message;
-    };
-
-    /**
-     * Creates a plain object from a CoreBindRequest message. Also converts values to other types if specified.
-     * @function toObject
-     * @memberof CoreBindRequest
-     * @static
-     * @param {CoreBindRequest} message CoreBindRequest
-     * @param {$protobuf.IConversionOptions} [options] Conversion options
-     * @returns {Object.<string,*>} Plain object
-     */
-    CoreBindRequest.toObject = function toObject(message, options) {
-        if (!options)
-            options = {};
-        var object = {};
-        if (options.defaults) {
-            object.method = "";
-            object.inputMsg = "";
-            object.outputMsg = "";
-            object.plugin = "";
-        }
-        if (message.method != null && message.hasOwnProperty("method"))
-            object.method = message.method;
-        if (message.inputMsg != null && message.hasOwnProperty("inputMsg"))
-            object.inputMsg = message.inputMsg;
-        if (message.outputMsg != null && message.hasOwnProperty("outputMsg"))
-            object.outputMsg = message.outputMsg;
-        if (message.plugin != null && message.hasOwnProperty("plugin"))
-            object.plugin = message.plugin;
-        return object;
-    };
-
-    /**
-     * Converts this CoreBindRequest to JSON.
-     * @function toJSON
-     * @memberof CoreBindRequest
-     * @instance
-     * @returns {Object.<string,*>} JSON object
-     */
-    CoreBindRequest.prototype.toJSON = function toJSON() {
-        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-    };
-
-    return CoreBindRequest;
-})();
-
-$root.CoreBindReply = (function() {
-
-    /**
-     * Properties of a CoreBindReply.
-     * @exports ICoreBindReply
-     * @interface ICoreBindReply
-     * @property {number} assignedId CoreBindReply assignedId
-     */
-
-    /**
-     * Constructs a new CoreBindReply.
-     * @exports CoreBindReply
-     * @classdesc Represents a CoreBindReply.
-     * @implements ICoreBindReply
-     * @constructor
-     * @param {ICoreBindReply=} [properties] Properties to set
-     */
-    function CoreBindReply(properties) {
-        if (properties)
-            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                if (properties[keys[i]] != null)
-                    this[keys[i]] = properties[keys[i]];
-    }
-
-    /**
-     * CoreBindReply assignedId.
-     * @member {number} assignedId
-     * @memberof CoreBindReply
-     * @instance
-     */
-    CoreBindReply.prototype.assignedId = 0;
-
-    /**
-     * Creates a new CoreBindReply instance using the specified properties.
-     * @function create
-     * @memberof CoreBindReply
-     * @static
-     * @param {ICoreBindReply=} [properties] Properties to set
-     * @returns {CoreBindReply} CoreBindReply instance
-     */
-    CoreBindReply.create = function create(properties) {
-        return new CoreBindReply(properties);
-    };
-
-    /**
-     * Encodes the specified CoreBindReply message. Does not implicitly {@link CoreBindReply.verify|verify} messages.
-     * @function encode
-     * @memberof CoreBindReply
-     * @static
-     * @param {ICoreBindReply} message CoreBindReply message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    CoreBindReply.encode = function encode(message, writer) {
-        if (!writer)
-            writer = $Writer.create();
-        writer.uint32(/* id 1, wireType 0 =*/8).int32(message.assignedId);
-        return writer;
-    };
-
-    /**
-     * Encodes the specified CoreBindReply message, length delimited. Does not implicitly {@link CoreBindReply.verify|verify} messages.
-     * @function encodeDelimited
-     * @memberof CoreBindReply
-     * @static
-     * @param {ICoreBindReply} message CoreBindReply message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    CoreBindReply.encodeDelimited = function encodeDelimited(message, writer) {
-        return this.encode(message, writer).ldelim();
-    };
-
-    /**
-     * Decodes a CoreBindReply message from the specified reader or buffer.
-     * @function decode
-     * @memberof CoreBindReply
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @param {number} [length] Message length if known beforehand
-     * @returns {CoreBindReply} CoreBindReply
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    CoreBindReply.decode = function decode(reader, length) {
-        if (!(reader instanceof $Reader))
-            reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CoreBindReply();
-        while (reader.pos < end) {
-            var tag = reader.uint32();
-            switch (tag >>> 3) {
-            case 1:
-                message.assignedId = reader.int32();
-                break;
-            default:
-                reader.skipType(tag & 7);
-                break;
-            }
-        }
-        if (!message.hasOwnProperty("assignedId"))
-            throw $util.ProtocolError("missing required 'assignedId'", { instance: message });
-        return message;
-    };
-
-    /**
-     * Decodes a CoreBindReply message from the specified reader or buffer, length delimited.
-     * @function decodeDelimited
-     * @memberof CoreBindReply
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @returns {CoreBindReply} CoreBindReply
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    CoreBindReply.decodeDelimited = function decodeDelimited(reader) {
-        if (!(reader instanceof $Reader))
-            reader = new $Reader(reader);
-        return this.decode(reader, reader.uint32());
-    };
-
-    /**
-     * Verifies a CoreBindReply message.
-     * @function verify
-     * @memberof CoreBindReply
-     * @static
-     * @param {Object.<string,*>} message Plain object to verify
-     * @returns {string|null} `null` if valid, otherwise the reason why it is not
-     */
-    CoreBindReply.verify = function verify(message) {
-        if (typeof message !== "object" || message === null)
-            return "object expected";
-        if (!$util.isInteger(message.assignedId))
-            return "assignedId: integer expected";
-        return null;
-    };
-
-    /**
-     * Creates a CoreBindReply message from a plain object. Also converts values to their respective internal types.
-     * @function fromObject
-     * @memberof CoreBindReply
-     * @static
-     * @param {Object.<string,*>} object Plain object
-     * @returns {CoreBindReply} CoreBindReply
-     */
-    CoreBindReply.fromObject = function fromObject(object) {
-        if (object instanceof $root.CoreBindReply)
-            return object;
-        var message = new $root.CoreBindReply();
-        if (object.assignedId != null)
-            message.assignedId = object.assignedId | 0;
-        return message;
-    };
-
-    /**
-     * Creates a plain object from a CoreBindReply message. Also converts values to other types if specified.
-     * @function toObject
-     * @memberof CoreBindReply
-     * @static
-     * @param {CoreBindReply} message CoreBindReply
-     * @param {$protobuf.IConversionOptions} [options] Conversion options
-     * @returns {Object.<string,*>} Plain object
-     */
-    CoreBindReply.toObject = function toObject(message, options) {
-        if (!options)
-            options = {};
-        var object = {};
-        if (options.defaults)
-            object.assignedId = 0;
-        if (message.assignedId != null && message.hasOwnProperty("assignedId"))
-            object.assignedId = message.assignedId;
-        return object;
-    };
-
-    /**
-     * Converts this CoreBindReply to JSON.
-     * @function toJSON
-     * @memberof CoreBindReply
-     * @instance
-     * @returns {Object.<string,*>} JSON object
-     */
-    CoreBindReply.prototype.toJSON = function toJSON() {
-        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-    };
-
-    return CoreBindReply;
-})();
-
-$root.CoreRunCommandRequest = (function() {
-
-    /**
-     * Properties of a CoreRunCommandRequest.
-     * @exports ICoreRunCommandRequest
-     * @interface ICoreRunCommandRequest
-     * @property {string} c CoreRunCommandRequest c
-     * @property {Array.<string>|null} ["arguments"] CoreRunCommandRequest arguments
-     */
-
-    /**
-     * Constructs a new CoreRunCommandRequest.
-     * @exports CoreRunCommandRequest
-     * @classdesc Represents a CoreRunCommandRequest.
-     * @implements ICoreRunCommandRequest
-     * @constructor
-     * @param {ICoreRunCommandRequest=} [properties] Properties to set
-     */
-    function CoreRunCommandRequest(properties) {
-        this["arguments"] = [];
-        if (properties)
-            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                if (properties[keys[i]] != null)
-                    this[keys[i]] = properties[keys[i]];
-    }
-
-    /**
-     * CoreRunCommandRequest c.
-     * @member {string} c
-     * @memberof CoreRunCommandRequest
-     * @instance
-     */
-    CoreRunCommandRequest.prototype.c = "";
-
-    /**
-     * CoreRunCommandRequest arguments.
-     * @member {Array.<string>} arguments
-     * @memberof CoreRunCommandRequest
-     * @instance
-     */
-    CoreRunCommandRequest.prototype["arguments"] = $util.emptyArray;
-
-    /**
-     * Creates a new CoreRunCommandRequest instance using the specified properties.
-     * @function create
-     * @memberof CoreRunCommandRequest
-     * @static
-     * @param {ICoreRunCommandRequest=} [properties] Properties to set
-     * @returns {CoreRunCommandRequest} CoreRunCommandRequest instance
-     */
-    CoreRunCommandRequest.create = function create(properties) {
-        return new CoreRunCommandRequest(properties);
-    };
-
-    /**
-     * Encodes the specified CoreRunCommandRequest message. Does not implicitly {@link CoreRunCommandRequest.verify|verify} messages.
-     * @function encode
-     * @memberof CoreRunCommandRequest
-     * @static
-     * @param {ICoreRunCommandRequest} message CoreRunCommandRequest message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    CoreRunCommandRequest.encode = function encode(message, writer) {
-        if (!writer)
-            writer = $Writer.create();
-        writer.uint32(/* id 1, wireType 2 =*/10).string(message.c);
-        if (message["arguments"] != null && message["arguments"].length)
-            for (var i = 0; i < message["arguments"].length; ++i)
-                writer.uint32(/* id 2, wireType 2 =*/18).string(message["arguments"][i]);
-        return writer;
-    };
-
-    /**
-     * Encodes the specified CoreRunCommandRequest message, length delimited. Does not implicitly {@link CoreRunCommandRequest.verify|verify} messages.
-     * @function encodeDelimited
-     * @memberof CoreRunCommandRequest
-     * @static
-     * @param {ICoreRunCommandRequest} message CoreRunCommandRequest message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    CoreRunCommandRequest.encodeDelimited = function encodeDelimited(message, writer) {
-        return this.encode(message, writer).ldelim();
-    };
-
-    /**
-     * Decodes a CoreRunCommandRequest message from the specified reader or buffer.
-     * @function decode
-     * @memberof CoreRunCommandRequest
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @param {number} [length] Message length if known beforehand
-     * @returns {CoreRunCommandRequest} CoreRunCommandRequest
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    CoreRunCommandRequest.decode = function decode(reader, length) {
-        if (!(reader instanceof $Reader))
-            reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CoreRunCommandRequest();
-        while (reader.pos < end) {
-            var tag = reader.uint32();
-            switch (tag >>> 3) {
-            case 1:
-                message.c = reader.string();
-                break;
-            case 2:
-                if (!(message["arguments"] && message["arguments"].length))
-                    message["arguments"] = [];
-                message["arguments"].push(reader.string());
-                break;
-            default:
-                reader.skipType(tag & 7);
-                break;
-            }
-        }
-        if (!message.hasOwnProperty("c"))
-            throw $util.ProtocolError("missing required 'c'", { instance: message });
-        return message;
-    };
-
-    /**
-     * Decodes a CoreRunCommandRequest message from the specified reader or buffer, length delimited.
-     * @function decodeDelimited
-     * @memberof CoreRunCommandRequest
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @returns {CoreRunCommandRequest} CoreRunCommandRequest
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    CoreRunCommandRequest.decodeDelimited = function decodeDelimited(reader) {
-        if (!(reader instanceof $Reader))
-            reader = new $Reader(reader);
-        return this.decode(reader, reader.uint32());
-    };
-
-    /**
-     * Verifies a CoreRunCommandRequest message.
-     * @function verify
-     * @memberof CoreRunCommandRequest
-     * @static
-     * @param {Object.<string,*>} message Plain object to verify
-     * @returns {string|null} `null` if valid, otherwise the reason why it is not
-     */
-    CoreRunCommandRequest.verify = function verify(message) {
-        if (typeof message !== "object" || message === null)
-            return "object expected";
-        if (!$util.isString(message.c))
-            return "c: string expected";
-        if (message["arguments"] != null && message.hasOwnProperty("arguments")) {
-            if (!Array.isArray(message["arguments"]))
-                return "arguments: array expected";
-            for (var i = 0; i < message["arguments"].length; ++i)
-                if (!$util.isString(message["arguments"][i]))
-                    return "arguments: string[] expected";
-        }
-        return null;
-    };
-
-    /**
-     * Creates a CoreRunCommandRequest message from a plain object. Also converts values to their respective internal types.
-     * @function fromObject
-     * @memberof CoreRunCommandRequest
-     * @static
-     * @param {Object.<string,*>} object Plain object
-     * @returns {CoreRunCommandRequest} CoreRunCommandRequest
-     */
-    CoreRunCommandRequest.fromObject = function fromObject(object) {
-        if (object instanceof $root.CoreRunCommandRequest)
-            return object;
-        var message = new $root.CoreRunCommandRequest();
-        if (object.c != null)
-            message.c = String(object.c);
-        if (object["arguments"]) {
-            if (!Array.isArray(object["arguments"]))
-                throw TypeError(".CoreRunCommandRequest.arguments: array expected");
-            message["arguments"] = [];
-            for (var i = 0; i < object["arguments"].length; ++i)
-                message["arguments"][i] = String(object["arguments"][i]);
-        }
-        return message;
-    };
-
-    /**
-     * Creates a plain object from a CoreRunCommandRequest message. Also converts values to other types if specified.
-     * @function toObject
-     * @memberof CoreRunCommandRequest
-     * @static
-     * @param {CoreRunCommandRequest} message CoreRunCommandRequest
-     * @param {$protobuf.IConversionOptions} [options] Conversion options
-     * @returns {Object.<string,*>} Plain object
-     */
-    CoreRunCommandRequest.toObject = function toObject(message, options) {
-        if (!options)
-            options = {};
-        var object = {};
-        if (options.arrays || options.defaults)
-            object["arguments"] = [];
-        if (options.defaults)
-            object.c = "";
-        if (message.c != null && message.hasOwnProperty("c"))
-            object.c = message.c;
-        if (message["arguments"] && message["arguments"].length) {
-            object["arguments"] = [];
-            for (var j = 0; j < message["arguments"].length; ++j)
-                object["arguments"][j] = message["arguments"][j];
-        }
-        return object;
-    };
-
-    /**
-     * Converts this CoreRunCommandRequest to JSON.
-     * @function toJSON
-     * @memberof CoreRunCommandRequest
-     * @instance
-     * @returns {Object.<string,*>} JSON object
-     */
-    CoreRunCommandRequest.prototype.toJSON = function toJSON() {
-        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-    };
-
-    return CoreRunCommandRequest;
-})();
-
 $root.DFHackRPCService = (function() {
 
     /**
@@ -1248,7 +47,7 @@ $root.DFHackRPCService = (function() {
      * @typedef BindMethodCallback
      * @type {function}
      * @param {Error|null} error Error, if any
-     * @param {CoreBindReply} [response] CoreBindReply
+     * @param {dfproto.CoreBindReply} [response] CoreBindReply
      */
 
     /**
@@ -1256,22 +55,22 @@ $root.DFHackRPCService = (function() {
      * @function bindMethod
      * @memberof DFHackRPCService
      * @instance
-     * @param {ICoreBindRequest} request CoreBindRequest message or plain object
+     * @param {dfproto.ICoreBindRequest} request CoreBindRequest message or plain object
      * @param {DFHackRPCService.BindMethodCallback} callback Node-style callback called with the error, if any, and CoreBindReply
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(DFHackRPCService.prototype.bindMethod = function bindMethod(request, callback) {
-        return this.rpcCall(bindMethod, $root.CoreBindRequest, $root.CoreBindReply, request, callback);
-    }, "name", { value: "BindMethod" });
+    Object.defineProperties(DFHackRPCService.prototype.bindMethod = function bindMethod(request, callback) {
+        return this.rpcCall(bindMethod, $root.dfproto.CoreBindRequest, $root.dfproto.CoreBindReply, request, callback);
+    }, {"name": { value: "BindMethod" }, "FQDN": { value: "DFHackRPCService.BindMethod" }, "requestFQDN": { value: "dfproto.CoreBindRequest" }, "responseFQDN": { value: "dfproto.CoreBindReply" }});
 
     /**
      * Calls BindMethod.
      * @function bindMethod
      * @memberof DFHackRPCService
      * @instance
-     * @param {ICoreBindRequest} request CoreBindRequest message or plain object
-     * @returns {Promise<CoreBindReply>} Promise
+     * @param {dfproto.ICoreBindRequest} request CoreBindRequest message or plain object
+     * @returns {Promise<dfproto.CoreBindReply>} Promise
      * @variation 2
      */
 
@@ -1281,7 +80,7 @@ $root.DFHackRPCService = (function() {
      * @typedef RunCommandCallback
      * @type {function}
      * @param {Error|null} error Error, if any
-     * @param {EmptyMessage} [response] EmptyMessage
+     * @param {dfproto.EmptyMessage} [response] EmptyMessage
      */
 
     /**
@@ -1289,22 +88,55 @@ $root.DFHackRPCService = (function() {
      * @function runCommand
      * @memberof DFHackRPCService
      * @instance
-     * @param {ICoreRunCommandRequest} request CoreRunCommandRequest message or plain object
+     * @param {dfproto.ICoreRunCommandRequest} request CoreRunCommandRequest message or plain object
      * @param {DFHackRPCService.RunCommandCallback} callback Node-style callback called with the error, if any, and EmptyMessage
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(DFHackRPCService.prototype.runCommand = function runCommand(request, callback) {
-        return this.rpcCall(runCommand, $root.CoreRunCommandRequest, $root.EmptyMessage, request, callback);
-    }, "name", { value: "RunCommand" });
+    Object.defineProperties(DFHackRPCService.prototype.runCommand = function runCommand(request, callback) {
+        return this.rpcCall(runCommand, $root.dfproto.CoreRunCommandRequest, $root.dfproto.EmptyMessage, request, callback);
+    }, {"name": { value: "RunCommand" }, "FQDN": { value: "DFHackRPCService.RunCommand" }, "requestFQDN": { value: "dfproto.CoreRunCommandRequest" }, "responseFQDN": { value: "dfproto.EmptyMessage" }});
 
     /**
      * Calls RunCommand.
      * @function runCommand
      * @memberof DFHackRPCService
      * @instance
-     * @param {ICoreRunCommandRequest} request CoreRunCommandRequest message or plain object
-     * @returns {Promise<EmptyMessage>} Promise
+     * @param {dfproto.ICoreRunCommandRequest} request CoreRunCommandRequest message or plain object
+     * @returns {Promise<dfproto.EmptyMessage>} Promise
+     * @variation 2
+     */
+
+    /**
+     * Callback as used by {@link DFHackRPCService#coreSuspend}.
+     * @memberof DFHackRPCService
+     * @typedef CoreSuspendCallback
+     * @type {function}
+     * @param {Error|null} error Error, if any
+     * @param {dfproto.IntMessage} [response] IntMessage
+     */
+
+    /**
+     * Calls CoreSuspend.
+     * @function coreSuspend
+     * @memberof DFHackRPCService
+     * @instance
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
+     * @param {DFHackRPCService.CoreSuspendCallback} callback Node-style callback called with the error, if any, and IntMessage
+     * @returns {undefined}
+     * @variation 1
+     */
+    Object.defineProperties(DFHackRPCService.prototype.coreSuspend = function coreSuspend(request, callback) {
+        return this.rpcCall(coreSuspend, $root.dfproto.EmptyMessage, $root.dfproto.IntMessage, request, callback);
+    }, {"name": { value: "CoreSuspend" }, "FQDN": { value: "DFHackRPCService.CoreSuspend" }, "requestFQDN": { value: "dfproto.EmptyMessage" }, "responseFQDN": { value: "dfproto.IntMessage" }});
+
+    /**
+     * Calls CoreSuspend.
+     * @function coreSuspend
+     * @memberof DFHackRPCService
+     * @instance
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
+     * @returns {Promise<dfproto.IntMessage>} Promise
      * @variation 2
      */
 
@@ -1314,7 +146,7 @@ $root.DFHackRPCService = (function() {
      * @typedef CoreResumeCallback
      * @type {function}
      * @param {Error|null} error Error, if any
-     * @param {IntMessage} [response] IntMessage
+     * @param {dfproto.IntMessage} [response] IntMessage
      */
 
     /**
@@ -1322,22 +154,55 @@ $root.DFHackRPCService = (function() {
      * @function coreResume
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
      * @param {DFHackRPCService.CoreResumeCallback} callback Node-style callback called with the error, if any, and IntMessage
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(DFHackRPCService.prototype.coreResume = function coreResume(request, callback) {
-        return this.rpcCall(coreResume, $root.EmptyMessage, $root.IntMessage, request, callback);
-    }, "name", { value: "CoreResume" });
+    Object.defineProperties(DFHackRPCService.prototype.coreResume = function coreResume(request, callback) {
+        return this.rpcCall(coreResume, $root.dfproto.EmptyMessage, $root.dfproto.IntMessage, request, callback);
+    }, {"name": { value: "CoreResume" }, "FQDN": { value: "DFHackRPCService.CoreResume" }, "requestFQDN": { value: "dfproto.EmptyMessage" }, "responseFQDN": { value: "dfproto.IntMessage" }});
 
     /**
      * Calls CoreResume.
      * @function coreResume
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
-     * @returns {Promise<IntMessage>} Promise
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
+     * @returns {Promise<dfproto.IntMessage>} Promise
+     * @variation 2
+     */
+
+    /**
+     * Callback as used by {@link DFHackRPCService#runLua}.
+     * @memberof DFHackRPCService
+     * @typedef RunLuaCallback
+     * @type {function}
+     * @param {Error|null} error Error, if any
+     * @param {dfproto.StringListMessage} [response] StringListMessage
+     */
+
+    /**
+     * Calls RunLua.
+     * @function runLua
+     * @memberof DFHackRPCService
+     * @instance
+     * @param {dfproto.ICoreRunLuaRequest} request CoreRunLuaRequest message or plain object
+     * @param {DFHackRPCService.RunLuaCallback} callback Node-style callback called with the error, if any, and StringListMessage
+     * @returns {undefined}
+     * @variation 1
+     */
+    Object.defineProperties(DFHackRPCService.prototype.runLua = function runLua(request, callback) {
+        return this.rpcCall(runLua, $root.dfproto.CoreRunLuaRequest, $root.dfproto.StringListMessage, request, callback);
+    }, {"name": { value: "RunLua" }, "FQDN": { value: "DFHackRPCService.RunLua" }, "requestFQDN": { value: "dfproto.CoreRunLuaRequest" }, "responseFQDN": { value: "dfproto.StringListMessage" }});
+
+    /**
+     * Calls RunLua.
+     * @function runLua
+     * @memberof DFHackRPCService
+     * @instance
+     * @param {dfproto.ICoreRunLuaRequest} request CoreRunLuaRequest message or plain object
+     * @returns {Promise<dfproto.StringListMessage>} Promise
      * @variation 2
      */
 
@@ -1347,7 +212,7 @@ $root.DFHackRPCService = (function() {
      * @typedef GetVersionCallback
      * @type {function}
      * @param {Error|null} error Error, if any
-     * @param {StringMessage} [response] StringMessage
+     * @param {dfproto.StringMessage} [response] StringMessage
      */
 
     /**
@@ -1355,22 +220,286 @@ $root.DFHackRPCService = (function() {
      * @function getVersion
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
      * @param {DFHackRPCService.GetVersionCallback} callback Node-style callback called with the error, if any, and StringMessage
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(DFHackRPCService.prototype.getVersion = function getVersion(request, callback) {
-        return this.rpcCall(getVersion, $root.EmptyMessage, $root.StringMessage, request, callback);
-    }, "name", { value: "GetVersion" });
+    Object.defineProperties(DFHackRPCService.prototype.getVersion = function getVersion(request, callback) {
+        return this.rpcCall(getVersion, $root.dfproto.EmptyMessage, $root.dfproto.StringMessage, request, callback);
+    }, {"name": { value: "GetVersion" }, "FQDN": { value: "DFHackRPCService.GetVersion" }, "requestFQDN": { value: "dfproto.EmptyMessage" }, "responseFQDN": { value: "dfproto.StringMessage" }});
 
     /**
      * Calls GetVersion.
      * @function getVersion
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
-     * @returns {Promise<StringMessage>} Promise
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
+     * @returns {Promise<dfproto.StringMessage>} Promise
+     * @variation 2
+     */
+
+    /**
+     * Callback as used by {@link DFHackRPCService#getDFVersion}.
+     * @memberof DFHackRPCService
+     * @typedef GetDFVersionCallback
+     * @type {function}
+     * @param {Error|null} error Error, if any
+     * @param {dfproto.StringMessage} [response] StringMessage
+     */
+
+    /**
+     * Calls GetDFVersion.
+     * @function getDFVersion
+     * @memberof DFHackRPCService
+     * @instance
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
+     * @param {DFHackRPCService.GetDFVersionCallback} callback Node-style callback called with the error, if any, and StringMessage
+     * @returns {undefined}
+     * @variation 1
+     */
+    Object.defineProperties(DFHackRPCService.prototype.getDFVersion = function getDFVersion(request, callback) {
+        return this.rpcCall(getDFVersion, $root.dfproto.EmptyMessage, $root.dfproto.StringMessage, request, callback);
+    }, {"name": { value: "GetDFVersion" }, "FQDN": { value: "DFHackRPCService.GetDFVersion" }, "requestFQDN": { value: "dfproto.EmptyMessage" }, "responseFQDN": { value: "dfproto.StringMessage" }});
+
+    /**
+     * Calls GetDFVersion.
+     * @function getDFVersion
+     * @memberof DFHackRPCService
+     * @instance
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
+     * @returns {Promise<dfproto.StringMessage>} Promise
+     * @variation 2
+     */
+
+    /**
+     * Callback as used by {@link DFHackRPCService#getWorldInfo}.
+     * @memberof DFHackRPCService
+     * @typedef GetWorldInfoCallback
+     * @type {function}
+     * @param {Error|null} error Error, if any
+     * @param {dfproto.GetWorldInfoOut} [response] GetWorldInfoOut
+     */
+
+    /**
+     * Calls GetWorldInfo.
+     * @function getWorldInfo
+     * @memberof DFHackRPCService
+     * @instance
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
+     * @param {DFHackRPCService.GetWorldInfoCallback} callback Node-style callback called with the error, if any, and GetWorldInfoOut
+     * @returns {undefined}
+     * @variation 1
+     */
+    Object.defineProperties(DFHackRPCService.prototype.getWorldInfo = function getWorldInfo(request, callback) {
+        return this.rpcCall(getWorldInfo, $root.dfproto.EmptyMessage, $root.dfproto.GetWorldInfoOut, request, callback);
+    }, {"name": { value: "GetWorldInfo" }, "FQDN": { value: "DFHackRPCService.GetWorldInfo" }, "requestFQDN": { value: "dfproto.EmptyMessage" }, "responseFQDN": { value: "dfproto.GetWorldInfoOut" }});
+
+    /**
+     * Calls GetWorldInfo.
+     * @function getWorldInfo
+     * @memberof DFHackRPCService
+     * @instance
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
+     * @returns {Promise<dfproto.GetWorldInfoOut>} Promise
+     * @variation 2
+     */
+
+    /**
+     * Callback as used by {@link DFHackRPCService#listEnums}.
+     * @memberof DFHackRPCService
+     * @typedef ListEnumsCallback
+     * @type {function}
+     * @param {Error|null} error Error, if any
+     * @param {dfproto.ListEnumsOut} [response] ListEnumsOut
+     */
+
+    /**
+     * Calls ListEnums.
+     * @function listEnums
+     * @memberof DFHackRPCService
+     * @instance
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
+     * @param {DFHackRPCService.ListEnumsCallback} callback Node-style callback called with the error, if any, and ListEnumsOut
+     * @returns {undefined}
+     * @variation 1
+     */
+    Object.defineProperties(DFHackRPCService.prototype.listEnums = function listEnums(request, callback) {
+        return this.rpcCall(listEnums, $root.dfproto.EmptyMessage, $root.dfproto.ListEnumsOut, request, callback);
+    }, {"name": { value: "ListEnums" }, "FQDN": { value: "DFHackRPCService.ListEnums" }, "requestFQDN": { value: "dfproto.EmptyMessage" }, "responseFQDN": { value: "dfproto.ListEnumsOut" }});
+
+    /**
+     * Calls ListEnums.
+     * @function listEnums
+     * @memberof DFHackRPCService
+     * @instance
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
+     * @returns {Promise<dfproto.ListEnumsOut>} Promise
+     * @variation 2
+     */
+
+    /**
+     * Callback as used by {@link DFHackRPCService#listJobSkills}.
+     * @memberof DFHackRPCService
+     * @typedef ListJobSkillsCallback
+     * @type {function}
+     * @param {Error|null} error Error, if any
+     * @param {dfproto.ListJobSkillsOut} [response] ListJobSkillsOut
+     */
+
+    /**
+     * Calls ListJobSkills.
+     * @function listJobSkills
+     * @memberof DFHackRPCService
+     * @instance
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
+     * @param {DFHackRPCService.ListJobSkillsCallback} callback Node-style callback called with the error, if any, and ListJobSkillsOut
+     * @returns {undefined}
+     * @variation 1
+     */
+    Object.defineProperties(DFHackRPCService.prototype.listJobSkills = function listJobSkills(request, callback) {
+        return this.rpcCall(listJobSkills, $root.dfproto.EmptyMessage, $root.dfproto.ListJobSkillsOut, request, callback);
+    }, {"name": { value: "ListJobSkills" }, "FQDN": { value: "DFHackRPCService.ListJobSkills" }, "requestFQDN": { value: "dfproto.EmptyMessage" }, "responseFQDN": { value: "dfproto.ListJobSkillsOut" }});
+
+    /**
+     * Calls ListJobSkills.
+     * @function listJobSkills
+     * @memberof DFHackRPCService
+     * @instance
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
+     * @returns {Promise<dfproto.ListJobSkillsOut>} Promise
+     * @variation 2
+     */
+
+    /**
+     * Callback as used by {@link DFHackRPCService#listMaterials}.
+     * @memberof DFHackRPCService
+     * @typedef ListMaterialsCallback
+     * @type {function}
+     * @param {Error|null} error Error, if any
+     * @param {dfproto.ListMaterialsOut} [response] ListMaterialsOut
+     */
+
+    /**
+     * Calls ListMaterials.
+     * @function listMaterials
+     * @memberof DFHackRPCService
+     * @instance
+     * @param {dfproto.IListMaterialsIn} request ListMaterialsIn message or plain object
+     * @param {DFHackRPCService.ListMaterialsCallback} callback Node-style callback called with the error, if any, and ListMaterialsOut
+     * @returns {undefined}
+     * @variation 1
+     */
+    Object.defineProperties(DFHackRPCService.prototype.listMaterials = function listMaterials(request, callback) {
+        return this.rpcCall(listMaterials, $root.dfproto.ListMaterialsIn, $root.dfproto.ListMaterialsOut, request, callback);
+    }, {"name": { value: "ListMaterials" }, "FQDN": { value: "DFHackRPCService.ListMaterials" }, "requestFQDN": { value: "dfproto.ListMaterialsIn" }, "responseFQDN": { value: "dfproto.ListMaterialsOut" }});
+
+    /**
+     * Calls ListMaterials.
+     * @function listMaterials
+     * @memberof DFHackRPCService
+     * @instance
+     * @param {dfproto.IListMaterialsIn} request ListMaterialsIn message or plain object
+     * @returns {Promise<dfproto.ListMaterialsOut>} Promise
+     * @variation 2
+     */
+
+    /**
+     * Callback as used by {@link DFHackRPCService#listUnits}.
+     * @memberof DFHackRPCService
+     * @typedef ListUnitsCallback
+     * @type {function}
+     * @param {Error|null} error Error, if any
+     * @param {dfproto.ListUnitsOut} [response] ListUnitsOut
+     */
+
+    /**
+     * Calls ListUnits.
+     * @function listUnits
+     * @memberof DFHackRPCService
+     * @instance
+     * @param {dfproto.IListUnitsIn} request ListUnitsIn message or plain object
+     * @param {DFHackRPCService.ListUnitsCallback} callback Node-style callback called with the error, if any, and ListUnitsOut
+     * @returns {undefined}
+     * @variation 1
+     */
+    Object.defineProperties(DFHackRPCService.prototype.listUnits = function listUnits(request, callback) {
+        return this.rpcCall(listUnits, $root.dfproto.ListUnitsIn, $root.dfproto.ListUnitsOut, request, callback);
+    }, {"name": { value: "ListUnits" }, "FQDN": { value: "DFHackRPCService.ListUnits" }, "requestFQDN": { value: "dfproto.ListUnitsIn" }, "responseFQDN": { value: "dfproto.ListUnitsOut" }});
+
+    /**
+     * Calls ListUnits.
+     * @function listUnits
+     * @memberof DFHackRPCService
+     * @instance
+     * @param {dfproto.IListUnitsIn} request ListUnitsIn message or plain object
+     * @returns {Promise<dfproto.ListUnitsOut>} Promise
+     * @variation 2
+     */
+
+    /**
+     * Callback as used by {@link DFHackRPCService#listSquads}.
+     * @memberof DFHackRPCService
+     * @typedef ListSquadsCallback
+     * @type {function}
+     * @param {Error|null} error Error, if any
+     * @param {dfproto.ListSquadsOut} [response] ListSquadsOut
+     */
+
+    /**
+     * Calls ListSquads.
+     * @function listSquads
+     * @memberof DFHackRPCService
+     * @instance
+     * @param {dfproto.IListSquadsIn} request ListSquadsIn message or plain object
+     * @param {DFHackRPCService.ListSquadsCallback} callback Node-style callback called with the error, if any, and ListSquadsOut
+     * @returns {undefined}
+     * @variation 1
+     */
+    Object.defineProperties(DFHackRPCService.prototype.listSquads = function listSquads(request, callback) {
+        return this.rpcCall(listSquads, $root.dfproto.ListSquadsIn, $root.dfproto.ListSquadsOut, request, callback);
+    }, {"name": { value: "ListSquads" }, "FQDN": { value: "DFHackRPCService.ListSquads" }, "requestFQDN": { value: "dfproto.ListSquadsIn" }, "responseFQDN": { value: "dfproto.ListSquadsOut" }});
+
+    /**
+     * Calls ListSquads.
+     * @function listSquads
+     * @memberof DFHackRPCService
+     * @instance
+     * @param {dfproto.IListSquadsIn} request ListSquadsIn message or plain object
+     * @returns {Promise<dfproto.ListSquadsOut>} Promise
+     * @variation 2
+     */
+
+    /**
+     * Callback as used by {@link DFHackRPCService#setUnitLabors}.
+     * @memberof DFHackRPCService
+     * @typedef SetUnitLaborsCallback
+     * @type {function}
+     * @param {Error|null} error Error, if any
+     * @param {dfproto.EmptyMessage} [response] EmptyMessage
+     */
+
+    /**
+     * Calls SetUnitLabors.
+     * @function setUnitLabors
+     * @memberof DFHackRPCService
+     * @instance
+     * @param {dfproto.ISetUnitLaborsIn} request SetUnitLaborsIn message or plain object
+     * @param {DFHackRPCService.SetUnitLaborsCallback} callback Node-style callback called with the error, if any, and EmptyMessage
+     * @returns {undefined}
+     * @variation 1
+     */
+    Object.defineProperties(DFHackRPCService.prototype.setUnitLabors = function setUnitLabors(request, callback) {
+        return this.rpcCall(setUnitLabors, $root.dfproto.SetUnitLaborsIn, $root.dfproto.EmptyMessage, request, callback);
+    }, {"name": { value: "SetUnitLabors" }, "FQDN": { value: "DFHackRPCService.SetUnitLabors" }, "requestFQDN": { value: "dfproto.SetUnitLaborsIn" }, "responseFQDN": { value: "dfproto.EmptyMessage" }});
+
+    /**
+     * Calls SetUnitLabors.
+     * @function setUnitLabors
+     * @memberof DFHackRPCService
+     * @instance
+     * @param {dfproto.ISetUnitLaborsIn} request SetUnitLaborsIn message or plain object
+     * @returns {Promise<dfproto.EmptyMessage>} Promise
      * @variation 2
      */
 
@@ -1393,9 +522,9 @@ $root.DFHackRPCService = (function() {
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(DFHackRPCService.prototype.getEmbarkTile = function getEmbarkTile(request, callback) {
+    Object.defineProperties(DFHackRPCService.prototype.getEmbarkTile = function getEmbarkTile(request, callback) {
         return this.rpcCall(getEmbarkTile, $root.isoworldremote.TileRequest, $root.isoworldremote.EmbarkTile, request, callback);
-    }, "name", { value: "GetEmbarkTile" });
+    }, {"name": { value: "GetEmbarkTile" }, "FQDN": { value: "DFHackRPCService.GetEmbarkTile" }, "requestFQDN": { value: "isoworldremote.TileRequest" }, "responseFQDN": { value: "isoworldremote.EmbarkTile" }});
 
     /**
      * Calls GetEmbarkTile.
@@ -1426,9 +555,9 @@ $root.DFHackRPCService = (function() {
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(DFHackRPCService.prototype.getEmbarkInfo = function getEmbarkInfo(request, callback) {
+    Object.defineProperties(DFHackRPCService.prototype.getEmbarkInfo = function getEmbarkInfo(request, callback) {
         return this.rpcCall(getEmbarkInfo, $root.isoworldremote.MapRequest, $root.isoworldremote.MapReply, request, callback);
-    }, "name", { value: "GetEmbarkInfo" });
+    }, {"name": { value: "GetEmbarkInfo" }, "FQDN": { value: "DFHackRPCService.GetEmbarkInfo" }, "requestFQDN": { value: "isoworldremote.MapRequest" }, "responseFQDN": { value: "isoworldremote.MapReply" }});
 
     /**
      * Calls GetEmbarkInfo.
@@ -1459,9 +588,9 @@ $root.DFHackRPCService = (function() {
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(DFHackRPCService.prototype.getRawNames = function getRawNames(request, callback) {
+    Object.defineProperties(DFHackRPCService.prototype.getRawNames = function getRawNames(request, callback) {
         return this.rpcCall(getRawNames, $root.isoworldremote.MapRequest, $root.isoworldremote.RawNames, request, callback);
-    }, "name", { value: "GetRawNames" });
+    }, {"name": { value: "GetRawNames" }, "FQDN": { value: "DFHackRPCService.GetRawNames" }, "requestFQDN": { value: "isoworldremote.MapRequest" }, "responseFQDN": { value: "isoworldremote.RawNames" }});
 
     /**
      * Calls GetRawNames.
@@ -1487,21 +616,21 @@ $root.DFHackRPCService = (function() {
      * @function getMaterialList
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
      * @param {DFHackRPCService.GetMaterialListCallback} callback Node-style callback called with the error, if any, and MaterialList
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(DFHackRPCService.prototype.getMaterialList = function getMaterialList(request, callback) {
-        return this.rpcCall(getMaterialList, $root.EmptyMessage, $root.RemoteFortressReader.MaterialList, request, callback);
-    }, "name", { value: "GetMaterialList" });
+    Object.defineProperties(DFHackRPCService.prototype.getMaterialList = function getMaterialList(request, callback) {
+        return this.rpcCall(getMaterialList, $root.dfproto.EmptyMessage, $root.RemoteFortressReader.MaterialList, request, callback);
+    }, {"name": { value: "GetMaterialList" }, "FQDN": { value: "DFHackRPCService.GetMaterialList" }, "requestFQDN": { value: "dfproto.EmptyMessage" }, "responseFQDN": { value: "RemoteFortressReader.MaterialList" }});
 
     /**
      * Calls GetMaterialList.
      * @function getMaterialList
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
      * @returns {Promise<RemoteFortressReader.MaterialList>} Promise
      * @variation 2
      */
@@ -1520,21 +649,21 @@ $root.DFHackRPCService = (function() {
      * @function getGrowthList
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
      * @param {DFHackRPCService.GetGrowthListCallback} callback Node-style callback called with the error, if any, and MaterialList
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(DFHackRPCService.prototype.getGrowthList = function getGrowthList(request, callback) {
-        return this.rpcCall(getGrowthList, $root.EmptyMessage, $root.RemoteFortressReader.MaterialList, request, callback);
-    }, "name", { value: "GetGrowthList" });
+    Object.defineProperties(DFHackRPCService.prototype.getGrowthList = function getGrowthList(request, callback) {
+        return this.rpcCall(getGrowthList, $root.dfproto.EmptyMessage, $root.RemoteFortressReader.MaterialList, request, callback);
+    }, {"name": { value: "GetGrowthList" }, "FQDN": { value: "DFHackRPCService.GetGrowthList" }, "requestFQDN": { value: "dfproto.EmptyMessage" }, "responseFQDN": { value: "RemoteFortressReader.MaterialList" }});
 
     /**
      * Calls GetGrowthList.
      * @function getGrowthList
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
      * @returns {Promise<RemoteFortressReader.MaterialList>} Promise
      * @variation 2
      */
@@ -1558,9 +687,9 @@ $root.DFHackRPCService = (function() {
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(DFHackRPCService.prototype.getBlockList = function getBlockList(request, callback) {
+    Object.defineProperties(DFHackRPCService.prototype.getBlockList = function getBlockList(request, callback) {
         return this.rpcCall(getBlockList, $root.RemoteFortressReader.BlockRequest, $root.RemoteFortressReader.BlockList, request, callback);
-    }, "name", { value: "GetBlockList" });
+    }, {"name": { value: "GetBlockList" }, "FQDN": { value: "DFHackRPCService.GetBlockList" }, "requestFQDN": { value: "RemoteFortressReader.BlockRequest" }, "responseFQDN": { value: "RemoteFortressReader.BlockList" }});
 
     /**
      * Calls GetBlockList.
@@ -1578,7 +707,7 @@ $root.DFHackRPCService = (function() {
      * @typedef CheckHashesCallback
      * @type {function}
      * @param {Error|null} error Error, if any
-     * @param {EmptyMessage} [response] EmptyMessage
+     * @param {dfproto.EmptyMessage} [response] EmptyMessage
      */
 
     /**
@@ -1586,22 +715,22 @@ $root.DFHackRPCService = (function() {
      * @function checkHashes
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
      * @param {DFHackRPCService.CheckHashesCallback} callback Node-style callback called with the error, if any, and EmptyMessage
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(DFHackRPCService.prototype.checkHashes = function checkHashes(request, callback) {
-        return this.rpcCall(checkHashes, $root.EmptyMessage, $root.EmptyMessage, request, callback);
-    }, "name", { value: "CheckHashes" });
+    Object.defineProperties(DFHackRPCService.prototype.checkHashes = function checkHashes(request, callback) {
+        return this.rpcCall(checkHashes, $root.dfproto.EmptyMessage, $root.dfproto.EmptyMessage, request, callback);
+    }, {"name": { value: "CheckHashes" }, "FQDN": { value: "DFHackRPCService.CheckHashes" }, "requestFQDN": { value: "dfproto.EmptyMessage" }, "responseFQDN": { value: "dfproto.EmptyMessage" }});
 
     /**
      * Calls CheckHashes.
      * @function checkHashes
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
-     * @returns {Promise<EmptyMessage>} Promise
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
+     * @returns {Promise<dfproto.EmptyMessage>} Promise
      * @variation 2
      */
 
@@ -1619,21 +748,21 @@ $root.DFHackRPCService = (function() {
      * @function getTiletypeList
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
      * @param {DFHackRPCService.GetTiletypeListCallback} callback Node-style callback called with the error, if any, and TiletypeList
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(DFHackRPCService.prototype.getTiletypeList = function getTiletypeList(request, callback) {
-        return this.rpcCall(getTiletypeList, $root.EmptyMessage, $root.RemoteFortressReader.TiletypeList, request, callback);
-    }, "name", { value: "GetTiletypeList" });
+    Object.defineProperties(DFHackRPCService.prototype.getTiletypeList = function getTiletypeList(request, callback) {
+        return this.rpcCall(getTiletypeList, $root.dfproto.EmptyMessage, $root.RemoteFortressReader.TiletypeList, request, callback);
+    }, {"name": { value: "GetTiletypeList" }, "FQDN": { value: "DFHackRPCService.GetTiletypeList" }, "requestFQDN": { value: "dfproto.EmptyMessage" }, "responseFQDN": { value: "RemoteFortressReader.TiletypeList" }});
 
     /**
      * Calls GetTiletypeList.
      * @function getTiletypeList
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
      * @returns {Promise<RemoteFortressReader.TiletypeList>} Promise
      * @variation 2
      */
@@ -1657,9 +786,9 @@ $root.DFHackRPCService = (function() {
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(DFHackRPCService.prototype.getPlantList = function getPlantList(request, callback) {
+    Object.defineProperties(DFHackRPCService.prototype.getPlantList = function getPlantList(request, callback) {
         return this.rpcCall(getPlantList, $root.RemoteFortressReader.BlockRequest, $root.RemoteFortressReader.PlantList, request, callback);
-    }, "name", { value: "GetPlantList" });
+    }, {"name": { value: "GetPlantList" }, "FQDN": { value: "DFHackRPCService.GetPlantList" }, "requestFQDN": { value: "RemoteFortressReader.BlockRequest" }, "responseFQDN": { value: "RemoteFortressReader.PlantList" }});
 
     /**
      * Calls GetPlantList.
@@ -1685,21 +814,21 @@ $root.DFHackRPCService = (function() {
      * @function getUnitList
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
      * @param {DFHackRPCService.GetUnitListCallback} callback Node-style callback called with the error, if any, and UnitList
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(DFHackRPCService.prototype.getUnitList = function getUnitList(request, callback) {
-        return this.rpcCall(getUnitList, $root.EmptyMessage, $root.RemoteFortressReader.UnitList, request, callback);
-    }, "name", { value: "GetUnitList" });
+    Object.defineProperties(DFHackRPCService.prototype.getUnitList = function getUnitList(request, callback) {
+        return this.rpcCall(getUnitList, $root.dfproto.EmptyMessage, $root.RemoteFortressReader.UnitList, request, callback);
+    }, {"name": { value: "GetUnitList" }, "FQDN": { value: "DFHackRPCService.GetUnitList" }, "requestFQDN": { value: "dfproto.EmptyMessage" }, "responseFQDN": { value: "RemoteFortressReader.UnitList" }});
 
     /**
      * Calls GetUnitList.
      * @function getUnitList
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
      * @returns {Promise<RemoteFortressReader.UnitList>} Promise
      * @variation 2
      */
@@ -1723,9 +852,9 @@ $root.DFHackRPCService = (function() {
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(DFHackRPCService.prototype.getUnitListInside = function getUnitListInside(request, callback) {
+    Object.defineProperties(DFHackRPCService.prototype.getUnitListInside = function getUnitListInside(request, callback) {
         return this.rpcCall(getUnitListInside, $root.RemoteFortressReader.BlockRequest, $root.RemoteFortressReader.UnitList, request, callback);
-    }, "name", { value: "GetUnitListInside" });
+    }, {"name": { value: "GetUnitListInside" }, "FQDN": { value: "DFHackRPCService.GetUnitListInside" }, "requestFQDN": { value: "RemoteFortressReader.BlockRequest" }, "responseFQDN": { value: "RemoteFortressReader.UnitList" }});
 
     /**
      * Calls GetUnitListInside.
@@ -1751,21 +880,21 @@ $root.DFHackRPCService = (function() {
      * @function getViewInfo
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
      * @param {DFHackRPCService.GetViewInfoCallback} callback Node-style callback called with the error, if any, and ViewInfo
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(DFHackRPCService.prototype.getViewInfo = function getViewInfo(request, callback) {
-        return this.rpcCall(getViewInfo, $root.EmptyMessage, $root.RemoteFortressReader.ViewInfo, request, callback);
-    }, "name", { value: "GetViewInfo" });
+    Object.defineProperties(DFHackRPCService.prototype.getViewInfo = function getViewInfo(request, callback) {
+        return this.rpcCall(getViewInfo, $root.dfproto.EmptyMessage, $root.RemoteFortressReader.ViewInfo, request, callback);
+    }, {"name": { value: "GetViewInfo" }, "FQDN": { value: "DFHackRPCService.GetViewInfo" }, "requestFQDN": { value: "dfproto.EmptyMessage" }, "responseFQDN": { value: "RemoteFortressReader.ViewInfo" }});
 
     /**
      * Calls GetViewInfo.
      * @function getViewInfo
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
      * @returns {Promise<RemoteFortressReader.ViewInfo>} Promise
      * @variation 2
      */
@@ -1784,21 +913,21 @@ $root.DFHackRPCService = (function() {
      * @function getMapInfo
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
      * @param {DFHackRPCService.GetMapInfoCallback} callback Node-style callback called with the error, if any, and MapInfo
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(DFHackRPCService.prototype.getMapInfo = function getMapInfo(request, callback) {
-        return this.rpcCall(getMapInfo, $root.EmptyMessage, $root.RemoteFortressReader.MapInfo, request, callback);
-    }, "name", { value: "GetMapInfo" });
+    Object.defineProperties(DFHackRPCService.prototype.getMapInfo = function getMapInfo(request, callback) {
+        return this.rpcCall(getMapInfo, $root.dfproto.EmptyMessage, $root.RemoteFortressReader.MapInfo, request, callback);
+    }, {"name": { value: "GetMapInfo" }, "FQDN": { value: "DFHackRPCService.GetMapInfo" }, "requestFQDN": { value: "dfproto.EmptyMessage" }, "responseFQDN": { value: "RemoteFortressReader.MapInfo" }});
 
     /**
      * Calls GetMapInfo.
      * @function getMapInfo
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
      * @returns {Promise<RemoteFortressReader.MapInfo>} Promise
      * @variation 2
      */
@@ -1809,7 +938,7 @@ $root.DFHackRPCService = (function() {
      * @typedef ResetMapHashesCallback
      * @type {function}
      * @param {Error|null} error Error, if any
-     * @param {EmptyMessage} [response] EmptyMessage
+     * @param {dfproto.EmptyMessage} [response] EmptyMessage
      */
 
     /**
@@ -1817,22 +946,22 @@ $root.DFHackRPCService = (function() {
      * @function resetMapHashes
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
      * @param {DFHackRPCService.ResetMapHashesCallback} callback Node-style callback called with the error, if any, and EmptyMessage
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(DFHackRPCService.prototype.resetMapHashes = function resetMapHashes(request, callback) {
-        return this.rpcCall(resetMapHashes, $root.EmptyMessage, $root.EmptyMessage, request, callback);
-    }, "name", { value: "ResetMapHashes" });
+    Object.defineProperties(DFHackRPCService.prototype.resetMapHashes = function resetMapHashes(request, callback) {
+        return this.rpcCall(resetMapHashes, $root.dfproto.EmptyMessage, $root.dfproto.EmptyMessage, request, callback);
+    }, {"name": { value: "ResetMapHashes" }, "FQDN": { value: "DFHackRPCService.ResetMapHashes" }, "requestFQDN": { value: "dfproto.EmptyMessage" }, "responseFQDN": { value: "dfproto.EmptyMessage" }});
 
     /**
      * Calls ResetMapHashes.
      * @function resetMapHashes
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
-     * @returns {Promise<EmptyMessage>} Promise
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
+     * @returns {Promise<dfproto.EmptyMessage>} Promise
      * @variation 2
      */
 
@@ -1850,21 +979,21 @@ $root.DFHackRPCService = (function() {
      * @function getItemList
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
      * @param {DFHackRPCService.GetItemListCallback} callback Node-style callback called with the error, if any, and MaterialList
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(DFHackRPCService.prototype.getItemList = function getItemList(request, callback) {
-        return this.rpcCall(getItemList, $root.EmptyMessage, $root.RemoteFortressReader.MaterialList, request, callback);
-    }, "name", { value: "GetItemList" });
+    Object.defineProperties(DFHackRPCService.prototype.getItemList = function getItemList(request, callback) {
+        return this.rpcCall(getItemList, $root.dfproto.EmptyMessage, $root.RemoteFortressReader.MaterialList, request, callback);
+    }, {"name": { value: "GetItemList" }, "FQDN": { value: "DFHackRPCService.GetItemList" }, "requestFQDN": { value: "dfproto.EmptyMessage" }, "responseFQDN": { value: "RemoteFortressReader.MaterialList" }});
 
     /**
      * Calls GetItemList.
      * @function getItemList
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
      * @returns {Promise<RemoteFortressReader.MaterialList>} Promise
      * @variation 2
      */
@@ -1883,21 +1012,21 @@ $root.DFHackRPCService = (function() {
      * @function getBuildingDefList
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
      * @param {DFHackRPCService.GetBuildingDefListCallback} callback Node-style callback called with the error, if any, and BuildingList
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(DFHackRPCService.prototype.getBuildingDefList = function getBuildingDefList(request, callback) {
-        return this.rpcCall(getBuildingDefList, $root.EmptyMessage, $root.RemoteFortressReader.BuildingList, request, callback);
-    }, "name", { value: "GetBuildingDefList" });
+    Object.defineProperties(DFHackRPCService.prototype.getBuildingDefList = function getBuildingDefList(request, callback) {
+        return this.rpcCall(getBuildingDefList, $root.dfproto.EmptyMessage, $root.RemoteFortressReader.BuildingList, request, callback);
+    }, {"name": { value: "GetBuildingDefList" }, "FQDN": { value: "DFHackRPCService.GetBuildingDefList" }, "requestFQDN": { value: "dfproto.EmptyMessage" }, "responseFQDN": { value: "RemoteFortressReader.BuildingList" }});
 
     /**
      * Calls GetBuildingDefList.
      * @function getBuildingDefList
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
      * @returns {Promise<RemoteFortressReader.BuildingList>} Promise
      * @variation 2
      */
@@ -1916,21 +1045,21 @@ $root.DFHackRPCService = (function() {
      * @function getWorldMap
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
      * @param {DFHackRPCService.GetWorldMapCallback} callback Node-style callback called with the error, if any, and WorldMap
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(DFHackRPCService.prototype.getWorldMap = function getWorldMap(request, callback) {
-        return this.rpcCall(getWorldMap, $root.EmptyMessage, $root.RemoteFortressReader.WorldMap, request, callback);
-    }, "name", { value: "GetWorldMap" });
+    Object.defineProperties(DFHackRPCService.prototype.getWorldMap = function getWorldMap(request, callback) {
+        return this.rpcCall(getWorldMap, $root.dfproto.EmptyMessage, $root.RemoteFortressReader.WorldMap, request, callback);
+    }, {"name": { value: "GetWorldMap" }, "FQDN": { value: "DFHackRPCService.GetWorldMap" }, "requestFQDN": { value: "dfproto.EmptyMessage" }, "responseFQDN": { value: "RemoteFortressReader.WorldMap" }});
 
     /**
      * Calls GetWorldMap.
      * @function getWorldMap
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
      * @returns {Promise<RemoteFortressReader.WorldMap>} Promise
      * @variation 2
      */
@@ -1949,21 +1078,21 @@ $root.DFHackRPCService = (function() {
      * @function getWorldMapNew
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
      * @param {DFHackRPCService.GetWorldMapNewCallback} callback Node-style callback called with the error, if any, and WorldMap
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(DFHackRPCService.prototype.getWorldMapNew = function getWorldMapNew(request, callback) {
-        return this.rpcCall(getWorldMapNew, $root.EmptyMessage, $root.RemoteFortressReader.WorldMap, request, callback);
-    }, "name", { value: "GetWorldMapNew" });
+    Object.defineProperties(DFHackRPCService.prototype.getWorldMapNew = function getWorldMapNew(request, callback) {
+        return this.rpcCall(getWorldMapNew, $root.dfproto.EmptyMessage, $root.RemoteFortressReader.WorldMap, request, callback);
+    }, {"name": { value: "GetWorldMapNew" }, "FQDN": { value: "DFHackRPCService.GetWorldMapNew" }, "requestFQDN": { value: "dfproto.EmptyMessage" }, "responseFQDN": { value: "RemoteFortressReader.WorldMap" }});
 
     /**
      * Calls GetWorldMapNew.
      * @function getWorldMapNew
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
      * @returns {Promise<RemoteFortressReader.WorldMap>} Promise
      * @variation 2
      */
@@ -1982,21 +1111,21 @@ $root.DFHackRPCService = (function() {
      * @function getRegionMaps
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
      * @param {DFHackRPCService.GetRegionMapsCallback} callback Node-style callback called with the error, if any, and RegionMaps
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(DFHackRPCService.prototype.getRegionMaps = function getRegionMaps(request, callback) {
-        return this.rpcCall(getRegionMaps, $root.EmptyMessage, $root.RemoteFortressReader.RegionMaps, request, callback);
-    }, "name", { value: "GetRegionMaps" });
+    Object.defineProperties(DFHackRPCService.prototype.getRegionMaps = function getRegionMaps(request, callback) {
+        return this.rpcCall(getRegionMaps, $root.dfproto.EmptyMessage, $root.RemoteFortressReader.RegionMaps, request, callback);
+    }, {"name": { value: "GetRegionMaps" }, "FQDN": { value: "DFHackRPCService.GetRegionMaps" }, "requestFQDN": { value: "dfproto.EmptyMessage" }, "responseFQDN": { value: "RemoteFortressReader.RegionMaps" }});
 
     /**
      * Calls GetRegionMaps.
      * @function getRegionMaps
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
      * @returns {Promise<RemoteFortressReader.RegionMaps>} Promise
      * @variation 2
      */
@@ -2015,21 +1144,21 @@ $root.DFHackRPCService = (function() {
      * @function getRegionMapsNew
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
      * @param {DFHackRPCService.GetRegionMapsNewCallback} callback Node-style callback called with the error, if any, and RegionMaps
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(DFHackRPCService.prototype.getRegionMapsNew = function getRegionMapsNew(request, callback) {
-        return this.rpcCall(getRegionMapsNew, $root.EmptyMessage, $root.RemoteFortressReader.RegionMaps, request, callback);
-    }, "name", { value: "GetRegionMapsNew" });
+    Object.defineProperties(DFHackRPCService.prototype.getRegionMapsNew = function getRegionMapsNew(request, callback) {
+        return this.rpcCall(getRegionMapsNew, $root.dfproto.EmptyMessage, $root.RemoteFortressReader.RegionMaps, request, callback);
+    }, {"name": { value: "GetRegionMapsNew" }, "FQDN": { value: "DFHackRPCService.GetRegionMapsNew" }, "requestFQDN": { value: "dfproto.EmptyMessage" }, "responseFQDN": { value: "RemoteFortressReader.RegionMaps" }});
 
     /**
      * Calls GetRegionMapsNew.
      * @function getRegionMapsNew
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
      * @returns {Promise<RemoteFortressReader.RegionMaps>} Promise
      * @variation 2
      */
@@ -2048,21 +1177,21 @@ $root.DFHackRPCService = (function() {
      * @function getCreatureRaws
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
      * @param {DFHackRPCService.GetCreatureRawsCallback} callback Node-style callback called with the error, if any, and CreatureRawList
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(DFHackRPCService.prototype.getCreatureRaws = function getCreatureRaws(request, callback) {
-        return this.rpcCall(getCreatureRaws, $root.EmptyMessage, $root.RemoteFortressReader.CreatureRawList, request, callback);
-    }, "name", { value: "GetCreatureRaws" });
+    Object.defineProperties(DFHackRPCService.prototype.getCreatureRaws = function getCreatureRaws(request, callback) {
+        return this.rpcCall(getCreatureRaws, $root.dfproto.EmptyMessage, $root.RemoteFortressReader.CreatureRawList, request, callback);
+    }, {"name": { value: "GetCreatureRaws" }, "FQDN": { value: "DFHackRPCService.GetCreatureRaws" }, "requestFQDN": { value: "dfproto.EmptyMessage" }, "responseFQDN": { value: "RemoteFortressReader.CreatureRawList" }});
 
     /**
      * Calls GetCreatureRaws.
      * @function getCreatureRaws
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
      * @returns {Promise<RemoteFortressReader.CreatureRawList>} Promise
      * @variation 2
      */
@@ -2086,9 +1215,9 @@ $root.DFHackRPCService = (function() {
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(DFHackRPCService.prototype.getPartialCreatureRaws = function getPartialCreatureRaws(request, callback) {
+    Object.defineProperties(DFHackRPCService.prototype.getPartialCreatureRaws = function getPartialCreatureRaws(request, callback) {
         return this.rpcCall(getPartialCreatureRaws, $root.RemoteFortressReader.ListRequest, $root.RemoteFortressReader.CreatureRawList, request, callback);
-    }, "name", { value: "GetPartialCreatureRaws" });
+    }, {"name": { value: "GetPartialCreatureRaws" }, "FQDN": { value: "DFHackRPCService.GetPartialCreatureRaws" }, "requestFQDN": { value: "RemoteFortressReader.ListRequest" }, "responseFQDN": { value: "RemoteFortressReader.CreatureRawList" }});
 
     /**
      * Calls GetPartialCreatureRaws.
@@ -2114,21 +1243,21 @@ $root.DFHackRPCService = (function() {
      * @function getWorldMapCenter
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
      * @param {DFHackRPCService.GetWorldMapCenterCallback} callback Node-style callback called with the error, if any, and WorldMap
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(DFHackRPCService.prototype.getWorldMapCenter = function getWorldMapCenter(request, callback) {
-        return this.rpcCall(getWorldMapCenter, $root.EmptyMessage, $root.RemoteFortressReader.WorldMap, request, callback);
-    }, "name", { value: "GetWorldMapCenter" });
+    Object.defineProperties(DFHackRPCService.prototype.getWorldMapCenter = function getWorldMapCenter(request, callback) {
+        return this.rpcCall(getWorldMapCenter, $root.dfproto.EmptyMessage, $root.RemoteFortressReader.WorldMap, request, callback);
+    }, {"name": { value: "GetWorldMapCenter" }, "FQDN": { value: "DFHackRPCService.GetWorldMapCenter" }, "requestFQDN": { value: "dfproto.EmptyMessage" }, "responseFQDN": { value: "RemoteFortressReader.WorldMap" }});
 
     /**
      * Calls GetWorldMapCenter.
      * @function getWorldMapCenter
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
      * @returns {Promise<RemoteFortressReader.WorldMap>} Promise
      * @variation 2
      */
@@ -2147,21 +1276,21 @@ $root.DFHackRPCService = (function() {
      * @function getPlantRaws
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
      * @param {DFHackRPCService.GetPlantRawsCallback} callback Node-style callback called with the error, if any, and PlantRawList
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(DFHackRPCService.prototype.getPlantRaws = function getPlantRaws(request, callback) {
-        return this.rpcCall(getPlantRaws, $root.EmptyMessage, $root.RemoteFortressReader.PlantRawList, request, callback);
-    }, "name", { value: "GetPlantRaws" });
+    Object.defineProperties(DFHackRPCService.prototype.getPlantRaws = function getPlantRaws(request, callback) {
+        return this.rpcCall(getPlantRaws, $root.dfproto.EmptyMessage, $root.RemoteFortressReader.PlantRawList, request, callback);
+    }, {"name": { value: "GetPlantRaws" }, "FQDN": { value: "DFHackRPCService.GetPlantRaws" }, "requestFQDN": { value: "dfproto.EmptyMessage" }, "responseFQDN": { value: "RemoteFortressReader.PlantRawList" }});
 
     /**
      * Calls GetPlantRaws.
      * @function getPlantRaws
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
      * @returns {Promise<RemoteFortressReader.PlantRawList>} Promise
      * @variation 2
      */
@@ -2185,9 +1314,9 @@ $root.DFHackRPCService = (function() {
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(DFHackRPCService.prototype.getPartialPlantRaws = function getPartialPlantRaws(request, callback) {
+    Object.defineProperties(DFHackRPCService.prototype.getPartialPlantRaws = function getPartialPlantRaws(request, callback) {
         return this.rpcCall(getPartialPlantRaws, $root.RemoteFortressReader.ListRequest, $root.RemoteFortressReader.PlantRawList, request, callback);
-    }, "name", { value: "GetPartialPlantRaws" });
+    }, {"name": { value: "GetPartialPlantRaws" }, "FQDN": { value: "DFHackRPCService.GetPartialPlantRaws" }, "requestFQDN": { value: "RemoteFortressReader.ListRequest" }, "responseFQDN": { value: "RemoteFortressReader.PlantRawList" }});
 
     /**
      * Calls GetPartialPlantRaws.
@@ -2213,21 +1342,21 @@ $root.DFHackRPCService = (function() {
      * @function copyScreen
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
      * @param {DFHackRPCService.CopyScreenCallback} callback Node-style callback called with the error, if any, and ScreenCapture
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(DFHackRPCService.prototype.copyScreen = function copyScreen(request, callback) {
-        return this.rpcCall(copyScreen, $root.EmptyMessage, $root.RemoteFortressReader.ScreenCapture, request, callback);
-    }, "name", { value: "CopyScreen" });
+    Object.defineProperties(DFHackRPCService.prototype.copyScreen = function copyScreen(request, callback) {
+        return this.rpcCall(copyScreen, $root.dfproto.EmptyMessage, $root.RemoteFortressReader.ScreenCapture, request, callback);
+    }, {"name": { value: "CopyScreen" }, "FQDN": { value: "DFHackRPCService.CopyScreen" }, "requestFQDN": { value: "dfproto.EmptyMessage" }, "responseFQDN": { value: "RemoteFortressReader.ScreenCapture" }});
 
     /**
      * Calls CopyScreen.
      * @function copyScreen
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
      * @returns {Promise<RemoteFortressReader.ScreenCapture>} Promise
      * @variation 2
      */
@@ -2238,7 +1367,7 @@ $root.DFHackRPCService = (function() {
      * @typedef PassKeyboardEventCallback
      * @type {function}
      * @param {Error|null} error Error, if any
-     * @param {EmptyMessage} [response] EmptyMessage
+     * @param {dfproto.EmptyMessage} [response] EmptyMessage
      */
 
     /**
@@ -2251,9 +1380,9 @@ $root.DFHackRPCService = (function() {
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(DFHackRPCService.prototype.passKeyboardEvent = function passKeyboardEvent(request, callback) {
-        return this.rpcCall(passKeyboardEvent, $root.RemoteFortressReader.KeyboardEvent, $root.EmptyMessage, request, callback);
-    }, "name", { value: "PassKeyboardEvent" });
+    Object.defineProperties(DFHackRPCService.prototype.passKeyboardEvent = function passKeyboardEvent(request, callback) {
+        return this.rpcCall(passKeyboardEvent, $root.RemoteFortressReader.KeyboardEvent, $root.dfproto.EmptyMessage, request, callback);
+    }, {"name": { value: "PassKeyboardEvent" }, "FQDN": { value: "DFHackRPCService.PassKeyboardEvent" }, "requestFQDN": { value: "RemoteFortressReader.KeyboardEvent" }, "responseFQDN": { value: "dfproto.EmptyMessage" }});
 
     /**
      * Calls PassKeyboardEvent.
@@ -2261,7 +1390,7 @@ $root.DFHackRPCService = (function() {
      * @memberof DFHackRPCService
      * @instance
      * @param {RemoteFortressReader.IKeyboardEvent} request KeyboardEvent message or plain object
-     * @returns {Promise<EmptyMessage>} Promise
+     * @returns {Promise<dfproto.EmptyMessage>} Promise
      * @variation 2
      */
 
@@ -2271,7 +1400,7 @@ $root.DFHackRPCService = (function() {
      * @typedef SendDigCommandCallback
      * @type {function}
      * @param {Error|null} error Error, if any
-     * @param {EmptyMessage} [response] EmptyMessage
+     * @param {dfproto.EmptyMessage} [response] EmptyMessage
      */
 
     /**
@@ -2284,9 +1413,9 @@ $root.DFHackRPCService = (function() {
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(DFHackRPCService.prototype.sendDigCommand = function sendDigCommand(request, callback) {
-        return this.rpcCall(sendDigCommand, $root.RemoteFortressReader.DigCommand, $root.EmptyMessage, request, callback);
-    }, "name", { value: "SendDigCommand" });
+    Object.defineProperties(DFHackRPCService.prototype.sendDigCommand = function sendDigCommand(request, callback) {
+        return this.rpcCall(sendDigCommand, $root.RemoteFortressReader.DigCommand, $root.dfproto.EmptyMessage, request, callback);
+    }, {"name": { value: "SendDigCommand" }, "FQDN": { value: "DFHackRPCService.SendDigCommand" }, "requestFQDN": { value: "RemoteFortressReader.DigCommand" }, "responseFQDN": { value: "dfproto.EmptyMessage" }});
 
     /**
      * Calls SendDigCommand.
@@ -2294,7 +1423,7 @@ $root.DFHackRPCService = (function() {
      * @memberof DFHackRPCService
      * @instance
      * @param {RemoteFortressReader.IDigCommand} request DigCommand message or plain object
-     * @returns {Promise<EmptyMessage>} Promise
+     * @returns {Promise<dfproto.EmptyMessage>} Promise
      * @variation 2
      */
 
@@ -2304,7 +1433,7 @@ $root.DFHackRPCService = (function() {
      * @typedef SetPauseStateCallback
      * @type {function}
      * @param {Error|null} error Error, if any
-     * @param {EmptyMessage} [response] EmptyMessage
+     * @param {dfproto.EmptyMessage} [response] EmptyMessage
      */
 
     /**
@@ -2317,9 +1446,9 @@ $root.DFHackRPCService = (function() {
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(DFHackRPCService.prototype.setPauseState = function setPauseState(request, callback) {
-        return this.rpcCall(setPauseState, $root.RemoteFortressReader.SingleBool, $root.EmptyMessage, request, callback);
-    }, "name", { value: "SetPauseState" });
+    Object.defineProperties(DFHackRPCService.prototype.setPauseState = function setPauseState(request, callback) {
+        return this.rpcCall(setPauseState, $root.RemoteFortressReader.SingleBool, $root.dfproto.EmptyMessage, request, callback);
+    }, {"name": { value: "SetPauseState" }, "FQDN": { value: "DFHackRPCService.SetPauseState" }, "requestFQDN": { value: "RemoteFortressReader.SingleBool" }, "responseFQDN": { value: "dfproto.EmptyMessage" }});
 
     /**
      * Calls SetPauseState.
@@ -2327,7 +1456,7 @@ $root.DFHackRPCService = (function() {
      * @memberof DFHackRPCService
      * @instance
      * @param {RemoteFortressReader.ISingleBool} request SingleBool message or plain object
-     * @returns {Promise<EmptyMessage>} Promise
+     * @returns {Promise<dfproto.EmptyMessage>} Promise
      * @variation 2
      */
 
@@ -2345,21 +1474,21 @@ $root.DFHackRPCService = (function() {
      * @function getPauseState
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
      * @param {DFHackRPCService.GetPauseStateCallback} callback Node-style callback called with the error, if any, and SingleBool
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(DFHackRPCService.prototype.getPauseState = function getPauseState(request, callback) {
-        return this.rpcCall(getPauseState, $root.EmptyMessage, $root.RemoteFortressReader.SingleBool, request, callback);
-    }, "name", { value: "GetPauseState" });
+    Object.defineProperties(DFHackRPCService.prototype.getPauseState = function getPauseState(request, callback) {
+        return this.rpcCall(getPauseState, $root.dfproto.EmptyMessage, $root.RemoteFortressReader.SingleBool, request, callback);
+    }, {"name": { value: "GetPauseState" }, "FQDN": { value: "DFHackRPCService.GetPauseState" }, "requestFQDN": { value: "dfproto.EmptyMessage" }, "responseFQDN": { value: "RemoteFortressReader.SingleBool" }});
 
     /**
      * Calls GetPauseState.
      * @function getPauseState
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
      * @returns {Promise<RemoteFortressReader.SingleBool>} Promise
      * @variation 2
      */
@@ -2378,21 +1507,21 @@ $root.DFHackRPCService = (function() {
      * @function getVersionInfo
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
      * @param {DFHackRPCService.GetVersionInfoCallback} callback Node-style callback called with the error, if any, and VersionInfo
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(DFHackRPCService.prototype.getVersionInfo = function getVersionInfo(request, callback) {
-        return this.rpcCall(getVersionInfo, $root.EmptyMessage, $root.RemoteFortressReader.VersionInfo, request, callback);
-    }, "name", { value: "GetVersionInfo" });
+    Object.defineProperties(DFHackRPCService.prototype.getVersionInfo = function getVersionInfo(request, callback) {
+        return this.rpcCall(getVersionInfo, $root.dfproto.EmptyMessage, $root.RemoteFortressReader.VersionInfo, request, callback);
+    }, {"name": { value: "GetVersionInfo" }, "FQDN": { value: "DFHackRPCService.GetVersionInfo" }, "requestFQDN": { value: "dfproto.EmptyMessage" }, "responseFQDN": { value: "RemoteFortressReader.VersionInfo" }});
 
     /**
      * Calls GetVersionInfo.
      * @function getVersionInfo
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
      * @returns {Promise<RemoteFortressReader.VersionInfo>} Promise
      * @variation 2
      */
@@ -2411,21 +1540,21 @@ $root.DFHackRPCService = (function() {
      * @function getReports
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
      * @param {DFHackRPCService.GetReportsCallback} callback Node-style callback called with the error, if any, and Status
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(DFHackRPCService.prototype.getReports = function getReports(request, callback) {
-        return this.rpcCall(getReports, $root.EmptyMessage, $root.RemoteFortressReader.Status, request, callback);
-    }, "name", { value: "GetReports" });
+    Object.defineProperties(DFHackRPCService.prototype.getReports = function getReports(request, callback) {
+        return this.rpcCall(getReports, $root.dfproto.EmptyMessage, $root.RemoteFortressReader.Status, request, callback);
+    }, {"name": { value: "GetReports" }, "FQDN": { value: "DFHackRPCService.GetReports" }, "requestFQDN": { value: "dfproto.EmptyMessage" }, "responseFQDN": { value: "RemoteFortressReader.Status" }});
 
     /**
      * Calls GetReports.
      * @function getReports
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
      * @returns {Promise<RemoteFortressReader.Status>} Promise
      * @variation 2
      */
@@ -2444,21 +1573,21 @@ $root.DFHackRPCService = (function() {
      * @function getLanguage
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
      * @param {DFHackRPCService.GetLanguageCallback} callback Node-style callback called with the error, if any, and Language
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(DFHackRPCService.prototype.getLanguage = function getLanguage(request, callback) {
-        return this.rpcCall(getLanguage, $root.EmptyMessage, $root.RemoteFortressReader.Language, request, callback);
-    }, "name", { value: "GetLanguage" });
+    Object.defineProperties(DFHackRPCService.prototype.getLanguage = function getLanguage(request, callback) {
+        return this.rpcCall(getLanguage, $root.dfproto.EmptyMessage, $root.RemoteFortressReader.Language, request, callback);
+    }, {"name": { value: "GetLanguage" }, "FQDN": { value: "DFHackRPCService.GetLanguage" }, "requestFQDN": { value: "dfproto.EmptyMessage" }, "responseFQDN": { value: "RemoteFortressReader.Language" }});
 
     /**
      * Calls GetLanguage.
      * @function getLanguage
      * @memberof DFHackRPCService
      * @instance
-     * @param {IEmptyMessage} request EmptyMessage message or plain object
+     * @param {dfproto.IEmptyMessage} request EmptyMessage message or plain object
      * @returns {Promise<RemoteFortressReader.Language>} Promise
      * @variation 2
      */
@@ -2469,7 +1598,7 @@ $root.DFHackRPCService = (function() {
      * @typedef RenameSquadCallback
      * @type {function}
      * @param {Error|null} error Error, if any
-     * @param {EmptyMessage} [response] EmptyMessage
+     * @param {dfproto.EmptyMessage} [response] EmptyMessage
      */
 
     /**
@@ -2482,9 +1611,9 @@ $root.DFHackRPCService = (function() {
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(DFHackRPCService.prototype.renameSquad = function renameSquad(request, callback) {
-        return this.rpcCall(renameSquad, $root.dfproto.RenameSquadIn, $root.EmptyMessage, request, callback);
-    }, "name", { value: "RenameSquad" });
+    Object.defineProperties(DFHackRPCService.prototype.renameSquad = function renameSquad(request, callback) {
+        return this.rpcCall(renameSquad, $root.dfproto.RenameSquadIn, $root.dfproto.EmptyMessage, request, callback);
+    }, {"name": { value: "RenameSquad" }, "FQDN": { value: "DFHackRPCService.RenameSquad" }, "requestFQDN": { value: "dfproto.RenameSquadIn" }, "responseFQDN": { value: "dfproto.EmptyMessage" }});
 
     /**
      * Calls RenameSquad.
@@ -2492,7 +1621,7 @@ $root.DFHackRPCService = (function() {
      * @memberof DFHackRPCService
      * @instance
      * @param {dfproto.IRenameSquadIn} request RenameSquadIn message or plain object
-     * @returns {Promise<EmptyMessage>} Promise
+     * @returns {Promise<dfproto.EmptyMessage>} Promise
      * @variation 2
      */
 
@@ -2502,7 +1631,7 @@ $root.DFHackRPCService = (function() {
      * @typedef RenameUnitCallback
      * @type {function}
      * @param {Error|null} error Error, if any
-     * @param {EmptyMessage} [response] EmptyMessage
+     * @param {dfproto.EmptyMessage} [response] EmptyMessage
      */
 
     /**
@@ -2515,9 +1644,9 @@ $root.DFHackRPCService = (function() {
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(DFHackRPCService.prototype.renameUnit = function renameUnit(request, callback) {
-        return this.rpcCall(renameUnit, $root.dfproto.RenameUnitIn, $root.EmptyMessage, request, callback);
-    }, "name", { value: "RenameUnit" });
+    Object.defineProperties(DFHackRPCService.prototype.renameUnit = function renameUnit(request, callback) {
+        return this.rpcCall(renameUnit, $root.dfproto.RenameUnitIn, $root.dfproto.EmptyMessage, request, callback);
+    }, {"name": { value: "RenameUnit" }, "FQDN": { value: "DFHackRPCService.RenameUnit" }, "requestFQDN": { value: "dfproto.RenameUnitIn" }, "responseFQDN": { value: "dfproto.EmptyMessage" }});
 
     /**
      * Calls RenameUnit.
@@ -2525,7 +1654,7 @@ $root.DFHackRPCService = (function() {
      * @memberof DFHackRPCService
      * @instance
      * @param {dfproto.IRenameUnitIn} request RenameUnitIn message or plain object
-     * @returns {Promise<EmptyMessage>} Promise
+     * @returns {Promise<dfproto.EmptyMessage>} Promise
      * @variation 2
      */
 
@@ -2535,7 +1664,7 @@ $root.DFHackRPCService = (function() {
      * @typedef RenameBuildingCallback
      * @type {function}
      * @param {Error|null} error Error, if any
-     * @param {EmptyMessage} [response] EmptyMessage
+     * @param {dfproto.EmptyMessage} [response] EmptyMessage
      */
 
     /**
@@ -2548,9 +1677,9 @@ $root.DFHackRPCService = (function() {
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(DFHackRPCService.prototype.renameBuilding = function renameBuilding(request, callback) {
-        return this.rpcCall(renameBuilding, $root.dfproto.RenameBuildingIn, $root.EmptyMessage, request, callback);
-    }, "name", { value: "RenameBuilding" });
+    Object.defineProperties(DFHackRPCService.prototype.renameBuilding = function renameBuilding(request, callback) {
+        return this.rpcCall(renameBuilding, $root.dfproto.RenameBuildingIn, $root.dfproto.EmptyMessage, request, callback);
+    }, {"name": { value: "RenameBuilding" }, "FQDN": { value: "DFHackRPCService.RenameBuilding" }, "requestFQDN": { value: "dfproto.RenameBuildingIn" }, "responseFQDN": { value: "dfproto.EmptyMessage" }});
 
     /**
      * Calls RenameBuilding.
@@ -2558,102 +1687,50 @@ $root.DFHackRPCService = (function() {
      * @memberof DFHackRPCService
      * @instance
      * @param {dfproto.IRenameBuildingIn} request RenameBuildingIn message or plain object
-     * @returns {Promise<EmptyMessage>} Promise
+     * @returns {Promise<dfproto.EmptyMessage>} Promise
      * @variation 2
      */
 
     return DFHackRPCService;
 })();
 
-$root.isoworldremote = (function() {
+$root.dfproto = (function() {
 
     /**
-     * Namespace isoworldremote.
-     * @exports isoworldremote
+     * Namespace dfproto.
+     * @exports dfproto
      * @namespace
      */
-    var isoworldremote = {};
+    var dfproto = {};
 
-    /**
-     * BasicMaterial enum.
-     * @name isoworldremote.BasicMaterial
-     * @enum {string}
-     * @property {number} AIR=0 AIR value
-     * @property {number} OTHER=1 OTHER value
-     * @property {number} INORGANIC=2 INORGANIC value
-     * @property {number} LIQUID=3 LIQUID value
-     * @property {number} PLANT=4 PLANT value
-     * @property {number} WOOD=5 WOOD value
-     */
-    isoworldremote.BasicMaterial = (function() {
-        var valuesById = {}, values = Object.create(valuesById);
-        values[valuesById[0] = "AIR"] = 0;
-        values[valuesById[1] = "OTHER"] = 1;
-        values[valuesById[2] = "INORGANIC"] = 2;
-        values[valuesById[3] = "LIQUID"] = 3;
-        values[valuesById[4] = "PLANT"] = 4;
-        values[valuesById[5] = "WOOD"] = 5;
-        return values;
-    })();
-
-    /**
-     * LiquidType enum.
-     * @name isoworldremote.LiquidType
-     * @enum {string}
-     * @property {number} ICE=0 ICE value
-     * @property {number} WATER=1 WATER value
-     * @property {number} MAGMA=2 MAGMA value
-     */
-    isoworldremote.LiquidType = (function() {
-        var valuesById = {}, values = Object.create(valuesById);
-        values[valuesById[0] = "ICE"] = 0;
-        values[valuesById[1] = "WATER"] = 1;
-        values[valuesById[2] = "MAGMA"] = 2;
-        return values;
-    })();
-
-    /**
-     * BasicShape enum.
-     * @name isoworldremote.BasicShape
-     * @enum {string}
-     * @property {number} NONE=0 NONE value
-     * @property {number} OPEN=1 OPEN value
-     * @property {number} WALL=3 WALL value
-     * @property {number} FLOOR=4 FLOOR value
-     * @property {number} RAMP_UP=5 RAMP_UP value
-     * @property {number} RAMP_DOWN=6 RAMP_DOWN value
-     */
-    isoworldremote.BasicShape = (function() {
-        var valuesById = {}, values = Object.create(valuesById);
-        values[valuesById[0] = "NONE"] = 0;
-        values[valuesById[1] = "OPEN"] = 1;
-        values[valuesById[3] = "WALL"] = 3;
-        values[valuesById[4] = "FLOOR"] = 4;
-        values[valuesById[5] = "RAMP_UP"] = 5;
-        values[valuesById[6] = "RAMP_DOWN"] = 6;
-        return values;
-    })();
-
-    isoworldremote.ColorDefinition = (function() {
+    dfproto.GetWorldInfoOut = (function() {
 
         /**
-         * Properties of a ColorDefinition.
-         * @memberof isoworldremote
-         * @interface IColorDefinition
-         * @property {number} red ColorDefinition red
-         * @property {number} green ColorDefinition green
-         * @property {number} blue ColorDefinition blue
+         * Properties of a GetWorldInfoOut.
+         * @memberof dfproto
+         * @interface IGetWorldInfoOut
+         * @property {dfproto.GetWorldInfoOut.Mode} mode GetWorldInfoOut mode
+         * @property {string} saveDir GetWorldInfoOut saveDir
+         * @property {dfproto.INameInfo|null} [worldName] GetWorldInfoOut worldName
+         * @property {number|null} [civId] GetWorldInfoOut civId
+         * @property {number|null} [siteId] GetWorldInfoOut siteId
+         * @property {number|null} [groupId] GetWorldInfoOut groupId
+         * @property {number|null} [raceId] GetWorldInfoOut raceId
+         * @property {number|null} [playerUnitId] GetWorldInfoOut playerUnitId
+         * @property {number|null} [playerHistfigId] GetWorldInfoOut playerHistfigId
+         * @property {Array.<number>|null} [companionHistfigIds] GetWorldInfoOut companionHistfigIds
          */
 
         /**
-         * Constructs a new ColorDefinition.
-         * @memberof isoworldremote
-         * @classdesc Represents a ColorDefinition.
-         * @implements IColorDefinition
+         * Constructs a new GetWorldInfoOut.
+         * @memberof dfproto
+         * @classdesc Represents a GetWorldInfoOut.
+         * @implements IGetWorldInfoOut
          * @constructor
-         * @param {isoworldremote.IColorDefinition=} [properties] Properties to set
+         * @param {dfproto.IGetWorldInfoOut=} [properties] Properties to set
          */
-        function ColorDefinition(properties) {
+        function GetWorldInfoOut(properties) {
+            this.companionHistfigIds = [];
             if (properties)
                 for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
@@ -2661,989 +1738,457 @@ $root.isoworldremote = (function() {
         }
 
         /**
-         * ColorDefinition red.
-         * @member {number} red
-         * @memberof isoworldremote.ColorDefinition
+         * GetWorldInfoOut mode.
+         * @member {dfproto.GetWorldInfoOut.Mode} mode
+         * @memberof dfproto.GetWorldInfoOut
          * @instance
          */
-        ColorDefinition.prototype.red = 0;
+        GetWorldInfoOut.prototype.mode = 1;
 
         /**
-         * ColorDefinition green.
-         * @member {number} green
-         * @memberof isoworldremote.ColorDefinition
+         * GetWorldInfoOut saveDir.
+         * @member {string} saveDir
+         * @memberof dfproto.GetWorldInfoOut
          * @instance
          */
-        ColorDefinition.prototype.green = 0;
+        GetWorldInfoOut.prototype.saveDir = "";
 
         /**
-         * ColorDefinition blue.
-         * @member {number} blue
-         * @memberof isoworldremote.ColorDefinition
+         * GetWorldInfoOut worldName.
+         * @member {dfproto.INameInfo|null|undefined} worldName
+         * @memberof dfproto.GetWorldInfoOut
          * @instance
          */
-        ColorDefinition.prototype.blue = 0;
+        GetWorldInfoOut.prototype.worldName = null;
 
         /**
-         * Creates a new ColorDefinition instance using the specified properties.
+         * GetWorldInfoOut civId.
+         * @member {number} civId
+         * @memberof dfproto.GetWorldInfoOut
+         * @instance
+         */
+        GetWorldInfoOut.prototype.civId = 0;
+
+        /**
+         * GetWorldInfoOut siteId.
+         * @member {number} siteId
+         * @memberof dfproto.GetWorldInfoOut
+         * @instance
+         */
+        GetWorldInfoOut.prototype.siteId = 0;
+
+        /**
+         * GetWorldInfoOut groupId.
+         * @member {number} groupId
+         * @memberof dfproto.GetWorldInfoOut
+         * @instance
+         */
+        GetWorldInfoOut.prototype.groupId = 0;
+
+        /**
+         * GetWorldInfoOut raceId.
+         * @member {number} raceId
+         * @memberof dfproto.GetWorldInfoOut
+         * @instance
+         */
+        GetWorldInfoOut.prototype.raceId = 0;
+
+        /**
+         * GetWorldInfoOut playerUnitId.
+         * @member {number} playerUnitId
+         * @memberof dfproto.GetWorldInfoOut
+         * @instance
+         */
+        GetWorldInfoOut.prototype.playerUnitId = 0;
+
+        /**
+         * GetWorldInfoOut playerHistfigId.
+         * @member {number} playerHistfigId
+         * @memberof dfproto.GetWorldInfoOut
+         * @instance
+         */
+        GetWorldInfoOut.prototype.playerHistfigId = 0;
+
+        /**
+         * GetWorldInfoOut companionHistfigIds.
+         * @member {Array.<number>} companionHistfigIds
+         * @memberof dfproto.GetWorldInfoOut
+         * @instance
+         */
+        GetWorldInfoOut.prototype.companionHistfigIds = $util.emptyArray;
+
+        /**
+         * Creates a new GetWorldInfoOut instance using the specified properties.
          * @function create
-         * @memberof isoworldremote.ColorDefinition
+         * @memberof dfproto.GetWorldInfoOut
          * @static
-         * @param {isoworldremote.IColorDefinition=} [properties] Properties to set
-         * @returns {isoworldremote.ColorDefinition} ColorDefinition instance
+         * @param {dfproto.IGetWorldInfoOut=} [properties] Properties to set
+         * @returns {dfproto.GetWorldInfoOut} GetWorldInfoOut instance
          */
-        ColorDefinition.create = function create(properties) {
-            return new ColorDefinition(properties);
+        GetWorldInfoOut.create = function create(properties) {
+            return new GetWorldInfoOut(properties);
         };
 
         /**
-         * Encodes the specified ColorDefinition message. Does not implicitly {@link isoworldremote.ColorDefinition.verify|verify} messages.
+         * Encodes the specified GetWorldInfoOut message. Does not implicitly {@link dfproto.GetWorldInfoOut.verify|verify} messages.
          * @function encode
-         * @memberof isoworldremote.ColorDefinition
+         * @memberof dfproto.GetWorldInfoOut
          * @static
-         * @param {isoworldremote.IColorDefinition} message ColorDefinition message or plain object to encode
+         * @param {dfproto.IGetWorldInfoOut} message GetWorldInfoOut message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        ColorDefinition.encode = function encode(message, writer) {
+        GetWorldInfoOut.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            writer.uint32(/* id 1, wireType 0 =*/8).int32(message.red);
-            writer.uint32(/* id 2, wireType 0 =*/16).int32(message.green);
-            writer.uint32(/* id 3, wireType 0 =*/24).int32(message.blue);
+            writer.uint32(/* id 1, wireType 0 =*/8).int32(message.mode);
+            writer.uint32(/* id 2, wireType 2 =*/18).string(message.saveDir);
+            if (message.worldName != null && Object.hasOwnProperty.call(message, "worldName"))
+                $root.dfproto.NameInfo.encode(message.worldName, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+            if (message.civId != null && Object.hasOwnProperty.call(message, "civId"))
+                writer.uint32(/* id 4, wireType 0 =*/32).int32(message.civId);
+            if (message.siteId != null && Object.hasOwnProperty.call(message, "siteId"))
+                writer.uint32(/* id 5, wireType 0 =*/40).int32(message.siteId);
+            if (message.groupId != null && Object.hasOwnProperty.call(message, "groupId"))
+                writer.uint32(/* id 6, wireType 0 =*/48).int32(message.groupId);
+            if (message.raceId != null && Object.hasOwnProperty.call(message, "raceId"))
+                writer.uint32(/* id 7, wireType 0 =*/56).int32(message.raceId);
+            if (message.playerUnitId != null && Object.hasOwnProperty.call(message, "playerUnitId"))
+                writer.uint32(/* id 8, wireType 0 =*/64).int32(message.playerUnitId);
+            if (message.playerHistfigId != null && Object.hasOwnProperty.call(message, "playerHistfigId"))
+                writer.uint32(/* id 9, wireType 0 =*/72).int32(message.playerHistfigId);
+            if (message.companionHistfigIds != null && message.companionHistfigIds.length)
+                for (var i = 0; i < message.companionHistfigIds.length; ++i)
+                    writer.uint32(/* id 10, wireType 0 =*/80).int32(message.companionHistfigIds[i]);
             return writer;
         };
 
         /**
-         * Encodes the specified ColorDefinition message, length delimited. Does not implicitly {@link isoworldremote.ColorDefinition.verify|verify} messages.
+         * Encodes the specified GetWorldInfoOut message, length delimited. Does not implicitly {@link dfproto.GetWorldInfoOut.verify|verify} messages.
          * @function encodeDelimited
-         * @memberof isoworldremote.ColorDefinition
+         * @memberof dfproto.GetWorldInfoOut
          * @static
-         * @param {isoworldremote.IColorDefinition} message ColorDefinition message or plain object to encode
+         * @param {dfproto.IGetWorldInfoOut} message GetWorldInfoOut message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        ColorDefinition.encodeDelimited = function encodeDelimited(message, writer) {
+        GetWorldInfoOut.encodeDelimited = function encodeDelimited(message, writer) {
             return this.encode(message, writer).ldelim();
         };
 
         /**
-         * Decodes a ColorDefinition message from the specified reader or buffer.
+         * Decodes a GetWorldInfoOut message from the specified reader or buffer.
          * @function decode
-         * @memberof isoworldremote.ColorDefinition
+         * @memberof dfproto.GetWorldInfoOut
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {isoworldremote.ColorDefinition} ColorDefinition
+         * @returns {dfproto.GetWorldInfoOut} GetWorldInfoOut
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        ColorDefinition.decode = function decode(reader, length) {
+        GetWorldInfoOut.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.isoworldremote.ColorDefinition();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.dfproto.GetWorldInfoOut();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.red = reader.int32();
+                    message.mode = reader.int32();
                     break;
                 case 2:
-                    message.green = reader.int32();
+                    message.saveDir = reader.string();
                     break;
                 case 3:
-                    message.blue = reader.int32();
-                    break;
-                default:
-                    reader.skipType(tag & 7);
-                    break;
-                }
-            }
-            if (!message.hasOwnProperty("red"))
-                throw $util.ProtocolError("missing required 'red'", { instance: message });
-            if (!message.hasOwnProperty("green"))
-                throw $util.ProtocolError("missing required 'green'", { instance: message });
-            if (!message.hasOwnProperty("blue"))
-                throw $util.ProtocolError("missing required 'blue'", { instance: message });
-            return message;
-        };
-
-        /**
-         * Decodes a ColorDefinition message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof isoworldremote.ColorDefinition
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {isoworldremote.ColorDefinition} ColorDefinition
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ColorDefinition.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ColorDefinition message.
-         * @function verify
-         * @memberof isoworldremote.ColorDefinition
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ColorDefinition.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (!$util.isInteger(message.red))
-                return "red: integer expected";
-            if (!$util.isInteger(message.green))
-                return "green: integer expected";
-            if (!$util.isInteger(message.blue))
-                return "blue: integer expected";
-            return null;
-        };
-
-        /**
-         * Creates a ColorDefinition message from a plain object. Also converts values to their respective internal types.
-         * @function fromObject
-         * @memberof isoworldremote.ColorDefinition
-         * @static
-         * @param {Object.<string,*>} object Plain object
-         * @returns {isoworldremote.ColorDefinition} ColorDefinition
-         */
-        ColorDefinition.fromObject = function fromObject(object) {
-            if (object instanceof $root.isoworldremote.ColorDefinition)
-                return object;
-            var message = new $root.isoworldremote.ColorDefinition();
-            if (object.red != null)
-                message.red = object.red | 0;
-            if (object.green != null)
-                message.green = object.green | 0;
-            if (object.blue != null)
-                message.blue = object.blue | 0;
-            return message;
-        };
-
-        /**
-         * Creates a plain object from a ColorDefinition message. Also converts values to other types if specified.
-         * @function toObject
-         * @memberof isoworldremote.ColorDefinition
-         * @static
-         * @param {isoworldremote.ColorDefinition} message ColorDefinition
-         * @param {$protobuf.IConversionOptions} [options] Conversion options
-         * @returns {Object.<string,*>} Plain object
-         */
-        ColorDefinition.toObject = function toObject(message, options) {
-            if (!options)
-                options = {};
-            var object = {};
-            if (options.defaults) {
-                object.red = 0;
-                object.green = 0;
-                object.blue = 0;
-            }
-            if (message.red != null && message.hasOwnProperty("red"))
-                object.red = message.red;
-            if (message.green != null && message.hasOwnProperty("green"))
-                object.green = message.green;
-            if (message.blue != null && message.hasOwnProperty("blue"))
-                object.blue = message.blue;
-            return object;
-        };
-
-        /**
-         * Converts this ColorDefinition to JSON.
-         * @function toJSON
-         * @memberof isoworldremote.ColorDefinition
-         * @instance
-         * @returns {Object.<string,*>} JSON object
-         */
-        ColorDefinition.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        return ColorDefinition;
-    })();
-
-    isoworldremote.EmbarkTileLayer = (function() {
-
-        /**
-         * Properties of an EmbarkTileLayer.
-         * @memberof isoworldremote
-         * @interface IEmbarkTileLayer
-         * @property {Array.<isoworldremote.BasicMaterial>|null} [matTypeTable] EmbarkTileLayer matTypeTable
-         * @property {Array.<number>|null} [matSubtypeTable] EmbarkTileLayer matSubtypeTable
-         * @property {Array.<isoworldremote.BasicShape>|null} [tileShapeTable] EmbarkTileLayer tileShapeTable
-         * @property {Array.<isoworldremote.IColorDefinition>|null} [tileColorTable] EmbarkTileLayer tileColorTable
-         */
-
-        /**
-         * Constructs a new EmbarkTileLayer.
-         * @memberof isoworldremote
-         * @classdesc Represents an EmbarkTileLayer.
-         * @implements IEmbarkTileLayer
-         * @constructor
-         * @param {isoworldremote.IEmbarkTileLayer=} [properties] Properties to set
-         */
-        function EmbarkTileLayer(properties) {
-            this.matTypeTable = [];
-            this.matSubtypeTable = [];
-            this.tileShapeTable = [];
-            this.tileColorTable = [];
-            if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
-                        this[keys[i]] = properties[keys[i]];
-        }
-
-        /**
-         * EmbarkTileLayer matTypeTable.
-         * @member {Array.<isoworldremote.BasicMaterial>} matTypeTable
-         * @memberof isoworldremote.EmbarkTileLayer
-         * @instance
-         */
-        EmbarkTileLayer.prototype.matTypeTable = $util.emptyArray;
-
-        /**
-         * EmbarkTileLayer matSubtypeTable.
-         * @member {Array.<number>} matSubtypeTable
-         * @memberof isoworldremote.EmbarkTileLayer
-         * @instance
-         */
-        EmbarkTileLayer.prototype.matSubtypeTable = $util.emptyArray;
-
-        /**
-         * EmbarkTileLayer tileShapeTable.
-         * @member {Array.<isoworldremote.BasicShape>} tileShapeTable
-         * @memberof isoworldremote.EmbarkTileLayer
-         * @instance
-         */
-        EmbarkTileLayer.prototype.tileShapeTable = $util.emptyArray;
-
-        /**
-         * EmbarkTileLayer tileColorTable.
-         * @member {Array.<isoworldremote.IColorDefinition>} tileColorTable
-         * @memberof isoworldremote.EmbarkTileLayer
-         * @instance
-         */
-        EmbarkTileLayer.prototype.tileColorTable = $util.emptyArray;
-
-        /**
-         * Creates a new EmbarkTileLayer instance using the specified properties.
-         * @function create
-         * @memberof isoworldremote.EmbarkTileLayer
-         * @static
-         * @param {isoworldremote.IEmbarkTileLayer=} [properties] Properties to set
-         * @returns {isoworldremote.EmbarkTileLayer} EmbarkTileLayer instance
-         */
-        EmbarkTileLayer.create = function create(properties) {
-            return new EmbarkTileLayer(properties);
-        };
-
-        /**
-         * Encodes the specified EmbarkTileLayer message. Does not implicitly {@link isoworldremote.EmbarkTileLayer.verify|verify} messages.
-         * @function encode
-         * @memberof isoworldremote.EmbarkTileLayer
-         * @static
-         * @param {isoworldremote.IEmbarkTileLayer} message EmbarkTileLayer message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        EmbarkTileLayer.encode = function encode(message, writer) {
-            if (!writer)
-                writer = $Writer.create();
-            if (message.matTypeTable != null && message.matTypeTable.length) {
-                writer.uint32(/* id 4, wireType 2 =*/34).fork();
-                for (var i = 0; i < message.matTypeTable.length; ++i)
-                    writer.int32(message.matTypeTable[i]);
-                writer.ldelim();
-            }
-            if (message.matSubtypeTable != null && message.matSubtypeTable.length) {
-                writer.uint32(/* id 5, wireType 2 =*/42).fork();
-                for (var i = 0; i < message.matSubtypeTable.length; ++i)
-                    writer.int32(message.matSubtypeTable[i]);
-                writer.ldelim();
-            }
-            if (message.tileShapeTable != null && message.tileShapeTable.length) {
-                writer.uint32(/* id 6, wireType 2 =*/50).fork();
-                for (var i = 0; i < message.tileShapeTable.length; ++i)
-                    writer.int32(message.tileShapeTable[i]);
-                writer.ldelim();
-            }
-            if (message.tileColorTable != null && message.tileColorTable.length)
-                for (var i = 0; i < message.tileColorTable.length; ++i)
-                    $root.isoworldremote.ColorDefinition.encode(message.tileColorTable[i], writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
-            return writer;
-        };
-
-        /**
-         * Encodes the specified EmbarkTileLayer message, length delimited. Does not implicitly {@link isoworldremote.EmbarkTileLayer.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof isoworldremote.EmbarkTileLayer
-         * @static
-         * @param {isoworldremote.IEmbarkTileLayer} message EmbarkTileLayer message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        EmbarkTileLayer.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
-         * Decodes an EmbarkTileLayer message from the specified reader or buffer.
-         * @function decode
-         * @memberof isoworldremote.EmbarkTileLayer
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @param {number} [length] Message length if known beforehand
-         * @returns {isoworldremote.EmbarkTileLayer} EmbarkTileLayer
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        EmbarkTileLayer.decode = function decode(reader, length) {
-            if (!(reader instanceof $Reader))
-                reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.isoworldremote.EmbarkTileLayer();
-            while (reader.pos < end) {
-                var tag = reader.uint32();
-                switch (tag >>> 3) {
-                case 4:
-                    if (!(message.matTypeTable && message.matTypeTable.length))
-                        message.matTypeTable = [];
-                    if ((tag & 7) === 2) {
-                        var end2 = reader.uint32() + reader.pos;
-                        while (reader.pos < end2)
-                            message.matTypeTable.push(reader.int32());
-                    } else
-                        message.matTypeTable.push(reader.int32());
-                    break;
-                case 5:
-                    if (!(message.matSubtypeTable && message.matSubtypeTable.length))
-                        message.matSubtypeTable = [];
-                    if ((tag & 7) === 2) {
-                        var end2 = reader.uint32() + reader.pos;
-                        while (reader.pos < end2)
-                            message.matSubtypeTable.push(reader.int32());
-                    } else
-                        message.matSubtypeTable.push(reader.int32());
-                    break;
-                case 6:
-                    if (!(message.tileShapeTable && message.tileShapeTable.length))
-                        message.tileShapeTable = [];
-                    if ((tag & 7) === 2) {
-                        var end2 = reader.uint32() + reader.pos;
-                        while (reader.pos < end2)
-                            message.tileShapeTable.push(reader.int32());
-                    } else
-                        message.tileShapeTable.push(reader.int32());
-                    break;
-                case 7:
-                    if (!(message.tileColorTable && message.tileColorTable.length))
-                        message.tileColorTable = [];
-                    message.tileColorTable.push($root.isoworldremote.ColorDefinition.decode(reader, reader.uint32()));
-                    break;
-                default:
-                    reader.skipType(tag & 7);
-                    break;
-                }
-            }
-            return message;
-        };
-
-        /**
-         * Decodes an EmbarkTileLayer message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof isoworldremote.EmbarkTileLayer
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {isoworldremote.EmbarkTileLayer} EmbarkTileLayer
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        EmbarkTileLayer.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an EmbarkTileLayer message.
-         * @function verify
-         * @memberof isoworldremote.EmbarkTileLayer
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        EmbarkTileLayer.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.matTypeTable != null && message.hasOwnProperty("matTypeTable")) {
-                if (!Array.isArray(message.matTypeTable))
-                    return "matTypeTable: array expected";
-                for (var i = 0; i < message.matTypeTable.length; ++i)
-                    switch (message.matTypeTable[i]) {
-                    default:
-                        return "matTypeTable: enum value[] expected";
-                    case 0:
-                    case 1:
-                    case 2:
-                    case 3:
-                    case 4:
-                    case 5:
-                        break;
-                    }
-            }
-            if (message.matSubtypeTable != null && message.hasOwnProperty("matSubtypeTable")) {
-                if (!Array.isArray(message.matSubtypeTable))
-                    return "matSubtypeTable: array expected";
-                for (var i = 0; i < message.matSubtypeTable.length; ++i)
-                    if (!$util.isInteger(message.matSubtypeTable[i]))
-                        return "matSubtypeTable: integer[] expected";
-            }
-            if (message.tileShapeTable != null && message.hasOwnProperty("tileShapeTable")) {
-                if (!Array.isArray(message.tileShapeTable))
-                    return "tileShapeTable: array expected";
-                for (var i = 0; i < message.tileShapeTable.length; ++i)
-                    switch (message.tileShapeTable[i]) {
-                    default:
-                        return "tileShapeTable: enum value[] expected";
-                    case 0:
-                    case 1:
-                    case 3:
-                    case 4:
-                    case 5:
-                    case 6:
-                        break;
-                    }
-            }
-            if (message.tileColorTable != null && message.hasOwnProperty("tileColorTable")) {
-                if (!Array.isArray(message.tileColorTable))
-                    return "tileColorTable: array expected";
-                for (var i = 0; i < message.tileColorTable.length; ++i) {
-                    var error = $root.isoworldremote.ColorDefinition.verify(message.tileColorTable[i]);
-                    if (error)
-                        return "tileColorTable." + error;
-                }
-            }
-            return null;
-        };
-
-        /**
-         * Creates an EmbarkTileLayer message from a plain object. Also converts values to their respective internal types.
-         * @function fromObject
-         * @memberof isoworldremote.EmbarkTileLayer
-         * @static
-         * @param {Object.<string,*>} object Plain object
-         * @returns {isoworldremote.EmbarkTileLayer} EmbarkTileLayer
-         */
-        EmbarkTileLayer.fromObject = function fromObject(object) {
-            if (object instanceof $root.isoworldremote.EmbarkTileLayer)
-                return object;
-            var message = new $root.isoworldremote.EmbarkTileLayer();
-            if (object.matTypeTable) {
-                if (!Array.isArray(object.matTypeTable))
-                    throw TypeError(".isoworldremote.EmbarkTileLayer.matTypeTable: array expected");
-                message.matTypeTable = [];
-                for (var i = 0; i < object.matTypeTable.length; ++i)
-                    switch (object.matTypeTable[i]) {
-                    default:
-                    case "AIR":
-                    case 0:
-                        message.matTypeTable[i] = 0;
-                        break;
-                    case "OTHER":
-                    case 1:
-                        message.matTypeTable[i] = 1;
-                        break;
-                    case "INORGANIC":
-                    case 2:
-                        message.matTypeTable[i] = 2;
-                        break;
-                    case "LIQUID":
-                    case 3:
-                        message.matTypeTable[i] = 3;
-                        break;
-                    case "PLANT":
-                    case 4:
-                        message.matTypeTable[i] = 4;
-                        break;
-                    case "WOOD":
-                    case 5:
-                        message.matTypeTable[i] = 5;
-                        break;
-                    }
-            }
-            if (object.matSubtypeTable) {
-                if (!Array.isArray(object.matSubtypeTable))
-                    throw TypeError(".isoworldremote.EmbarkTileLayer.matSubtypeTable: array expected");
-                message.matSubtypeTable = [];
-                for (var i = 0; i < object.matSubtypeTable.length; ++i)
-                    message.matSubtypeTable[i] = object.matSubtypeTable[i] | 0;
-            }
-            if (object.tileShapeTable) {
-                if (!Array.isArray(object.tileShapeTable))
-                    throw TypeError(".isoworldremote.EmbarkTileLayer.tileShapeTable: array expected");
-                message.tileShapeTable = [];
-                for (var i = 0; i < object.tileShapeTable.length; ++i)
-                    switch (object.tileShapeTable[i]) {
-                    default:
-                    case "NONE":
-                    case 0:
-                        message.tileShapeTable[i] = 0;
-                        break;
-                    case "OPEN":
-                    case 1:
-                        message.tileShapeTable[i] = 1;
-                        break;
-                    case "WALL":
-                    case 3:
-                        message.tileShapeTable[i] = 3;
-                        break;
-                    case "FLOOR":
-                    case 4:
-                        message.tileShapeTable[i] = 4;
-                        break;
-                    case "RAMP_UP":
-                    case 5:
-                        message.tileShapeTable[i] = 5;
-                        break;
-                    case "RAMP_DOWN":
-                    case 6:
-                        message.tileShapeTable[i] = 6;
-                        break;
-                    }
-            }
-            if (object.tileColorTable) {
-                if (!Array.isArray(object.tileColorTable))
-                    throw TypeError(".isoworldremote.EmbarkTileLayer.tileColorTable: array expected");
-                message.tileColorTable = [];
-                for (var i = 0; i < object.tileColorTable.length; ++i) {
-                    if (typeof object.tileColorTable[i] !== "object")
-                        throw TypeError(".isoworldremote.EmbarkTileLayer.tileColorTable: object expected");
-                    message.tileColorTable[i] = $root.isoworldremote.ColorDefinition.fromObject(object.tileColorTable[i]);
-                }
-            }
-            return message;
-        };
-
-        /**
-         * Creates a plain object from an EmbarkTileLayer message. Also converts values to other types if specified.
-         * @function toObject
-         * @memberof isoworldremote.EmbarkTileLayer
-         * @static
-         * @param {isoworldremote.EmbarkTileLayer} message EmbarkTileLayer
-         * @param {$protobuf.IConversionOptions} [options] Conversion options
-         * @returns {Object.<string,*>} Plain object
-         */
-        EmbarkTileLayer.toObject = function toObject(message, options) {
-            if (!options)
-                options = {};
-            var object = {};
-            if (options.arrays || options.defaults) {
-                object.matTypeTable = [];
-                object.matSubtypeTable = [];
-                object.tileShapeTable = [];
-                object.tileColorTable = [];
-            }
-            if (message.matTypeTable && message.matTypeTable.length) {
-                object.matTypeTable = [];
-                for (var j = 0; j < message.matTypeTable.length; ++j)
-                    object.matTypeTable[j] = options.enums === String ? $root.isoworldremote.BasicMaterial[message.matTypeTable[j]] : message.matTypeTable[j];
-            }
-            if (message.matSubtypeTable && message.matSubtypeTable.length) {
-                object.matSubtypeTable = [];
-                for (var j = 0; j < message.matSubtypeTable.length; ++j)
-                    object.matSubtypeTable[j] = message.matSubtypeTable[j];
-            }
-            if (message.tileShapeTable && message.tileShapeTable.length) {
-                object.tileShapeTable = [];
-                for (var j = 0; j < message.tileShapeTable.length; ++j)
-                    object.tileShapeTable[j] = options.enums === String ? $root.isoworldremote.BasicShape[message.tileShapeTable[j]] : message.tileShapeTable[j];
-            }
-            if (message.tileColorTable && message.tileColorTable.length) {
-                object.tileColorTable = [];
-                for (var j = 0; j < message.tileColorTable.length; ++j)
-                    object.tileColorTable[j] = $root.isoworldremote.ColorDefinition.toObject(message.tileColorTable[j], options);
-            }
-            return object;
-        };
-
-        /**
-         * Converts this EmbarkTileLayer to JSON.
-         * @function toJSON
-         * @memberof isoworldremote.EmbarkTileLayer
-         * @instance
-         * @returns {Object.<string,*>} JSON object
-         */
-        EmbarkTileLayer.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        return EmbarkTileLayer;
-    })();
-
-    isoworldremote.EmbarkTile = (function() {
-
-        /**
-         * Properties of an EmbarkTile.
-         * @memberof isoworldremote
-         * @interface IEmbarkTile
-         * @property {number} worldX EmbarkTile worldX
-         * @property {number} worldY EmbarkTile worldY
-         * @property {number} worldZ EmbarkTile worldZ
-         * @property {Array.<isoworldremote.IEmbarkTileLayer>|null} [tileLayer] EmbarkTile tileLayer
-         * @property {number|null} [currentYear] EmbarkTile currentYear
-         * @property {number|null} [currentSeason] EmbarkTile currentSeason
-         * @property {boolean|null} [isValid] EmbarkTile isValid
-         */
-
-        /**
-         * Constructs a new EmbarkTile.
-         * @memberof isoworldremote
-         * @classdesc Represents an EmbarkTile.
-         * @implements IEmbarkTile
-         * @constructor
-         * @param {isoworldremote.IEmbarkTile=} [properties] Properties to set
-         */
-        function EmbarkTile(properties) {
-            this.tileLayer = [];
-            if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
-                        this[keys[i]] = properties[keys[i]];
-        }
-
-        /**
-         * EmbarkTile worldX.
-         * @member {number} worldX
-         * @memberof isoworldremote.EmbarkTile
-         * @instance
-         */
-        EmbarkTile.prototype.worldX = 0;
-
-        /**
-         * EmbarkTile worldY.
-         * @member {number} worldY
-         * @memberof isoworldremote.EmbarkTile
-         * @instance
-         */
-        EmbarkTile.prototype.worldY = 0;
-
-        /**
-         * EmbarkTile worldZ.
-         * @member {number} worldZ
-         * @memberof isoworldremote.EmbarkTile
-         * @instance
-         */
-        EmbarkTile.prototype.worldZ = 0;
-
-        /**
-         * EmbarkTile tileLayer.
-         * @member {Array.<isoworldremote.IEmbarkTileLayer>} tileLayer
-         * @memberof isoworldremote.EmbarkTile
-         * @instance
-         */
-        EmbarkTile.prototype.tileLayer = $util.emptyArray;
-
-        /**
-         * EmbarkTile currentYear.
-         * @member {number} currentYear
-         * @memberof isoworldremote.EmbarkTile
-         * @instance
-         */
-        EmbarkTile.prototype.currentYear = 0;
-
-        /**
-         * EmbarkTile currentSeason.
-         * @member {number} currentSeason
-         * @memberof isoworldremote.EmbarkTile
-         * @instance
-         */
-        EmbarkTile.prototype.currentSeason = 0;
-
-        /**
-         * EmbarkTile isValid.
-         * @member {boolean} isValid
-         * @memberof isoworldremote.EmbarkTile
-         * @instance
-         */
-        EmbarkTile.prototype.isValid = false;
-
-        /**
-         * Creates a new EmbarkTile instance using the specified properties.
-         * @function create
-         * @memberof isoworldremote.EmbarkTile
-         * @static
-         * @param {isoworldremote.IEmbarkTile=} [properties] Properties to set
-         * @returns {isoworldremote.EmbarkTile} EmbarkTile instance
-         */
-        EmbarkTile.create = function create(properties) {
-            return new EmbarkTile(properties);
-        };
-
-        /**
-         * Encodes the specified EmbarkTile message. Does not implicitly {@link isoworldremote.EmbarkTile.verify|verify} messages.
-         * @function encode
-         * @memberof isoworldremote.EmbarkTile
-         * @static
-         * @param {isoworldremote.IEmbarkTile} message EmbarkTile message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        EmbarkTile.encode = function encode(message, writer) {
-            if (!writer)
-                writer = $Writer.create();
-            writer.uint32(/* id 1, wireType 0 =*/8).int32(message.worldX);
-            writer.uint32(/* id 2, wireType 0 =*/16).int32(message.worldY);
-            writer.uint32(/* id 3, wireType 0 =*/24).sint32(message.worldZ);
-            if (message.tileLayer != null && message.tileLayer.length)
-                for (var i = 0; i < message.tileLayer.length; ++i)
-                    $root.isoworldremote.EmbarkTileLayer.encode(message.tileLayer[i], writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-            if (message.currentYear != null && message.hasOwnProperty("currentYear"))
-                writer.uint32(/* id 5, wireType 0 =*/40).int32(message.currentYear);
-            if (message.currentSeason != null && message.hasOwnProperty("currentSeason"))
-                writer.uint32(/* id 6, wireType 0 =*/48).int32(message.currentSeason);
-            if (message.isValid != null && message.hasOwnProperty("isValid"))
-                writer.uint32(/* id 7, wireType 0 =*/56).bool(message.isValid);
-            return writer;
-        };
-
-        /**
-         * Encodes the specified EmbarkTile message, length delimited. Does not implicitly {@link isoworldremote.EmbarkTile.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof isoworldremote.EmbarkTile
-         * @static
-         * @param {isoworldremote.IEmbarkTile} message EmbarkTile message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        EmbarkTile.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
-         * Decodes an EmbarkTile message from the specified reader or buffer.
-         * @function decode
-         * @memberof isoworldremote.EmbarkTile
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @param {number} [length] Message length if known beforehand
-         * @returns {isoworldremote.EmbarkTile} EmbarkTile
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        EmbarkTile.decode = function decode(reader, length) {
-            if (!(reader instanceof $Reader))
-                reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.isoworldremote.EmbarkTile();
-            while (reader.pos < end) {
-                var tag = reader.uint32();
-                switch (tag >>> 3) {
-                case 1:
-                    message.worldX = reader.int32();
-                    break;
-                case 2:
-                    message.worldY = reader.int32();
-                    break;
-                case 3:
-                    message.worldZ = reader.sint32();
+                    message.worldName = $root.dfproto.NameInfo.decode(reader, reader.uint32());
                     break;
                 case 4:
-                    if (!(message.tileLayer && message.tileLayer.length))
-                        message.tileLayer = [];
-                    message.tileLayer.push($root.isoworldremote.EmbarkTileLayer.decode(reader, reader.uint32()));
+                    message.civId = reader.int32();
                     break;
                 case 5:
-                    message.currentYear = reader.int32();
+                    message.siteId = reader.int32();
                     break;
                 case 6:
-                    message.currentSeason = reader.int32();
+                    message.groupId = reader.int32();
                     break;
                 case 7:
-                    message.isValid = reader.bool();
+                    message.raceId = reader.int32();
+                    break;
+                case 8:
+                    message.playerUnitId = reader.int32();
+                    break;
+                case 9:
+                    message.playerHistfigId = reader.int32();
+                    break;
+                case 10:
+                    if (!(message.companionHistfigIds && message.companionHistfigIds.length))
+                        message.companionHistfigIds = [];
+                    if ((tag & 7) === 2) {
+                        var end2 = reader.uint32() + reader.pos;
+                        while (reader.pos < end2)
+                            message.companionHistfigIds.push(reader.int32());
+                    } else
+                        message.companionHistfigIds.push(reader.int32());
                     break;
                 default:
                     reader.skipType(tag & 7);
                     break;
                 }
             }
-            if (!message.hasOwnProperty("worldX"))
-                throw $util.ProtocolError("missing required 'worldX'", { instance: message });
-            if (!message.hasOwnProperty("worldY"))
-                throw $util.ProtocolError("missing required 'worldY'", { instance: message });
-            if (!message.hasOwnProperty("worldZ"))
-                throw $util.ProtocolError("missing required 'worldZ'", { instance: message });
+            if (!message.hasOwnProperty("mode"))
+                throw $util.ProtocolError("missing required 'mode'", { instance: message });
+            if (!message.hasOwnProperty("saveDir"))
+                throw $util.ProtocolError("missing required 'saveDir'", { instance: message });
             return message;
         };
 
         /**
-         * Decodes an EmbarkTile message from the specified reader or buffer, length delimited.
+         * Decodes a GetWorldInfoOut message from the specified reader or buffer, length delimited.
          * @function decodeDelimited
-         * @memberof isoworldremote.EmbarkTile
+         * @memberof dfproto.GetWorldInfoOut
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {isoworldremote.EmbarkTile} EmbarkTile
+         * @returns {dfproto.GetWorldInfoOut} GetWorldInfoOut
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        EmbarkTile.decodeDelimited = function decodeDelimited(reader) {
+        GetWorldInfoOut.decodeDelimited = function decodeDelimited(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
         };
 
         /**
-         * Verifies an EmbarkTile message.
+         * Verifies a GetWorldInfoOut message.
          * @function verify
-         * @memberof isoworldremote.EmbarkTile
+         * @memberof dfproto.GetWorldInfoOut
          * @static
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        EmbarkTile.verify = function verify(message) {
+        GetWorldInfoOut.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
-            if (!$util.isInteger(message.worldX))
-                return "worldX: integer expected";
-            if (!$util.isInteger(message.worldY))
-                return "worldY: integer expected";
-            if (!$util.isInteger(message.worldZ))
-                return "worldZ: integer expected";
-            if (message.tileLayer != null && message.hasOwnProperty("tileLayer")) {
-                if (!Array.isArray(message.tileLayer))
-                    return "tileLayer: array expected";
-                for (var i = 0; i < message.tileLayer.length; ++i) {
-                    var error = $root.isoworldremote.EmbarkTileLayer.verify(message.tileLayer[i]);
-                    if (error)
-                        return "tileLayer." + error;
-                }
+            switch (message.mode) {
+            default:
+                return "mode: enum value expected";
+            case 1:
+            case 2:
+            case 3:
+                break;
             }
-            if (message.currentYear != null && message.hasOwnProperty("currentYear"))
-                if (!$util.isInteger(message.currentYear))
-                    return "currentYear: integer expected";
-            if (message.currentSeason != null && message.hasOwnProperty("currentSeason"))
-                if (!$util.isInteger(message.currentSeason))
-                    return "currentSeason: integer expected";
-            if (message.isValid != null && message.hasOwnProperty("isValid"))
-                if (typeof message.isValid !== "boolean")
-                    return "isValid: boolean expected";
+            if (!$util.isString(message.saveDir))
+                return "saveDir: string expected";
+            if (message.worldName != null && message.hasOwnProperty("worldName")) {
+                var error = $root.dfproto.NameInfo.verify(message.worldName);
+                if (error)
+                    return "worldName." + error;
+            }
+            if (message.civId != null && message.hasOwnProperty("civId"))
+                if (!$util.isInteger(message.civId))
+                    return "civId: integer expected";
+            if (message.siteId != null && message.hasOwnProperty("siteId"))
+                if (!$util.isInteger(message.siteId))
+                    return "siteId: integer expected";
+            if (message.groupId != null && message.hasOwnProperty("groupId"))
+                if (!$util.isInteger(message.groupId))
+                    return "groupId: integer expected";
+            if (message.raceId != null && message.hasOwnProperty("raceId"))
+                if (!$util.isInteger(message.raceId))
+                    return "raceId: integer expected";
+            if (message.playerUnitId != null && message.hasOwnProperty("playerUnitId"))
+                if (!$util.isInteger(message.playerUnitId))
+                    return "playerUnitId: integer expected";
+            if (message.playerHistfigId != null && message.hasOwnProperty("playerHistfigId"))
+                if (!$util.isInteger(message.playerHistfigId))
+                    return "playerHistfigId: integer expected";
+            if (message.companionHistfigIds != null && message.hasOwnProperty("companionHistfigIds")) {
+                if (!Array.isArray(message.companionHistfigIds))
+                    return "companionHistfigIds: array expected";
+                for (var i = 0; i < message.companionHistfigIds.length; ++i)
+                    if (!$util.isInteger(message.companionHistfigIds[i]))
+                        return "companionHistfigIds: integer[] expected";
+            }
             return null;
         };
 
         /**
-         * Creates an EmbarkTile message from a plain object. Also converts values to their respective internal types.
+         * Creates a GetWorldInfoOut message from a plain object. Also converts values to their respective internal types.
          * @function fromObject
-         * @memberof isoworldremote.EmbarkTile
+         * @memberof dfproto.GetWorldInfoOut
          * @static
          * @param {Object.<string,*>} object Plain object
-         * @returns {isoworldremote.EmbarkTile} EmbarkTile
+         * @returns {dfproto.GetWorldInfoOut} GetWorldInfoOut
          */
-        EmbarkTile.fromObject = function fromObject(object) {
-            if (object instanceof $root.isoworldremote.EmbarkTile)
+        GetWorldInfoOut.fromObject = function fromObject(object) {
+            if (object instanceof $root.dfproto.GetWorldInfoOut)
                 return object;
-            var message = new $root.isoworldremote.EmbarkTile();
-            if (object.worldX != null)
-                message.worldX = object.worldX | 0;
-            if (object.worldY != null)
-                message.worldY = object.worldY | 0;
-            if (object.worldZ != null)
-                message.worldZ = object.worldZ | 0;
-            if (object.tileLayer) {
-                if (!Array.isArray(object.tileLayer))
-                    throw TypeError(".isoworldremote.EmbarkTile.tileLayer: array expected");
-                message.tileLayer = [];
-                for (var i = 0; i < object.tileLayer.length; ++i) {
-                    if (typeof object.tileLayer[i] !== "object")
-                        throw TypeError(".isoworldremote.EmbarkTile.tileLayer: object expected");
-                    message.tileLayer[i] = $root.isoworldremote.EmbarkTileLayer.fromObject(object.tileLayer[i]);
-                }
+            var message = new $root.dfproto.GetWorldInfoOut();
+            switch (object.mode) {
+            case "MODE_DWARF":
+            case 1:
+                message.mode = 1;
+                break;
+            case "MODE_ADVENTURE":
+            case 2:
+                message.mode = 2;
+                break;
+            case "MODE_LEGENDS":
+            case 3:
+                message.mode = 3;
+                break;
             }
-            if (object.currentYear != null)
-                message.currentYear = object.currentYear | 0;
-            if (object.currentSeason != null)
-                message.currentSeason = object.currentSeason | 0;
-            if (object.isValid != null)
-                message.isValid = Boolean(object.isValid);
+            if (object.saveDir != null)
+                message.saveDir = String(object.saveDir);
+            if (object.worldName != null) {
+                if (typeof object.worldName !== "object")
+                    throw TypeError(".dfproto.GetWorldInfoOut.worldName: object expected");
+                message.worldName = $root.dfproto.NameInfo.fromObject(object.worldName);
+            }
+            if (object.civId != null)
+                message.civId = object.civId | 0;
+            if (object.siteId != null)
+                message.siteId = object.siteId | 0;
+            if (object.groupId != null)
+                message.groupId = object.groupId | 0;
+            if (object.raceId != null)
+                message.raceId = object.raceId | 0;
+            if (object.playerUnitId != null)
+                message.playerUnitId = object.playerUnitId | 0;
+            if (object.playerHistfigId != null)
+                message.playerHistfigId = object.playerHistfigId | 0;
+            if (object.companionHistfigIds) {
+                if (!Array.isArray(object.companionHistfigIds))
+                    throw TypeError(".dfproto.GetWorldInfoOut.companionHistfigIds: array expected");
+                message.companionHistfigIds = [];
+                for (var i = 0; i < object.companionHistfigIds.length; ++i)
+                    message.companionHistfigIds[i] = object.companionHistfigIds[i] | 0;
+            }
             return message;
         };
 
         /**
-         * Creates a plain object from an EmbarkTile message. Also converts values to other types if specified.
+         * Creates a plain object from a GetWorldInfoOut message. Also converts values to other types if specified.
          * @function toObject
-         * @memberof isoworldremote.EmbarkTile
+         * @memberof dfproto.GetWorldInfoOut
          * @static
-         * @param {isoworldremote.EmbarkTile} message EmbarkTile
+         * @param {dfproto.GetWorldInfoOut} message GetWorldInfoOut
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        EmbarkTile.toObject = function toObject(message, options) {
+        GetWorldInfoOut.toObject = function toObject(message, options) {
             if (!options)
                 options = {};
             var object = {};
             if (options.arrays || options.defaults)
-                object.tileLayer = [];
+                object.companionHistfigIds = [];
             if (options.defaults) {
-                object.worldX = 0;
-                object.worldY = 0;
-                object.worldZ = 0;
-                object.currentYear = 0;
-                object.currentSeason = 0;
-                object.isValid = false;
+                object.mode = options.enums === String ? "MODE_DWARF" : 1;
+                object.saveDir = "";
+                object.worldName = null;
+                object.civId = 0;
+                object.siteId = 0;
+                object.groupId = 0;
+                object.raceId = 0;
+                object.playerUnitId = 0;
+                object.playerHistfigId = 0;
             }
-            if (message.worldX != null && message.hasOwnProperty("worldX"))
-                object.worldX = message.worldX;
-            if (message.worldY != null && message.hasOwnProperty("worldY"))
-                object.worldY = message.worldY;
-            if (message.worldZ != null && message.hasOwnProperty("worldZ"))
-                object.worldZ = message.worldZ;
-            if (message.tileLayer && message.tileLayer.length) {
-                object.tileLayer = [];
-                for (var j = 0; j < message.tileLayer.length; ++j)
-                    object.tileLayer[j] = $root.isoworldremote.EmbarkTileLayer.toObject(message.tileLayer[j], options);
+            if (message.mode != null && message.hasOwnProperty("mode"))
+                object.mode = options.enums === String ? $root.dfproto.GetWorldInfoOut.Mode[message.mode] : message.mode;
+            if (message.saveDir != null && message.hasOwnProperty("saveDir"))
+                object.saveDir = message.saveDir;
+            if (message.worldName != null && message.hasOwnProperty("worldName"))
+                object.worldName = $root.dfproto.NameInfo.toObject(message.worldName, options);
+            if (message.civId != null && message.hasOwnProperty("civId"))
+                object.civId = message.civId;
+            if (message.siteId != null && message.hasOwnProperty("siteId"))
+                object.siteId = message.siteId;
+            if (message.groupId != null && message.hasOwnProperty("groupId"))
+                object.groupId = message.groupId;
+            if (message.raceId != null && message.hasOwnProperty("raceId"))
+                object.raceId = message.raceId;
+            if (message.playerUnitId != null && message.hasOwnProperty("playerUnitId"))
+                object.playerUnitId = message.playerUnitId;
+            if (message.playerHistfigId != null && message.hasOwnProperty("playerHistfigId"))
+                object.playerHistfigId = message.playerHistfigId;
+            if (message.companionHistfigIds && message.companionHistfigIds.length) {
+                object.companionHistfigIds = [];
+                for (var j = 0; j < message.companionHistfigIds.length; ++j)
+                    object.companionHistfigIds[j] = message.companionHistfigIds[j];
             }
-            if (message.currentYear != null && message.hasOwnProperty("currentYear"))
-                object.currentYear = message.currentYear;
-            if (message.currentSeason != null && message.hasOwnProperty("currentSeason"))
-                object.currentSeason = message.currentSeason;
-            if (message.isValid != null && message.hasOwnProperty("isValid"))
-                object.isValid = message.isValid;
             return object;
         };
 
         /**
-         * Converts this EmbarkTile to JSON.
+         * Converts this GetWorldInfoOut to JSON.
          * @function toJSON
-         * @memberof isoworldremote.EmbarkTile
+         * @memberof dfproto.GetWorldInfoOut
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        EmbarkTile.prototype.toJSON = function toJSON() {
+        GetWorldInfoOut.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
-        return EmbarkTile;
+        /**
+         * Mode enum.
+         * @name dfproto.GetWorldInfoOut.Mode
+         * @enum {string}
+         * @property {number} MODE_DWARF=1 MODE_DWARF value
+         * @property {number} MODE_ADVENTURE=2 MODE_ADVENTURE value
+         * @property {number} MODE_LEGENDS=3 MODE_LEGENDS value
+         */
+        GetWorldInfoOut.Mode = (function() {
+            var valuesById = {}, values = Object.create(valuesById);
+            values[valuesById[1] = "MODE_DWARF"] = 1;
+            values[valuesById[2] = "MODE_ADVENTURE"] = 2;
+            values[valuesById[3] = "MODE_LEGENDS"] = 3;
+            return values;
+        })();
+
+        return GetWorldInfoOut;
     })();
 
-    isoworldremote.TileRequest = (function() {
+    dfproto.ListEnumsOut = (function() {
 
         /**
-         * Properties of a TileRequest.
-         * @memberof isoworldremote
-         * @interface ITileRequest
-         * @property {number|null} [wantX] TileRequest wantX
-         * @property {number|null} [wantY] TileRequest wantY
+         * Properties of a ListEnumsOut.
+         * @memberof dfproto
+         * @interface IListEnumsOut
+         * @property {Array.<dfproto.IEnumItemName>|null} [materialFlags] ListEnumsOut materialFlags
+         * @property {Array.<dfproto.IEnumItemName>|null} [inorganicFlags] ListEnumsOut inorganicFlags
+         * @property {Array.<dfproto.IEnumItemName>|null} [unitFlags1] ListEnumsOut unitFlags1
+         * @property {Array.<dfproto.IEnumItemName>|null} [unitFlags2] ListEnumsOut unitFlags2
+         * @property {Array.<dfproto.IEnumItemName>|null} [unitFlags3] ListEnumsOut unitFlags3
+         * @property {Array.<dfproto.IEnumItemName>|null} [unitLabor] ListEnumsOut unitLabor
+         * @property {Array.<dfproto.IEnumItemName>|null} [jobSkill] ListEnumsOut jobSkill
+         * @property {Array.<dfproto.IEnumItemName>|null} [cieAddTagMask1] ListEnumsOut cieAddTagMask1
+         * @property {Array.<dfproto.IEnumItemName>|null} [cieAddTagMask2] ListEnumsOut cieAddTagMask2
+         * @property {Array.<dfproto.IEnumItemName>|null} [deathInfoFlags] ListEnumsOut deathInfoFlags
+         * @property {Array.<dfproto.IEnumItemName>|null} [profession] ListEnumsOut profession
          */
 
         /**
-         * Constructs a new TileRequest.
-         * @memberof isoworldremote
-         * @classdesc Represents a TileRequest.
-         * @implements ITileRequest
+         * Constructs a new ListEnumsOut.
+         * @memberof dfproto
+         * @classdesc Represents a ListEnumsOut.
+         * @implements IListEnumsOut
          * @constructor
-         * @param {isoworldremote.ITileRequest=} [properties] Properties to set
+         * @param {dfproto.IListEnumsOut=} [properties] Properties to set
          */
-        function TileRequest(properties) {
+        function ListEnumsOut(properties) {
+            this.materialFlags = [];
+            this.inorganicFlags = [];
+            this.unitFlags1 = [];
+            this.unitFlags2 = [];
+            this.unitFlags3 = [];
+            this.unitLabor = [];
+            this.jobSkill = [];
+            this.cieAddTagMask1 = [];
+            this.cieAddTagMask2 = [];
+            this.deathInfoFlags = [];
+            this.profession = [];
             if (properties)
                 for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
@@ -3651,963 +2196,12554 @@ $root.isoworldremote = (function() {
         }
 
         /**
-         * TileRequest wantX.
-         * @member {number} wantX
-         * @memberof isoworldremote.TileRequest
+         * ListEnumsOut materialFlags.
+         * @member {Array.<dfproto.IEnumItemName>} materialFlags
+         * @memberof dfproto.ListEnumsOut
          * @instance
          */
-        TileRequest.prototype.wantX = 0;
+        ListEnumsOut.prototype.materialFlags = $util.emptyArray;
 
         /**
-         * TileRequest wantY.
-         * @member {number} wantY
-         * @memberof isoworldremote.TileRequest
+         * ListEnumsOut inorganicFlags.
+         * @member {Array.<dfproto.IEnumItemName>} inorganicFlags
+         * @memberof dfproto.ListEnumsOut
          * @instance
          */
-        TileRequest.prototype.wantY = 0;
+        ListEnumsOut.prototype.inorganicFlags = $util.emptyArray;
 
         /**
-         * Creates a new TileRequest instance using the specified properties.
+         * ListEnumsOut unitFlags1.
+         * @member {Array.<dfproto.IEnumItemName>} unitFlags1
+         * @memberof dfproto.ListEnumsOut
+         * @instance
+         */
+        ListEnumsOut.prototype.unitFlags1 = $util.emptyArray;
+
+        /**
+         * ListEnumsOut unitFlags2.
+         * @member {Array.<dfproto.IEnumItemName>} unitFlags2
+         * @memberof dfproto.ListEnumsOut
+         * @instance
+         */
+        ListEnumsOut.prototype.unitFlags2 = $util.emptyArray;
+
+        /**
+         * ListEnumsOut unitFlags3.
+         * @member {Array.<dfproto.IEnumItemName>} unitFlags3
+         * @memberof dfproto.ListEnumsOut
+         * @instance
+         */
+        ListEnumsOut.prototype.unitFlags3 = $util.emptyArray;
+
+        /**
+         * ListEnumsOut unitLabor.
+         * @member {Array.<dfproto.IEnumItemName>} unitLabor
+         * @memberof dfproto.ListEnumsOut
+         * @instance
+         */
+        ListEnumsOut.prototype.unitLabor = $util.emptyArray;
+
+        /**
+         * ListEnumsOut jobSkill.
+         * @member {Array.<dfproto.IEnumItemName>} jobSkill
+         * @memberof dfproto.ListEnumsOut
+         * @instance
+         */
+        ListEnumsOut.prototype.jobSkill = $util.emptyArray;
+
+        /**
+         * ListEnumsOut cieAddTagMask1.
+         * @member {Array.<dfproto.IEnumItemName>} cieAddTagMask1
+         * @memberof dfproto.ListEnumsOut
+         * @instance
+         */
+        ListEnumsOut.prototype.cieAddTagMask1 = $util.emptyArray;
+
+        /**
+         * ListEnumsOut cieAddTagMask2.
+         * @member {Array.<dfproto.IEnumItemName>} cieAddTagMask2
+         * @memberof dfproto.ListEnumsOut
+         * @instance
+         */
+        ListEnumsOut.prototype.cieAddTagMask2 = $util.emptyArray;
+
+        /**
+         * ListEnumsOut deathInfoFlags.
+         * @member {Array.<dfproto.IEnumItemName>} deathInfoFlags
+         * @memberof dfproto.ListEnumsOut
+         * @instance
+         */
+        ListEnumsOut.prototype.deathInfoFlags = $util.emptyArray;
+
+        /**
+         * ListEnumsOut profession.
+         * @member {Array.<dfproto.IEnumItemName>} profession
+         * @memberof dfproto.ListEnumsOut
+         * @instance
+         */
+        ListEnumsOut.prototype.profession = $util.emptyArray;
+
+        /**
+         * Creates a new ListEnumsOut instance using the specified properties.
          * @function create
-         * @memberof isoworldremote.TileRequest
+         * @memberof dfproto.ListEnumsOut
          * @static
-         * @param {isoworldremote.ITileRequest=} [properties] Properties to set
-         * @returns {isoworldremote.TileRequest} TileRequest instance
+         * @param {dfproto.IListEnumsOut=} [properties] Properties to set
+         * @returns {dfproto.ListEnumsOut} ListEnumsOut instance
          */
-        TileRequest.create = function create(properties) {
-            return new TileRequest(properties);
+        ListEnumsOut.create = function create(properties) {
+            return new ListEnumsOut(properties);
         };
 
         /**
-         * Encodes the specified TileRequest message. Does not implicitly {@link isoworldremote.TileRequest.verify|verify} messages.
+         * Encodes the specified ListEnumsOut message. Does not implicitly {@link dfproto.ListEnumsOut.verify|verify} messages.
          * @function encode
-         * @memberof isoworldremote.TileRequest
+         * @memberof dfproto.ListEnumsOut
          * @static
-         * @param {isoworldremote.ITileRequest} message TileRequest message or plain object to encode
+         * @param {dfproto.IListEnumsOut} message ListEnumsOut message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        TileRequest.encode = function encode(message, writer) {
+        ListEnumsOut.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.wantX != null && message.hasOwnProperty("wantX"))
-                writer.uint32(/* id 1, wireType 0 =*/8).int32(message.wantX);
-            if (message.wantY != null && message.hasOwnProperty("wantY"))
-                writer.uint32(/* id 2, wireType 0 =*/16).int32(message.wantY);
+            if (message.materialFlags != null && message.materialFlags.length)
+                for (var i = 0; i < message.materialFlags.length; ++i)
+                    $root.dfproto.EnumItemName.encode(message.materialFlags[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+            if (message.inorganicFlags != null && message.inorganicFlags.length)
+                for (var i = 0; i < message.inorganicFlags.length; ++i)
+                    $root.dfproto.EnumItemName.encode(message.inorganicFlags[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+            if (message.unitFlags1 != null && message.unitFlags1.length)
+                for (var i = 0; i < message.unitFlags1.length; ++i)
+                    $root.dfproto.EnumItemName.encode(message.unitFlags1[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+            if (message.unitFlags2 != null && message.unitFlags2.length)
+                for (var i = 0; i < message.unitFlags2.length; ++i)
+                    $root.dfproto.EnumItemName.encode(message.unitFlags2[i], writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+            if (message.unitFlags3 != null && message.unitFlags3.length)
+                for (var i = 0; i < message.unitFlags3.length; ++i)
+                    $root.dfproto.EnumItemName.encode(message.unitFlags3[i], writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+            if (message.unitLabor != null && message.unitLabor.length)
+                for (var i = 0; i < message.unitLabor.length; ++i)
+                    $root.dfproto.EnumItemName.encode(message.unitLabor[i], writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+            if (message.jobSkill != null && message.jobSkill.length)
+                for (var i = 0; i < message.jobSkill.length; ++i)
+                    $root.dfproto.EnumItemName.encode(message.jobSkill[i], writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+            if (message.cieAddTagMask1 != null && message.cieAddTagMask1.length)
+                for (var i = 0; i < message.cieAddTagMask1.length; ++i)
+                    $root.dfproto.EnumItemName.encode(message.cieAddTagMask1[i], writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
+            if (message.cieAddTagMask2 != null && message.cieAddTagMask2.length)
+                for (var i = 0; i < message.cieAddTagMask2.length; ++i)
+                    $root.dfproto.EnumItemName.encode(message.cieAddTagMask2[i], writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
+            if (message.deathInfoFlags != null && message.deathInfoFlags.length)
+                for (var i = 0; i < message.deathInfoFlags.length; ++i)
+                    $root.dfproto.EnumItemName.encode(message.deathInfoFlags[i], writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
+            if (message.profession != null && message.profession.length)
+                for (var i = 0; i < message.profession.length; ++i)
+                    $root.dfproto.EnumItemName.encode(message.profession[i], writer.uint32(/* id 11, wireType 2 =*/90).fork()).ldelim();
             return writer;
         };
 
         /**
-         * Encodes the specified TileRequest message, length delimited. Does not implicitly {@link isoworldremote.TileRequest.verify|verify} messages.
+         * Encodes the specified ListEnumsOut message, length delimited. Does not implicitly {@link dfproto.ListEnumsOut.verify|verify} messages.
          * @function encodeDelimited
-         * @memberof isoworldremote.TileRequest
+         * @memberof dfproto.ListEnumsOut
          * @static
-         * @param {isoworldremote.ITileRequest} message TileRequest message or plain object to encode
+         * @param {dfproto.IListEnumsOut} message ListEnumsOut message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        TileRequest.encodeDelimited = function encodeDelimited(message, writer) {
+        ListEnumsOut.encodeDelimited = function encodeDelimited(message, writer) {
             return this.encode(message, writer).ldelim();
         };
 
         /**
-         * Decodes a TileRequest message from the specified reader or buffer.
+         * Decodes a ListEnumsOut message from the specified reader or buffer.
          * @function decode
-         * @memberof isoworldremote.TileRequest
+         * @memberof dfproto.ListEnumsOut
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {isoworldremote.TileRequest} TileRequest
+         * @returns {dfproto.ListEnumsOut} ListEnumsOut
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        TileRequest.decode = function decode(reader, length) {
+        ListEnumsOut.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.isoworldremote.TileRequest();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.dfproto.ListEnumsOut();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.wantX = reader.int32();
+                    if (!(message.materialFlags && message.materialFlags.length))
+                        message.materialFlags = [];
+                    message.materialFlags.push($root.dfproto.EnumItemName.decode(reader, reader.uint32()));
                     break;
                 case 2:
-                    message.wantY = reader.int32();
-                    break;
-                default:
-                    reader.skipType(tag & 7);
-                    break;
-                }
-            }
-            return message;
-        };
-
-        /**
-         * Decodes a TileRequest message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof isoworldremote.TileRequest
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {isoworldremote.TileRequest} TileRequest
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        TileRequest.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a TileRequest message.
-         * @function verify
-         * @memberof isoworldremote.TileRequest
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        TileRequest.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.wantX != null && message.hasOwnProperty("wantX"))
-                if (!$util.isInteger(message.wantX))
-                    return "wantX: integer expected";
-            if (message.wantY != null && message.hasOwnProperty("wantY"))
-                if (!$util.isInteger(message.wantY))
-                    return "wantY: integer expected";
-            return null;
-        };
-
-        /**
-         * Creates a TileRequest message from a plain object. Also converts values to their respective internal types.
-         * @function fromObject
-         * @memberof isoworldremote.TileRequest
-         * @static
-         * @param {Object.<string,*>} object Plain object
-         * @returns {isoworldremote.TileRequest} TileRequest
-         */
-        TileRequest.fromObject = function fromObject(object) {
-            if (object instanceof $root.isoworldremote.TileRequest)
-                return object;
-            var message = new $root.isoworldremote.TileRequest();
-            if (object.wantX != null)
-                message.wantX = object.wantX | 0;
-            if (object.wantY != null)
-                message.wantY = object.wantY | 0;
-            return message;
-        };
-
-        /**
-         * Creates a plain object from a TileRequest message. Also converts values to other types if specified.
-         * @function toObject
-         * @memberof isoworldremote.TileRequest
-         * @static
-         * @param {isoworldremote.TileRequest} message TileRequest
-         * @param {$protobuf.IConversionOptions} [options] Conversion options
-         * @returns {Object.<string,*>} Plain object
-         */
-        TileRequest.toObject = function toObject(message, options) {
-            if (!options)
-                options = {};
-            var object = {};
-            if (options.defaults) {
-                object.wantX = 0;
-                object.wantY = 0;
-            }
-            if (message.wantX != null && message.hasOwnProperty("wantX"))
-                object.wantX = message.wantX;
-            if (message.wantY != null && message.hasOwnProperty("wantY"))
-                object.wantY = message.wantY;
-            return object;
-        };
-
-        /**
-         * Converts this TileRequest to JSON.
-         * @function toJSON
-         * @memberof isoworldremote.TileRequest
-         * @instance
-         * @returns {Object.<string,*>} JSON object
-         */
-        TileRequest.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        return TileRequest;
-    })();
-
-    isoworldremote.MapRequest = (function() {
-
-        /**
-         * Properties of a MapRequest.
-         * @memberof isoworldremote
-         * @interface IMapRequest
-         * @property {string|null} [saveFolder] MapRequest saveFolder
-         */
-
-        /**
-         * Constructs a new MapRequest.
-         * @memberof isoworldremote
-         * @classdesc Represents a MapRequest.
-         * @implements IMapRequest
-         * @constructor
-         * @param {isoworldremote.IMapRequest=} [properties] Properties to set
-         */
-        function MapRequest(properties) {
-            if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
-                        this[keys[i]] = properties[keys[i]];
-        }
-
-        /**
-         * MapRequest saveFolder.
-         * @member {string} saveFolder
-         * @memberof isoworldremote.MapRequest
-         * @instance
-         */
-        MapRequest.prototype.saveFolder = "";
-
-        /**
-         * Creates a new MapRequest instance using the specified properties.
-         * @function create
-         * @memberof isoworldremote.MapRequest
-         * @static
-         * @param {isoworldremote.IMapRequest=} [properties] Properties to set
-         * @returns {isoworldremote.MapRequest} MapRequest instance
-         */
-        MapRequest.create = function create(properties) {
-            return new MapRequest(properties);
-        };
-
-        /**
-         * Encodes the specified MapRequest message. Does not implicitly {@link isoworldremote.MapRequest.verify|verify} messages.
-         * @function encode
-         * @memberof isoworldremote.MapRequest
-         * @static
-         * @param {isoworldremote.IMapRequest} message MapRequest message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        MapRequest.encode = function encode(message, writer) {
-            if (!writer)
-                writer = $Writer.create();
-            if (message.saveFolder != null && message.hasOwnProperty("saveFolder"))
-                writer.uint32(/* id 1, wireType 2 =*/10).string(message.saveFolder);
-            return writer;
-        };
-
-        /**
-         * Encodes the specified MapRequest message, length delimited. Does not implicitly {@link isoworldremote.MapRequest.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof isoworldremote.MapRequest
-         * @static
-         * @param {isoworldremote.IMapRequest} message MapRequest message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        MapRequest.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
-         * Decodes a MapRequest message from the specified reader or buffer.
-         * @function decode
-         * @memberof isoworldremote.MapRequest
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @param {number} [length] Message length if known beforehand
-         * @returns {isoworldremote.MapRequest} MapRequest
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        MapRequest.decode = function decode(reader, length) {
-            if (!(reader instanceof $Reader))
-                reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.isoworldremote.MapRequest();
-            while (reader.pos < end) {
-                var tag = reader.uint32();
-                switch (tag >>> 3) {
-                case 1:
-                    message.saveFolder = reader.string();
-                    break;
-                default:
-                    reader.skipType(tag & 7);
-                    break;
-                }
-            }
-            return message;
-        };
-
-        /**
-         * Decodes a MapRequest message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof isoworldremote.MapRequest
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {isoworldremote.MapRequest} MapRequest
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        MapRequest.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a MapRequest message.
-         * @function verify
-         * @memberof isoworldremote.MapRequest
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        MapRequest.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.saveFolder != null && message.hasOwnProperty("saveFolder"))
-                if (!$util.isString(message.saveFolder))
-                    return "saveFolder: string expected";
-            return null;
-        };
-
-        /**
-         * Creates a MapRequest message from a plain object. Also converts values to their respective internal types.
-         * @function fromObject
-         * @memberof isoworldremote.MapRequest
-         * @static
-         * @param {Object.<string,*>} object Plain object
-         * @returns {isoworldremote.MapRequest} MapRequest
-         */
-        MapRequest.fromObject = function fromObject(object) {
-            if (object instanceof $root.isoworldremote.MapRequest)
-                return object;
-            var message = new $root.isoworldremote.MapRequest();
-            if (object.saveFolder != null)
-                message.saveFolder = String(object.saveFolder);
-            return message;
-        };
-
-        /**
-         * Creates a plain object from a MapRequest message. Also converts values to other types if specified.
-         * @function toObject
-         * @memberof isoworldremote.MapRequest
-         * @static
-         * @param {isoworldremote.MapRequest} message MapRequest
-         * @param {$protobuf.IConversionOptions} [options] Conversion options
-         * @returns {Object.<string,*>} Plain object
-         */
-        MapRequest.toObject = function toObject(message, options) {
-            if (!options)
-                options = {};
-            var object = {};
-            if (options.defaults)
-                object.saveFolder = "";
-            if (message.saveFolder != null && message.hasOwnProperty("saveFolder"))
-                object.saveFolder = message.saveFolder;
-            return object;
-        };
-
-        /**
-         * Converts this MapRequest to JSON.
-         * @function toJSON
-         * @memberof isoworldremote.MapRequest
-         * @instance
-         * @returns {Object.<string,*>} JSON object
-         */
-        MapRequest.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        return MapRequest;
-    })();
-
-    isoworldremote.MapReply = (function() {
-
-        /**
-         * Properties of a MapReply.
-         * @memberof isoworldremote
-         * @interface IMapReply
-         * @property {boolean} available MapReply available
-         * @property {number|null} [regionX] MapReply regionX
-         * @property {number|null} [regionY] MapReply regionY
-         * @property {number|null} [regionSizeX] MapReply regionSizeX
-         * @property {number|null} [regionSizeY] MapReply regionSizeY
-         * @property {number|null} [currentYear] MapReply currentYear
-         * @property {number|null} [currentSeason] MapReply currentSeason
-         */
-
-        /**
-         * Constructs a new MapReply.
-         * @memberof isoworldremote
-         * @classdesc Represents a MapReply.
-         * @implements IMapReply
-         * @constructor
-         * @param {isoworldremote.IMapReply=} [properties] Properties to set
-         */
-        function MapReply(properties) {
-            if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
-                        this[keys[i]] = properties[keys[i]];
-        }
-
-        /**
-         * MapReply available.
-         * @member {boolean} available
-         * @memberof isoworldremote.MapReply
-         * @instance
-         */
-        MapReply.prototype.available = false;
-
-        /**
-         * MapReply regionX.
-         * @member {number} regionX
-         * @memberof isoworldremote.MapReply
-         * @instance
-         */
-        MapReply.prototype.regionX = 0;
-
-        /**
-         * MapReply regionY.
-         * @member {number} regionY
-         * @memberof isoworldremote.MapReply
-         * @instance
-         */
-        MapReply.prototype.regionY = 0;
-
-        /**
-         * MapReply regionSizeX.
-         * @member {number} regionSizeX
-         * @memberof isoworldremote.MapReply
-         * @instance
-         */
-        MapReply.prototype.regionSizeX = 0;
-
-        /**
-         * MapReply regionSizeY.
-         * @member {number} regionSizeY
-         * @memberof isoworldremote.MapReply
-         * @instance
-         */
-        MapReply.prototype.regionSizeY = 0;
-
-        /**
-         * MapReply currentYear.
-         * @member {number} currentYear
-         * @memberof isoworldremote.MapReply
-         * @instance
-         */
-        MapReply.prototype.currentYear = 0;
-
-        /**
-         * MapReply currentSeason.
-         * @member {number} currentSeason
-         * @memberof isoworldremote.MapReply
-         * @instance
-         */
-        MapReply.prototype.currentSeason = 0;
-
-        /**
-         * Creates a new MapReply instance using the specified properties.
-         * @function create
-         * @memberof isoworldremote.MapReply
-         * @static
-         * @param {isoworldremote.IMapReply=} [properties] Properties to set
-         * @returns {isoworldremote.MapReply} MapReply instance
-         */
-        MapReply.create = function create(properties) {
-            return new MapReply(properties);
-        };
-
-        /**
-         * Encodes the specified MapReply message. Does not implicitly {@link isoworldremote.MapReply.verify|verify} messages.
-         * @function encode
-         * @memberof isoworldremote.MapReply
-         * @static
-         * @param {isoworldremote.IMapReply} message MapReply message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        MapReply.encode = function encode(message, writer) {
-            if (!writer)
-                writer = $Writer.create();
-            writer.uint32(/* id 1, wireType 0 =*/8).bool(message.available);
-            if (message.regionX != null && message.hasOwnProperty("regionX"))
-                writer.uint32(/* id 2, wireType 0 =*/16).int32(message.regionX);
-            if (message.regionY != null && message.hasOwnProperty("regionY"))
-                writer.uint32(/* id 3, wireType 0 =*/24).int32(message.regionY);
-            if (message.regionSizeX != null && message.hasOwnProperty("regionSizeX"))
-                writer.uint32(/* id 4, wireType 0 =*/32).int32(message.regionSizeX);
-            if (message.regionSizeY != null && message.hasOwnProperty("regionSizeY"))
-                writer.uint32(/* id 5, wireType 0 =*/40).int32(message.regionSizeY);
-            if (message.currentYear != null && message.hasOwnProperty("currentYear"))
-                writer.uint32(/* id 6, wireType 0 =*/48).int32(message.currentYear);
-            if (message.currentSeason != null && message.hasOwnProperty("currentSeason"))
-                writer.uint32(/* id 7, wireType 0 =*/56).int32(message.currentSeason);
-            return writer;
-        };
-
-        /**
-         * Encodes the specified MapReply message, length delimited. Does not implicitly {@link isoworldremote.MapReply.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof isoworldremote.MapReply
-         * @static
-         * @param {isoworldremote.IMapReply} message MapReply message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        MapReply.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
-         * Decodes a MapReply message from the specified reader or buffer.
-         * @function decode
-         * @memberof isoworldremote.MapReply
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @param {number} [length] Message length if known beforehand
-         * @returns {isoworldremote.MapReply} MapReply
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        MapReply.decode = function decode(reader, length) {
-            if (!(reader instanceof $Reader))
-                reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.isoworldremote.MapReply();
-            while (reader.pos < end) {
-                var tag = reader.uint32();
-                switch (tag >>> 3) {
-                case 1:
-                    message.available = reader.bool();
-                    break;
-                case 2:
-                    message.regionX = reader.int32();
+                    if (!(message.inorganicFlags && message.inorganicFlags.length))
+                        message.inorganicFlags = [];
+                    message.inorganicFlags.push($root.dfproto.EnumItemName.decode(reader, reader.uint32()));
                     break;
                 case 3:
-                    message.regionY = reader.int32();
+                    if (!(message.unitFlags1 && message.unitFlags1.length))
+                        message.unitFlags1 = [];
+                    message.unitFlags1.push($root.dfproto.EnumItemName.decode(reader, reader.uint32()));
                     break;
                 case 4:
-                    message.regionSizeX = reader.int32();
+                    if (!(message.unitFlags2 && message.unitFlags2.length))
+                        message.unitFlags2 = [];
+                    message.unitFlags2.push($root.dfproto.EnumItemName.decode(reader, reader.uint32()));
                     break;
                 case 5:
-                    message.regionSizeY = reader.int32();
+                    if (!(message.unitFlags3 && message.unitFlags3.length))
+                        message.unitFlags3 = [];
+                    message.unitFlags3.push($root.dfproto.EnumItemName.decode(reader, reader.uint32()));
                     break;
                 case 6:
-                    message.currentYear = reader.int32();
+                    if (!(message.unitLabor && message.unitLabor.length))
+                        message.unitLabor = [];
+                    message.unitLabor.push($root.dfproto.EnumItemName.decode(reader, reader.uint32()));
                     break;
                 case 7:
-                    message.currentSeason = reader.int32();
+                    if (!(message.jobSkill && message.jobSkill.length))
+                        message.jobSkill = [];
+                    message.jobSkill.push($root.dfproto.EnumItemName.decode(reader, reader.uint32()));
+                    break;
+                case 8:
+                    if (!(message.cieAddTagMask1 && message.cieAddTagMask1.length))
+                        message.cieAddTagMask1 = [];
+                    message.cieAddTagMask1.push($root.dfproto.EnumItemName.decode(reader, reader.uint32()));
+                    break;
+                case 9:
+                    if (!(message.cieAddTagMask2 && message.cieAddTagMask2.length))
+                        message.cieAddTagMask2 = [];
+                    message.cieAddTagMask2.push($root.dfproto.EnumItemName.decode(reader, reader.uint32()));
+                    break;
+                case 10:
+                    if (!(message.deathInfoFlags && message.deathInfoFlags.length))
+                        message.deathInfoFlags = [];
+                    message.deathInfoFlags.push($root.dfproto.EnumItemName.decode(reader, reader.uint32()));
+                    break;
+                case 11:
+                    if (!(message.profession && message.profession.length))
+                        message.profession = [];
+                    message.profession.push($root.dfproto.EnumItemName.decode(reader, reader.uint32()));
                     break;
                 default:
                     reader.skipType(tag & 7);
                     break;
                 }
             }
-            if (!message.hasOwnProperty("available"))
-                throw $util.ProtocolError("missing required 'available'", { instance: message });
             return message;
         };
 
         /**
-         * Decodes a MapReply message from the specified reader or buffer, length delimited.
+         * Decodes a ListEnumsOut message from the specified reader or buffer, length delimited.
          * @function decodeDelimited
-         * @memberof isoworldremote.MapReply
+         * @memberof dfproto.ListEnumsOut
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {isoworldremote.MapReply} MapReply
+         * @returns {dfproto.ListEnumsOut} ListEnumsOut
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        MapReply.decodeDelimited = function decodeDelimited(reader) {
+        ListEnumsOut.decodeDelimited = function decodeDelimited(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
         };
 
         /**
-         * Verifies a MapReply message.
+         * Verifies a ListEnumsOut message.
          * @function verify
-         * @memberof isoworldremote.MapReply
+         * @memberof dfproto.ListEnumsOut
          * @static
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        MapReply.verify = function verify(message) {
+        ListEnumsOut.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
-            if (typeof message.available !== "boolean")
-                return "available: boolean expected";
-            if (message.regionX != null && message.hasOwnProperty("regionX"))
-                if (!$util.isInteger(message.regionX))
-                    return "regionX: integer expected";
-            if (message.regionY != null && message.hasOwnProperty("regionY"))
-                if (!$util.isInteger(message.regionY))
-                    return "regionY: integer expected";
-            if (message.regionSizeX != null && message.hasOwnProperty("regionSizeX"))
-                if (!$util.isInteger(message.regionSizeX))
-                    return "regionSizeX: integer expected";
-            if (message.regionSizeY != null && message.hasOwnProperty("regionSizeY"))
-                if (!$util.isInteger(message.regionSizeY))
-                    return "regionSizeY: integer expected";
-            if (message.currentYear != null && message.hasOwnProperty("currentYear"))
-                if (!$util.isInteger(message.currentYear))
-                    return "currentYear: integer expected";
-            if (message.currentSeason != null && message.hasOwnProperty("currentSeason"))
-                if (!$util.isInteger(message.currentSeason))
-                    return "currentSeason: integer expected";
-            return null;
-        };
-
-        /**
-         * Creates a MapReply message from a plain object. Also converts values to their respective internal types.
-         * @function fromObject
-         * @memberof isoworldremote.MapReply
-         * @static
-         * @param {Object.<string,*>} object Plain object
-         * @returns {isoworldremote.MapReply} MapReply
-         */
-        MapReply.fromObject = function fromObject(object) {
-            if (object instanceof $root.isoworldremote.MapReply)
-                return object;
-            var message = new $root.isoworldremote.MapReply();
-            if (object.available != null)
-                message.available = Boolean(object.available);
-            if (object.regionX != null)
-                message.regionX = object.regionX | 0;
-            if (object.regionY != null)
-                message.regionY = object.regionY | 0;
-            if (object.regionSizeX != null)
-                message.regionSizeX = object.regionSizeX | 0;
-            if (object.regionSizeY != null)
-                message.regionSizeY = object.regionSizeY | 0;
-            if (object.currentYear != null)
-                message.currentYear = object.currentYear | 0;
-            if (object.currentSeason != null)
-                message.currentSeason = object.currentSeason | 0;
-            return message;
-        };
-
-        /**
-         * Creates a plain object from a MapReply message. Also converts values to other types if specified.
-         * @function toObject
-         * @memberof isoworldremote.MapReply
-         * @static
-         * @param {isoworldremote.MapReply} message MapReply
-         * @param {$protobuf.IConversionOptions} [options] Conversion options
-         * @returns {Object.<string,*>} Plain object
-         */
-        MapReply.toObject = function toObject(message, options) {
-            if (!options)
-                options = {};
-            var object = {};
-            if (options.defaults) {
-                object.available = false;
-                object.regionX = 0;
-                object.regionY = 0;
-                object.regionSizeX = 0;
-                object.regionSizeY = 0;
-                object.currentYear = 0;
-                object.currentSeason = 0;
-            }
-            if (message.available != null && message.hasOwnProperty("available"))
-                object.available = message.available;
-            if (message.regionX != null && message.hasOwnProperty("regionX"))
-                object.regionX = message.regionX;
-            if (message.regionY != null && message.hasOwnProperty("regionY"))
-                object.regionY = message.regionY;
-            if (message.regionSizeX != null && message.hasOwnProperty("regionSizeX"))
-                object.regionSizeX = message.regionSizeX;
-            if (message.regionSizeY != null && message.hasOwnProperty("regionSizeY"))
-                object.regionSizeY = message.regionSizeY;
-            if (message.currentYear != null && message.hasOwnProperty("currentYear"))
-                object.currentYear = message.currentYear;
-            if (message.currentSeason != null && message.hasOwnProperty("currentSeason"))
-                object.currentSeason = message.currentSeason;
-            return object;
-        };
-
-        /**
-         * Converts this MapReply to JSON.
-         * @function toJSON
-         * @memberof isoworldremote.MapReply
-         * @instance
-         * @returns {Object.<string,*>} JSON object
-         */
-        MapReply.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        return MapReply;
-    })();
-
-    isoworldremote.RawNames = (function() {
-
-        /**
-         * Properties of a RawNames.
-         * @memberof isoworldremote
-         * @interface IRawNames
-         * @property {boolean} available RawNames available
-         * @property {Array.<string>|null} [inorganic] RawNames inorganic
-         * @property {Array.<string>|null} [organic] RawNames organic
-         */
-
-        /**
-         * Constructs a new RawNames.
-         * @memberof isoworldremote
-         * @classdesc Represents a RawNames.
-         * @implements IRawNames
-         * @constructor
-         * @param {isoworldremote.IRawNames=} [properties] Properties to set
-         */
-        function RawNames(properties) {
-            this.inorganic = [];
-            this.organic = [];
-            if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
-                        this[keys[i]] = properties[keys[i]];
-        }
-
-        /**
-         * RawNames available.
-         * @member {boolean} available
-         * @memberof isoworldremote.RawNames
-         * @instance
-         */
-        RawNames.prototype.available = false;
-
-        /**
-         * RawNames inorganic.
-         * @member {Array.<string>} inorganic
-         * @memberof isoworldremote.RawNames
-         * @instance
-         */
-        RawNames.prototype.inorganic = $util.emptyArray;
-
-        /**
-         * RawNames organic.
-         * @member {Array.<string>} organic
-         * @memberof isoworldremote.RawNames
-         * @instance
-         */
-        RawNames.prototype.organic = $util.emptyArray;
-
-        /**
-         * Creates a new RawNames instance using the specified properties.
-         * @function create
-         * @memberof isoworldremote.RawNames
-         * @static
-         * @param {isoworldremote.IRawNames=} [properties] Properties to set
-         * @returns {isoworldremote.RawNames} RawNames instance
-         */
-        RawNames.create = function create(properties) {
-            return new RawNames(properties);
-        };
-
-        /**
-         * Encodes the specified RawNames message. Does not implicitly {@link isoworldremote.RawNames.verify|verify} messages.
-         * @function encode
-         * @memberof isoworldremote.RawNames
-         * @static
-         * @param {isoworldremote.IRawNames} message RawNames message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        RawNames.encode = function encode(message, writer) {
-            if (!writer)
-                writer = $Writer.create();
-            writer.uint32(/* id 1, wireType 0 =*/8).bool(message.available);
-            if (message.inorganic != null && message.inorganic.length)
-                for (var i = 0; i < message.inorganic.length; ++i)
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.inorganic[i]);
-            if (message.organic != null && message.organic.length)
-                for (var i = 0; i < message.organic.length; ++i)
-                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.organic[i]);
-            return writer;
-        };
-
-        /**
-         * Encodes the specified RawNames message, length delimited. Does not implicitly {@link isoworldremote.RawNames.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof isoworldremote.RawNames
-         * @static
-         * @param {isoworldremote.IRawNames} message RawNames message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        RawNames.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
-         * Decodes a RawNames message from the specified reader or buffer.
-         * @function decode
-         * @memberof isoworldremote.RawNames
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @param {number} [length] Message length if known beforehand
-         * @returns {isoworldremote.RawNames} RawNames
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        RawNames.decode = function decode(reader, length) {
-            if (!(reader instanceof $Reader))
-                reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.isoworldremote.RawNames();
-            while (reader.pos < end) {
-                var tag = reader.uint32();
-                switch (tag >>> 3) {
-                case 1:
-                    message.available = reader.bool();
-                    break;
-                case 2:
-                    if (!(message.inorganic && message.inorganic.length))
-                        message.inorganic = [];
-                    message.inorganic.push(reader.string());
-                    break;
-                case 3:
-                    if (!(message.organic && message.organic.length))
-                        message.organic = [];
-                    message.organic.push(reader.string());
-                    break;
-                default:
-                    reader.skipType(tag & 7);
-                    break;
+            if (message.materialFlags != null && message.hasOwnProperty("materialFlags")) {
+                if (!Array.isArray(message.materialFlags))
+                    return "materialFlags: array expected";
+                for (var i = 0; i < message.materialFlags.length; ++i) {
+                    var error = $root.dfproto.EnumItemName.verify(message.materialFlags[i]);
+                    if (error)
+                        return "materialFlags." + error;
                 }
             }
-            if (!message.hasOwnProperty("available"))
-                throw $util.ProtocolError("missing required 'available'", { instance: message });
-            return message;
-        };
-
-        /**
-         * Decodes a RawNames message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof isoworldremote.RawNames
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {isoworldremote.RawNames} RawNames
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        RawNames.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a RawNames message.
-         * @function verify
-         * @memberof isoworldremote.RawNames
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        RawNames.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (typeof message.available !== "boolean")
-                return "available: boolean expected";
-            if (message.inorganic != null && message.hasOwnProperty("inorganic")) {
-                if (!Array.isArray(message.inorganic))
-                    return "inorganic: array expected";
-                for (var i = 0; i < message.inorganic.length; ++i)
-                    if (!$util.isString(message.inorganic[i]))
-                        return "inorganic: string[] expected";
+            if (message.inorganicFlags != null && message.hasOwnProperty("inorganicFlags")) {
+                if (!Array.isArray(message.inorganicFlags))
+                    return "inorganicFlags: array expected";
+                for (var i = 0; i < message.inorganicFlags.length; ++i) {
+                    var error = $root.dfproto.EnumItemName.verify(message.inorganicFlags[i]);
+                    if (error)
+                        return "inorganicFlags." + error;
+                }
             }
-            if (message.organic != null && message.hasOwnProperty("organic")) {
-                if (!Array.isArray(message.organic))
-                    return "organic: array expected";
-                for (var i = 0; i < message.organic.length; ++i)
-                    if (!$util.isString(message.organic[i]))
-                        return "organic: string[] expected";
+            if (message.unitFlags1 != null && message.hasOwnProperty("unitFlags1")) {
+                if (!Array.isArray(message.unitFlags1))
+                    return "unitFlags1: array expected";
+                for (var i = 0; i < message.unitFlags1.length; ++i) {
+                    var error = $root.dfproto.EnumItemName.verify(message.unitFlags1[i]);
+                    if (error)
+                        return "unitFlags1." + error;
+                }
+            }
+            if (message.unitFlags2 != null && message.hasOwnProperty("unitFlags2")) {
+                if (!Array.isArray(message.unitFlags2))
+                    return "unitFlags2: array expected";
+                for (var i = 0; i < message.unitFlags2.length; ++i) {
+                    var error = $root.dfproto.EnumItemName.verify(message.unitFlags2[i]);
+                    if (error)
+                        return "unitFlags2." + error;
+                }
+            }
+            if (message.unitFlags3 != null && message.hasOwnProperty("unitFlags3")) {
+                if (!Array.isArray(message.unitFlags3))
+                    return "unitFlags3: array expected";
+                for (var i = 0; i < message.unitFlags3.length; ++i) {
+                    var error = $root.dfproto.EnumItemName.verify(message.unitFlags3[i]);
+                    if (error)
+                        return "unitFlags3." + error;
+                }
+            }
+            if (message.unitLabor != null && message.hasOwnProperty("unitLabor")) {
+                if (!Array.isArray(message.unitLabor))
+                    return "unitLabor: array expected";
+                for (var i = 0; i < message.unitLabor.length; ++i) {
+                    var error = $root.dfproto.EnumItemName.verify(message.unitLabor[i]);
+                    if (error)
+                        return "unitLabor." + error;
+                }
+            }
+            if (message.jobSkill != null && message.hasOwnProperty("jobSkill")) {
+                if (!Array.isArray(message.jobSkill))
+                    return "jobSkill: array expected";
+                for (var i = 0; i < message.jobSkill.length; ++i) {
+                    var error = $root.dfproto.EnumItemName.verify(message.jobSkill[i]);
+                    if (error)
+                        return "jobSkill." + error;
+                }
+            }
+            if (message.cieAddTagMask1 != null && message.hasOwnProperty("cieAddTagMask1")) {
+                if (!Array.isArray(message.cieAddTagMask1))
+                    return "cieAddTagMask1: array expected";
+                for (var i = 0; i < message.cieAddTagMask1.length; ++i) {
+                    var error = $root.dfproto.EnumItemName.verify(message.cieAddTagMask1[i]);
+                    if (error)
+                        return "cieAddTagMask1." + error;
+                }
+            }
+            if (message.cieAddTagMask2 != null && message.hasOwnProperty("cieAddTagMask2")) {
+                if (!Array.isArray(message.cieAddTagMask2))
+                    return "cieAddTagMask2: array expected";
+                for (var i = 0; i < message.cieAddTagMask2.length; ++i) {
+                    var error = $root.dfproto.EnumItemName.verify(message.cieAddTagMask2[i]);
+                    if (error)
+                        return "cieAddTagMask2." + error;
+                }
+            }
+            if (message.deathInfoFlags != null && message.hasOwnProperty("deathInfoFlags")) {
+                if (!Array.isArray(message.deathInfoFlags))
+                    return "deathInfoFlags: array expected";
+                for (var i = 0; i < message.deathInfoFlags.length; ++i) {
+                    var error = $root.dfproto.EnumItemName.verify(message.deathInfoFlags[i]);
+                    if (error)
+                        return "deathInfoFlags." + error;
+                }
+            }
+            if (message.profession != null && message.hasOwnProperty("profession")) {
+                if (!Array.isArray(message.profession))
+                    return "profession: array expected";
+                for (var i = 0; i < message.profession.length; ++i) {
+                    var error = $root.dfproto.EnumItemName.verify(message.profession[i]);
+                    if (error)
+                        return "profession." + error;
+                }
             }
             return null;
         };
 
         /**
-         * Creates a RawNames message from a plain object. Also converts values to their respective internal types.
+         * Creates a ListEnumsOut message from a plain object. Also converts values to their respective internal types.
          * @function fromObject
-         * @memberof isoworldremote.RawNames
+         * @memberof dfproto.ListEnumsOut
          * @static
          * @param {Object.<string,*>} object Plain object
-         * @returns {isoworldremote.RawNames} RawNames
+         * @returns {dfproto.ListEnumsOut} ListEnumsOut
          */
-        RawNames.fromObject = function fromObject(object) {
-            if (object instanceof $root.isoworldremote.RawNames)
+        ListEnumsOut.fromObject = function fromObject(object) {
+            if (object instanceof $root.dfproto.ListEnumsOut)
                 return object;
-            var message = new $root.isoworldremote.RawNames();
-            if (object.available != null)
-                message.available = Boolean(object.available);
-            if (object.inorganic) {
-                if (!Array.isArray(object.inorganic))
-                    throw TypeError(".isoworldremote.RawNames.inorganic: array expected");
-                message.inorganic = [];
-                for (var i = 0; i < object.inorganic.length; ++i)
-                    message.inorganic[i] = String(object.inorganic[i]);
+            var message = new $root.dfproto.ListEnumsOut();
+            if (object.materialFlags) {
+                if (!Array.isArray(object.materialFlags))
+                    throw TypeError(".dfproto.ListEnumsOut.materialFlags: array expected");
+                message.materialFlags = [];
+                for (var i = 0; i < object.materialFlags.length; ++i) {
+                    if (typeof object.materialFlags[i] !== "object")
+                        throw TypeError(".dfproto.ListEnumsOut.materialFlags: object expected");
+                    message.materialFlags[i] = $root.dfproto.EnumItemName.fromObject(object.materialFlags[i]);
+                }
             }
-            if (object.organic) {
-                if (!Array.isArray(object.organic))
-                    throw TypeError(".isoworldremote.RawNames.organic: array expected");
-                message.organic = [];
-                for (var i = 0; i < object.organic.length; ++i)
-                    message.organic[i] = String(object.organic[i]);
+            if (object.inorganicFlags) {
+                if (!Array.isArray(object.inorganicFlags))
+                    throw TypeError(".dfproto.ListEnumsOut.inorganicFlags: array expected");
+                message.inorganicFlags = [];
+                for (var i = 0; i < object.inorganicFlags.length; ++i) {
+                    if (typeof object.inorganicFlags[i] !== "object")
+                        throw TypeError(".dfproto.ListEnumsOut.inorganicFlags: object expected");
+                    message.inorganicFlags[i] = $root.dfproto.EnumItemName.fromObject(object.inorganicFlags[i]);
+                }
+            }
+            if (object.unitFlags1) {
+                if (!Array.isArray(object.unitFlags1))
+                    throw TypeError(".dfproto.ListEnumsOut.unitFlags1: array expected");
+                message.unitFlags1 = [];
+                for (var i = 0; i < object.unitFlags1.length; ++i) {
+                    if (typeof object.unitFlags1[i] !== "object")
+                        throw TypeError(".dfproto.ListEnumsOut.unitFlags1: object expected");
+                    message.unitFlags1[i] = $root.dfproto.EnumItemName.fromObject(object.unitFlags1[i]);
+                }
+            }
+            if (object.unitFlags2) {
+                if (!Array.isArray(object.unitFlags2))
+                    throw TypeError(".dfproto.ListEnumsOut.unitFlags2: array expected");
+                message.unitFlags2 = [];
+                for (var i = 0; i < object.unitFlags2.length; ++i) {
+                    if (typeof object.unitFlags2[i] !== "object")
+                        throw TypeError(".dfproto.ListEnumsOut.unitFlags2: object expected");
+                    message.unitFlags2[i] = $root.dfproto.EnumItemName.fromObject(object.unitFlags2[i]);
+                }
+            }
+            if (object.unitFlags3) {
+                if (!Array.isArray(object.unitFlags3))
+                    throw TypeError(".dfproto.ListEnumsOut.unitFlags3: array expected");
+                message.unitFlags3 = [];
+                for (var i = 0; i < object.unitFlags3.length; ++i) {
+                    if (typeof object.unitFlags3[i] !== "object")
+                        throw TypeError(".dfproto.ListEnumsOut.unitFlags3: object expected");
+                    message.unitFlags3[i] = $root.dfproto.EnumItemName.fromObject(object.unitFlags3[i]);
+                }
+            }
+            if (object.unitLabor) {
+                if (!Array.isArray(object.unitLabor))
+                    throw TypeError(".dfproto.ListEnumsOut.unitLabor: array expected");
+                message.unitLabor = [];
+                for (var i = 0; i < object.unitLabor.length; ++i) {
+                    if (typeof object.unitLabor[i] !== "object")
+                        throw TypeError(".dfproto.ListEnumsOut.unitLabor: object expected");
+                    message.unitLabor[i] = $root.dfproto.EnumItemName.fromObject(object.unitLabor[i]);
+                }
+            }
+            if (object.jobSkill) {
+                if (!Array.isArray(object.jobSkill))
+                    throw TypeError(".dfproto.ListEnumsOut.jobSkill: array expected");
+                message.jobSkill = [];
+                for (var i = 0; i < object.jobSkill.length; ++i) {
+                    if (typeof object.jobSkill[i] !== "object")
+                        throw TypeError(".dfproto.ListEnumsOut.jobSkill: object expected");
+                    message.jobSkill[i] = $root.dfproto.EnumItemName.fromObject(object.jobSkill[i]);
+                }
+            }
+            if (object.cieAddTagMask1) {
+                if (!Array.isArray(object.cieAddTagMask1))
+                    throw TypeError(".dfproto.ListEnumsOut.cieAddTagMask1: array expected");
+                message.cieAddTagMask1 = [];
+                for (var i = 0; i < object.cieAddTagMask1.length; ++i) {
+                    if (typeof object.cieAddTagMask1[i] !== "object")
+                        throw TypeError(".dfproto.ListEnumsOut.cieAddTagMask1: object expected");
+                    message.cieAddTagMask1[i] = $root.dfproto.EnumItemName.fromObject(object.cieAddTagMask1[i]);
+                }
+            }
+            if (object.cieAddTagMask2) {
+                if (!Array.isArray(object.cieAddTagMask2))
+                    throw TypeError(".dfproto.ListEnumsOut.cieAddTagMask2: array expected");
+                message.cieAddTagMask2 = [];
+                for (var i = 0; i < object.cieAddTagMask2.length; ++i) {
+                    if (typeof object.cieAddTagMask2[i] !== "object")
+                        throw TypeError(".dfproto.ListEnumsOut.cieAddTagMask2: object expected");
+                    message.cieAddTagMask2[i] = $root.dfproto.EnumItemName.fromObject(object.cieAddTagMask2[i]);
+                }
+            }
+            if (object.deathInfoFlags) {
+                if (!Array.isArray(object.deathInfoFlags))
+                    throw TypeError(".dfproto.ListEnumsOut.deathInfoFlags: array expected");
+                message.deathInfoFlags = [];
+                for (var i = 0; i < object.deathInfoFlags.length; ++i) {
+                    if (typeof object.deathInfoFlags[i] !== "object")
+                        throw TypeError(".dfproto.ListEnumsOut.deathInfoFlags: object expected");
+                    message.deathInfoFlags[i] = $root.dfproto.EnumItemName.fromObject(object.deathInfoFlags[i]);
+                }
+            }
+            if (object.profession) {
+                if (!Array.isArray(object.profession))
+                    throw TypeError(".dfproto.ListEnumsOut.profession: array expected");
+                message.profession = [];
+                for (var i = 0; i < object.profession.length; ++i) {
+                    if (typeof object.profession[i] !== "object")
+                        throw TypeError(".dfproto.ListEnumsOut.profession: object expected");
+                    message.profession[i] = $root.dfproto.EnumItemName.fromObject(object.profession[i]);
+                }
             }
             return message;
         };
 
         /**
-         * Creates a plain object from a RawNames message. Also converts values to other types if specified.
+         * Creates a plain object from a ListEnumsOut message. Also converts values to other types if specified.
          * @function toObject
-         * @memberof isoworldremote.RawNames
+         * @memberof dfproto.ListEnumsOut
          * @static
-         * @param {isoworldremote.RawNames} message RawNames
+         * @param {dfproto.ListEnumsOut} message ListEnumsOut
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        RawNames.toObject = function toObject(message, options) {
+        ListEnumsOut.toObject = function toObject(message, options) {
             if (!options)
                 options = {};
             var object = {};
             if (options.arrays || options.defaults) {
-                object.inorganic = [];
-                object.organic = [];
+                object.materialFlags = [];
+                object.inorganicFlags = [];
+                object.unitFlags1 = [];
+                object.unitFlags2 = [];
+                object.unitFlags3 = [];
+                object.unitLabor = [];
+                object.jobSkill = [];
+                object.cieAddTagMask1 = [];
+                object.cieAddTagMask2 = [];
+                object.deathInfoFlags = [];
+                object.profession = [];
             }
-            if (options.defaults)
-                object.available = false;
-            if (message.available != null && message.hasOwnProperty("available"))
-                object.available = message.available;
-            if (message.inorganic && message.inorganic.length) {
-                object.inorganic = [];
-                for (var j = 0; j < message.inorganic.length; ++j)
-                    object.inorganic[j] = message.inorganic[j];
+            if (message.materialFlags && message.materialFlags.length) {
+                object.materialFlags = [];
+                for (var j = 0; j < message.materialFlags.length; ++j)
+                    object.materialFlags[j] = $root.dfproto.EnumItemName.toObject(message.materialFlags[j], options);
             }
-            if (message.organic && message.organic.length) {
-                object.organic = [];
-                for (var j = 0; j < message.organic.length; ++j)
-                    object.organic[j] = message.organic[j];
+            if (message.inorganicFlags && message.inorganicFlags.length) {
+                object.inorganicFlags = [];
+                for (var j = 0; j < message.inorganicFlags.length; ++j)
+                    object.inorganicFlags[j] = $root.dfproto.EnumItemName.toObject(message.inorganicFlags[j], options);
+            }
+            if (message.unitFlags1 && message.unitFlags1.length) {
+                object.unitFlags1 = [];
+                for (var j = 0; j < message.unitFlags1.length; ++j)
+                    object.unitFlags1[j] = $root.dfproto.EnumItemName.toObject(message.unitFlags1[j], options);
+            }
+            if (message.unitFlags2 && message.unitFlags2.length) {
+                object.unitFlags2 = [];
+                for (var j = 0; j < message.unitFlags2.length; ++j)
+                    object.unitFlags2[j] = $root.dfproto.EnumItemName.toObject(message.unitFlags2[j], options);
+            }
+            if (message.unitFlags3 && message.unitFlags3.length) {
+                object.unitFlags3 = [];
+                for (var j = 0; j < message.unitFlags3.length; ++j)
+                    object.unitFlags3[j] = $root.dfproto.EnumItemName.toObject(message.unitFlags3[j], options);
+            }
+            if (message.unitLabor && message.unitLabor.length) {
+                object.unitLabor = [];
+                for (var j = 0; j < message.unitLabor.length; ++j)
+                    object.unitLabor[j] = $root.dfproto.EnumItemName.toObject(message.unitLabor[j], options);
+            }
+            if (message.jobSkill && message.jobSkill.length) {
+                object.jobSkill = [];
+                for (var j = 0; j < message.jobSkill.length; ++j)
+                    object.jobSkill[j] = $root.dfproto.EnumItemName.toObject(message.jobSkill[j], options);
+            }
+            if (message.cieAddTagMask1 && message.cieAddTagMask1.length) {
+                object.cieAddTagMask1 = [];
+                for (var j = 0; j < message.cieAddTagMask1.length; ++j)
+                    object.cieAddTagMask1[j] = $root.dfproto.EnumItemName.toObject(message.cieAddTagMask1[j], options);
+            }
+            if (message.cieAddTagMask2 && message.cieAddTagMask2.length) {
+                object.cieAddTagMask2 = [];
+                for (var j = 0; j < message.cieAddTagMask2.length; ++j)
+                    object.cieAddTagMask2[j] = $root.dfproto.EnumItemName.toObject(message.cieAddTagMask2[j], options);
+            }
+            if (message.deathInfoFlags && message.deathInfoFlags.length) {
+                object.deathInfoFlags = [];
+                for (var j = 0; j < message.deathInfoFlags.length; ++j)
+                    object.deathInfoFlags[j] = $root.dfproto.EnumItemName.toObject(message.deathInfoFlags[j], options);
+            }
+            if (message.profession && message.profession.length) {
+                object.profession = [];
+                for (var j = 0; j < message.profession.length; ++j)
+                    object.profession[j] = $root.dfproto.EnumItemName.toObject(message.profession[j], options);
             }
             return object;
         };
 
         /**
-         * Converts this RawNames to JSON.
+         * Converts this ListEnumsOut to JSON.
          * @function toJSON
-         * @memberof isoworldremote.RawNames
+         * @memberof dfproto.ListEnumsOut
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        RawNames.prototype.toJSON = function toJSON() {
+        ListEnumsOut.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
-        return RawNames;
+        return ListEnumsOut;
     })();
 
-    return isoworldremote;
+    dfproto.ListJobSkillsOut = (function() {
+
+        /**
+         * Properties of a ListJobSkillsOut.
+         * @memberof dfproto
+         * @interface IListJobSkillsOut
+         * @property {Array.<dfproto.IJobSkillAttr>|null} [skill] ListJobSkillsOut skill
+         * @property {Array.<dfproto.IProfessionAttr>|null} [profession] ListJobSkillsOut profession
+         * @property {Array.<dfproto.IUnitLaborAttr>|null} [labor] ListJobSkillsOut labor
+         */
+
+        /**
+         * Constructs a new ListJobSkillsOut.
+         * @memberof dfproto
+         * @classdesc Represents a ListJobSkillsOut.
+         * @implements IListJobSkillsOut
+         * @constructor
+         * @param {dfproto.IListJobSkillsOut=} [properties] Properties to set
+         */
+        function ListJobSkillsOut(properties) {
+            this.skill = [];
+            this.profession = [];
+            this.labor = [];
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * ListJobSkillsOut skill.
+         * @member {Array.<dfproto.IJobSkillAttr>} skill
+         * @memberof dfproto.ListJobSkillsOut
+         * @instance
+         */
+        ListJobSkillsOut.prototype.skill = $util.emptyArray;
+
+        /**
+         * ListJobSkillsOut profession.
+         * @member {Array.<dfproto.IProfessionAttr>} profession
+         * @memberof dfproto.ListJobSkillsOut
+         * @instance
+         */
+        ListJobSkillsOut.prototype.profession = $util.emptyArray;
+
+        /**
+         * ListJobSkillsOut labor.
+         * @member {Array.<dfproto.IUnitLaborAttr>} labor
+         * @memberof dfproto.ListJobSkillsOut
+         * @instance
+         */
+        ListJobSkillsOut.prototype.labor = $util.emptyArray;
+
+        /**
+         * Creates a new ListJobSkillsOut instance using the specified properties.
+         * @function create
+         * @memberof dfproto.ListJobSkillsOut
+         * @static
+         * @param {dfproto.IListJobSkillsOut=} [properties] Properties to set
+         * @returns {dfproto.ListJobSkillsOut} ListJobSkillsOut instance
+         */
+        ListJobSkillsOut.create = function create(properties) {
+            return new ListJobSkillsOut(properties);
+        };
+
+        /**
+         * Encodes the specified ListJobSkillsOut message. Does not implicitly {@link dfproto.ListJobSkillsOut.verify|verify} messages.
+         * @function encode
+         * @memberof dfproto.ListJobSkillsOut
+         * @static
+         * @param {dfproto.IListJobSkillsOut} message ListJobSkillsOut message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        ListJobSkillsOut.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.skill != null && message.skill.length)
+                for (var i = 0; i < message.skill.length; ++i)
+                    $root.dfproto.JobSkillAttr.encode(message.skill[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+            if (message.profession != null && message.profession.length)
+                for (var i = 0; i < message.profession.length; ++i)
+                    $root.dfproto.ProfessionAttr.encode(message.profession[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+            if (message.labor != null && message.labor.length)
+                for (var i = 0; i < message.labor.length; ++i)
+                    $root.dfproto.UnitLaborAttr.encode(message.labor[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+            return writer;
+        };
+
+        /**
+         * Encodes the specified ListJobSkillsOut message, length delimited. Does not implicitly {@link dfproto.ListJobSkillsOut.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof dfproto.ListJobSkillsOut
+         * @static
+         * @param {dfproto.IListJobSkillsOut} message ListJobSkillsOut message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        ListJobSkillsOut.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a ListJobSkillsOut message from the specified reader or buffer.
+         * @function decode
+         * @memberof dfproto.ListJobSkillsOut
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {dfproto.ListJobSkillsOut} ListJobSkillsOut
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        ListJobSkillsOut.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.dfproto.ListJobSkillsOut();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    if (!(message.skill && message.skill.length))
+                        message.skill = [];
+                    message.skill.push($root.dfproto.JobSkillAttr.decode(reader, reader.uint32()));
+                    break;
+                case 2:
+                    if (!(message.profession && message.profession.length))
+                        message.profession = [];
+                    message.profession.push($root.dfproto.ProfessionAttr.decode(reader, reader.uint32()));
+                    break;
+                case 3:
+                    if (!(message.labor && message.labor.length))
+                        message.labor = [];
+                    message.labor.push($root.dfproto.UnitLaborAttr.decode(reader, reader.uint32()));
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a ListJobSkillsOut message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof dfproto.ListJobSkillsOut
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {dfproto.ListJobSkillsOut} ListJobSkillsOut
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        ListJobSkillsOut.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a ListJobSkillsOut message.
+         * @function verify
+         * @memberof dfproto.ListJobSkillsOut
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        ListJobSkillsOut.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.skill != null && message.hasOwnProperty("skill")) {
+                if (!Array.isArray(message.skill))
+                    return "skill: array expected";
+                for (var i = 0; i < message.skill.length; ++i) {
+                    var error = $root.dfproto.JobSkillAttr.verify(message.skill[i]);
+                    if (error)
+                        return "skill." + error;
+                }
+            }
+            if (message.profession != null && message.hasOwnProperty("profession")) {
+                if (!Array.isArray(message.profession))
+                    return "profession: array expected";
+                for (var i = 0; i < message.profession.length; ++i) {
+                    var error = $root.dfproto.ProfessionAttr.verify(message.profession[i]);
+                    if (error)
+                        return "profession." + error;
+                }
+            }
+            if (message.labor != null && message.hasOwnProperty("labor")) {
+                if (!Array.isArray(message.labor))
+                    return "labor: array expected";
+                for (var i = 0; i < message.labor.length; ++i) {
+                    var error = $root.dfproto.UnitLaborAttr.verify(message.labor[i]);
+                    if (error)
+                        return "labor." + error;
+                }
+            }
+            return null;
+        };
+
+        /**
+         * Creates a ListJobSkillsOut message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof dfproto.ListJobSkillsOut
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {dfproto.ListJobSkillsOut} ListJobSkillsOut
+         */
+        ListJobSkillsOut.fromObject = function fromObject(object) {
+            if (object instanceof $root.dfproto.ListJobSkillsOut)
+                return object;
+            var message = new $root.dfproto.ListJobSkillsOut();
+            if (object.skill) {
+                if (!Array.isArray(object.skill))
+                    throw TypeError(".dfproto.ListJobSkillsOut.skill: array expected");
+                message.skill = [];
+                for (var i = 0; i < object.skill.length; ++i) {
+                    if (typeof object.skill[i] !== "object")
+                        throw TypeError(".dfproto.ListJobSkillsOut.skill: object expected");
+                    message.skill[i] = $root.dfproto.JobSkillAttr.fromObject(object.skill[i]);
+                }
+            }
+            if (object.profession) {
+                if (!Array.isArray(object.profession))
+                    throw TypeError(".dfproto.ListJobSkillsOut.profession: array expected");
+                message.profession = [];
+                for (var i = 0; i < object.profession.length; ++i) {
+                    if (typeof object.profession[i] !== "object")
+                        throw TypeError(".dfproto.ListJobSkillsOut.profession: object expected");
+                    message.profession[i] = $root.dfproto.ProfessionAttr.fromObject(object.profession[i]);
+                }
+            }
+            if (object.labor) {
+                if (!Array.isArray(object.labor))
+                    throw TypeError(".dfproto.ListJobSkillsOut.labor: array expected");
+                message.labor = [];
+                for (var i = 0; i < object.labor.length; ++i) {
+                    if (typeof object.labor[i] !== "object")
+                        throw TypeError(".dfproto.ListJobSkillsOut.labor: object expected");
+                    message.labor[i] = $root.dfproto.UnitLaborAttr.fromObject(object.labor[i]);
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a ListJobSkillsOut message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof dfproto.ListJobSkillsOut
+         * @static
+         * @param {dfproto.ListJobSkillsOut} message ListJobSkillsOut
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        ListJobSkillsOut.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.arrays || options.defaults) {
+                object.skill = [];
+                object.profession = [];
+                object.labor = [];
+            }
+            if (message.skill && message.skill.length) {
+                object.skill = [];
+                for (var j = 0; j < message.skill.length; ++j)
+                    object.skill[j] = $root.dfproto.JobSkillAttr.toObject(message.skill[j], options);
+            }
+            if (message.profession && message.profession.length) {
+                object.profession = [];
+                for (var j = 0; j < message.profession.length; ++j)
+                    object.profession[j] = $root.dfproto.ProfessionAttr.toObject(message.profession[j], options);
+            }
+            if (message.labor && message.labor.length) {
+                object.labor = [];
+                for (var j = 0; j < message.labor.length; ++j)
+                    object.labor[j] = $root.dfproto.UnitLaborAttr.toObject(message.labor[j], options);
+            }
+            return object;
+        };
+
+        /**
+         * Converts this ListJobSkillsOut to JSON.
+         * @function toJSON
+         * @memberof dfproto.ListJobSkillsOut
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        ListJobSkillsOut.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return ListJobSkillsOut;
+    })();
+
+    dfproto.ListMaterialsIn = (function() {
+
+        /**
+         * Properties of a ListMaterialsIn.
+         * @memberof dfproto
+         * @interface IListMaterialsIn
+         * @property {dfproto.IBasicMaterialInfoMask|null} [mask] ListMaterialsIn mask
+         * @property {Array.<dfproto.IBasicMaterialId>|null} [idList] ListMaterialsIn idList
+         * @property {boolean|null} [builtin] ListMaterialsIn builtin
+         * @property {boolean|null} [inorganic] ListMaterialsIn inorganic
+         * @property {boolean|null} [creatures] ListMaterialsIn creatures
+         * @property {boolean|null} [plants] ListMaterialsIn plants
+         */
+
+        /**
+         * Constructs a new ListMaterialsIn.
+         * @memberof dfproto
+         * @classdesc Represents a ListMaterialsIn.
+         * @implements IListMaterialsIn
+         * @constructor
+         * @param {dfproto.IListMaterialsIn=} [properties] Properties to set
+         */
+        function ListMaterialsIn(properties) {
+            this.idList = [];
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * ListMaterialsIn mask.
+         * @member {dfproto.IBasicMaterialInfoMask|null|undefined} mask
+         * @memberof dfproto.ListMaterialsIn
+         * @instance
+         */
+        ListMaterialsIn.prototype.mask = null;
+
+        /**
+         * ListMaterialsIn idList.
+         * @member {Array.<dfproto.IBasicMaterialId>} idList
+         * @memberof dfproto.ListMaterialsIn
+         * @instance
+         */
+        ListMaterialsIn.prototype.idList = $util.emptyArray;
+
+        /**
+         * ListMaterialsIn builtin.
+         * @member {boolean} builtin
+         * @memberof dfproto.ListMaterialsIn
+         * @instance
+         */
+        ListMaterialsIn.prototype.builtin = false;
+
+        /**
+         * ListMaterialsIn inorganic.
+         * @member {boolean} inorganic
+         * @memberof dfproto.ListMaterialsIn
+         * @instance
+         */
+        ListMaterialsIn.prototype.inorganic = false;
+
+        /**
+         * ListMaterialsIn creatures.
+         * @member {boolean} creatures
+         * @memberof dfproto.ListMaterialsIn
+         * @instance
+         */
+        ListMaterialsIn.prototype.creatures = false;
+
+        /**
+         * ListMaterialsIn plants.
+         * @member {boolean} plants
+         * @memberof dfproto.ListMaterialsIn
+         * @instance
+         */
+        ListMaterialsIn.prototype.plants = false;
+
+        /**
+         * Creates a new ListMaterialsIn instance using the specified properties.
+         * @function create
+         * @memberof dfproto.ListMaterialsIn
+         * @static
+         * @param {dfproto.IListMaterialsIn=} [properties] Properties to set
+         * @returns {dfproto.ListMaterialsIn} ListMaterialsIn instance
+         */
+        ListMaterialsIn.create = function create(properties) {
+            return new ListMaterialsIn(properties);
+        };
+
+        /**
+         * Encodes the specified ListMaterialsIn message. Does not implicitly {@link dfproto.ListMaterialsIn.verify|verify} messages.
+         * @function encode
+         * @memberof dfproto.ListMaterialsIn
+         * @static
+         * @param {dfproto.IListMaterialsIn} message ListMaterialsIn message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        ListMaterialsIn.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.mask != null && Object.hasOwnProperty.call(message, "mask"))
+                $root.dfproto.BasicMaterialInfoMask.encode(message.mask, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+            if (message.idList != null && message.idList.length)
+                for (var i = 0; i < message.idList.length; ++i)
+                    $root.dfproto.BasicMaterialId.encode(message.idList[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+            if (message.builtin != null && Object.hasOwnProperty.call(message, "builtin"))
+                writer.uint32(/* id 3, wireType 0 =*/24).bool(message.builtin);
+            if (message.inorganic != null && Object.hasOwnProperty.call(message, "inorganic"))
+                writer.uint32(/* id 4, wireType 0 =*/32).bool(message.inorganic);
+            if (message.creatures != null && Object.hasOwnProperty.call(message, "creatures"))
+                writer.uint32(/* id 5, wireType 0 =*/40).bool(message.creatures);
+            if (message.plants != null && Object.hasOwnProperty.call(message, "plants"))
+                writer.uint32(/* id 6, wireType 0 =*/48).bool(message.plants);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified ListMaterialsIn message, length delimited. Does not implicitly {@link dfproto.ListMaterialsIn.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof dfproto.ListMaterialsIn
+         * @static
+         * @param {dfproto.IListMaterialsIn} message ListMaterialsIn message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        ListMaterialsIn.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a ListMaterialsIn message from the specified reader or buffer.
+         * @function decode
+         * @memberof dfproto.ListMaterialsIn
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {dfproto.ListMaterialsIn} ListMaterialsIn
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        ListMaterialsIn.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.dfproto.ListMaterialsIn();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    message.mask = $root.dfproto.BasicMaterialInfoMask.decode(reader, reader.uint32());
+                    break;
+                case 2:
+                    if (!(message.idList && message.idList.length))
+                        message.idList = [];
+                    message.idList.push($root.dfproto.BasicMaterialId.decode(reader, reader.uint32()));
+                    break;
+                case 3:
+                    message.builtin = reader.bool();
+                    break;
+                case 4:
+                    message.inorganic = reader.bool();
+                    break;
+                case 5:
+                    message.creatures = reader.bool();
+                    break;
+                case 6:
+                    message.plants = reader.bool();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a ListMaterialsIn message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof dfproto.ListMaterialsIn
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {dfproto.ListMaterialsIn} ListMaterialsIn
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        ListMaterialsIn.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a ListMaterialsIn message.
+         * @function verify
+         * @memberof dfproto.ListMaterialsIn
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        ListMaterialsIn.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.mask != null && message.hasOwnProperty("mask")) {
+                var error = $root.dfproto.BasicMaterialInfoMask.verify(message.mask);
+                if (error)
+                    return "mask." + error;
+            }
+            if (message.idList != null && message.hasOwnProperty("idList")) {
+                if (!Array.isArray(message.idList))
+                    return "idList: array expected";
+                for (var i = 0; i < message.idList.length; ++i) {
+                    var error = $root.dfproto.BasicMaterialId.verify(message.idList[i]);
+                    if (error)
+                        return "idList." + error;
+                }
+            }
+            if (message.builtin != null && message.hasOwnProperty("builtin"))
+                if (typeof message.builtin !== "boolean")
+                    return "builtin: boolean expected";
+            if (message.inorganic != null && message.hasOwnProperty("inorganic"))
+                if (typeof message.inorganic !== "boolean")
+                    return "inorganic: boolean expected";
+            if (message.creatures != null && message.hasOwnProperty("creatures"))
+                if (typeof message.creatures !== "boolean")
+                    return "creatures: boolean expected";
+            if (message.plants != null && message.hasOwnProperty("plants"))
+                if (typeof message.plants !== "boolean")
+                    return "plants: boolean expected";
+            return null;
+        };
+
+        /**
+         * Creates a ListMaterialsIn message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof dfproto.ListMaterialsIn
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {dfproto.ListMaterialsIn} ListMaterialsIn
+         */
+        ListMaterialsIn.fromObject = function fromObject(object) {
+            if (object instanceof $root.dfproto.ListMaterialsIn)
+                return object;
+            var message = new $root.dfproto.ListMaterialsIn();
+            if (object.mask != null) {
+                if (typeof object.mask !== "object")
+                    throw TypeError(".dfproto.ListMaterialsIn.mask: object expected");
+                message.mask = $root.dfproto.BasicMaterialInfoMask.fromObject(object.mask);
+            }
+            if (object.idList) {
+                if (!Array.isArray(object.idList))
+                    throw TypeError(".dfproto.ListMaterialsIn.idList: array expected");
+                message.idList = [];
+                for (var i = 0; i < object.idList.length; ++i) {
+                    if (typeof object.idList[i] !== "object")
+                        throw TypeError(".dfproto.ListMaterialsIn.idList: object expected");
+                    message.idList[i] = $root.dfproto.BasicMaterialId.fromObject(object.idList[i]);
+                }
+            }
+            if (object.builtin != null)
+                message.builtin = Boolean(object.builtin);
+            if (object.inorganic != null)
+                message.inorganic = Boolean(object.inorganic);
+            if (object.creatures != null)
+                message.creatures = Boolean(object.creatures);
+            if (object.plants != null)
+                message.plants = Boolean(object.plants);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a ListMaterialsIn message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof dfproto.ListMaterialsIn
+         * @static
+         * @param {dfproto.ListMaterialsIn} message ListMaterialsIn
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        ListMaterialsIn.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.arrays || options.defaults)
+                object.idList = [];
+            if (options.defaults) {
+                object.mask = null;
+                object.builtin = false;
+                object.inorganic = false;
+                object.creatures = false;
+                object.plants = false;
+            }
+            if (message.mask != null && message.hasOwnProperty("mask"))
+                object.mask = $root.dfproto.BasicMaterialInfoMask.toObject(message.mask, options);
+            if (message.idList && message.idList.length) {
+                object.idList = [];
+                for (var j = 0; j < message.idList.length; ++j)
+                    object.idList[j] = $root.dfproto.BasicMaterialId.toObject(message.idList[j], options);
+            }
+            if (message.builtin != null && message.hasOwnProperty("builtin"))
+                object.builtin = message.builtin;
+            if (message.inorganic != null && message.hasOwnProperty("inorganic"))
+                object.inorganic = message.inorganic;
+            if (message.creatures != null && message.hasOwnProperty("creatures"))
+                object.creatures = message.creatures;
+            if (message.plants != null && message.hasOwnProperty("plants"))
+                object.plants = message.plants;
+            return object;
+        };
+
+        /**
+         * Converts this ListMaterialsIn to JSON.
+         * @function toJSON
+         * @memberof dfproto.ListMaterialsIn
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        ListMaterialsIn.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return ListMaterialsIn;
+    })();
+
+    dfproto.ListMaterialsOut = (function() {
+
+        /**
+         * Properties of a ListMaterialsOut.
+         * @memberof dfproto
+         * @interface IListMaterialsOut
+         * @property {Array.<dfproto.IBasicMaterialInfo>|null} [value] ListMaterialsOut value
+         */
+
+        /**
+         * Constructs a new ListMaterialsOut.
+         * @memberof dfproto
+         * @classdesc Represents a ListMaterialsOut.
+         * @implements IListMaterialsOut
+         * @constructor
+         * @param {dfproto.IListMaterialsOut=} [properties] Properties to set
+         */
+        function ListMaterialsOut(properties) {
+            this.value = [];
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * ListMaterialsOut value.
+         * @member {Array.<dfproto.IBasicMaterialInfo>} value
+         * @memberof dfproto.ListMaterialsOut
+         * @instance
+         */
+        ListMaterialsOut.prototype.value = $util.emptyArray;
+
+        /**
+         * Creates a new ListMaterialsOut instance using the specified properties.
+         * @function create
+         * @memberof dfproto.ListMaterialsOut
+         * @static
+         * @param {dfproto.IListMaterialsOut=} [properties] Properties to set
+         * @returns {dfproto.ListMaterialsOut} ListMaterialsOut instance
+         */
+        ListMaterialsOut.create = function create(properties) {
+            return new ListMaterialsOut(properties);
+        };
+
+        /**
+         * Encodes the specified ListMaterialsOut message. Does not implicitly {@link dfproto.ListMaterialsOut.verify|verify} messages.
+         * @function encode
+         * @memberof dfproto.ListMaterialsOut
+         * @static
+         * @param {dfproto.IListMaterialsOut} message ListMaterialsOut message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        ListMaterialsOut.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.value != null && message.value.length)
+                for (var i = 0; i < message.value.length; ++i)
+                    $root.dfproto.BasicMaterialInfo.encode(message.value[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+            return writer;
+        };
+
+        /**
+         * Encodes the specified ListMaterialsOut message, length delimited. Does not implicitly {@link dfproto.ListMaterialsOut.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof dfproto.ListMaterialsOut
+         * @static
+         * @param {dfproto.IListMaterialsOut} message ListMaterialsOut message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        ListMaterialsOut.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a ListMaterialsOut message from the specified reader or buffer.
+         * @function decode
+         * @memberof dfproto.ListMaterialsOut
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {dfproto.ListMaterialsOut} ListMaterialsOut
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        ListMaterialsOut.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.dfproto.ListMaterialsOut();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    if (!(message.value && message.value.length))
+                        message.value = [];
+                    message.value.push($root.dfproto.BasicMaterialInfo.decode(reader, reader.uint32()));
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a ListMaterialsOut message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof dfproto.ListMaterialsOut
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {dfproto.ListMaterialsOut} ListMaterialsOut
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        ListMaterialsOut.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a ListMaterialsOut message.
+         * @function verify
+         * @memberof dfproto.ListMaterialsOut
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        ListMaterialsOut.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.value != null && message.hasOwnProperty("value")) {
+                if (!Array.isArray(message.value))
+                    return "value: array expected";
+                for (var i = 0; i < message.value.length; ++i) {
+                    var error = $root.dfproto.BasicMaterialInfo.verify(message.value[i]);
+                    if (error)
+                        return "value." + error;
+                }
+            }
+            return null;
+        };
+
+        /**
+         * Creates a ListMaterialsOut message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof dfproto.ListMaterialsOut
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {dfproto.ListMaterialsOut} ListMaterialsOut
+         */
+        ListMaterialsOut.fromObject = function fromObject(object) {
+            if (object instanceof $root.dfproto.ListMaterialsOut)
+                return object;
+            var message = new $root.dfproto.ListMaterialsOut();
+            if (object.value) {
+                if (!Array.isArray(object.value))
+                    throw TypeError(".dfproto.ListMaterialsOut.value: array expected");
+                message.value = [];
+                for (var i = 0; i < object.value.length; ++i) {
+                    if (typeof object.value[i] !== "object")
+                        throw TypeError(".dfproto.ListMaterialsOut.value: object expected");
+                    message.value[i] = $root.dfproto.BasicMaterialInfo.fromObject(object.value[i]);
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a ListMaterialsOut message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof dfproto.ListMaterialsOut
+         * @static
+         * @param {dfproto.ListMaterialsOut} message ListMaterialsOut
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        ListMaterialsOut.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.arrays || options.defaults)
+                object.value = [];
+            if (message.value && message.value.length) {
+                object.value = [];
+                for (var j = 0; j < message.value.length; ++j)
+                    object.value[j] = $root.dfproto.BasicMaterialInfo.toObject(message.value[j], options);
+            }
+            return object;
+        };
+
+        /**
+         * Converts this ListMaterialsOut to JSON.
+         * @function toJSON
+         * @memberof dfproto.ListMaterialsOut
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        ListMaterialsOut.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return ListMaterialsOut;
+    })();
+
+    dfproto.ListUnitsIn = (function() {
+
+        /**
+         * Properties of a ListUnitsIn.
+         * @memberof dfproto
+         * @interface IListUnitsIn
+         * @property {dfproto.IBasicUnitInfoMask|null} [mask] ListUnitsIn mask
+         * @property {Array.<number>|null} [idList] ListUnitsIn idList
+         * @property {boolean|null} [scanAll] ListUnitsIn scanAll
+         * @property {number|null} [race] ListUnitsIn race
+         * @property {number|null} [civId] ListUnitsIn civId
+         * @property {boolean|null} [dead] ListUnitsIn dead
+         * @property {boolean|null} [alive] ListUnitsIn alive
+         * @property {boolean|null} [sane] ListUnitsIn sane
+         */
+
+        /**
+         * Constructs a new ListUnitsIn.
+         * @memberof dfproto
+         * @classdesc Represents a ListUnitsIn.
+         * @implements IListUnitsIn
+         * @constructor
+         * @param {dfproto.IListUnitsIn=} [properties] Properties to set
+         */
+        function ListUnitsIn(properties) {
+            this.idList = [];
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * ListUnitsIn mask.
+         * @member {dfproto.IBasicUnitInfoMask|null|undefined} mask
+         * @memberof dfproto.ListUnitsIn
+         * @instance
+         */
+        ListUnitsIn.prototype.mask = null;
+
+        /**
+         * ListUnitsIn idList.
+         * @member {Array.<number>} idList
+         * @memberof dfproto.ListUnitsIn
+         * @instance
+         */
+        ListUnitsIn.prototype.idList = $util.emptyArray;
+
+        /**
+         * ListUnitsIn scanAll.
+         * @member {boolean} scanAll
+         * @memberof dfproto.ListUnitsIn
+         * @instance
+         */
+        ListUnitsIn.prototype.scanAll = false;
+
+        /**
+         * ListUnitsIn race.
+         * @member {number} race
+         * @memberof dfproto.ListUnitsIn
+         * @instance
+         */
+        ListUnitsIn.prototype.race = 0;
+
+        /**
+         * ListUnitsIn civId.
+         * @member {number} civId
+         * @memberof dfproto.ListUnitsIn
+         * @instance
+         */
+        ListUnitsIn.prototype.civId = 0;
+
+        /**
+         * ListUnitsIn dead.
+         * @member {boolean} dead
+         * @memberof dfproto.ListUnitsIn
+         * @instance
+         */
+        ListUnitsIn.prototype.dead = false;
+
+        /**
+         * ListUnitsIn alive.
+         * @member {boolean} alive
+         * @memberof dfproto.ListUnitsIn
+         * @instance
+         */
+        ListUnitsIn.prototype.alive = false;
+
+        /**
+         * ListUnitsIn sane.
+         * @member {boolean} sane
+         * @memberof dfproto.ListUnitsIn
+         * @instance
+         */
+        ListUnitsIn.prototype.sane = false;
+
+        /**
+         * Creates a new ListUnitsIn instance using the specified properties.
+         * @function create
+         * @memberof dfproto.ListUnitsIn
+         * @static
+         * @param {dfproto.IListUnitsIn=} [properties] Properties to set
+         * @returns {dfproto.ListUnitsIn} ListUnitsIn instance
+         */
+        ListUnitsIn.create = function create(properties) {
+            return new ListUnitsIn(properties);
+        };
+
+        /**
+         * Encodes the specified ListUnitsIn message. Does not implicitly {@link dfproto.ListUnitsIn.verify|verify} messages.
+         * @function encode
+         * @memberof dfproto.ListUnitsIn
+         * @static
+         * @param {dfproto.IListUnitsIn} message ListUnitsIn message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        ListUnitsIn.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.mask != null && Object.hasOwnProperty.call(message, "mask"))
+                $root.dfproto.BasicUnitInfoMask.encode(message.mask, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+            if (message.idList != null && message.idList.length)
+                for (var i = 0; i < message.idList.length; ++i)
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.idList[i]);
+            if (message.race != null && Object.hasOwnProperty.call(message, "race"))
+                writer.uint32(/* id 3, wireType 0 =*/24).int32(message.race);
+            if (message.civId != null && Object.hasOwnProperty.call(message, "civId"))
+                writer.uint32(/* id 4, wireType 0 =*/32).int32(message.civId);
+            if (message.scanAll != null && Object.hasOwnProperty.call(message, "scanAll"))
+                writer.uint32(/* id 5, wireType 0 =*/40).bool(message.scanAll);
+            if (message.dead != null && Object.hasOwnProperty.call(message, "dead"))
+                writer.uint32(/* id 6, wireType 0 =*/48).bool(message.dead);
+            if (message.alive != null && Object.hasOwnProperty.call(message, "alive"))
+                writer.uint32(/* id 7, wireType 0 =*/56).bool(message.alive);
+            if (message.sane != null && Object.hasOwnProperty.call(message, "sane"))
+                writer.uint32(/* id 8, wireType 0 =*/64).bool(message.sane);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified ListUnitsIn message, length delimited. Does not implicitly {@link dfproto.ListUnitsIn.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof dfproto.ListUnitsIn
+         * @static
+         * @param {dfproto.IListUnitsIn} message ListUnitsIn message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        ListUnitsIn.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a ListUnitsIn message from the specified reader or buffer.
+         * @function decode
+         * @memberof dfproto.ListUnitsIn
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {dfproto.ListUnitsIn} ListUnitsIn
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        ListUnitsIn.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.dfproto.ListUnitsIn();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    message.mask = $root.dfproto.BasicUnitInfoMask.decode(reader, reader.uint32());
+                    break;
+                case 2:
+                    if (!(message.idList && message.idList.length))
+                        message.idList = [];
+                    if ((tag & 7) === 2) {
+                        var end2 = reader.uint32() + reader.pos;
+                        while (reader.pos < end2)
+                            message.idList.push(reader.int32());
+                    } else
+                        message.idList.push(reader.int32());
+                    break;
+                case 5:
+                    message.scanAll = reader.bool();
+                    break;
+                case 3:
+                    message.race = reader.int32();
+                    break;
+                case 4:
+                    message.civId = reader.int32();
+                    break;
+                case 6:
+                    message.dead = reader.bool();
+                    break;
+                case 7:
+                    message.alive = reader.bool();
+                    break;
+                case 8:
+                    message.sane = reader.bool();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a ListUnitsIn message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof dfproto.ListUnitsIn
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {dfproto.ListUnitsIn} ListUnitsIn
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        ListUnitsIn.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a ListUnitsIn message.
+         * @function verify
+         * @memberof dfproto.ListUnitsIn
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        ListUnitsIn.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.mask != null && message.hasOwnProperty("mask")) {
+                var error = $root.dfproto.BasicUnitInfoMask.verify(message.mask);
+                if (error)
+                    return "mask." + error;
+            }
+            if (message.idList != null && message.hasOwnProperty("idList")) {
+                if (!Array.isArray(message.idList))
+                    return "idList: array expected";
+                for (var i = 0; i < message.idList.length; ++i)
+                    if (!$util.isInteger(message.idList[i]))
+                        return "idList: integer[] expected";
+            }
+            if (message.scanAll != null && message.hasOwnProperty("scanAll"))
+                if (typeof message.scanAll !== "boolean")
+                    return "scanAll: boolean expected";
+            if (message.race != null && message.hasOwnProperty("race"))
+                if (!$util.isInteger(message.race))
+                    return "race: integer expected";
+            if (message.civId != null && message.hasOwnProperty("civId"))
+                if (!$util.isInteger(message.civId))
+                    return "civId: integer expected";
+            if (message.dead != null && message.hasOwnProperty("dead"))
+                if (typeof message.dead !== "boolean")
+                    return "dead: boolean expected";
+            if (message.alive != null && message.hasOwnProperty("alive"))
+                if (typeof message.alive !== "boolean")
+                    return "alive: boolean expected";
+            if (message.sane != null && message.hasOwnProperty("sane"))
+                if (typeof message.sane !== "boolean")
+                    return "sane: boolean expected";
+            return null;
+        };
+
+        /**
+         * Creates a ListUnitsIn message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof dfproto.ListUnitsIn
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {dfproto.ListUnitsIn} ListUnitsIn
+         */
+        ListUnitsIn.fromObject = function fromObject(object) {
+            if (object instanceof $root.dfproto.ListUnitsIn)
+                return object;
+            var message = new $root.dfproto.ListUnitsIn();
+            if (object.mask != null) {
+                if (typeof object.mask !== "object")
+                    throw TypeError(".dfproto.ListUnitsIn.mask: object expected");
+                message.mask = $root.dfproto.BasicUnitInfoMask.fromObject(object.mask);
+            }
+            if (object.idList) {
+                if (!Array.isArray(object.idList))
+                    throw TypeError(".dfproto.ListUnitsIn.idList: array expected");
+                message.idList = [];
+                for (var i = 0; i < object.idList.length; ++i)
+                    message.idList[i] = object.idList[i] | 0;
+            }
+            if (object.scanAll != null)
+                message.scanAll = Boolean(object.scanAll);
+            if (object.race != null)
+                message.race = object.race | 0;
+            if (object.civId != null)
+                message.civId = object.civId | 0;
+            if (object.dead != null)
+                message.dead = Boolean(object.dead);
+            if (object.alive != null)
+                message.alive = Boolean(object.alive);
+            if (object.sane != null)
+                message.sane = Boolean(object.sane);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a ListUnitsIn message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof dfproto.ListUnitsIn
+         * @static
+         * @param {dfproto.ListUnitsIn} message ListUnitsIn
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        ListUnitsIn.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.arrays || options.defaults)
+                object.idList = [];
+            if (options.defaults) {
+                object.mask = null;
+                object.race = 0;
+                object.civId = 0;
+                object.scanAll = false;
+                object.dead = false;
+                object.alive = false;
+                object.sane = false;
+            }
+            if (message.mask != null && message.hasOwnProperty("mask"))
+                object.mask = $root.dfproto.BasicUnitInfoMask.toObject(message.mask, options);
+            if (message.idList && message.idList.length) {
+                object.idList = [];
+                for (var j = 0; j < message.idList.length; ++j)
+                    object.idList[j] = message.idList[j];
+            }
+            if (message.race != null && message.hasOwnProperty("race"))
+                object.race = message.race;
+            if (message.civId != null && message.hasOwnProperty("civId"))
+                object.civId = message.civId;
+            if (message.scanAll != null && message.hasOwnProperty("scanAll"))
+                object.scanAll = message.scanAll;
+            if (message.dead != null && message.hasOwnProperty("dead"))
+                object.dead = message.dead;
+            if (message.alive != null && message.hasOwnProperty("alive"))
+                object.alive = message.alive;
+            if (message.sane != null && message.hasOwnProperty("sane"))
+                object.sane = message.sane;
+            return object;
+        };
+
+        /**
+         * Converts this ListUnitsIn to JSON.
+         * @function toJSON
+         * @memberof dfproto.ListUnitsIn
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        ListUnitsIn.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return ListUnitsIn;
+    })();
+
+    dfproto.ListUnitsOut = (function() {
+
+        /**
+         * Properties of a ListUnitsOut.
+         * @memberof dfproto
+         * @interface IListUnitsOut
+         * @property {Array.<dfproto.IBasicUnitInfo>|null} [value] ListUnitsOut value
+         */
+
+        /**
+         * Constructs a new ListUnitsOut.
+         * @memberof dfproto
+         * @classdesc Represents a ListUnitsOut.
+         * @implements IListUnitsOut
+         * @constructor
+         * @param {dfproto.IListUnitsOut=} [properties] Properties to set
+         */
+        function ListUnitsOut(properties) {
+            this.value = [];
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * ListUnitsOut value.
+         * @member {Array.<dfproto.IBasicUnitInfo>} value
+         * @memberof dfproto.ListUnitsOut
+         * @instance
+         */
+        ListUnitsOut.prototype.value = $util.emptyArray;
+
+        /**
+         * Creates a new ListUnitsOut instance using the specified properties.
+         * @function create
+         * @memberof dfproto.ListUnitsOut
+         * @static
+         * @param {dfproto.IListUnitsOut=} [properties] Properties to set
+         * @returns {dfproto.ListUnitsOut} ListUnitsOut instance
+         */
+        ListUnitsOut.create = function create(properties) {
+            return new ListUnitsOut(properties);
+        };
+
+        /**
+         * Encodes the specified ListUnitsOut message. Does not implicitly {@link dfproto.ListUnitsOut.verify|verify} messages.
+         * @function encode
+         * @memberof dfproto.ListUnitsOut
+         * @static
+         * @param {dfproto.IListUnitsOut} message ListUnitsOut message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        ListUnitsOut.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.value != null && message.value.length)
+                for (var i = 0; i < message.value.length; ++i)
+                    $root.dfproto.BasicUnitInfo.encode(message.value[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+            return writer;
+        };
+
+        /**
+         * Encodes the specified ListUnitsOut message, length delimited. Does not implicitly {@link dfproto.ListUnitsOut.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof dfproto.ListUnitsOut
+         * @static
+         * @param {dfproto.IListUnitsOut} message ListUnitsOut message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        ListUnitsOut.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a ListUnitsOut message from the specified reader or buffer.
+         * @function decode
+         * @memberof dfproto.ListUnitsOut
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {dfproto.ListUnitsOut} ListUnitsOut
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        ListUnitsOut.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.dfproto.ListUnitsOut();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    if (!(message.value && message.value.length))
+                        message.value = [];
+                    message.value.push($root.dfproto.BasicUnitInfo.decode(reader, reader.uint32()));
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a ListUnitsOut message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof dfproto.ListUnitsOut
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {dfproto.ListUnitsOut} ListUnitsOut
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        ListUnitsOut.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a ListUnitsOut message.
+         * @function verify
+         * @memberof dfproto.ListUnitsOut
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        ListUnitsOut.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.value != null && message.hasOwnProperty("value")) {
+                if (!Array.isArray(message.value))
+                    return "value: array expected";
+                for (var i = 0; i < message.value.length; ++i) {
+                    var error = $root.dfproto.BasicUnitInfo.verify(message.value[i]);
+                    if (error)
+                        return "value." + error;
+                }
+            }
+            return null;
+        };
+
+        /**
+         * Creates a ListUnitsOut message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof dfproto.ListUnitsOut
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {dfproto.ListUnitsOut} ListUnitsOut
+         */
+        ListUnitsOut.fromObject = function fromObject(object) {
+            if (object instanceof $root.dfproto.ListUnitsOut)
+                return object;
+            var message = new $root.dfproto.ListUnitsOut();
+            if (object.value) {
+                if (!Array.isArray(object.value))
+                    throw TypeError(".dfproto.ListUnitsOut.value: array expected");
+                message.value = [];
+                for (var i = 0; i < object.value.length; ++i) {
+                    if (typeof object.value[i] !== "object")
+                        throw TypeError(".dfproto.ListUnitsOut.value: object expected");
+                    message.value[i] = $root.dfproto.BasicUnitInfo.fromObject(object.value[i]);
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a ListUnitsOut message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof dfproto.ListUnitsOut
+         * @static
+         * @param {dfproto.ListUnitsOut} message ListUnitsOut
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        ListUnitsOut.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.arrays || options.defaults)
+                object.value = [];
+            if (message.value && message.value.length) {
+                object.value = [];
+                for (var j = 0; j < message.value.length; ++j)
+                    object.value[j] = $root.dfproto.BasicUnitInfo.toObject(message.value[j], options);
+            }
+            return object;
+        };
+
+        /**
+         * Converts this ListUnitsOut to JSON.
+         * @function toJSON
+         * @memberof dfproto.ListUnitsOut
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        ListUnitsOut.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return ListUnitsOut;
+    })();
+
+    dfproto.ListSquadsIn = (function() {
+
+        /**
+         * Properties of a ListSquadsIn.
+         * @memberof dfproto
+         * @interface IListSquadsIn
+         */
+
+        /**
+         * Constructs a new ListSquadsIn.
+         * @memberof dfproto
+         * @classdesc Represents a ListSquadsIn.
+         * @implements IListSquadsIn
+         * @constructor
+         * @param {dfproto.IListSquadsIn=} [properties] Properties to set
+         */
+        function ListSquadsIn(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * Creates a new ListSquadsIn instance using the specified properties.
+         * @function create
+         * @memberof dfproto.ListSquadsIn
+         * @static
+         * @param {dfproto.IListSquadsIn=} [properties] Properties to set
+         * @returns {dfproto.ListSquadsIn} ListSquadsIn instance
+         */
+        ListSquadsIn.create = function create(properties) {
+            return new ListSquadsIn(properties);
+        };
+
+        /**
+         * Encodes the specified ListSquadsIn message. Does not implicitly {@link dfproto.ListSquadsIn.verify|verify} messages.
+         * @function encode
+         * @memberof dfproto.ListSquadsIn
+         * @static
+         * @param {dfproto.IListSquadsIn} message ListSquadsIn message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        ListSquadsIn.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            return writer;
+        };
+
+        /**
+         * Encodes the specified ListSquadsIn message, length delimited. Does not implicitly {@link dfproto.ListSquadsIn.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof dfproto.ListSquadsIn
+         * @static
+         * @param {dfproto.IListSquadsIn} message ListSquadsIn message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        ListSquadsIn.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a ListSquadsIn message from the specified reader or buffer.
+         * @function decode
+         * @memberof dfproto.ListSquadsIn
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {dfproto.ListSquadsIn} ListSquadsIn
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        ListSquadsIn.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.dfproto.ListSquadsIn();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a ListSquadsIn message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof dfproto.ListSquadsIn
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {dfproto.ListSquadsIn} ListSquadsIn
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        ListSquadsIn.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a ListSquadsIn message.
+         * @function verify
+         * @memberof dfproto.ListSquadsIn
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        ListSquadsIn.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            return null;
+        };
+
+        /**
+         * Creates a ListSquadsIn message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof dfproto.ListSquadsIn
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {dfproto.ListSquadsIn} ListSquadsIn
+         */
+        ListSquadsIn.fromObject = function fromObject(object) {
+            if (object instanceof $root.dfproto.ListSquadsIn)
+                return object;
+            return new $root.dfproto.ListSquadsIn();
+        };
+
+        /**
+         * Creates a plain object from a ListSquadsIn message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof dfproto.ListSquadsIn
+         * @static
+         * @param {dfproto.ListSquadsIn} message ListSquadsIn
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        ListSquadsIn.toObject = function toObject() {
+            return {};
+        };
+
+        /**
+         * Converts this ListSquadsIn to JSON.
+         * @function toJSON
+         * @memberof dfproto.ListSquadsIn
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        ListSquadsIn.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return ListSquadsIn;
+    })();
+
+    dfproto.ListSquadsOut = (function() {
+
+        /**
+         * Properties of a ListSquadsOut.
+         * @memberof dfproto
+         * @interface IListSquadsOut
+         * @property {Array.<dfproto.IBasicSquadInfo>|null} [value] ListSquadsOut value
+         */
+
+        /**
+         * Constructs a new ListSquadsOut.
+         * @memberof dfproto
+         * @classdesc Represents a ListSquadsOut.
+         * @implements IListSquadsOut
+         * @constructor
+         * @param {dfproto.IListSquadsOut=} [properties] Properties to set
+         */
+        function ListSquadsOut(properties) {
+            this.value = [];
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * ListSquadsOut value.
+         * @member {Array.<dfproto.IBasicSquadInfo>} value
+         * @memberof dfproto.ListSquadsOut
+         * @instance
+         */
+        ListSquadsOut.prototype.value = $util.emptyArray;
+
+        /**
+         * Creates a new ListSquadsOut instance using the specified properties.
+         * @function create
+         * @memberof dfproto.ListSquadsOut
+         * @static
+         * @param {dfproto.IListSquadsOut=} [properties] Properties to set
+         * @returns {dfproto.ListSquadsOut} ListSquadsOut instance
+         */
+        ListSquadsOut.create = function create(properties) {
+            return new ListSquadsOut(properties);
+        };
+
+        /**
+         * Encodes the specified ListSquadsOut message. Does not implicitly {@link dfproto.ListSquadsOut.verify|verify} messages.
+         * @function encode
+         * @memberof dfproto.ListSquadsOut
+         * @static
+         * @param {dfproto.IListSquadsOut} message ListSquadsOut message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        ListSquadsOut.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.value != null && message.value.length)
+                for (var i = 0; i < message.value.length; ++i)
+                    $root.dfproto.BasicSquadInfo.encode(message.value[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+            return writer;
+        };
+
+        /**
+         * Encodes the specified ListSquadsOut message, length delimited. Does not implicitly {@link dfproto.ListSquadsOut.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof dfproto.ListSquadsOut
+         * @static
+         * @param {dfproto.IListSquadsOut} message ListSquadsOut message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        ListSquadsOut.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a ListSquadsOut message from the specified reader or buffer.
+         * @function decode
+         * @memberof dfproto.ListSquadsOut
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {dfproto.ListSquadsOut} ListSquadsOut
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        ListSquadsOut.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.dfproto.ListSquadsOut();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    if (!(message.value && message.value.length))
+                        message.value = [];
+                    message.value.push($root.dfproto.BasicSquadInfo.decode(reader, reader.uint32()));
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a ListSquadsOut message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof dfproto.ListSquadsOut
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {dfproto.ListSquadsOut} ListSquadsOut
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        ListSquadsOut.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a ListSquadsOut message.
+         * @function verify
+         * @memberof dfproto.ListSquadsOut
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        ListSquadsOut.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.value != null && message.hasOwnProperty("value")) {
+                if (!Array.isArray(message.value))
+                    return "value: array expected";
+                for (var i = 0; i < message.value.length; ++i) {
+                    var error = $root.dfproto.BasicSquadInfo.verify(message.value[i]);
+                    if (error)
+                        return "value." + error;
+                }
+            }
+            return null;
+        };
+
+        /**
+         * Creates a ListSquadsOut message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof dfproto.ListSquadsOut
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {dfproto.ListSquadsOut} ListSquadsOut
+         */
+        ListSquadsOut.fromObject = function fromObject(object) {
+            if (object instanceof $root.dfproto.ListSquadsOut)
+                return object;
+            var message = new $root.dfproto.ListSquadsOut();
+            if (object.value) {
+                if (!Array.isArray(object.value))
+                    throw TypeError(".dfproto.ListSquadsOut.value: array expected");
+                message.value = [];
+                for (var i = 0; i < object.value.length; ++i) {
+                    if (typeof object.value[i] !== "object")
+                        throw TypeError(".dfproto.ListSquadsOut.value: object expected");
+                    message.value[i] = $root.dfproto.BasicSquadInfo.fromObject(object.value[i]);
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a ListSquadsOut message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof dfproto.ListSquadsOut
+         * @static
+         * @param {dfproto.ListSquadsOut} message ListSquadsOut
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        ListSquadsOut.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.arrays || options.defaults)
+                object.value = [];
+            if (message.value && message.value.length) {
+                object.value = [];
+                for (var j = 0; j < message.value.length; ++j)
+                    object.value[j] = $root.dfproto.BasicSquadInfo.toObject(message.value[j], options);
+            }
+            return object;
+        };
+
+        /**
+         * Converts this ListSquadsOut to JSON.
+         * @function toJSON
+         * @memberof dfproto.ListSquadsOut
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        ListSquadsOut.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return ListSquadsOut;
+    })();
+
+    dfproto.SetUnitLaborsIn = (function() {
+
+        /**
+         * Properties of a SetUnitLaborsIn.
+         * @memberof dfproto
+         * @interface ISetUnitLaborsIn
+         * @property {Array.<dfproto.IUnitLaborState>|null} [change] SetUnitLaborsIn change
+         */
+
+        /**
+         * Constructs a new SetUnitLaborsIn.
+         * @memberof dfproto
+         * @classdesc Represents a SetUnitLaborsIn.
+         * @implements ISetUnitLaborsIn
+         * @constructor
+         * @param {dfproto.ISetUnitLaborsIn=} [properties] Properties to set
+         */
+        function SetUnitLaborsIn(properties) {
+            this.change = [];
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * SetUnitLaborsIn change.
+         * @member {Array.<dfproto.IUnitLaborState>} change
+         * @memberof dfproto.SetUnitLaborsIn
+         * @instance
+         */
+        SetUnitLaborsIn.prototype.change = $util.emptyArray;
+
+        /**
+         * Creates a new SetUnitLaborsIn instance using the specified properties.
+         * @function create
+         * @memberof dfproto.SetUnitLaborsIn
+         * @static
+         * @param {dfproto.ISetUnitLaborsIn=} [properties] Properties to set
+         * @returns {dfproto.SetUnitLaborsIn} SetUnitLaborsIn instance
+         */
+        SetUnitLaborsIn.create = function create(properties) {
+            return new SetUnitLaborsIn(properties);
+        };
+
+        /**
+         * Encodes the specified SetUnitLaborsIn message. Does not implicitly {@link dfproto.SetUnitLaborsIn.verify|verify} messages.
+         * @function encode
+         * @memberof dfproto.SetUnitLaborsIn
+         * @static
+         * @param {dfproto.ISetUnitLaborsIn} message SetUnitLaborsIn message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        SetUnitLaborsIn.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.change != null && message.change.length)
+                for (var i = 0; i < message.change.length; ++i)
+                    $root.dfproto.UnitLaborState.encode(message.change[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+            return writer;
+        };
+
+        /**
+         * Encodes the specified SetUnitLaborsIn message, length delimited. Does not implicitly {@link dfproto.SetUnitLaborsIn.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof dfproto.SetUnitLaborsIn
+         * @static
+         * @param {dfproto.ISetUnitLaborsIn} message SetUnitLaborsIn message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        SetUnitLaborsIn.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a SetUnitLaborsIn message from the specified reader or buffer.
+         * @function decode
+         * @memberof dfproto.SetUnitLaborsIn
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {dfproto.SetUnitLaborsIn} SetUnitLaborsIn
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        SetUnitLaborsIn.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.dfproto.SetUnitLaborsIn();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    if (!(message.change && message.change.length))
+                        message.change = [];
+                    message.change.push($root.dfproto.UnitLaborState.decode(reader, reader.uint32()));
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a SetUnitLaborsIn message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof dfproto.SetUnitLaborsIn
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {dfproto.SetUnitLaborsIn} SetUnitLaborsIn
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        SetUnitLaborsIn.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a SetUnitLaborsIn message.
+         * @function verify
+         * @memberof dfproto.SetUnitLaborsIn
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        SetUnitLaborsIn.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.change != null && message.hasOwnProperty("change")) {
+                if (!Array.isArray(message.change))
+                    return "change: array expected";
+                for (var i = 0; i < message.change.length; ++i) {
+                    var error = $root.dfproto.UnitLaborState.verify(message.change[i]);
+                    if (error)
+                        return "change." + error;
+                }
+            }
+            return null;
+        };
+
+        /**
+         * Creates a SetUnitLaborsIn message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof dfproto.SetUnitLaborsIn
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {dfproto.SetUnitLaborsIn} SetUnitLaborsIn
+         */
+        SetUnitLaborsIn.fromObject = function fromObject(object) {
+            if (object instanceof $root.dfproto.SetUnitLaborsIn)
+                return object;
+            var message = new $root.dfproto.SetUnitLaborsIn();
+            if (object.change) {
+                if (!Array.isArray(object.change))
+                    throw TypeError(".dfproto.SetUnitLaborsIn.change: array expected");
+                message.change = [];
+                for (var i = 0; i < object.change.length; ++i) {
+                    if (typeof object.change[i] !== "object")
+                        throw TypeError(".dfproto.SetUnitLaborsIn.change: object expected");
+                    message.change[i] = $root.dfproto.UnitLaborState.fromObject(object.change[i]);
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a SetUnitLaborsIn message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof dfproto.SetUnitLaborsIn
+         * @static
+         * @param {dfproto.SetUnitLaborsIn} message SetUnitLaborsIn
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        SetUnitLaborsIn.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.arrays || options.defaults)
+                object.change = [];
+            if (message.change && message.change.length) {
+                object.change = [];
+                for (var j = 0; j < message.change.length; ++j)
+                    object.change[j] = $root.dfproto.UnitLaborState.toObject(message.change[j], options);
+            }
+            return object;
+        };
+
+        /**
+         * Converts this SetUnitLaborsIn to JSON.
+         * @function toJSON
+         * @memberof dfproto.SetUnitLaborsIn
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        SetUnitLaborsIn.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return SetUnitLaborsIn;
+    })();
+
+    dfproto.EnumItemName = (function() {
+
+        /**
+         * Properties of an EnumItemName.
+         * @memberof dfproto
+         * @interface IEnumItemName
+         * @property {number} value EnumItemName value
+         * @property {string|null} [name] EnumItemName name
+         * @property {number|null} [bitSize] EnumItemName bitSize
+         */
+
+        /**
+         * Constructs a new EnumItemName.
+         * @memberof dfproto
+         * @classdesc Represents an EnumItemName.
+         * @implements IEnumItemName
+         * @constructor
+         * @param {dfproto.IEnumItemName=} [properties] Properties to set
+         */
+        function EnumItemName(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * EnumItemName value.
+         * @member {number} value
+         * @memberof dfproto.EnumItemName
+         * @instance
+         */
+        EnumItemName.prototype.value = 0;
+
+        /**
+         * EnumItemName name.
+         * @member {string} name
+         * @memberof dfproto.EnumItemName
+         * @instance
+         */
+        EnumItemName.prototype.name = "";
+
+        /**
+         * EnumItemName bitSize.
+         * @member {number} bitSize
+         * @memberof dfproto.EnumItemName
+         * @instance
+         */
+        EnumItemName.prototype.bitSize = 1;
+
+        /**
+         * Creates a new EnumItemName instance using the specified properties.
+         * @function create
+         * @memberof dfproto.EnumItemName
+         * @static
+         * @param {dfproto.IEnumItemName=} [properties] Properties to set
+         * @returns {dfproto.EnumItemName} EnumItemName instance
+         */
+        EnumItemName.create = function create(properties) {
+            return new EnumItemName(properties);
+        };
+
+        /**
+         * Encodes the specified EnumItemName message. Does not implicitly {@link dfproto.EnumItemName.verify|verify} messages.
+         * @function encode
+         * @memberof dfproto.EnumItemName
+         * @static
+         * @param {dfproto.IEnumItemName} message EnumItemName message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        EnumItemName.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            writer.uint32(/* id 1, wireType 0 =*/8).int32(message.value);
+            if (message.name != null && Object.hasOwnProperty.call(message, "name"))
+                writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
+            if (message.bitSize != null && Object.hasOwnProperty.call(message, "bitSize"))
+                writer.uint32(/* id 3, wireType 0 =*/24).int32(message.bitSize);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified EnumItemName message, length delimited. Does not implicitly {@link dfproto.EnumItemName.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof dfproto.EnumItemName
+         * @static
+         * @param {dfproto.IEnumItemName} message EnumItemName message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        EnumItemName.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes an EnumItemName message from the specified reader or buffer.
+         * @function decode
+         * @memberof dfproto.EnumItemName
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {dfproto.EnumItemName} EnumItemName
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        EnumItemName.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.dfproto.EnumItemName();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    message.value = reader.int32();
+                    break;
+                case 2:
+                    message.name = reader.string();
+                    break;
+                case 3:
+                    message.bitSize = reader.int32();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            if (!message.hasOwnProperty("value"))
+                throw $util.ProtocolError("missing required 'value'", { instance: message });
+            return message;
+        };
+
+        /**
+         * Decodes an EnumItemName message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof dfproto.EnumItemName
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {dfproto.EnumItemName} EnumItemName
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        EnumItemName.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies an EnumItemName message.
+         * @function verify
+         * @memberof dfproto.EnumItemName
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        EnumItemName.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (!$util.isInteger(message.value))
+                return "value: integer expected";
+            if (message.name != null && message.hasOwnProperty("name"))
+                if (!$util.isString(message.name))
+                    return "name: string expected";
+            if (message.bitSize != null && message.hasOwnProperty("bitSize"))
+                if (!$util.isInteger(message.bitSize))
+                    return "bitSize: integer expected";
+            return null;
+        };
+
+        /**
+         * Creates an EnumItemName message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof dfproto.EnumItemName
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {dfproto.EnumItemName} EnumItemName
+         */
+        EnumItemName.fromObject = function fromObject(object) {
+            if (object instanceof $root.dfproto.EnumItemName)
+                return object;
+            var message = new $root.dfproto.EnumItemName();
+            if (object.value != null)
+                message.value = object.value | 0;
+            if (object.name != null)
+                message.name = String(object.name);
+            if (object.bitSize != null)
+                message.bitSize = object.bitSize | 0;
+            return message;
+        };
+
+        /**
+         * Creates a plain object from an EnumItemName message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof dfproto.EnumItemName
+         * @static
+         * @param {dfproto.EnumItemName} message EnumItemName
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        EnumItemName.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.value = 0;
+                object.name = "";
+                object.bitSize = 1;
+            }
+            if (message.value != null && message.hasOwnProperty("value"))
+                object.value = message.value;
+            if (message.name != null && message.hasOwnProperty("name"))
+                object.name = message.name;
+            if (message.bitSize != null && message.hasOwnProperty("bitSize"))
+                object.bitSize = message.bitSize;
+            return object;
+        };
+
+        /**
+         * Converts this EnumItemName to JSON.
+         * @function toJSON
+         * @memberof dfproto.EnumItemName
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        EnumItemName.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return EnumItemName;
+    })();
+
+    dfproto.BasicMaterialId = (function() {
+
+        /**
+         * Properties of a BasicMaterialId.
+         * @memberof dfproto
+         * @interface IBasicMaterialId
+         * @property {number} type BasicMaterialId type
+         * @property {number} index BasicMaterialId index
+         */
+
+        /**
+         * Constructs a new BasicMaterialId.
+         * @memberof dfproto
+         * @classdesc Represents a BasicMaterialId.
+         * @implements IBasicMaterialId
+         * @constructor
+         * @param {dfproto.IBasicMaterialId=} [properties] Properties to set
+         */
+        function BasicMaterialId(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * BasicMaterialId type.
+         * @member {number} type
+         * @memberof dfproto.BasicMaterialId
+         * @instance
+         */
+        BasicMaterialId.prototype.type = 0;
+
+        /**
+         * BasicMaterialId index.
+         * @member {number} index
+         * @memberof dfproto.BasicMaterialId
+         * @instance
+         */
+        BasicMaterialId.prototype.index = 0;
+
+        /**
+         * Creates a new BasicMaterialId instance using the specified properties.
+         * @function create
+         * @memberof dfproto.BasicMaterialId
+         * @static
+         * @param {dfproto.IBasicMaterialId=} [properties] Properties to set
+         * @returns {dfproto.BasicMaterialId} BasicMaterialId instance
+         */
+        BasicMaterialId.create = function create(properties) {
+            return new BasicMaterialId(properties);
+        };
+
+        /**
+         * Encodes the specified BasicMaterialId message. Does not implicitly {@link dfproto.BasicMaterialId.verify|verify} messages.
+         * @function encode
+         * @memberof dfproto.BasicMaterialId
+         * @static
+         * @param {dfproto.IBasicMaterialId} message BasicMaterialId message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        BasicMaterialId.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            writer.uint32(/* id 1, wireType 0 =*/8).int32(message.type);
+            writer.uint32(/* id 2, wireType 0 =*/16).sint32(message.index);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified BasicMaterialId message, length delimited. Does not implicitly {@link dfproto.BasicMaterialId.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof dfproto.BasicMaterialId
+         * @static
+         * @param {dfproto.IBasicMaterialId} message BasicMaterialId message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        BasicMaterialId.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a BasicMaterialId message from the specified reader or buffer.
+         * @function decode
+         * @memberof dfproto.BasicMaterialId
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {dfproto.BasicMaterialId} BasicMaterialId
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        BasicMaterialId.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.dfproto.BasicMaterialId();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    message.type = reader.int32();
+                    break;
+                case 2:
+                    message.index = reader.sint32();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            if (!message.hasOwnProperty("type"))
+                throw $util.ProtocolError("missing required 'type'", { instance: message });
+            if (!message.hasOwnProperty("index"))
+                throw $util.ProtocolError("missing required 'index'", { instance: message });
+            return message;
+        };
+
+        /**
+         * Decodes a BasicMaterialId message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof dfproto.BasicMaterialId
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {dfproto.BasicMaterialId} BasicMaterialId
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        BasicMaterialId.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a BasicMaterialId message.
+         * @function verify
+         * @memberof dfproto.BasicMaterialId
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        BasicMaterialId.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (!$util.isInteger(message.type))
+                return "type: integer expected";
+            if (!$util.isInteger(message.index))
+                return "index: integer expected";
+            return null;
+        };
+
+        /**
+         * Creates a BasicMaterialId message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof dfproto.BasicMaterialId
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {dfproto.BasicMaterialId} BasicMaterialId
+         */
+        BasicMaterialId.fromObject = function fromObject(object) {
+            if (object instanceof $root.dfproto.BasicMaterialId)
+                return object;
+            var message = new $root.dfproto.BasicMaterialId();
+            if (object.type != null)
+                message.type = object.type | 0;
+            if (object.index != null)
+                message.index = object.index | 0;
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a BasicMaterialId message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof dfproto.BasicMaterialId
+         * @static
+         * @param {dfproto.BasicMaterialId} message BasicMaterialId
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        BasicMaterialId.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.type = 0;
+                object.index = 0;
+            }
+            if (message.type != null && message.hasOwnProperty("type"))
+                object.type = message.type;
+            if (message.index != null && message.hasOwnProperty("index"))
+                object.index = message.index;
+            return object;
+        };
+
+        /**
+         * Converts this BasicMaterialId to JSON.
+         * @function toJSON
+         * @memberof dfproto.BasicMaterialId
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        BasicMaterialId.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return BasicMaterialId;
+    })();
+
+    dfproto.BasicMaterialInfo = (function() {
+
+        /**
+         * Properties of a BasicMaterialInfo.
+         * @memberof dfproto
+         * @interface IBasicMaterialInfo
+         * @property {number} type BasicMaterialInfo type
+         * @property {number} index BasicMaterialInfo index
+         * @property {string} token BasicMaterialInfo token
+         * @property {Array.<number>|null} [flags] BasicMaterialInfo flags
+         * @property {number|null} [subtype] BasicMaterialInfo subtype
+         * @property {number|null} [creatureId] BasicMaterialInfo creatureId
+         * @property {number|null} [plantId] BasicMaterialInfo plantId
+         * @property {number|null} [histfigId] BasicMaterialInfo histfigId
+         * @property {string|null} [namePrefix] BasicMaterialInfo namePrefix
+         * @property {Array.<number>|null} [stateColor] BasicMaterialInfo stateColor
+         * @property {Array.<string>|null} [stateName] BasicMaterialInfo stateName
+         * @property {Array.<string>|null} [stateAdj] BasicMaterialInfo stateAdj
+         * @property {Array.<string>|null} [reactionClass] BasicMaterialInfo reactionClass
+         * @property {Array.<dfproto.BasicMaterialInfo.IProduct>|null} [reactionProduct] BasicMaterialInfo reactionProduct
+         * @property {Array.<number>|null} [inorganicFlags] BasicMaterialInfo inorganicFlags
+         */
+
+        /**
+         * Constructs a new BasicMaterialInfo.
+         * @memberof dfproto
+         * @classdesc Represents a BasicMaterialInfo.
+         * @implements IBasicMaterialInfo
+         * @constructor
+         * @param {dfproto.IBasicMaterialInfo=} [properties] Properties to set
+         */
+        function BasicMaterialInfo(properties) {
+            this.flags = [];
+            this.stateColor = [];
+            this.stateName = [];
+            this.stateAdj = [];
+            this.reactionClass = [];
+            this.reactionProduct = [];
+            this.inorganicFlags = [];
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * BasicMaterialInfo type.
+         * @member {number} type
+         * @memberof dfproto.BasicMaterialInfo
+         * @instance
+         */
+        BasicMaterialInfo.prototype.type = 0;
+
+        /**
+         * BasicMaterialInfo index.
+         * @member {number} index
+         * @memberof dfproto.BasicMaterialInfo
+         * @instance
+         */
+        BasicMaterialInfo.prototype.index = 0;
+
+        /**
+         * BasicMaterialInfo token.
+         * @member {string} token
+         * @memberof dfproto.BasicMaterialInfo
+         * @instance
+         */
+        BasicMaterialInfo.prototype.token = "";
+
+        /**
+         * BasicMaterialInfo flags.
+         * @member {Array.<number>} flags
+         * @memberof dfproto.BasicMaterialInfo
+         * @instance
+         */
+        BasicMaterialInfo.prototype.flags = $util.emptyArray;
+
+        /**
+         * BasicMaterialInfo subtype.
+         * @member {number} subtype
+         * @memberof dfproto.BasicMaterialInfo
+         * @instance
+         */
+        BasicMaterialInfo.prototype.subtype = -1;
+
+        /**
+         * BasicMaterialInfo creatureId.
+         * @member {number} creatureId
+         * @memberof dfproto.BasicMaterialInfo
+         * @instance
+         */
+        BasicMaterialInfo.prototype.creatureId = -1;
+
+        /**
+         * BasicMaterialInfo plantId.
+         * @member {number} plantId
+         * @memberof dfproto.BasicMaterialInfo
+         * @instance
+         */
+        BasicMaterialInfo.prototype.plantId = -1;
+
+        /**
+         * BasicMaterialInfo histfigId.
+         * @member {number} histfigId
+         * @memberof dfproto.BasicMaterialInfo
+         * @instance
+         */
+        BasicMaterialInfo.prototype.histfigId = -1;
+
+        /**
+         * BasicMaterialInfo namePrefix.
+         * @member {string} namePrefix
+         * @memberof dfproto.BasicMaterialInfo
+         * @instance
+         */
+        BasicMaterialInfo.prototype.namePrefix = "";
+
+        /**
+         * BasicMaterialInfo stateColor.
+         * @member {Array.<number>} stateColor
+         * @memberof dfproto.BasicMaterialInfo
+         * @instance
+         */
+        BasicMaterialInfo.prototype.stateColor = $util.emptyArray;
+
+        /**
+         * BasicMaterialInfo stateName.
+         * @member {Array.<string>} stateName
+         * @memberof dfproto.BasicMaterialInfo
+         * @instance
+         */
+        BasicMaterialInfo.prototype.stateName = $util.emptyArray;
+
+        /**
+         * BasicMaterialInfo stateAdj.
+         * @member {Array.<string>} stateAdj
+         * @memberof dfproto.BasicMaterialInfo
+         * @instance
+         */
+        BasicMaterialInfo.prototype.stateAdj = $util.emptyArray;
+
+        /**
+         * BasicMaterialInfo reactionClass.
+         * @member {Array.<string>} reactionClass
+         * @memberof dfproto.BasicMaterialInfo
+         * @instance
+         */
+        BasicMaterialInfo.prototype.reactionClass = $util.emptyArray;
+
+        /**
+         * BasicMaterialInfo reactionProduct.
+         * @member {Array.<dfproto.BasicMaterialInfo.IProduct>} reactionProduct
+         * @memberof dfproto.BasicMaterialInfo
+         * @instance
+         */
+        BasicMaterialInfo.prototype.reactionProduct = $util.emptyArray;
+
+        /**
+         * BasicMaterialInfo inorganicFlags.
+         * @member {Array.<number>} inorganicFlags
+         * @memberof dfproto.BasicMaterialInfo
+         * @instance
+         */
+        BasicMaterialInfo.prototype.inorganicFlags = $util.emptyArray;
+
+        /**
+         * Creates a new BasicMaterialInfo instance using the specified properties.
+         * @function create
+         * @memberof dfproto.BasicMaterialInfo
+         * @static
+         * @param {dfproto.IBasicMaterialInfo=} [properties] Properties to set
+         * @returns {dfproto.BasicMaterialInfo} BasicMaterialInfo instance
+         */
+        BasicMaterialInfo.create = function create(properties) {
+            return new BasicMaterialInfo(properties);
+        };
+
+        /**
+         * Encodes the specified BasicMaterialInfo message. Does not implicitly {@link dfproto.BasicMaterialInfo.verify|verify} messages.
+         * @function encode
+         * @memberof dfproto.BasicMaterialInfo
+         * @static
+         * @param {dfproto.IBasicMaterialInfo} message BasicMaterialInfo message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        BasicMaterialInfo.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            writer.uint32(/* id 1, wireType 0 =*/8).int32(message.type);
+            writer.uint32(/* id 2, wireType 0 =*/16).sint32(message.index);
+            writer.uint32(/* id 3, wireType 2 =*/26).string(message.token);
+            if (message.flags != null && message.flags.length)
+                for (var i = 0; i < message.flags.length; ++i)
+                    writer.uint32(/* id 4, wireType 0 =*/32).int32(message.flags[i]);
+            if (message.subtype != null && Object.hasOwnProperty.call(message, "subtype"))
+                writer.uint32(/* id 5, wireType 0 =*/40).int32(message.subtype);
+            if (message.creatureId != null && Object.hasOwnProperty.call(message, "creatureId"))
+                writer.uint32(/* id 6, wireType 0 =*/48).int32(message.creatureId);
+            if (message.plantId != null && Object.hasOwnProperty.call(message, "plantId"))
+                writer.uint32(/* id 7, wireType 0 =*/56).int32(message.plantId);
+            if (message.histfigId != null && Object.hasOwnProperty.call(message, "histfigId"))
+                writer.uint32(/* id 8, wireType 0 =*/64).int32(message.histfigId);
+            if (message.namePrefix != null && Object.hasOwnProperty.call(message, "namePrefix"))
+                writer.uint32(/* id 9, wireType 2 =*/74).string(message.namePrefix);
+            if (message.stateColor != null && message.stateColor.length)
+                for (var i = 0; i < message.stateColor.length; ++i)
+                    writer.uint32(/* id 10, wireType 5 =*/85).fixed32(message.stateColor[i]);
+            if (message.stateName != null && message.stateName.length)
+                for (var i = 0; i < message.stateName.length; ++i)
+                    writer.uint32(/* id 11, wireType 2 =*/90).string(message.stateName[i]);
+            if (message.stateAdj != null && message.stateAdj.length)
+                for (var i = 0; i < message.stateAdj.length; ++i)
+                    writer.uint32(/* id 12, wireType 2 =*/98).string(message.stateAdj[i]);
+            if (message.reactionClass != null && message.reactionClass.length)
+                for (var i = 0; i < message.reactionClass.length; ++i)
+                    writer.uint32(/* id 13, wireType 2 =*/106).string(message.reactionClass[i]);
+            if (message.reactionProduct != null && message.reactionProduct.length)
+                for (var i = 0; i < message.reactionProduct.length; ++i)
+                    $root.dfproto.BasicMaterialInfo.Product.encode(message.reactionProduct[i], writer.uint32(/* id 14, wireType 2 =*/114).fork()).ldelim();
+            if (message.inorganicFlags != null && message.inorganicFlags.length)
+                for (var i = 0; i < message.inorganicFlags.length; ++i)
+                    writer.uint32(/* id 15, wireType 0 =*/120).int32(message.inorganicFlags[i]);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified BasicMaterialInfo message, length delimited. Does not implicitly {@link dfproto.BasicMaterialInfo.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof dfproto.BasicMaterialInfo
+         * @static
+         * @param {dfproto.IBasicMaterialInfo} message BasicMaterialInfo message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        BasicMaterialInfo.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a BasicMaterialInfo message from the specified reader or buffer.
+         * @function decode
+         * @memberof dfproto.BasicMaterialInfo
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {dfproto.BasicMaterialInfo} BasicMaterialInfo
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        BasicMaterialInfo.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.dfproto.BasicMaterialInfo();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    message.type = reader.int32();
+                    break;
+                case 2:
+                    message.index = reader.sint32();
+                    break;
+                case 3:
+                    message.token = reader.string();
+                    break;
+                case 4:
+                    if (!(message.flags && message.flags.length))
+                        message.flags = [];
+                    if ((tag & 7) === 2) {
+                        var end2 = reader.uint32() + reader.pos;
+                        while (reader.pos < end2)
+                            message.flags.push(reader.int32());
+                    } else
+                        message.flags.push(reader.int32());
+                    break;
+                case 5:
+                    message.subtype = reader.int32();
+                    break;
+                case 6:
+                    message.creatureId = reader.int32();
+                    break;
+                case 7:
+                    message.plantId = reader.int32();
+                    break;
+                case 8:
+                    message.histfigId = reader.int32();
+                    break;
+                case 9:
+                    message.namePrefix = reader.string();
+                    break;
+                case 10:
+                    if (!(message.stateColor && message.stateColor.length))
+                        message.stateColor = [];
+                    if ((tag & 7) === 2) {
+                        var end2 = reader.uint32() + reader.pos;
+                        while (reader.pos < end2)
+                            message.stateColor.push(reader.fixed32());
+                    } else
+                        message.stateColor.push(reader.fixed32());
+                    break;
+                case 11:
+                    if (!(message.stateName && message.stateName.length))
+                        message.stateName = [];
+                    message.stateName.push(reader.string());
+                    break;
+                case 12:
+                    if (!(message.stateAdj && message.stateAdj.length))
+                        message.stateAdj = [];
+                    message.stateAdj.push(reader.string());
+                    break;
+                case 13:
+                    if (!(message.reactionClass && message.reactionClass.length))
+                        message.reactionClass = [];
+                    message.reactionClass.push(reader.string());
+                    break;
+                case 14:
+                    if (!(message.reactionProduct && message.reactionProduct.length))
+                        message.reactionProduct = [];
+                    message.reactionProduct.push($root.dfproto.BasicMaterialInfo.Product.decode(reader, reader.uint32()));
+                    break;
+                case 15:
+                    if (!(message.inorganicFlags && message.inorganicFlags.length))
+                        message.inorganicFlags = [];
+                    if ((tag & 7) === 2) {
+                        var end2 = reader.uint32() + reader.pos;
+                        while (reader.pos < end2)
+                            message.inorganicFlags.push(reader.int32());
+                    } else
+                        message.inorganicFlags.push(reader.int32());
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            if (!message.hasOwnProperty("type"))
+                throw $util.ProtocolError("missing required 'type'", { instance: message });
+            if (!message.hasOwnProperty("index"))
+                throw $util.ProtocolError("missing required 'index'", { instance: message });
+            if (!message.hasOwnProperty("token"))
+                throw $util.ProtocolError("missing required 'token'", { instance: message });
+            return message;
+        };
+
+        /**
+         * Decodes a BasicMaterialInfo message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof dfproto.BasicMaterialInfo
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {dfproto.BasicMaterialInfo} BasicMaterialInfo
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        BasicMaterialInfo.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a BasicMaterialInfo message.
+         * @function verify
+         * @memberof dfproto.BasicMaterialInfo
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        BasicMaterialInfo.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (!$util.isInteger(message.type))
+                return "type: integer expected";
+            if (!$util.isInteger(message.index))
+                return "index: integer expected";
+            if (!$util.isString(message.token))
+                return "token: string expected";
+            if (message.flags != null && message.hasOwnProperty("flags")) {
+                if (!Array.isArray(message.flags))
+                    return "flags: array expected";
+                for (var i = 0; i < message.flags.length; ++i)
+                    if (!$util.isInteger(message.flags[i]))
+                        return "flags: integer[] expected";
+            }
+            if (message.subtype != null && message.hasOwnProperty("subtype"))
+                if (!$util.isInteger(message.subtype))
+                    return "subtype: integer expected";
+            if (message.creatureId != null && message.hasOwnProperty("creatureId"))
+                if (!$util.isInteger(message.creatureId))
+                    return "creatureId: integer expected";
+            if (message.plantId != null && message.hasOwnProperty("plantId"))
+                if (!$util.isInteger(message.plantId))
+                    return "plantId: integer expected";
+            if (message.histfigId != null && message.hasOwnProperty("histfigId"))
+                if (!$util.isInteger(message.histfigId))
+                    return "histfigId: integer expected";
+            if (message.namePrefix != null && message.hasOwnProperty("namePrefix"))
+                if (!$util.isString(message.namePrefix))
+                    return "namePrefix: string expected";
+            if (message.stateColor != null && message.hasOwnProperty("stateColor")) {
+                if (!Array.isArray(message.stateColor))
+                    return "stateColor: array expected";
+                for (var i = 0; i < message.stateColor.length; ++i)
+                    if (!$util.isInteger(message.stateColor[i]))
+                        return "stateColor: integer[] expected";
+            }
+            if (message.stateName != null && message.hasOwnProperty("stateName")) {
+                if (!Array.isArray(message.stateName))
+                    return "stateName: array expected";
+                for (var i = 0; i < message.stateName.length; ++i)
+                    if (!$util.isString(message.stateName[i]))
+                        return "stateName: string[] expected";
+            }
+            if (message.stateAdj != null && message.hasOwnProperty("stateAdj")) {
+                if (!Array.isArray(message.stateAdj))
+                    return "stateAdj: array expected";
+                for (var i = 0; i < message.stateAdj.length; ++i)
+                    if (!$util.isString(message.stateAdj[i]))
+                        return "stateAdj: string[] expected";
+            }
+            if (message.reactionClass != null && message.hasOwnProperty("reactionClass")) {
+                if (!Array.isArray(message.reactionClass))
+                    return "reactionClass: array expected";
+                for (var i = 0; i < message.reactionClass.length; ++i)
+                    if (!$util.isString(message.reactionClass[i]))
+                        return "reactionClass: string[] expected";
+            }
+            if (message.reactionProduct != null && message.hasOwnProperty("reactionProduct")) {
+                if (!Array.isArray(message.reactionProduct))
+                    return "reactionProduct: array expected";
+                for (var i = 0; i < message.reactionProduct.length; ++i) {
+                    var error = $root.dfproto.BasicMaterialInfo.Product.verify(message.reactionProduct[i]);
+                    if (error)
+                        return "reactionProduct." + error;
+                }
+            }
+            if (message.inorganicFlags != null && message.hasOwnProperty("inorganicFlags")) {
+                if (!Array.isArray(message.inorganicFlags))
+                    return "inorganicFlags: array expected";
+                for (var i = 0; i < message.inorganicFlags.length; ++i)
+                    if (!$util.isInteger(message.inorganicFlags[i]))
+                        return "inorganicFlags: integer[] expected";
+            }
+            return null;
+        };
+
+        /**
+         * Creates a BasicMaterialInfo message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof dfproto.BasicMaterialInfo
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {dfproto.BasicMaterialInfo} BasicMaterialInfo
+         */
+        BasicMaterialInfo.fromObject = function fromObject(object) {
+            if (object instanceof $root.dfproto.BasicMaterialInfo)
+                return object;
+            var message = new $root.dfproto.BasicMaterialInfo();
+            if (object.type != null)
+                message.type = object.type | 0;
+            if (object.index != null)
+                message.index = object.index | 0;
+            if (object.token != null)
+                message.token = String(object.token);
+            if (object.flags) {
+                if (!Array.isArray(object.flags))
+                    throw TypeError(".dfproto.BasicMaterialInfo.flags: array expected");
+                message.flags = [];
+                for (var i = 0; i < object.flags.length; ++i)
+                    message.flags[i] = object.flags[i] | 0;
+            }
+            if (object.subtype != null)
+                message.subtype = object.subtype | 0;
+            if (object.creatureId != null)
+                message.creatureId = object.creatureId | 0;
+            if (object.plantId != null)
+                message.plantId = object.plantId | 0;
+            if (object.histfigId != null)
+                message.histfigId = object.histfigId | 0;
+            if (object.namePrefix != null)
+                message.namePrefix = String(object.namePrefix);
+            if (object.stateColor) {
+                if (!Array.isArray(object.stateColor))
+                    throw TypeError(".dfproto.BasicMaterialInfo.stateColor: array expected");
+                message.stateColor = [];
+                for (var i = 0; i < object.stateColor.length; ++i)
+                    message.stateColor[i] = object.stateColor[i] >>> 0;
+            }
+            if (object.stateName) {
+                if (!Array.isArray(object.stateName))
+                    throw TypeError(".dfproto.BasicMaterialInfo.stateName: array expected");
+                message.stateName = [];
+                for (var i = 0; i < object.stateName.length; ++i)
+                    message.stateName[i] = String(object.stateName[i]);
+            }
+            if (object.stateAdj) {
+                if (!Array.isArray(object.stateAdj))
+                    throw TypeError(".dfproto.BasicMaterialInfo.stateAdj: array expected");
+                message.stateAdj = [];
+                for (var i = 0; i < object.stateAdj.length; ++i)
+                    message.stateAdj[i] = String(object.stateAdj[i]);
+            }
+            if (object.reactionClass) {
+                if (!Array.isArray(object.reactionClass))
+                    throw TypeError(".dfproto.BasicMaterialInfo.reactionClass: array expected");
+                message.reactionClass = [];
+                for (var i = 0; i < object.reactionClass.length; ++i)
+                    message.reactionClass[i] = String(object.reactionClass[i]);
+            }
+            if (object.reactionProduct) {
+                if (!Array.isArray(object.reactionProduct))
+                    throw TypeError(".dfproto.BasicMaterialInfo.reactionProduct: array expected");
+                message.reactionProduct = [];
+                for (var i = 0; i < object.reactionProduct.length; ++i) {
+                    if (typeof object.reactionProduct[i] !== "object")
+                        throw TypeError(".dfproto.BasicMaterialInfo.reactionProduct: object expected");
+                    message.reactionProduct[i] = $root.dfproto.BasicMaterialInfo.Product.fromObject(object.reactionProduct[i]);
+                }
+            }
+            if (object.inorganicFlags) {
+                if (!Array.isArray(object.inorganicFlags))
+                    throw TypeError(".dfproto.BasicMaterialInfo.inorganicFlags: array expected");
+                message.inorganicFlags = [];
+                for (var i = 0; i < object.inorganicFlags.length; ++i)
+                    message.inorganicFlags[i] = object.inorganicFlags[i] | 0;
+            }
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a BasicMaterialInfo message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof dfproto.BasicMaterialInfo
+         * @static
+         * @param {dfproto.BasicMaterialInfo} message BasicMaterialInfo
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        BasicMaterialInfo.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.arrays || options.defaults) {
+                object.flags = [];
+                object.stateColor = [];
+                object.stateName = [];
+                object.stateAdj = [];
+                object.reactionClass = [];
+                object.reactionProduct = [];
+                object.inorganicFlags = [];
+            }
+            if (options.defaults) {
+                object.type = 0;
+                object.index = 0;
+                object.token = "";
+                object.subtype = -1;
+                object.creatureId = -1;
+                object.plantId = -1;
+                object.histfigId = -1;
+                object.namePrefix = "";
+            }
+            if (message.type != null && message.hasOwnProperty("type"))
+                object.type = message.type;
+            if (message.index != null && message.hasOwnProperty("index"))
+                object.index = message.index;
+            if (message.token != null && message.hasOwnProperty("token"))
+                object.token = message.token;
+            if (message.flags && message.flags.length) {
+                object.flags = [];
+                for (var j = 0; j < message.flags.length; ++j)
+                    object.flags[j] = message.flags[j];
+            }
+            if (message.subtype != null && message.hasOwnProperty("subtype"))
+                object.subtype = message.subtype;
+            if (message.creatureId != null && message.hasOwnProperty("creatureId"))
+                object.creatureId = message.creatureId;
+            if (message.plantId != null && message.hasOwnProperty("plantId"))
+                object.plantId = message.plantId;
+            if (message.histfigId != null && message.hasOwnProperty("histfigId"))
+                object.histfigId = message.histfigId;
+            if (message.namePrefix != null && message.hasOwnProperty("namePrefix"))
+                object.namePrefix = message.namePrefix;
+            if (message.stateColor && message.stateColor.length) {
+                object.stateColor = [];
+                for (var j = 0; j < message.stateColor.length; ++j)
+                    object.stateColor[j] = message.stateColor[j];
+            }
+            if (message.stateName && message.stateName.length) {
+                object.stateName = [];
+                for (var j = 0; j < message.stateName.length; ++j)
+                    object.stateName[j] = message.stateName[j];
+            }
+            if (message.stateAdj && message.stateAdj.length) {
+                object.stateAdj = [];
+                for (var j = 0; j < message.stateAdj.length; ++j)
+                    object.stateAdj[j] = message.stateAdj[j];
+            }
+            if (message.reactionClass && message.reactionClass.length) {
+                object.reactionClass = [];
+                for (var j = 0; j < message.reactionClass.length; ++j)
+                    object.reactionClass[j] = message.reactionClass[j];
+            }
+            if (message.reactionProduct && message.reactionProduct.length) {
+                object.reactionProduct = [];
+                for (var j = 0; j < message.reactionProduct.length; ++j)
+                    object.reactionProduct[j] = $root.dfproto.BasicMaterialInfo.Product.toObject(message.reactionProduct[j], options);
+            }
+            if (message.inorganicFlags && message.inorganicFlags.length) {
+                object.inorganicFlags = [];
+                for (var j = 0; j < message.inorganicFlags.length; ++j)
+                    object.inorganicFlags[j] = message.inorganicFlags[j];
+            }
+            return object;
+        };
+
+        /**
+         * Converts this BasicMaterialInfo to JSON.
+         * @function toJSON
+         * @memberof dfproto.BasicMaterialInfo
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        BasicMaterialInfo.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        BasicMaterialInfo.Product = (function() {
+
+            /**
+             * Properties of a Product.
+             * @memberof dfproto.BasicMaterialInfo
+             * @interface IProduct
+             * @property {string} id Product id
+             * @property {number} type Product type
+             * @property {number} index Product index
+             */
+
+            /**
+             * Constructs a new Product.
+             * @memberof dfproto.BasicMaterialInfo
+             * @classdesc Represents a Product.
+             * @implements IProduct
+             * @constructor
+             * @param {dfproto.BasicMaterialInfo.IProduct=} [properties] Properties to set
+             */
+            function Product(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Product id.
+             * @member {string} id
+             * @memberof dfproto.BasicMaterialInfo.Product
+             * @instance
+             */
+            Product.prototype.id = "";
+
+            /**
+             * Product type.
+             * @member {number} type
+             * @memberof dfproto.BasicMaterialInfo.Product
+             * @instance
+             */
+            Product.prototype.type = 0;
+
+            /**
+             * Product index.
+             * @member {number} index
+             * @memberof dfproto.BasicMaterialInfo.Product
+             * @instance
+             */
+            Product.prototype.index = 0;
+
+            /**
+             * Creates a new Product instance using the specified properties.
+             * @function create
+             * @memberof dfproto.BasicMaterialInfo.Product
+             * @static
+             * @param {dfproto.BasicMaterialInfo.IProduct=} [properties] Properties to set
+             * @returns {dfproto.BasicMaterialInfo.Product} Product instance
+             */
+            Product.create = function create(properties) {
+                return new Product(properties);
+            };
+
+            /**
+             * Encodes the specified Product message. Does not implicitly {@link dfproto.BasicMaterialInfo.Product.verify|verify} messages.
+             * @function encode
+             * @memberof dfproto.BasicMaterialInfo.Product
+             * @static
+             * @param {dfproto.BasicMaterialInfo.IProduct} message Product message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Product.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
+                writer.uint32(/* id 2, wireType 0 =*/16).int32(message.type);
+                writer.uint32(/* id 3, wireType 0 =*/24).sint32(message.index);
+                return writer;
+            };
+
+            /**
+             * Encodes the specified Product message, length delimited. Does not implicitly {@link dfproto.BasicMaterialInfo.Product.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof dfproto.BasicMaterialInfo.Product
+             * @static
+             * @param {dfproto.BasicMaterialInfo.IProduct} message Product message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Product.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a Product message from the specified reader or buffer.
+             * @function decode
+             * @memberof dfproto.BasicMaterialInfo.Product
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {dfproto.BasicMaterialInfo.Product} Product
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Product.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.dfproto.BasicMaterialInfo.Product();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.id = reader.string();
+                        break;
+                    case 2:
+                        message.type = reader.int32();
+                        break;
+                    case 3:
+                        message.index = reader.sint32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                if (!message.hasOwnProperty("id"))
+                    throw $util.ProtocolError("missing required 'id'", { instance: message });
+                if (!message.hasOwnProperty("type"))
+                    throw $util.ProtocolError("missing required 'type'", { instance: message });
+                if (!message.hasOwnProperty("index"))
+                    throw $util.ProtocolError("missing required 'index'", { instance: message });
+                return message;
+            };
+
+            /**
+             * Decodes a Product message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof dfproto.BasicMaterialInfo.Product
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {dfproto.BasicMaterialInfo.Product} Product
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Product.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a Product message.
+             * @function verify
+             * @memberof dfproto.BasicMaterialInfo.Product
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Product.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (!$util.isString(message.id))
+                    return "id: string expected";
+                if (!$util.isInteger(message.type))
+                    return "type: integer expected";
+                if (!$util.isInteger(message.index))
+                    return "index: integer expected";
+                return null;
+            };
+
+            /**
+             * Creates a Product message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof dfproto.BasicMaterialInfo.Product
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {dfproto.BasicMaterialInfo.Product} Product
+             */
+            Product.fromObject = function fromObject(object) {
+                if (object instanceof $root.dfproto.BasicMaterialInfo.Product)
+                    return object;
+                var message = new $root.dfproto.BasicMaterialInfo.Product();
+                if (object.id != null)
+                    message.id = String(object.id);
+                if (object.type != null)
+                    message.type = object.type | 0;
+                if (object.index != null)
+                    message.index = object.index | 0;
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a Product message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof dfproto.BasicMaterialInfo.Product
+             * @static
+             * @param {dfproto.BasicMaterialInfo.Product} message Product
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            Product.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.id = "";
+                    object.type = 0;
+                    object.index = 0;
+                }
+                if (message.id != null && message.hasOwnProperty("id"))
+                    object.id = message.id;
+                if (message.type != null && message.hasOwnProperty("type"))
+                    object.type = message.type;
+                if (message.index != null && message.hasOwnProperty("index"))
+                    object.index = message.index;
+                return object;
+            };
+
+            /**
+             * Converts this Product to JSON.
+             * @function toJSON
+             * @memberof dfproto.BasicMaterialInfo.Product
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            Product.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return Product;
+        })();
+
+        return BasicMaterialInfo;
+    })();
+
+    dfproto.BasicMaterialInfoMask = (function() {
+
+        /**
+         * Properties of a BasicMaterialInfoMask.
+         * @memberof dfproto
+         * @interface IBasicMaterialInfoMask
+         * @property {Array.<dfproto.BasicMaterialInfoMask.StateType>|null} [states] BasicMaterialInfoMask states
+         * @property {number|null} [temperature] BasicMaterialInfoMask temperature
+         * @property {boolean|null} [flags] BasicMaterialInfoMask flags
+         * @property {boolean|null} [reaction] BasicMaterialInfoMask reaction
+         */
+
+        /**
+         * Constructs a new BasicMaterialInfoMask.
+         * @memberof dfproto
+         * @classdesc Represents a BasicMaterialInfoMask.
+         * @implements IBasicMaterialInfoMask
+         * @constructor
+         * @param {dfproto.IBasicMaterialInfoMask=} [properties] Properties to set
+         */
+        function BasicMaterialInfoMask(properties) {
+            this.states = [];
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * BasicMaterialInfoMask states.
+         * @member {Array.<dfproto.BasicMaterialInfoMask.StateType>} states
+         * @memberof dfproto.BasicMaterialInfoMask
+         * @instance
+         */
+        BasicMaterialInfoMask.prototype.states = $util.emptyArray;
+
+        /**
+         * BasicMaterialInfoMask temperature.
+         * @member {number} temperature
+         * @memberof dfproto.BasicMaterialInfoMask
+         * @instance
+         */
+        BasicMaterialInfoMask.prototype.temperature = 10015;
+
+        /**
+         * BasicMaterialInfoMask flags.
+         * @member {boolean} flags
+         * @memberof dfproto.BasicMaterialInfoMask
+         * @instance
+         */
+        BasicMaterialInfoMask.prototype.flags = false;
+
+        /**
+         * BasicMaterialInfoMask reaction.
+         * @member {boolean} reaction
+         * @memberof dfproto.BasicMaterialInfoMask
+         * @instance
+         */
+        BasicMaterialInfoMask.prototype.reaction = false;
+
+        /**
+         * Creates a new BasicMaterialInfoMask instance using the specified properties.
+         * @function create
+         * @memberof dfproto.BasicMaterialInfoMask
+         * @static
+         * @param {dfproto.IBasicMaterialInfoMask=} [properties] Properties to set
+         * @returns {dfproto.BasicMaterialInfoMask} BasicMaterialInfoMask instance
+         */
+        BasicMaterialInfoMask.create = function create(properties) {
+            return new BasicMaterialInfoMask(properties);
+        };
+
+        /**
+         * Encodes the specified BasicMaterialInfoMask message. Does not implicitly {@link dfproto.BasicMaterialInfoMask.verify|verify} messages.
+         * @function encode
+         * @memberof dfproto.BasicMaterialInfoMask
+         * @static
+         * @param {dfproto.IBasicMaterialInfoMask} message BasicMaterialInfoMask message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        BasicMaterialInfoMask.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.states != null && message.states.length)
+                for (var i = 0; i < message.states.length; ++i)
+                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.states[i]);
+            if (message.flags != null && Object.hasOwnProperty.call(message, "flags"))
+                writer.uint32(/* id 2, wireType 0 =*/16).bool(message.flags);
+            if (message.reaction != null && Object.hasOwnProperty.call(message, "reaction"))
+                writer.uint32(/* id 3, wireType 0 =*/24).bool(message.reaction);
+            if (message.temperature != null && Object.hasOwnProperty.call(message, "temperature"))
+                writer.uint32(/* id 4, wireType 0 =*/32).int32(message.temperature);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified BasicMaterialInfoMask message, length delimited. Does not implicitly {@link dfproto.BasicMaterialInfoMask.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof dfproto.BasicMaterialInfoMask
+         * @static
+         * @param {dfproto.IBasicMaterialInfoMask} message BasicMaterialInfoMask message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        BasicMaterialInfoMask.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a BasicMaterialInfoMask message from the specified reader or buffer.
+         * @function decode
+         * @memberof dfproto.BasicMaterialInfoMask
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {dfproto.BasicMaterialInfoMask} BasicMaterialInfoMask
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        BasicMaterialInfoMask.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.dfproto.BasicMaterialInfoMask();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    if (!(message.states && message.states.length))
+                        message.states = [];
+                    if ((tag & 7) === 2) {
+                        var end2 = reader.uint32() + reader.pos;
+                        while (reader.pos < end2)
+                            message.states.push(reader.int32());
+                    } else
+                        message.states.push(reader.int32());
+                    break;
+                case 4:
+                    message.temperature = reader.int32();
+                    break;
+                case 2:
+                    message.flags = reader.bool();
+                    break;
+                case 3:
+                    message.reaction = reader.bool();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a BasicMaterialInfoMask message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof dfproto.BasicMaterialInfoMask
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {dfproto.BasicMaterialInfoMask} BasicMaterialInfoMask
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        BasicMaterialInfoMask.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a BasicMaterialInfoMask message.
+         * @function verify
+         * @memberof dfproto.BasicMaterialInfoMask
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        BasicMaterialInfoMask.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.states != null && message.hasOwnProperty("states")) {
+                if (!Array.isArray(message.states))
+                    return "states: array expected";
+                for (var i = 0; i < message.states.length; ++i)
+                    switch (message.states[i]) {
+                    default:
+                        return "states: enum value[] expected";
+                    case 0:
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 5:
+                        break;
+                    }
+            }
+            if (message.temperature != null && message.hasOwnProperty("temperature"))
+                if (!$util.isInteger(message.temperature))
+                    return "temperature: integer expected";
+            if (message.flags != null && message.hasOwnProperty("flags"))
+                if (typeof message.flags !== "boolean")
+                    return "flags: boolean expected";
+            if (message.reaction != null && message.hasOwnProperty("reaction"))
+                if (typeof message.reaction !== "boolean")
+                    return "reaction: boolean expected";
+            return null;
+        };
+
+        /**
+         * Creates a BasicMaterialInfoMask message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof dfproto.BasicMaterialInfoMask
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {dfproto.BasicMaterialInfoMask} BasicMaterialInfoMask
+         */
+        BasicMaterialInfoMask.fromObject = function fromObject(object) {
+            if (object instanceof $root.dfproto.BasicMaterialInfoMask)
+                return object;
+            var message = new $root.dfproto.BasicMaterialInfoMask();
+            if (object.states) {
+                if (!Array.isArray(object.states))
+                    throw TypeError(".dfproto.BasicMaterialInfoMask.states: array expected");
+                message.states = [];
+                for (var i = 0; i < object.states.length; ++i)
+                    switch (object.states[i]) {
+                    default:
+                    case "Solid":
+                    case 0:
+                        message.states[i] = 0;
+                        break;
+                    case "Liquid":
+                    case 1:
+                        message.states[i] = 1;
+                        break;
+                    case "Gas":
+                    case 2:
+                        message.states[i] = 2;
+                        break;
+                    case "Powder":
+                    case 3:
+                        message.states[i] = 3;
+                        break;
+                    case "Paste":
+                    case 4:
+                        message.states[i] = 4;
+                        break;
+                    case "Pressed":
+                    case 5:
+                        message.states[i] = 5;
+                        break;
+                    }
+            }
+            if (object.temperature != null)
+                message.temperature = object.temperature | 0;
+            if (object.flags != null)
+                message.flags = Boolean(object.flags);
+            if (object.reaction != null)
+                message.reaction = Boolean(object.reaction);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a BasicMaterialInfoMask message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof dfproto.BasicMaterialInfoMask
+         * @static
+         * @param {dfproto.BasicMaterialInfoMask} message BasicMaterialInfoMask
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        BasicMaterialInfoMask.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.arrays || options.defaults)
+                object.states = [];
+            if (options.defaults) {
+                object.flags = false;
+                object.reaction = false;
+                object.temperature = 10015;
+            }
+            if (message.states && message.states.length) {
+                object.states = [];
+                for (var j = 0; j < message.states.length; ++j)
+                    object.states[j] = options.enums === String ? $root.dfproto.BasicMaterialInfoMask.StateType[message.states[j]] : message.states[j];
+            }
+            if (message.flags != null && message.hasOwnProperty("flags"))
+                object.flags = message.flags;
+            if (message.reaction != null && message.hasOwnProperty("reaction"))
+                object.reaction = message.reaction;
+            if (message.temperature != null && message.hasOwnProperty("temperature"))
+                object.temperature = message.temperature;
+            return object;
+        };
+
+        /**
+         * Converts this BasicMaterialInfoMask to JSON.
+         * @function toJSON
+         * @memberof dfproto.BasicMaterialInfoMask
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        BasicMaterialInfoMask.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * StateType enum.
+         * @name dfproto.BasicMaterialInfoMask.StateType
+         * @enum {string}
+         * @property {number} Solid=0 Solid value
+         * @property {number} Liquid=1 Liquid value
+         * @property {number} Gas=2 Gas value
+         * @property {number} Powder=3 Powder value
+         * @property {number} Paste=4 Paste value
+         * @property {number} Pressed=5 Pressed value
+         */
+        BasicMaterialInfoMask.StateType = (function() {
+            var valuesById = {}, values = Object.create(valuesById);
+            values[valuesById[0] = "Solid"] = 0;
+            values[valuesById[1] = "Liquid"] = 1;
+            values[valuesById[2] = "Gas"] = 2;
+            values[valuesById[3] = "Powder"] = 3;
+            values[valuesById[4] = "Paste"] = 4;
+            values[valuesById[5] = "Pressed"] = 5;
+            return values;
+        })();
+
+        return BasicMaterialInfoMask;
+    })();
+
+    dfproto.JobSkillAttr = (function() {
+
+        /**
+         * Properties of a JobSkillAttr.
+         * @memberof dfproto
+         * @interface IJobSkillAttr
+         * @property {number} id JobSkillAttr id
+         * @property {string} key JobSkillAttr key
+         * @property {string|null} [caption] JobSkillAttr caption
+         * @property {string|null} [captionNoun] JobSkillAttr captionNoun
+         * @property {number|null} [profession] JobSkillAttr profession
+         * @property {number|null} [labor] JobSkillAttr labor
+         * @property {string|null} [type] JobSkillAttr type
+         */
+
+        /**
+         * Constructs a new JobSkillAttr.
+         * @memberof dfproto
+         * @classdesc Represents a JobSkillAttr.
+         * @implements IJobSkillAttr
+         * @constructor
+         * @param {dfproto.IJobSkillAttr=} [properties] Properties to set
+         */
+        function JobSkillAttr(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * JobSkillAttr id.
+         * @member {number} id
+         * @memberof dfproto.JobSkillAttr
+         * @instance
+         */
+        JobSkillAttr.prototype.id = 0;
+
+        /**
+         * JobSkillAttr key.
+         * @member {string} key
+         * @memberof dfproto.JobSkillAttr
+         * @instance
+         */
+        JobSkillAttr.prototype.key = "";
+
+        /**
+         * JobSkillAttr caption.
+         * @member {string} caption
+         * @memberof dfproto.JobSkillAttr
+         * @instance
+         */
+        JobSkillAttr.prototype.caption = "";
+
+        /**
+         * JobSkillAttr captionNoun.
+         * @member {string} captionNoun
+         * @memberof dfproto.JobSkillAttr
+         * @instance
+         */
+        JobSkillAttr.prototype.captionNoun = "";
+
+        /**
+         * JobSkillAttr profession.
+         * @member {number} profession
+         * @memberof dfproto.JobSkillAttr
+         * @instance
+         */
+        JobSkillAttr.prototype.profession = 0;
+
+        /**
+         * JobSkillAttr labor.
+         * @member {number} labor
+         * @memberof dfproto.JobSkillAttr
+         * @instance
+         */
+        JobSkillAttr.prototype.labor = 0;
+
+        /**
+         * JobSkillAttr type.
+         * @member {string} type
+         * @memberof dfproto.JobSkillAttr
+         * @instance
+         */
+        JobSkillAttr.prototype.type = "";
+
+        /**
+         * Creates a new JobSkillAttr instance using the specified properties.
+         * @function create
+         * @memberof dfproto.JobSkillAttr
+         * @static
+         * @param {dfproto.IJobSkillAttr=} [properties] Properties to set
+         * @returns {dfproto.JobSkillAttr} JobSkillAttr instance
+         */
+        JobSkillAttr.create = function create(properties) {
+            return new JobSkillAttr(properties);
+        };
+
+        /**
+         * Encodes the specified JobSkillAttr message. Does not implicitly {@link dfproto.JobSkillAttr.verify|verify} messages.
+         * @function encode
+         * @memberof dfproto.JobSkillAttr
+         * @static
+         * @param {dfproto.IJobSkillAttr} message JobSkillAttr message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        JobSkillAttr.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            writer.uint32(/* id 1, wireType 0 =*/8).int32(message.id);
+            writer.uint32(/* id 2, wireType 2 =*/18).string(message.key);
+            if (message.caption != null && Object.hasOwnProperty.call(message, "caption"))
+                writer.uint32(/* id 3, wireType 2 =*/26).string(message.caption);
+            if (message.captionNoun != null && Object.hasOwnProperty.call(message, "captionNoun"))
+                writer.uint32(/* id 4, wireType 2 =*/34).string(message.captionNoun);
+            if (message.profession != null && Object.hasOwnProperty.call(message, "profession"))
+                writer.uint32(/* id 5, wireType 0 =*/40).int32(message.profession);
+            if (message.labor != null && Object.hasOwnProperty.call(message, "labor"))
+                writer.uint32(/* id 6, wireType 0 =*/48).int32(message.labor);
+            if (message.type != null && Object.hasOwnProperty.call(message, "type"))
+                writer.uint32(/* id 7, wireType 2 =*/58).string(message.type);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified JobSkillAttr message, length delimited. Does not implicitly {@link dfproto.JobSkillAttr.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof dfproto.JobSkillAttr
+         * @static
+         * @param {dfproto.IJobSkillAttr} message JobSkillAttr message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        JobSkillAttr.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a JobSkillAttr message from the specified reader or buffer.
+         * @function decode
+         * @memberof dfproto.JobSkillAttr
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {dfproto.JobSkillAttr} JobSkillAttr
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        JobSkillAttr.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.dfproto.JobSkillAttr();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    message.id = reader.int32();
+                    break;
+                case 2:
+                    message.key = reader.string();
+                    break;
+                case 3:
+                    message.caption = reader.string();
+                    break;
+                case 4:
+                    message.captionNoun = reader.string();
+                    break;
+                case 5:
+                    message.profession = reader.int32();
+                    break;
+                case 6:
+                    message.labor = reader.int32();
+                    break;
+                case 7:
+                    message.type = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            if (!message.hasOwnProperty("id"))
+                throw $util.ProtocolError("missing required 'id'", { instance: message });
+            if (!message.hasOwnProperty("key"))
+                throw $util.ProtocolError("missing required 'key'", { instance: message });
+            return message;
+        };
+
+        /**
+         * Decodes a JobSkillAttr message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof dfproto.JobSkillAttr
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {dfproto.JobSkillAttr} JobSkillAttr
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        JobSkillAttr.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a JobSkillAttr message.
+         * @function verify
+         * @memberof dfproto.JobSkillAttr
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        JobSkillAttr.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (!$util.isInteger(message.id))
+                return "id: integer expected";
+            if (!$util.isString(message.key))
+                return "key: string expected";
+            if (message.caption != null && message.hasOwnProperty("caption"))
+                if (!$util.isString(message.caption))
+                    return "caption: string expected";
+            if (message.captionNoun != null && message.hasOwnProperty("captionNoun"))
+                if (!$util.isString(message.captionNoun))
+                    return "captionNoun: string expected";
+            if (message.profession != null && message.hasOwnProperty("profession"))
+                if (!$util.isInteger(message.profession))
+                    return "profession: integer expected";
+            if (message.labor != null && message.hasOwnProperty("labor"))
+                if (!$util.isInteger(message.labor))
+                    return "labor: integer expected";
+            if (message.type != null && message.hasOwnProperty("type"))
+                if (!$util.isString(message.type))
+                    return "type: string expected";
+            return null;
+        };
+
+        /**
+         * Creates a JobSkillAttr message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof dfproto.JobSkillAttr
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {dfproto.JobSkillAttr} JobSkillAttr
+         */
+        JobSkillAttr.fromObject = function fromObject(object) {
+            if (object instanceof $root.dfproto.JobSkillAttr)
+                return object;
+            var message = new $root.dfproto.JobSkillAttr();
+            if (object.id != null)
+                message.id = object.id | 0;
+            if (object.key != null)
+                message.key = String(object.key);
+            if (object.caption != null)
+                message.caption = String(object.caption);
+            if (object.captionNoun != null)
+                message.captionNoun = String(object.captionNoun);
+            if (object.profession != null)
+                message.profession = object.profession | 0;
+            if (object.labor != null)
+                message.labor = object.labor | 0;
+            if (object.type != null)
+                message.type = String(object.type);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a JobSkillAttr message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof dfproto.JobSkillAttr
+         * @static
+         * @param {dfproto.JobSkillAttr} message JobSkillAttr
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        JobSkillAttr.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.id = 0;
+                object.key = "";
+                object.caption = "";
+                object.captionNoun = "";
+                object.profession = 0;
+                object.labor = 0;
+                object.type = "";
+            }
+            if (message.id != null && message.hasOwnProperty("id"))
+                object.id = message.id;
+            if (message.key != null && message.hasOwnProperty("key"))
+                object.key = message.key;
+            if (message.caption != null && message.hasOwnProperty("caption"))
+                object.caption = message.caption;
+            if (message.captionNoun != null && message.hasOwnProperty("captionNoun"))
+                object.captionNoun = message.captionNoun;
+            if (message.profession != null && message.hasOwnProperty("profession"))
+                object.profession = message.profession;
+            if (message.labor != null && message.hasOwnProperty("labor"))
+                object.labor = message.labor;
+            if (message.type != null && message.hasOwnProperty("type"))
+                object.type = message.type;
+            return object;
+        };
+
+        /**
+         * Converts this JobSkillAttr to JSON.
+         * @function toJSON
+         * @memberof dfproto.JobSkillAttr
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        JobSkillAttr.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return JobSkillAttr;
+    })();
+
+    dfproto.ProfessionAttr = (function() {
+
+        /**
+         * Properties of a ProfessionAttr.
+         * @memberof dfproto
+         * @interface IProfessionAttr
+         * @property {number} id ProfessionAttr id
+         * @property {string} key ProfessionAttr key
+         * @property {string|null} [caption] ProfessionAttr caption
+         * @property {boolean|null} [military] ProfessionAttr military
+         * @property {boolean|null} [canAssignLabor] ProfessionAttr canAssignLabor
+         * @property {number|null} [parent] ProfessionAttr parent
+         */
+
+        /**
+         * Constructs a new ProfessionAttr.
+         * @memberof dfproto
+         * @classdesc Represents a ProfessionAttr.
+         * @implements IProfessionAttr
+         * @constructor
+         * @param {dfproto.IProfessionAttr=} [properties] Properties to set
+         */
+        function ProfessionAttr(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * ProfessionAttr id.
+         * @member {number} id
+         * @memberof dfproto.ProfessionAttr
+         * @instance
+         */
+        ProfessionAttr.prototype.id = 0;
+
+        /**
+         * ProfessionAttr key.
+         * @member {string} key
+         * @memberof dfproto.ProfessionAttr
+         * @instance
+         */
+        ProfessionAttr.prototype.key = "";
+
+        /**
+         * ProfessionAttr caption.
+         * @member {string} caption
+         * @memberof dfproto.ProfessionAttr
+         * @instance
+         */
+        ProfessionAttr.prototype.caption = "";
+
+        /**
+         * ProfessionAttr military.
+         * @member {boolean} military
+         * @memberof dfproto.ProfessionAttr
+         * @instance
+         */
+        ProfessionAttr.prototype.military = false;
+
+        /**
+         * ProfessionAttr canAssignLabor.
+         * @member {boolean} canAssignLabor
+         * @memberof dfproto.ProfessionAttr
+         * @instance
+         */
+        ProfessionAttr.prototype.canAssignLabor = false;
+
+        /**
+         * ProfessionAttr parent.
+         * @member {number} parent
+         * @memberof dfproto.ProfessionAttr
+         * @instance
+         */
+        ProfessionAttr.prototype.parent = 0;
+
+        /**
+         * Creates a new ProfessionAttr instance using the specified properties.
+         * @function create
+         * @memberof dfproto.ProfessionAttr
+         * @static
+         * @param {dfproto.IProfessionAttr=} [properties] Properties to set
+         * @returns {dfproto.ProfessionAttr} ProfessionAttr instance
+         */
+        ProfessionAttr.create = function create(properties) {
+            return new ProfessionAttr(properties);
+        };
+
+        /**
+         * Encodes the specified ProfessionAttr message. Does not implicitly {@link dfproto.ProfessionAttr.verify|verify} messages.
+         * @function encode
+         * @memberof dfproto.ProfessionAttr
+         * @static
+         * @param {dfproto.IProfessionAttr} message ProfessionAttr message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        ProfessionAttr.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            writer.uint32(/* id 1, wireType 0 =*/8).int32(message.id);
+            writer.uint32(/* id 2, wireType 2 =*/18).string(message.key);
+            if (message.caption != null && Object.hasOwnProperty.call(message, "caption"))
+                writer.uint32(/* id 3, wireType 2 =*/26).string(message.caption);
+            if (message.military != null && Object.hasOwnProperty.call(message, "military"))
+                writer.uint32(/* id 4, wireType 0 =*/32).bool(message.military);
+            if (message.canAssignLabor != null && Object.hasOwnProperty.call(message, "canAssignLabor"))
+                writer.uint32(/* id 5, wireType 0 =*/40).bool(message.canAssignLabor);
+            if (message.parent != null && Object.hasOwnProperty.call(message, "parent"))
+                writer.uint32(/* id 6, wireType 0 =*/48).int32(message.parent);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified ProfessionAttr message, length delimited. Does not implicitly {@link dfproto.ProfessionAttr.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof dfproto.ProfessionAttr
+         * @static
+         * @param {dfproto.IProfessionAttr} message ProfessionAttr message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        ProfessionAttr.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a ProfessionAttr message from the specified reader or buffer.
+         * @function decode
+         * @memberof dfproto.ProfessionAttr
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {dfproto.ProfessionAttr} ProfessionAttr
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        ProfessionAttr.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.dfproto.ProfessionAttr();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    message.id = reader.int32();
+                    break;
+                case 2:
+                    message.key = reader.string();
+                    break;
+                case 3:
+                    message.caption = reader.string();
+                    break;
+                case 4:
+                    message.military = reader.bool();
+                    break;
+                case 5:
+                    message.canAssignLabor = reader.bool();
+                    break;
+                case 6:
+                    message.parent = reader.int32();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            if (!message.hasOwnProperty("id"))
+                throw $util.ProtocolError("missing required 'id'", { instance: message });
+            if (!message.hasOwnProperty("key"))
+                throw $util.ProtocolError("missing required 'key'", { instance: message });
+            return message;
+        };
+
+        /**
+         * Decodes a ProfessionAttr message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof dfproto.ProfessionAttr
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {dfproto.ProfessionAttr} ProfessionAttr
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        ProfessionAttr.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a ProfessionAttr message.
+         * @function verify
+         * @memberof dfproto.ProfessionAttr
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        ProfessionAttr.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (!$util.isInteger(message.id))
+                return "id: integer expected";
+            if (!$util.isString(message.key))
+                return "key: string expected";
+            if (message.caption != null && message.hasOwnProperty("caption"))
+                if (!$util.isString(message.caption))
+                    return "caption: string expected";
+            if (message.military != null && message.hasOwnProperty("military"))
+                if (typeof message.military !== "boolean")
+                    return "military: boolean expected";
+            if (message.canAssignLabor != null && message.hasOwnProperty("canAssignLabor"))
+                if (typeof message.canAssignLabor !== "boolean")
+                    return "canAssignLabor: boolean expected";
+            if (message.parent != null && message.hasOwnProperty("parent"))
+                if (!$util.isInteger(message.parent))
+                    return "parent: integer expected";
+            return null;
+        };
+
+        /**
+         * Creates a ProfessionAttr message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof dfproto.ProfessionAttr
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {dfproto.ProfessionAttr} ProfessionAttr
+         */
+        ProfessionAttr.fromObject = function fromObject(object) {
+            if (object instanceof $root.dfproto.ProfessionAttr)
+                return object;
+            var message = new $root.dfproto.ProfessionAttr();
+            if (object.id != null)
+                message.id = object.id | 0;
+            if (object.key != null)
+                message.key = String(object.key);
+            if (object.caption != null)
+                message.caption = String(object.caption);
+            if (object.military != null)
+                message.military = Boolean(object.military);
+            if (object.canAssignLabor != null)
+                message.canAssignLabor = Boolean(object.canAssignLabor);
+            if (object.parent != null)
+                message.parent = object.parent | 0;
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a ProfessionAttr message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof dfproto.ProfessionAttr
+         * @static
+         * @param {dfproto.ProfessionAttr} message ProfessionAttr
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        ProfessionAttr.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.id = 0;
+                object.key = "";
+                object.caption = "";
+                object.military = false;
+                object.canAssignLabor = false;
+                object.parent = 0;
+            }
+            if (message.id != null && message.hasOwnProperty("id"))
+                object.id = message.id;
+            if (message.key != null && message.hasOwnProperty("key"))
+                object.key = message.key;
+            if (message.caption != null && message.hasOwnProperty("caption"))
+                object.caption = message.caption;
+            if (message.military != null && message.hasOwnProperty("military"))
+                object.military = message.military;
+            if (message.canAssignLabor != null && message.hasOwnProperty("canAssignLabor"))
+                object.canAssignLabor = message.canAssignLabor;
+            if (message.parent != null && message.hasOwnProperty("parent"))
+                object.parent = message.parent;
+            return object;
+        };
+
+        /**
+         * Converts this ProfessionAttr to JSON.
+         * @function toJSON
+         * @memberof dfproto.ProfessionAttr
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        ProfessionAttr.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return ProfessionAttr;
+    })();
+
+    dfproto.UnitLaborAttr = (function() {
+
+        /**
+         * Properties of an UnitLaborAttr.
+         * @memberof dfproto
+         * @interface IUnitLaborAttr
+         * @property {number} id UnitLaborAttr id
+         * @property {string} key UnitLaborAttr key
+         * @property {string|null} [caption] UnitLaborAttr caption
+         */
+
+        /**
+         * Constructs a new UnitLaborAttr.
+         * @memberof dfproto
+         * @classdesc Represents an UnitLaborAttr.
+         * @implements IUnitLaborAttr
+         * @constructor
+         * @param {dfproto.IUnitLaborAttr=} [properties] Properties to set
+         */
+        function UnitLaborAttr(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * UnitLaborAttr id.
+         * @member {number} id
+         * @memberof dfproto.UnitLaborAttr
+         * @instance
+         */
+        UnitLaborAttr.prototype.id = 0;
+
+        /**
+         * UnitLaborAttr key.
+         * @member {string} key
+         * @memberof dfproto.UnitLaborAttr
+         * @instance
+         */
+        UnitLaborAttr.prototype.key = "";
+
+        /**
+         * UnitLaborAttr caption.
+         * @member {string} caption
+         * @memberof dfproto.UnitLaborAttr
+         * @instance
+         */
+        UnitLaborAttr.prototype.caption = "";
+
+        /**
+         * Creates a new UnitLaborAttr instance using the specified properties.
+         * @function create
+         * @memberof dfproto.UnitLaborAttr
+         * @static
+         * @param {dfproto.IUnitLaborAttr=} [properties] Properties to set
+         * @returns {dfproto.UnitLaborAttr} UnitLaborAttr instance
+         */
+        UnitLaborAttr.create = function create(properties) {
+            return new UnitLaborAttr(properties);
+        };
+
+        /**
+         * Encodes the specified UnitLaborAttr message. Does not implicitly {@link dfproto.UnitLaborAttr.verify|verify} messages.
+         * @function encode
+         * @memberof dfproto.UnitLaborAttr
+         * @static
+         * @param {dfproto.IUnitLaborAttr} message UnitLaborAttr message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        UnitLaborAttr.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            writer.uint32(/* id 1, wireType 0 =*/8).int32(message.id);
+            writer.uint32(/* id 2, wireType 2 =*/18).string(message.key);
+            if (message.caption != null && Object.hasOwnProperty.call(message, "caption"))
+                writer.uint32(/* id 3, wireType 2 =*/26).string(message.caption);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified UnitLaborAttr message, length delimited. Does not implicitly {@link dfproto.UnitLaborAttr.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof dfproto.UnitLaborAttr
+         * @static
+         * @param {dfproto.IUnitLaborAttr} message UnitLaborAttr message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        UnitLaborAttr.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes an UnitLaborAttr message from the specified reader or buffer.
+         * @function decode
+         * @memberof dfproto.UnitLaborAttr
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {dfproto.UnitLaborAttr} UnitLaborAttr
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        UnitLaborAttr.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.dfproto.UnitLaborAttr();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    message.id = reader.int32();
+                    break;
+                case 2:
+                    message.key = reader.string();
+                    break;
+                case 3:
+                    message.caption = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            if (!message.hasOwnProperty("id"))
+                throw $util.ProtocolError("missing required 'id'", { instance: message });
+            if (!message.hasOwnProperty("key"))
+                throw $util.ProtocolError("missing required 'key'", { instance: message });
+            return message;
+        };
+
+        /**
+         * Decodes an UnitLaborAttr message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof dfproto.UnitLaborAttr
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {dfproto.UnitLaborAttr} UnitLaborAttr
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        UnitLaborAttr.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies an UnitLaborAttr message.
+         * @function verify
+         * @memberof dfproto.UnitLaborAttr
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        UnitLaborAttr.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (!$util.isInteger(message.id))
+                return "id: integer expected";
+            if (!$util.isString(message.key))
+                return "key: string expected";
+            if (message.caption != null && message.hasOwnProperty("caption"))
+                if (!$util.isString(message.caption))
+                    return "caption: string expected";
+            return null;
+        };
+
+        /**
+         * Creates an UnitLaborAttr message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof dfproto.UnitLaborAttr
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {dfproto.UnitLaborAttr} UnitLaborAttr
+         */
+        UnitLaborAttr.fromObject = function fromObject(object) {
+            if (object instanceof $root.dfproto.UnitLaborAttr)
+                return object;
+            var message = new $root.dfproto.UnitLaborAttr();
+            if (object.id != null)
+                message.id = object.id | 0;
+            if (object.key != null)
+                message.key = String(object.key);
+            if (object.caption != null)
+                message.caption = String(object.caption);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from an UnitLaborAttr message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof dfproto.UnitLaborAttr
+         * @static
+         * @param {dfproto.UnitLaborAttr} message UnitLaborAttr
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        UnitLaborAttr.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.id = 0;
+                object.key = "";
+                object.caption = "";
+            }
+            if (message.id != null && message.hasOwnProperty("id"))
+                object.id = message.id;
+            if (message.key != null && message.hasOwnProperty("key"))
+                object.key = message.key;
+            if (message.caption != null && message.hasOwnProperty("caption"))
+                object.caption = message.caption;
+            return object;
+        };
+
+        /**
+         * Converts this UnitLaborAttr to JSON.
+         * @function toJSON
+         * @memberof dfproto.UnitLaborAttr
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        UnitLaborAttr.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return UnitLaborAttr;
+    })();
+
+    dfproto.NameInfo = (function() {
+
+        /**
+         * Properties of a NameInfo.
+         * @memberof dfproto
+         * @interface INameInfo
+         * @property {string|null} [firstName] NameInfo firstName
+         * @property {string|null} [nickname] NameInfo nickname
+         * @property {number|null} [languageId] NameInfo languageId
+         * @property {string|null} [lastName] NameInfo lastName
+         * @property {string|null} [englishName] NameInfo englishName
+         */
+
+        /**
+         * Constructs a new NameInfo.
+         * @memberof dfproto
+         * @classdesc Represents a NameInfo.
+         * @implements INameInfo
+         * @constructor
+         * @param {dfproto.INameInfo=} [properties] Properties to set
+         */
+        function NameInfo(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * NameInfo firstName.
+         * @member {string} firstName
+         * @memberof dfproto.NameInfo
+         * @instance
+         */
+        NameInfo.prototype.firstName = "";
+
+        /**
+         * NameInfo nickname.
+         * @member {string} nickname
+         * @memberof dfproto.NameInfo
+         * @instance
+         */
+        NameInfo.prototype.nickname = "";
+
+        /**
+         * NameInfo languageId.
+         * @member {number} languageId
+         * @memberof dfproto.NameInfo
+         * @instance
+         */
+        NameInfo.prototype.languageId = -1;
+
+        /**
+         * NameInfo lastName.
+         * @member {string} lastName
+         * @memberof dfproto.NameInfo
+         * @instance
+         */
+        NameInfo.prototype.lastName = "";
+
+        /**
+         * NameInfo englishName.
+         * @member {string} englishName
+         * @memberof dfproto.NameInfo
+         * @instance
+         */
+        NameInfo.prototype.englishName = "";
+
+        /**
+         * Creates a new NameInfo instance using the specified properties.
+         * @function create
+         * @memberof dfproto.NameInfo
+         * @static
+         * @param {dfproto.INameInfo=} [properties] Properties to set
+         * @returns {dfproto.NameInfo} NameInfo instance
+         */
+        NameInfo.create = function create(properties) {
+            return new NameInfo(properties);
+        };
+
+        /**
+         * Encodes the specified NameInfo message. Does not implicitly {@link dfproto.NameInfo.verify|verify} messages.
+         * @function encode
+         * @memberof dfproto.NameInfo
+         * @static
+         * @param {dfproto.INameInfo} message NameInfo message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        NameInfo.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.firstName != null && Object.hasOwnProperty.call(message, "firstName"))
+                writer.uint32(/* id 1, wireType 2 =*/10).string(message.firstName);
+            if (message.nickname != null && Object.hasOwnProperty.call(message, "nickname"))
+                writer.uint32(/* id 2, wireType 2 =*/18).string(message.nickname);
+            if (message.languageId != null && Object.hasOwnProperty.call(message, "languageId"))
+                writer.uint32(/* id 3, wireType 0 =*/24).int32(message.languageId);
+            if (message.lastName != null && Object.hasOwnProperty.call(message, "lastName"))
+                writer.uint32(/* id 4, wireType 2 =*/34).string(message.lastName);
+            if (message.englishName != null && Object.hasOwnProperty.call(message, "englishName"))
+                writer.uint32(/* id 5, wireType 2 =*/42).string(message.englishName);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified NameInfo message, length delimited. Does not implicitly {@link dfproto.NameInfo.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof dfproto.NameInfo
+         * @static
+         * @param {dfproto.INameInfo} message NameInfo message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        NameInfo.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a NameInfo message from the specified reader or buffer.
+         * @function decode
+         * @memberof dfproto.NameInfo
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {dfproto.NameInfo} NameInfo
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        NameInfo.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.dfproto.NameInfo();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    message.firstName = reader.string();
+                    break;
+                case 2:
+                    message.nickname = reader.string();
+                    break;
+                case 3:
+                    message.languageId = reader.int32();
+                    break;
+                case 4:
+                    message.lastName = reader.string();
+                    break;
+                case 5:
+                    message.englishName = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a NameInfo message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof dfproto.NameInfo
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {dfproto.NameInfo} NameInfo
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        NameInfo.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a NameInfo message.
+         * @function verify
+         * @memberof dfproto.NameInfo
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        NameInfo.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.firstName != null && message.hasOwnProperty("firstName"))
+                if (!$util.isString(message.firstName))
+                    return "firstName: string expected";
+            if (message.nickname != null && message.hasOwnProperty("nickname"))
+                if (!$util.isString(message.nickname))
+                    return "nickname: string expected";
+            if (message.languageId != null && message.hasOwnProperty("languageId"))
+                if (!$util.isInteger(message.languageId))
+                    return "languageId: integer expected";
+            if (message.lastName != null && message.hasOwnProperty("lastName"))
+                if (!$util.isString(message.lastName))
+                    return "lastName: string expected";
+            if (message.englishName != null && message.hasOwnProperty("englishName"))
+                if (!$util.isString(message.englishName))
+                    return "englishName: string expected";
+            return null;
+        };
+
+        /**
+         * Creates a NameInfo message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof dfproto.NameInfo
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {dfproto.NameInfo} NameInfo
+         */
+        NameInfo.fromObject = function fromObject(object) {
+            if (object instanceof $root.dfproto.NameInfo)
+                return object;
+            var message = new $root.dfproto.NameInfo();
+            if (object.firstName != null)
+                message.firstName = String(object.firstName);
+            if (object.nickname != null)
+                message.nickname = String(object.nickname);
+            if (object.languageId != null)
+                message.languageId = object.languageId | 0;
+            if (object.lastName != null)
+                message.lastName = String(object.lastName);
+            if (object.englishName != null)
+                message.englishName = String(object.englishName);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a NameInfo message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof dfproto.NameInfo
+         * @static
+         * @param {dfproto.NameInfo} message NameInfo
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        NameInfo.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.firstName = "";
+                object.nickname = "";
+                object.languageId = -1;
+                object.lastName = "";
+                object.englishName = "";
+            }
+            if (message.firstName != null && message.hasOwnProperty("firstName"))
+                object.firstName = message.firstName;
+            if (message.nickname != null && message.hasOwnProperty("nickname"))
+                object.nickname = message.nickname;
+            if (message.languageId != null && message.hasOwnProperty("languageId"))
+                object.languageId = message.languageId;
+            if (message.lastName != null && message.hasOwnProperty("lastName"))
+                object.lastName = message.lastName;
+            if (message.englishName != null && message.hasOwnProperty("englishName"))
+                object.englishName = message.englishName;
+            return object;
+        };
+
+        /**
+         * Converts this NameInfo to JSON.
+         * @function toJSON
+         * @memberof dfproto.NameInfo
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        NameInfo.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return NameInfo;
+    })();
+
+    dfproto.NameTriple = (function() {
+
+        /**
+         * Properties of a NameTriple.
+         * @memberof dfproto
+         * @interface INameTriple
+         * @property {string} normal NameTriple normal
+         * @property {string|null} [plural] NameTriple plural
+         * @property {string|null} [adjective] NameTriple adjective
+         */
+
+        /**
+         * Constructs a new NameTriple.
+         * @memberof dfproto
+         * @classdesc Represents a NameTriple.
+         * @implements INameTriple
+         * @constructor
+         * @param {dfproto.INameTriple=} [properties] Properties to set
+         */
+        function NameTriple(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * NameTriple normal.
+         * @member {string} normal
+         * @memberof dfproto.NameTriple
+         * @instance
+         */
+        NameTriple.prototype.normal = "";
+
+        /**
+         * NameTriple plural.
+         * @member {string} plural
+         * @memberof dfproto.NameTriple
+         * @instance
+         */
+        NameTriple.prototype.plural = "";
+
+        /**
+         * NameTriple adjective.
+         * @member {string} adjective
+         * @memberof dfproto.NameTriple
+         * @instance
+         */
+        NameTriple.prototype.adjective = "";
+
+        /**
+         * Creates a new NameTriple instance using the specified properties.
+         * @function create
+         * @memberof dfproto.NameTriple
+         * @static
+         * @param {dfproto.INameTriple=} [properties] Properties to set
+         * @returns {dfproto.NameTriple} NameTriple instance
+         */
+        NameTriple.create = function create(properties) {
+            return new NameTriple(properties);
+        };
+
+        /**
+         * Encodes the specified NameTriple message. Does not implicitly {@link dfproto.NameTriple.verify|verify} messages.
+         * @function encode
+         * @memberof dfproto.NameTriple
+         * @static
+         * @param {dfproto.INameTriple} message NameTriple message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        NameTriple.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            writer.uint32(/* id 1, wireType 2 =*/10).string(message.normal);
+            if (message.plural != null && Object.hasOwnProperty.call(message, "plural"))
+                writer.uint32(/* id 2, wireType 2 =*/18).string(message.plural);
+            if (message.adjective != null && Object.hasOwnProperty.call(message, "adjective"))
+                writer.uint32(/* id 3, wireType 2 =*/26).string(message.adjective);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified NameTriple message, length delimited. Does not implicitly {@link dfproto.NameTriple.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof dfproto.NameTriple
+         * @static
+         * @param {dfproto.INameTriple} message NameTriple message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        NameTriple.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a NameTriple message from the specified reader or buffer.
+         * @function decode
+         * @memberof dfproto.NameTriple
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {dfproto.NameTriple} NameTriple
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        NameTriple.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.dfproto.NameTriple();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    message.normal = reader.string();
+                    break;
+                case 2:
+                    message.plural = reader.string();
+                    break;
+                case 3:
+                    message.adjective = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            if (!message.hasOwnProperty("normal"))
+                throw $util.ProtocolError("missing required 'normal'", { instance: message });
+            return message;
+        };
+
+        /**
+         * Decodes a NameTriple message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof dfproto.NameTriple
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {dfproto.NameTriple} NameTriple
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        NameTriple.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a NameTriple message.
+         * @function verify
+         * @memberof dfproto.NameTriple
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        NameTriple.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (!$util.isString(message.normal))
+                return "normal: string expected";
+            if (message.plural != null && message.hasOwnProperty("plural"))
+                if (!$util.isString(message.plural))
+                    return "plural: string expected";
+            if (message.adjective != null && message.hasOwnProperty("adjective"))
+                if (!$util.isString(message.adjective))
+                    return "adjective: string expected";
+            return null;
+        };
+
+        /**
+         * Creates a NameTriple message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof dfproto.NameTriple
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {dfproto.NameTriple} NameTriple
+         */
+        NameTriple.fromObject = function fromObject(object) {
+            if (object instanceof $root.dfproto.NameTriple)
+                return object;
+            var message = new $root.dfproto.NameTriple();
+            if (object.normal != null)
+                message.normal = String(object.normal);
+            if (object.plural != null)
+                message.plural = String(object.plural);
+            if (object.adjective != null)
+                message.adjective = String(object.adjective);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a NameTriple message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof dfproto.NameTriple
+         * @static
+         * @param {dfproto.NameTriple} message NameTriple
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        NameTriple.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.normal = "";
+                object.plural = "";
+                object.adjective = "";
+            }
+            if (message.normal != null && message.hasOwnProperty("normal"))
+                object.normal = message.normal;
+            if (message.plural != null && message.hasOwnProperty("plural"))
+                object.plural = message.plural;
+            if (message.adjective != null && message.hasOwnProperty("adjective"))
+                object.adjective = message.adjective;
+            return object;
+        };
+
+        /**
+         * Converts this NameTriple to JSON.
+         * @function toJSON
+         * @memberof dfproto.NameTriple
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        NameTriple.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return NameTriple;
+    })();
+
+    dfproto.UnitCurseInfo = (function() {
+
+        /**
+         * Properties of an UnitCurseInfo.
+         * @memberof dfproto
+         * @interface IUnitCurseInfo
+         * @property {number} addTags1 UnitCurseInfo addTags1
+         * @property {number} remTags1 UnitCurseInfo remTags1
+         * @property {number} addTags2 UnitCurseInfo addTags2
+         * @property {number} remTags2 UnitCurseInfo remTags2
+         * @property {dfproto.INameTriple|null} [name] UnitCurseInfo name
+         */
+
+        /**
+         * Constructs a new UnitCurseInfo.
+         * @memberof dfproto
+         * @classdesc Represents an UnitCurseInfo.
+         * @implements IUnitCurseInfo
+         * @constructor
+         * @param {dfproto.IUnitCurseInfo=} [properties] Properties to set
+         */
+        function UnitCurseInfo(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * UnitCurseInfo addTags1.
+         * @member {number} addTags1
+         * @memberof dfproto.UnitCurseInfo
+         * @instance
+         */
+        UnitCurseInfo.prototype.addTags1 = 0;
+
+        /**
+         * UnitCurseInfo remTags1.
+         * @member {number} remTags1
+         * @memberof dfproto.UnitCurseInfo
+         * @instance
+         */
+        UnitCurseInfo.prototype.remTags1 = 0;
+
+        /**
+         * UnitCurseInfo addTags2.
+         * @member {number} addTags2
+         * @memberof dfproto.UnitCurseInfo
+         * @instance
+         */
+        UnitCurseInfo.prototype.addTags2 = 0;
+
+        /**
+         * UnitCurseInfo remTags2.
+         * @member {number} remTags2
+         * @memberof dfproto.UnitCurseInfo
+         * @instance
+         */
+        UnitCurseInfo.prototype.remTags2 = 0;
+
+        /**
+         * UnitCurseInfo name.
+         * @member {dfproto.INameTriple|null|undefined} name
+         * @memberof dfproto.UnitCurseInfo
+         * @instance
+         */
+        UnitCurseInfo.prototype.name = null;
+
+        /**
+         * Creates a new UnitCurseInfo instance using the specified properties.
+         * @function create
+         * @memberof dfproto.UnitCurseInfo
+         * @static
+         * @param {dfproto.IUnitCurseInfo=} [properties] Properties to set
+         * @returns {dfproto.UnitCurseInfo} UnitCurseInfo instance
+         */
+        UnitCurseInfo.create = function create(properties) {
+            return new UnitCurseInfo(properties);
+        };
+
+        /**
+         * Encodes the specified UnitCurseInfo message. Does not implicitly {@link dfproto.UnitCurseInfo.verify|verify} messages.
+         * @function encode
+         * @memberof dfproto.UnitCurseInfo
+         * @static
+         * @param {dfproto.IUnitCurseInfo} message UnitCurseInfo message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        UnitCurseInfo.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            writer.uint32(/* id 1, wireType 5 =*/13).fixed32(message.addTags1);
+            writer.uint32(/* id 2, wireType 5 =*/21).fixed32(message.remTags1);
+            writer.uint32(/* id 3, wireType 5 =*/29).fixed32(message.addTags2);
+            writer.uint32(/* id 4, wireType 5 =*/37).fixed32(message.remTags2);
+            if (message.name != null && Object.hasOwnProperty.call(message, "name"))
+                $root.dfproto.NameTriple.encode(message.name, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+            return writer;
+        };
+
+        /**
+         * Encodes the specified UnitCurseInfo message, length delimited. Does not implicitly {@link dfproto.UnitCurseInfo.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof dfproto.UnitCurseInfo
+         * @static
+         * @param {dfproto.IUnitCurseInfo} message UnitCurseInfo message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        UnitCurseInfo.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes an UnitCurseInfo message from the specified reader or buffer.
+         * @function decode
+         * @memberof dfproto.UnitCurseInfo
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {dfproto.UnitCurseInfo} UnitCurseInfo
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        UnitCurseInfo.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.dfproto.UnitCurseInfo();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    message.addTags1 = reader.fixed32();
+                    break;
+                case 2:
+                    message.remTags1 = reader.fixed32();
+                    break;
+                case 3:
+                    message.addTags2 = reader.fixed32();
+                    break;
+                case 4:
+                    message.remTags2 = reader.fixed32();
+                    break;
+                case 5:
+                    message.name = $root.dfproto.NameTriple.decode(reader, reader.uint32());
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            if (!message.hasOwnProperty("addTags1"))
+                throw $util.ProtocolError("missing required 'addTags1'", { instance: message });
+            if (!message.hasOwnProperty("remTags1"))
+                throw $util.ProtocolError("missing required 'remTags1'", { instance: message });
+            if (!message.hasOwnProperty("addTags2"))
+                throw $util.ProtocolError("missing required 'addTags2'", { instance: message });
+            if (!message.hasOwnProperty("remTags2"))
+                throw $util.ProtocolError("missing required 'remTags2'", { instance: message });
+            return message;
+        };
+
+        /**
+         * Decodes an UnitCurseInfo message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof dfproto.UnitCurseInfo
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {dfproto.UnitCurseInfo} UnitCurseInfo
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        UnitCurseInfo.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies an UnitCurseInfo message.
+         * @function verify
+         * @memberof dfproto.UnitCurseInfo
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        UnitCurseInfo.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (!$util.isInteger(message.addTags1))
+                return "addTags1: integer expected";
+            if (!$util.isInteger(message.remTags1))
+                return "remTags1: integer expected";
+            if (!$util.isInteger(message.addTags2))
+                return "addTags2: integer expected";
+            if (!$util.isInteger(message.remTags2))
+                return "remTags2: integer expected";
+            if (message.name != null && message.hasOwnProperty("name")) {
+                var error = $root.dfproto.NameTriple.verify(message.name);
+                if (error)
+                    return "name." + error;
+            }
+            return null;
+        };
+
+        /**
+         * Creates an UnitCurseInfo message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof dfproto.UnitCurseInfo
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {dfproto.UnitCurseInfo} UnitCurseInfo
+         */
+        UnitCurseInfo.fromObject = function fromObject(object) {
+            if (object instanceof $root.dfproto.UnitCurseInfo)
+                return object;
+            var message = new $root.dfproto.UnitCurseInfo();
+            if (object.addTags1 != null)
+                message.addTags1 = object.addTags1 >>> 0;
+            if (object.remTags1 != null)
+                message.remTags1 = object.remTags1 >>> 0;
+            if (object.addTags2 != null)
+                message.addTags2 = object.addTags2 >>> 0;
+            if (object.remTags2 != null)
+                message.remTags2 = object.remTags2 >>> 0;
+            if (object.name != null) {
+                if (typeof object.name !== "object")
+                    throw TypeError(".dfproto.UnitCurseInfo.name: object expected");
+                message.name = $root.dfproto.NameTriple.fromObject(object.name);
+            }
+            return message;
+        };
+
+        /**
+         * Creates a plain object from an UnitCurseInfo message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof dfproto.UnitCurseInfo
+         * @static
+         * @param {dfproto.UnitCurseInfo} message UnitCurseInfo
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        UnitCurseInfo.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.addTags1 = 0;
+                object.remTags1 = 0;
+                object.addTags2 = 0;
+                object.remTags2 = 0;
+                object.name = null;
+            }
+            if (message.addTags1 != null && message.hasOwnProperty("addTags1"))
+                object.addTags1 = message.addTags1;
+            if (message.remTags1 != null && message.hasOwnProperty("remTags1"))
+                object.remTags1 = message.remTags1;
+            if (message.addTags2 != null && message.hasOwnProperty("addTags2"))
+                object.addTags2 = message.addTags2;
+            if (message.remTags2 != null && message.hasOwnProperty("remTags2"))
+                object.remTags2 = message.remTags2;
+            if (message.name != null && message.hasOwnProperty("name"))
+                object.name = $root.dfproto.NameTriple.toObject(message.name, options);
+            return object;
+        };
+
+        /**
+         * Converts this UnitCurseInfo to JSON.
+         * @function toJSON
+         * @memberof dfproto.UnitCurseInfo
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        UnitCurseInfo.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return UnitCurseInfo;
+    })();
+
+    dfproto.SkillInfo = (function() {
+
+        /**
+         * Properties of a SkillInfo.
+         * @memberof dfproto
+         * @interface ISkillInfo
+         * @property {number} id SkillInfo id
+         * @property {number} level SkillInfo level
+         * @property {number} experience SkillInfo experience
+         */
+
+        /**
+         * Constructs a new SkillInfo.
+         * @memberof dfproto
+         * @classdesc Represents a SkillInfo.
+         * @implements ISkillInfo
+         * @constructor
+         * @param {dfproto.ISkillInfo=} [properties] Properties to set
+         */
+        function SkillInfo(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * SkillInfo id.
+         * @member {number} id
+         * @memberof dfproto.SkillInfo
+         * @instance
+         */
+        SkillInfo.prototype.id = 0;
+
+        /**
+         * SkillInfo level.
+         * @member {number} level
+         * @memberof dfproto.SkillInfo
+         * @instance
+         */
+        SkillInfo.prototype.level = 0;
+
+        /**
+         * SkillInfo experience.
+         * @member {number} experience
+         * @memberof dfproto.SkillInfo
+         * @instance
+         */
+        SkillInfo.prototype.experience = 0;
+
+        /**
+         * Creates a new SkillInfo instance using the specified properties.
+         * @function create
+         * @memberof dfproto.SkillInfo
+         * @static
+         * @param {dfproto.ISkillInfo=} [properties] Properties to set
+         * @returns {dfproto.SkillInfo} SkillInfo instance
+         */
+        SkillInfo.create = function create(properties) {
+            return new SkillInfo(properties);
+        };
+
+        /**
+         * Encodes the specified SkillInfo message. Does not implicitly {@link dfproto.SkillInfo.verify|verify} messages.
+         * @function encode
+         * @memberof dfproto.SkillInfo
+         * @static
+         * @param {dfproto.ISkillInfo} message SkillInfo message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        SkillInfo.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            writer.uint32(/* id 1, wireType 0 =*/8).int32(message.id);
+            writer.uint32(/* id 2, wireType 0 =*/16).int32(message.level);
+            writer.uint32(/* id 3, wireType 0 =*/24).int32(message.experience);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified SkillInfo message, length delimited. Does not implicitly {@link dfproto.SkillInfo.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof dfproto.SkillInfo
+         * @static
+         * @param {dfproto.ISkillInfo} message SkillInfo message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        SkillInfo.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a SkillInfo message from the specified reader or buffer.
+         * @function decode
+         * @memberof dfproto.SkillInfo
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {dfproto.SkillInfo} SkillInfo
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        SkillInfo.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.dfproto.SkillInfo();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    message.id = reader.int32();
+                    break;
+                case 2:
+                    message.level = reader.int32();
+                    break;
+                case 3:
+                    message.experience = reader.int32();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            if (!message.hasOwnProperty("id"))
+                throw $util.ProtocolError("missing required 'id'", { instance: message });
+            if (!message.hasOwnProperty("level"))
+                throw $util.ProtocolError("missing required 'level'", { instance: message });
+            if (!message.hasOwnProperty("experience"))
+                throw $util.ProtocolError("missing required 'experience'", { instance: message });
+            return message;
+        };
+
+        /**
+         * Decodes a SkillInfo message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof dfproto.SkillInfo
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {dfproto.SkillInfo} SkillInfo
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        SkillInfo.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a SkillInfo message.
+         * @function verify
+         * @memberof dfproto.SkillInfo
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        SkillInfo.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (!$util.isInteger(message.id))
+                return "id: integer expected";
+            if (!$util.isInteger(message.level))
+                return "level: integer expected";
+            if (!$util.isInteger(message.experience))
+                return "experience: integer expected";
+            return null;
+        };
+
+        /**
+         * Creates a SkillInfo message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof dfproto.SkillInfo
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {dfproto.SkillInfo} SkillInfo
+         */
+        SkillInfo.fromObject = function fromObject(object) {
+            if (object instanceof $root.dfproto.SkillInfo)
+                return object;
+            var message = new $root.dfproto.SkillInfo();
+            if (object.id != null)
+                message.id = object.id | 0;
+            if (object.level != null)
+                message.level = object.level | 0;
+            if (object.experience != null)
+                message.experience = object.experience | 0;
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a SkillInfo message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof dfproto.SkillInfo
+         * @static
+         * @param {dfproto.SkillInfo} message SkillInfo
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        SkillInfo.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.id = 0;
+                object.level = 0;
+                object.experience = 0;
+            }
+            if (message.id != null && message.hasOwnProperty("id"))
+                object.id = message.id;
+            if (message.level != null && message.hasOwnProperty("level"))
+                object.level = message.level;
+            if (message.experience != null && message.hasOwnProperty("experience"))
+                object.experience = message.experience;
+            return object;
+        };
+
+        /**
+         * Converts this SkillInfo to JSON.
+         * @function toJSON
+         * @memberof dfproto.SkillInfo
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        SkillInfo.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return SkillInfo;
+    })();
+
+    dfproto.UnitMiscTrait = (function() {
+
+        /**
+         * Properties of an UnitMiscTrait.
+         * @memberof dfproto
+         * @interface IUnitMiscTrait
+         * @property {number} id UnitMiscTrait id
+         * @property {number} value UnitMiscTrait value
+         */
+
+        /**
+         * Constructs a new UnitMiscTrait.
+         * @memberof dfproto
+         * @classdesc Represents an UnitMiscTrait.
+         * @implements IUnitMiscTrait
+         * @constructor
+         * @param {dfproto.IUnitMiscTrait=} [properties] Properties to set
+         */
+        function UnitMiscTrait(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * UnitMiscTrait id.
+         * @member {number} id
+         * @memberof dfproto.UnitMiscTrait
+         * @instance
+         */
+        UnitMiscTrait.prototype.id = 0;
+
+        /**
+         * UnitMiscTrait value.
+         * @member {number} value
+         * @memberof dfproto.UnitMiscTrait
+         * @instance
+         */
+        UnitMiscTrait.prototype.value = 0;
+
+        /**
+         * Creates a new UnitMiscTrait instance using the specified properties.
+         * @function create
+         * @memberof dfproto.UnitMiscTrait
+         * @static
+         * @param {dfproto.IUnitMiscTrait=} [properties] Properties to set
+         * @returns {dfproto.UnitMiscTrait} UnitMiscTrait instance
+         */
+        UnitMiscTrait.create = function create(properties) {
+            return new UnitMiscTrait(properties);
+        };
+
+        /**
+         * Encodes the specified UnitMiscTrait message. Does not implicitly {@link dfproto.UnitMiscTrait.verify|verify} messages.
+         * @function encode
+         * @memberof dfproto.UnitMiscTrait
+         * @static
+         * @param {dfproto.IUnitMiscTrait} message UnitMiscTrait message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        UnitMiscTrait.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            writer.uint32(/* id 1, wireType 0 =*/8).int32(message.id);
+            writer.uint32(/* id 2, wireType 0 =*/16).int32(message.value);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified UnitMiscTrait message, length delimited. Does not implicitly {@link dfproto.UnitMiscTrait.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof dfproto.UnitMiscTrait
+         * @static
+         * @param {dfproto.IUnitMiscTrait} message UnitMiscTrait message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        UnitMiscTrait.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes an UnitMiscTrait message from the specified reader or buffer.
+         * @function decode
+         * @memberof dfproto.UnitMiscTrait
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {dfproto.UnitMiscTrait} UnitMiscTrait
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        UnitMiscTrait.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.dfproto.UnitMiscTrait();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    message.id = reader.int32();
+                    break;
+                case 2:
+                    message.value = reader.int32();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            if (!message.hasOwnProperty("id"))
+                throw $util.ProtocolError("missing required 'id'", { instance: message });
+            if (!message.hasOwnProperty("value"))
+                throw $util.ProtocolError("missing required 'value'", { instance: message });
+            return message;
+        };
+
+        /**
+         * Decodes an UnitMiscTrait message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof dfproto.UnitMiscTrait
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {dfproto.UnitMiscTrait} UnitMiscTrait
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        UnitMiscTrait.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies an UnitMiscTrait message.
+         * @function verify
+         * @memberof dfproto.UnitMiscTrait
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        UnitMiscTrait.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (!$util.isInteger(message.id))
+                return "id: integer expected";
+            if (!$util.isInteger(message.value))
+                return "value: integer expected";
+            return null;
+        };
+
+        /**
+         * Creates an UnitMiscTrait message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof dfproto.UnitMiscTrait
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {dfproto.UnitMiscTrait} UnitMiscTrait
+         */
+        UnitMiscTrait.fromObject = function fromObject(object) {
+            if (object instanceof $root.dfproto.UnitMiscTrait)
+                return object;
+            var message = new $root.dfproto.UnitMiscTrait();
+            if (object.id != null)
+                message.id = object.id | 0;
+            if (object.value != null)
+                message.value = object.value | 0;
+            return message;
+        };
+
+        /**
+         * Creates a plain object from an UnitMiscTrait message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof dfproto.UnitMiscTrait
+         * @static
+         * @param {dfproto.UnitMiscTrait} message UnitMiscTrait
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        UnitMiscTrait.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.id = 0;
+                object.value = 0;
+            }
+            if (message.id != null && message.hasOwnProperty("id"))
+                object.id = message.id;
+            if (message.value != null && message.hasOwnProperty("value"))
+                object.value = message.value;
+            return object;
+        };
+
+        /**
+         * Converts this UnitMiscTrait to JSON.
+         * @function toJSON
+         * @memberof dfproto.UnitMiscTrait
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        UnitMiscTrait.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return UnitMiscTrait;
+    })();
+
+    dfproto.BasicUnitInfo = (function() {
+
+        /**
+         * Properties of a BasicUnitInfo.
+         * @memberof dfproto
+         * @interface IBasicUnitInfo
+         * @property {number} unitId BasicUnitInfo unitId
+         * @property {number} posX BasicUnitInfo posX
+         * @property {number} posY BasicUnitInfo posY
+         * @property {number} posZ BasicUnitInfo posZ
+         * @property {dfproto.INameInfo|null} [name] BasicUnitInfo name
+         * @property {number} flags1 BasicUnitInfo flags1
+         * @property {number} flags2 BasicUnitInfo flags2
+         * @property {number} flags3 BasicUnitInfo flags3
+         * @property {number} race BasicUnitInfo race
+         * @property {number} caste BasicUnitInfo caste
+         * @property {number|null} [gender] BasicUnitInfo gender
+         * @property {number|null} [civId] BasicUnitInfo civId
+         * @property {number|null} [histfigId] BasicUnitInfo histfigId
+         * @property {number|null} [deathId] BasicUnitInfo deathId
+         * @property {number|null} [deathFlags] BasicUnitInfo deathFlags
+         * @property {number|null} [squadId] BasicUnitInfo squadId
+         * @property {number|null} [squadPosition] BasicUnitInfo squadPosition
+         * @property {number|null} [profession] BasicUnitInfo profession
+         * @property {string|null} [customProfession] BasicUnitInfo customProfession
+         * @property {Array.<number>|null} [labors] BasicUnitInfo labors
+         * @property {Array.<dfproto.ISkillInfo>|null} [skills] BasicUnitInfo skills
+         * @property {Array.<dfproto.IUnitMiscTrait>|null} [miscTraits] BasicUnitInfo miscTraits
+         * @property {dfproto.IUnitCurseInfo|null} [curse] BasicUnitInfo curse
+         * @property {Array.<number>|null} [burrows] BasicUnitInfo burrows
+         */
+
+        /**
+         * Constructs a new BasicUnitInfo.
+         * @memberof dfproto
+         * @classdesc Represents a BasicUnitInfo.
+         * @implements IBasicUnitInfo
+         * @constructor
+         * @param {dfproto.IBasicUnitInfo=} [properties] Properties to set
+         */
+        function BasicUnitInfo(properties) {
+            this.labors = [];
+            this.skills = [];
+            this.miscTraits = [];
+            this.burrows = [];
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * BasicUnitInfo unitId.
+         * @member {number} unitId
+         * @memberof dfproto.BasicUnitInfo
+         * @instance
+         */
+        BasicUnitInfo.prototype.unitId = 0;
+
+        /**
+         * BasicUnitInfo posX.
+         * @member {number} posX
+         * @memberof dfproto.BasicUnitInfo
+         * @instance
+         */
+        BasicUnitInfo.prototype.posX = 0;
+
+        /**
+         * BasicUnitInfo posY.
+         * @member {number} posY
+         * @memberof dfproto.BasicUnitInfo
+         * @instance
+         */
+        BasicUnitInfo.prototype.posY = 0;
+
+        /**
+         * BasicUnitInfo posZ.
+         * @member {number} posZ
+         * @memberof dfproto.BasicUnitInfo
+         * @instance
+         */
+        BasicUnitInfo.prototype.posZ = 0;
+
+        /**
+         * BasicUnitInfo name.
+         * @member {dfproto.INameInfo|null|undefined} name
+         * @memberof dfproto.BasicUnitInfo
+         * @instance
+         */
+        BasicUnitInfo.prototype.name = null;
+
+        /**
+         * BasicUnitInfo flags1.
+         * @member {number} flags1
+         * @memberof dfproto.BasicUnitInfo
+         * @instance
+         */
+        BasicUnitInfo.prototype.flags1 = 0;
+
+        /**
+         * BasicUnitInfo flags2.
+         * @member {number} flags2
+         * @memberof dfproto.BasicUnitInfo
+         * @instance
+         */
+        BasicUnitInfo.prototype.flags2 = 0;
+
+        /**
+         * BasicUnitInfo flags3.
+         * @member {number} flags3
+         * @memberof dfproto.BasicUnitInfo
+         * @instance
+         */
+        BasicUnitInfo.prototype.flags3 = 0;
+
+        /**
+         * BasicUnitInfo race.
+         * @member {number} race
+         * @memberof dfproto.BasicUnitInfo
+         * @instance
+         */
+        BasicUnitInfo.prototype.race = 0;
+
+        /**
+         * BasicUnitInfo caste.
+         * @member {number} caste
+         * @memberof dfproto.BasicUnitInfo
+         * @instance
+         */
+        BasicUnitInfo.prototype.caste = 0;
+
+        /**
+         * BasicUnitInfo gender.
+         * @member {number} gender
+         * @memberof dfproto.BasicUnitInfo
+         * @instance
+         */
+        BasicUnitInfo.prototype.gender = -1;
+
+        /**
+         * BasicUnitInfo civId.
+         * @member {number} civId
+         * @memberof dfproto.BasicUnitInfo
+         * @instance
+         */
+        BasicUnitInfo.prototype.civId = -1;
+
+        /**
+         * BasicUnitInfo histfigId.
+         * @member {number} histfigId
+         * @memberof dfproto.BasicUnitInfo
+         * @instance
+         */
+        BasicUnitInfo.prototype.histfigId = -1;
+
+        /**
+         * BasicUnitInfo deathId.
+         * @member {number} deathId
+         * @memberof dfproto.BasicUnitInfo
+         * @instance
+         */
+        BasicUnitInfo.prototype.deathId = -1;
+
+        /**
+         * BasicUnitInfo deathFlags.
+         * @member {number} deathFlags
+         * @memberof dfproto.BasicUnitInfo
+         * @instance
+         */
+        BasicUnitInfo.prototype.deathFlags = 0;
+
+        /**
+         * BasicUnitInfo squadId.
+         * @member {number} squadId
+         * @memberof dfproto.BasicUnitInfo
+         * @instance
+         */
+        BasicUnitInfo.prototype.squadId = -1;
+
+        /**
+         * BasicUnitInfo squadPosition.
+         * @member {number} squadPosition
+         * @memberof dfproto.BasicUnitInfo
+         * @instance
+         */
+        BasicUnitInfo.prototype.squadPosition = -1;
+
+        /**
+         * BasicUnitInfo profession.
+         * @member {number} profession
+         * @memberof dfproto.BasicUnitInfo
+         * @instance
+         */
+        BasicUnitInfo.prototype.profession = -1;
+
+        /**
+         * BasicUnitInfo customProfession.
+         * @member {string} customProfession
+         * @memberof dfproto.BasicUnitInfo
+         * @instance
+         */
+        BasicUnitInfo.prototype.customProfession = "";
+
+        /**
+         * BasicUnitInfo labors.
+         * @member {Array.<number>} labors
+         * @memberof dfproto.BasicUnitInfo
+         * @instance
+         */
+        BasicUnitInfo.prototype.labors = $util.emptyArray;
+
+        /**
+         * BasicUnitInfo skills.
+         * @member {Array.<dfproto.ISkillInfo>} skills
+         * @memberof dfproto.BasicUnitInfo
+         * @instance
+         */
+        BasicUnitInfo.prototype.skills = $util.emptyArray;
+
+        /**
+         * BasicUnitInfo miscTraits.
+         * @member {Array.<dfproto.IUnitMiscTrait>} miscTraits
+         * @memberof dfproto.BasicUnitInfo
+         * @instance
+         */
+        BasicUnitInfo.prototype.miscTraits = $util.emptyArray;
+
+        /**
+         * BasicUnitInfo curse.
+         * @member {dfproto.IUnitCurseInfo|null|undefined} curse
+         * @memberof dfproto.BasicUnitInfo
+         * @instance
+         */
+        BasicUnitInfo.prototype.curse = null;
+
+        /**
+         * BasicUnitInfo burrows.
+         * @member {Array.<number>} burrows
+         * @memberof dfproto.BasicUnitInfo
+         * @instance
+         */
+        BasicUnitInfo.prototype.burrows = $util.emptyArray;
+
+        /**
+         * Creates a new BasicUnitInfo instance using the specified properties.
+         * @function create
+         * @memberof dfproto.BasicUnitInfo
+         * @static
+         * @param {dfproto.IBasicUnitInfo=} [properties] Properties to set
+         * @returns {dfproto.BasicUnitInfo} BasicUnitInfo instance
+         */
+        BasicUnitInfo.create = function create(properties) {
+            return new BasicUnitInfo(properties);
+        };
+
+        /**
+         * Encodes the specified BasicUnitInfo message. Does not implicitly {@link dfproto.BasicUnitInfo.verify|verify} messages.
+         * @function encode
+         * @memberof dfproto.BasicUnitInfo
+         * @static
+         * @param {dfproto.IBasicUnitInfo} message BasicUnitInfo message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        BasicUnitInfo.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            writer.uint32(/* id 1, wireType 0 =*/8).int32(message.unitId);
+            if (message.name != null && Object.hasOwnProperty.call(message, "name"))
+                $root.dfproto.NameInfo.encode(message.name, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+            writer.uint32(/* id 3, wireType 5 =*/29).fixed32(message.flags1);
+            writer.uint32(/* id 4, wireType 5 =*/37).fixed32(message.flags2);
+            writer.uint32(/* id 5, wireType 5 =*/45).fixed32(message.flags3);
+            writer.uint32(/* id 6, wireType 0 =*/48).int32(message.race);
+            writer.uint32(/* id 7, wireType 0 =*/56).int32(message.caste);
+            if (message.gender != null && Object.hasOwnProperty.call(message, "gender"))
+                writer.uint32(/* id 8, wireType 0 =*/64).int32(message.gender);
+            if (message.civId != null && Object.hasOwnProperty.call(message, "civId"))
+                writer.uint32(/* id 9, wireType 0 =*/72).int32(message.civId);
+            if (message.histfigId != null && Object.hasOwnProperty.call(message, "histfigId"))
+                writer.uint32(/* id 10, wireType 0 =*/80).int32(message.histfigId);
+            if (message.labors != null && message.labors.length)
+                for (var i = 0; i < message.labors.length; ++i)
+                    writer.uint32(/* id 11, wireType 0 =*/88).int32(message.labors[i]);
+            if (message.skills != null && message.skills.length)
+                for (var i = 0; i < message.skills.length; ++i)
+                    $root.dfproto.SkillInfo.encode(message.skills[i], writer.uint32(/* id 12, wireType 2 =*/98).fork()).ldelim();
+            writer.uint32(/* id 13, wireType 0 =*/104).int32(message.posX);
+            writer.uint32(/* id 14, wireType 0 =*/112).int32(message.posY);
+            writer.uint32(/* id 15, wireType 0 =*/120).int32(message.posZ);
+            if (message.curse != null && Object.hasOwnProperty.call(message, "curse"))
+                $root.dfproto.UnitCurseInfo.encode(message.curse, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
+            if (message.deathId != null && Object.hasOwnProperty.call(message, "deathId"))
+                writer.uint32(/* id 17, wireType 0 =*/136).int32(message.deathId);
+            if (message.deathFlags != null && Object.hasOwnProperty.call(message, "deathFlags"))
+                writer.uint32(/* id 18, wireType 0 =*/144).uint32(message.deathFlags);
+            if (message.squadId != null && Object.hasOwnProperty.call(message, "squadId"))
+                writer.uint32(/* id 19, wireType 0 =*/152).int32(message.squadId);
+            if (message.squadPosition != null && Object.hasOwnProperty.call(message, "squadPosition"))
+                writer.uint32(/* id 20, wireType 0 =*/160).int32(message.squadPosition);
+            if (message.burrows != null && message.burrows.length)
+                for (var i = 0; i < message.burrows.length; ++i)
+                    writer.uint32(/* id 21, wireType 0 =*/168).int32(message.burrows[i]);
+            if (message.profession != null && Object.hasOwnProperty.call(message, "profession"))
+                writer.uint32(/* id 22, wireType 0 =*/176).int32(message.profession);
+            if (message.customProfession != null && Object.hasOwnProperty.call(message, "customProfession"))
+                writer.uint32(/* id 23, wireType 2 =*/186).string(message.customProfession);
+            if (message.miscTraits != null && message.miscTraits.length)
+                for (var i = 0; i < message.miscTraits.length; ++i)
+                    $root.dfproto.UnitMiscTrait.encode(message.miscTraits[i], writer.uint32(/* id 24, wireType 2 =*/194).fork()).ldelim();
+            return writer;
+        };
+
+        /**
+         * Encodes the specified BasicUnitInfo message, length delimited. Does not implicitly {@link dfproto.BasicUnitInfo.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof dfproto.BasicUnitInfo
+         * @static
+         * @param {dfproto.IBasicUnitInfo} message BasicUnitInfo message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        BasicUnitInfo.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a BasicUnitInfo message from the specified reader or buffer.
+         * @function decode
+         * @memberof dfproto.BasicUnitInfo
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {dfproto.BasicUnitInfo} BasicUnitInfo
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        BasicUnitInfo.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.dfproto.BasicUnitInfo();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    message.unitId = reader.int32();
+                    break;
+                case 13:
+                    message.posX = reader.int32();
+                    break;
+                case 14:
+                    message.posY = reader.int32();
+                    break;
+                case 15:
+                    message.posZ = reader.int32();
+                    break;
+                case 2:
+                    message.name = $root.dfproto.NameInfo.decode(reader, reader.uint32());
+                    break;
+                case 3:
+                    message.flags1 = reader.fixed32();
+                    break;
+                case 4:
+                    message.flags2 = reader.fixed32();
+                    break;
+                case 5:
+                    message.flags3 = reader.fixed32();
+                    break;
+                case 6:
+                    message.race = reader.int32();
+                    break;
+                case 7:
+                    message.caste = reader.int32();
+                    break;
+                case 8:
+                    message.gender = reader.int32();
+                    break;
+                case 9:
+                    message.civId = reader.int32();
+                    break;
+                case 10:
+                    message.histfigId = reader.int32();
+                    break;
+                case 17:
+                    message.deathId = reader.int32();
+                    break;
+                case 18:
+                    message.deathFlags = reader.uint32();
+                    break;
+                case 19:
+                    message.squadId = reader.int32();
+                    break;
+                case 20:
+                    message.squadPosition = reader.int32();
+                    break;
+                case 22:
+                    message.profession = reader.int32();
+                    break;
+                case 23:
+                    message.customProfession = reader.string();
+                    break;
+                case 11:
+                    if (!(message.labors && message.labors.length))
+                        message.labors = [];
+                    if ((tag & 7) === 2) {
+                        var end2 = reader.uint32() + reader.pos;
+                        while (reader.pos < end2)
+                            message.labors.push(reader.int32());
+                    } else
+                        message.labors.push(reader.int32());
+                    break;
+                case 12:
+                    if (!(message.skills && message.skills.length))
+                        message.skills = [];
+                    message.skills.push($root.dfproto.SkillInfo.decode(reader, reader.uint32()));
+                    break;
+                case 24:
+                    if (!(message.miscTraits && message.miscTraits.length))
+                        message.miscTraits = [];
+                    message.miscTraits.push($root.dfproto.UnitMiscTrait.decode(reader, reader.uint32()));
+                    break;
+                case 16:
+                    message.curse = $root.dfproto.UnitCurseInfo.decode(reader, reader.uint32());
+                    break;
+                case 21:
+                    if (!(message.burrows && message.burrows.length))
+                        message.burrows = [];
+                    if ((tag & 7) === 2) {
+                        var end2 = reader.uint32() + reader.pos;
+                        while (reader.pos < end2)
+                            message.burrows.push(reader.int32());
+                    } else
+                        message.burrows.push(reader.int32());
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            if (!message.hasOwnProperty("unitId"))
+                throw $util.ProtocolError("missing required 'unitId'", { instance: message });
+            if (!message.hasOwnProperty("posX"))
+                throw $util.ProtocolError("missing required 'posX'", { instance: message });
+            if (!message.hasOwnProperty("posY"))
+                throw $util.ProtocolError("missing required 'posY'", { instance: message });
+            if (!message.hasOwnProperty("posZ"))
+                throw $util.ProtocolError("missing required 'posZ'", { instance: message });
+            if (!message.hasOwnProperty("flags1"))
+                throw $util.ProtocolError("missing required 'flags1'", { instance: message });
+            if (!message.hasOwnProperty("flags2"))
+                throw $util.ProtocolError("missing required 'flags2'", { instance: message });
+            if (!message.hasOwnProperty("flags3"))
+                throw $util.ProtocolError("missing required 'flags3'", { instance: message });
+            if (!message.hasOwnProperty("race"))
+                throw $util.ProtocolError("missing required 'race'", { instance: message });
+            if (!message.hasOwnProperty("caste"))
+                throw $util.ProtocolError("missing required 'caste'", { instance: message });
+            return message;
+        };
+
+        /**
+         * Decodes a BasicUnitInfo message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof dfproto.BasicUnitInfo
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {dfproto.BasicUnitInfo} BasicUnitInfo
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        BasicUnitInfo.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a BasicUnitInfo message.
+         * @function verify
+         * @memberof dfproto.BasicUnitInfo
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        BasicUnitInfo.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (!$util.isInteger(message.unitId))
+                return "unitId: integer expected";
+            if (!$util.isInteger(message.posX))
+                return "posX: integer expected";
+            if (!$util.isInteger(message.posY))
+                return "posY: integer expected";
+            if (!$util.isInteger(message.posZ))
+                return "posZ: integer expected";
+            if (message.name != null && message.hasOwnProperty("name")) {
+                var error = $root.dfproto.NameInfo.verify(message.name);
+                if (error)
+                    return "name." + error;
+            }
+            if (!$util.isInteger(message.flags1))
+                return "flags1: integer expected";
+            if (!$util.isInteger(message.flags2))
+                return "flags2: integer expected";
+            if (!$util.isInteger(message.flags3))
+                return "flags3: integer expected";
+            if (!$util.isInteger(message.race))
+                return "race: integer expected";
+            if (!$util.isInteger(message.caste))
+                return "caste: integer expected";
+            if (message.gender != null && message.hasOwnProperty("gender"))
+                if (!$util.isInteger(message.gender))
+                    return "gender: integer expected";
+            if (message.civId != null && message.hasOwnProperty("civId"))
+                if (!$util.isInteger(message.civId))
+                    return "civId: integer expected";
+            if (message.histfigId != null && message.hasOwnProperty("histfigId"))
+                if (!$util.isInteger(message.histfigId))
+                    return "histfigId: integer expected";
+            if (message.deathId != null && message.hasOwnProperty("deathId"))
+                if (!$util.isInteger(message.deathId))
+                    return "deathId: integer expected";
+            if (message.deathFlags != null && message.hasOwnProperty("deathFlags"))
+                if (!$util.isInteger(message.deathFlags))
+                    return "deathFlags: integer expected";
+            if (message.squadId != null && message.hasOwnProperty("squadId"))
+                if (!$util.isInteger(message.squadId))
+                    return "squadId: integer expected";
+            if (message.squadPosition != null && message.hasOwnProperty("squadPosition"))
+                if (!$util.isInteger(message.squadPosition))
+                    return "squadPosition: integer expected";
+            if (message.profession != null && message.hasOwnProperty("profession"))
+                if (!$util.isInteger(message.profession))
+                    return "profession: integer expected";
+            if (message.customProfession != null && message.hasOwnProperty("customProfession"))
+                if (!$util.isString(message.customProfession))
+                    return "customProfession: string expected";
+            if (message.labors != null && message.hasOwnProperty("labors")) {
+                if (!Array.isArray(message.labors))
+                    return "labors: array expected";
+                for (var i = 0; i < message.labors.length; ++i)
+                    if (!$util.isInteger(message.labors[i]))
+                        return "labors: integer[] expected";
+            }
+            if (message.skills != null && message.hasOwnProperty("skills")) {
+                if (!Array.isArray(message.skills))
+                    return "skills: array expected";
+                for (var i = 0; i < message.skills.length; ++i) {
+                    var error = $root.dfproto.SkillInfo.verify(message.skills[i]);
+                    if (error)
+                        return "skills." + error;
+                }
+            }
+            if (message.miscTraits != null && message.hasOwnProperty("miscTraits")) {
+                if (!Array.isArray(message.miscTraits))
+                    return "miscTraits: array expected";
+                for (var i = 0; i < message.miscTraits.length; ++i) {
+                    var error = $root.dfproto.UnitMiscTrait.verify(message.miscTraits[i]);
+                    if (error)
+                        return "miscTraits." + error;
+                }
+            }
+            if (message.curse != null && message.hasOwnProperty("curse")) {
+                var error = $root.dfproto.UnitCurseInfo.verify(message.curse);
+                if (error)
+                    return "curse." + error;
+            }
+            if (message.burrows != null && message.hasOwnProperty("burrows")) {
+                if (!Array.isArray(message.burrows))
+                    return "burrows: array expected";
+                for (var i = 0; i < message.burrows.length; ++i)
+                    if (!$util.isInteger(message.burrows[i]))
+                        return "burrows: integer[] expected";
+            }
+            return null;
+        };
+
+        /**
+         * Creates a BasicUnitInfo message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof dfproto.BasicUnitInfo
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {dfproto.BasicUnitInfo} BasicUnitInfo
+         */
+        BasicUnitInfo.fromObject = function fromObject(object) {
+            if (object instanceof $root.dfproto.BasicUnitInfo)
+                return object;
+            var message = new $root.dfproto.BasicUnitInfo();
+            if (object.unitId != null)
+                message.unitId = object.unitId | 0;
+            if (object.posX != null)
+                message.posX = object.posX | 0;
+            if (object.posY != null)
+                message.posY = object.posY | 0;
+            if (object.posZ != null)
+                message.posZ = object.posZ | 0;
+            if (object.name != null) {
+                if (typeof object.name !== "object")
+                    throw TypeError(".dfproto.BasicUnitInfo.name: object expected");
+                message.name = $root.dfproto.NameInfo.fromObject(object.name);
+            }
+            if (object.flags1 != null)
+                message.flags1 = object.flags1 >>> 0;
+            if (object.flags2 != null)
+                message.flags2 = object.flags2 >>> 0;
+            if (object.flags3 != null)
+                message.flags3 = object.flags3 >>> 0;
+            if (object.race != null)
+                message.race = object.race | 0;
+            if (object.caste != null)
+                message.caste = object.caste | 0;
+            if (object.gender != null)
+                message.gender = object.gender | 0;
+            if (object.civId != null)
+                message.civId = object.civId | 0;
+            if (object.histfigId != null)
+                message.histfigId = object.histfigId | 0;
+            if (object.deathId != null)
+                message.deathId = object.deathId | 0;
+            if (object.deathFlags != null)
+                message.deathFlags = object.deathFlags >>> 0;
+            if (object.squadId != null)
+                message.squadId = object.squadId | 0;
+            if (object.squadPosition != null)
+                message.squadPosition = object.squadPosition | 0;
+            if (object.profession != null)
+                message.profession = object.profession | 0;
+            if (object.customProfession != null)
+                message.customProfession = String(object.customProfession);
+            if (object.labors) {
+                if (!Array.isArray(object.labors))
+                    throw TypeError(".dfproto.BasicUnitInfo.labors: array expected");
+                message.labors = [];
+                for (var i = 0; i < object.labors.length; ++i)
+                    message.labors[i] = object.labors[i] | 0;
+            }
+            if (object.skills) {
+                if (!Array.isArray(object.skills))
+                    throw TypeError(".dfproto.BasicUnitInfo.skills: array expected");
+                message.skills = [];
+                for (var i = 0; i < object.skills.length; ++i) {
+                    if (typeof object.skills[i] !== "object")
+                        throw TypeError(".dfproto.BasicUnitInfo.skills: object expected");
+                    message.skills[i] = $root.dfproto.SkillInfo.fromObject(object.skills[i]);
+                }
+            }
+            if (object.miscTraits) {
+                if (!Array.isArray(object.miscTraits))
+                    throw TypeError(".dfproto.BasicUnitInfo.miscTraits: array expected");
+                message.miscTraits = [];
+                for (var i = 0; i < object.miscTraits.length; ++i) {
+                    if (typeof object.miscTraits[i] !== "object")
+                        throw TypeError(".dfproto.BasicUnitInfo.miscTraits: object expected");
+                    message.miscTraits[i] = $root.dfproto.UnitMiscTrait.fromObject(object.miscTraits[i]);
+                }
+            }
+            if (object.curse != null) {
+                if (typeof object.curse !== "object")
+                    throw TypeError(".dfproto.BasicUnitInfo.curse: object expected");
+                message.curse = $root.dfproto.UnitCurseInfo.fromObject(object.curse);
+            }
+            if (object.burrows) {
+                if (!Array.isArray(object.burrows))
+                    throw TypeError(".dfproto.BasicUnitInfo.burrows: array expected");
+                message.burrows = [];
+                for (var i = 0; i < object.burrows.length; ++i)
+                    message.burrows[i] = object.burrows[i] | 0;
+            }
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a BasicUnitInfo message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof dfproto.BasicUnitInfo
+         * @static
+         * @param {dfproto.BasicUnitInfo} message BasicUnitInfo
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        BasicUnitInfo.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.arrays || options.defaults) {
+                object.labors = [];
+                object.skills = [];
+                object.burrows = [];
+                object.miscTraits = [];
+            }
+            if (options.defaults) {
+                object.unitId = 0;
+                object.name = null;
+                object.flags1 = 0;
+                object.flags2 = 0;
+                object.flags3 = 0;
+                object.race = 0;
+                object.caste = 0;
+                object.gender = -1;
+                object.civId = -1;
+                object.histfigId = -1;
+                object.posX = 0;
+                object.posY = 0;
+                object.posZ = 0;
+                object.curse = null;
+                object.deathId = -1;
+                object.deathFlags = 0;
+                object.squadId = -1;
+                object.squadPosition = -1;
+                object.profession = -1;
+                object.customProfession = "";
+            }
+            if (message.unitId != null && message.hasOwnProperty("unitId"))
+                object.unitId = message.unitId;
+            if (message.name != null && message.hasOwnProperty("name"))
+                object.name = $root.dfproto.NameInfo.toObject(message.name, options);
+            if (message.flags1 != null && message.hasOwnProperty("flags1"))
+                object.flags1 = message.flags1;
+            if (message.flags2 != null && message.hasOwnProperty("flags2"))
+                object.flags2 = message.flags2;
+            if (message.flags3 != null && message.hasOwnProperty("flags3"))
+                object.flags3 = message.flags3;
+            if (message.race != null && message.hasOwnProperty("race"))
+                object.race = message.race;
+            if (message.caste != null && message.hasOwnProperty("caste"))
+                object.caste = message.caste;
+            if (message.gender != null && message.hasOwnProperty("gender"))
+                object.gender = message.gender;
+            if (message.civId != null && message.hasOwnProperty("civId"))
+                object.civId = message.civId;
+            if (message.histfigId != null && message.hasOwnProperty("histfigId"))
+                object.histfigId = message.histfigId;
+            if (message.labors && message.labors.length) {
+                object.labors = [];
+                for (var j = 0; j < message.labors.length; ++j)
+                    object.labors[j] = message.labors[j];
+            }
+            if (message.skills && message.skills.length) {
+                object.skills = [];
+                for (var j = 0; j < message.skills.length; ++j)
+                    object.skills[j] = $root.dfproto.SkillInfo.toObject(message.skills[j], options);
+            }
+            if (message.posX != null && message.hasOwnProperty("posX"))
+                object.posX = message.posX;
+            if (message.posY != null && message.hasOwnProperty("posY"))
+                object.posY = message.posY;
+            if (message.posZ != null && message.hasOwnProperty("posZ"))
+                object.posZ = message.posZ;
+            if (message.curse != null && message.hasOwnProperty("curse"))
+                object.curse = $root.dfproto.UnitCurseInfo.toObject(message.curse, options);
+            if (message.deathId != null && message.hasOwnProperty("deathId"))
+                object.deathId = message.deathId;
+            if (message.deathFlags != null && message.hasOwnProperty("deathFlags"))
+                object.deathFlags = message.deathFlags;
+            if (message.squadId != null && message.hasOwnProperty("squadId"))
+                object.squadId = message.squadId;
+            if (message.squadPosition != null && message.hasOwnProperty("squadPosition"))
+                object.squadPosition = message.squadPosition;
+            if (message.burrows && message.burrows.length) {
+                object.burrows = [];
+                for (var j = 0; j < message.burrows.length; ++j)
+                    object.burrows[j] = message.burrows[j];
+            }
+            if (message.profession != null && message.hasOwnProperty("profession"))
+                object.profession = message.profession;
+            if (message.customProfession != null && message.hasOwnProperty("customProfession"))
+                object.customProfession = message.customProfession;
+            if (message.miscTraits && message.miscTraits.length) {
+                object.miscTraits = [];
+                for (var j = 0; j < message.miscTraits.length; ++j)
+                    object.miscTraits[j] = $root.dfproto.UnitMiscTrait.toObject(message.miscTraits[j], options);
+            }
+            return object;
+        };
+
+        /**
+         * Converts this BasicUnitInfo to JSON.
+         * @function toJSON
+         * @memberof dfproto.BasicUnitInfo
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        BasicUnitInfo.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return BasicUnitInfo;
+    })();
+
+    dfproto.BasicUnitInfoMask = (function() {
+
+        /**
+         * Properties of a BasicUnitInfoMask.
+         * @memberof dfproto
+         * @interface IBasicUnitInfoMask
+         * @property {boolean|null} [labors] BasicUnitInfoMask labors
+         * @property {boolean|null} [skills] BasicUnitInfoMask skills
+         * @property {boolean|null} [profession] BasicUnitInfoMask profession
+         * @property {boolean|null} [miscTraits] BasicUnitInfoMask miscTraits
+         */
+
+        /**
+         * Constructs a new BasicUnitInfoMask.
+         * @memberof dfproto
+         * @classdesc Represents a BasicUnitInfoMask.
+         * @implements IBasicUnitInfoMask
+         * @constructor
+         * @param {dfproto.IBasicUnitInfoMask=} [properties] Properties to set
+         */
+        function BasicUnitInfoMask(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * BasicUnitInfoMask labors.
+         * @member {boolean} labors
+         * @memberof dfproto.BasicUnitInfoMask
+         * @instance
+         */
+        BasicUnitInfoMask.prototype.labors = false;
+
+        /**
+         * BasicUnitInfoMask skills.
+         * @member {boolean} skills
+         * @memberof dfproto.BasicUnitInfoMask
+         * @instance
+         */
+        BasicUnitInfoMask.prototype.skills = false;
+
+        /**
+         * BasicUnitInfoMask profession.
+         * @member {boolean} profession
+         * @memberof dfproto.BasicUnitInfoMask
+         * @instance
+         */
+        BasicUnitInfoMask.prototype.profession = false;
+
+        /**
+         * BasicUnitInfoMask miscTraits.
+         * @member {boolean} miscTraits
+         * @memberof dfproto.BasicUnitInfoMask
+         * @instance
+         */
+        BasicUnitInfoMask.prototype.miscTraits = false;
+
+        /**
+         * Creates a new BasicUnitInfoMask instance using the specified properties.
+         * @function create
+         * @memberof dfproto.BasicUnitInfoMask
+         * @static
+         * @param {dfproto.IBasicUnitInfoMask=} [properties] Properties to set
+         * @returns {dfproto.BasicUnitInfoMask} BasicUnitInfoMask instance
+         */
+        BasicUnitInfoMask.create = function create(properties) {
+            return new BasicUnitInfoMask(properties);
+        };
+
+        /**
+         * Encodes the specified BasicUnitInfoMask message. Does not implicitly {@link dfproto.BasicUnitInfoMask.verify|verify} messages.
+         * @function encode
+         * @memberof dfproto.BasicUnitInfoMask
+         * @static
+         * @param {dfproto.IBasicUnitInfoMask} message BasicUnitInfoMask message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        BasicUnitInfoMask.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.labors != null && Object.hasOwnProperty.call(message, "labors"))
+                writer.uint32(/* id 1, wireType 0 =*/8).bool(message.labors);
+            if (message.skills != null && Object.hasOwnProperty.call(message, "skills"))
+                writer.uint32(/* id 2, wireType 0 =*/16).bool(message.skills);
+            if (message.profession != null && Object.hasOwnProperty.call(message, "profession"))
+                writer.uint32(/* id 3, wireType 0 =*/24).bool(message.profession);
+            if (message.miscTraits != null && Object.hasOwnProperty.call(message, "miscTraits"))
+                writer.uint32(/* id 4, wireType 0 =*/32).bool(message.miscTraits);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified BasicUnitInfoMask message, length delimited. Does not implicitly {@link dfproto.BasicUnitInfoMask.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof dfproto.BasicUnitInfoMask
+         * @static
+         * @param {dfproto.IBasicUnitInfoMask} message BasicUnitInfoMask message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        BasicUnitInfoMask.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a BasicUnitInfoMask message from the specified reader or buffer.
+         * @function decode
+         * @memberof dfproto.BasicUnitInfoMask
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {dfproto.BasicUnitInfoMask} BasicUnitInfoMask
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        BasicUnitInfoMask.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.dfproto.BasicUnitInfoMask();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    message.labors = reader.bool();
+                    break;
+                case 2:
+                    message.skills = reader.bool();
+                    break;
+                case 3:
+                    message.profession = reader.bool();
+                    break;
+                case 4:
+                    message.miscTraits = reader.bool();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a BasicUnitInfoMask message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof dfproto.BasicUnitInfoMask
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {dfproto.BasicUnitInfoMask} BasicUnitInfoMask
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        BasicUnitInfoMask.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a BasicUnitInfoMask message.
+         * @function verify
+         * @memberof dfproto.BasicUnitInfoMask
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        BasicUnitInfoMask.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.labors != null && message.hasOwnProperty("labors"))
+                if (typeof message.labors !== "boolean")
+                    return "labors: boolean expected";
+            if (message.skills != null && message.hasOwnProperty("skills"))
+                if (typeof message.skills !== "boolean")
+                    return "skills: boolean expected";
+            if (message.profession != null && message.hasOwnProperty("profession"))
+                if (typeof message.profession !== "boolean")
+                    return "profession: boolean expected";
+            if (message.miscTraits != null && message.hasOwnProperty("miscTraits"))
+                if (typeof message.miscTraits !== "boolean")
+                    return "miscTraits: boolean expected";
+            return null;
+        };
+
+        /**
+         * Creates a BasicUnitInfoMask message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof dfproto.BasicUnitInfoMask
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {dfproto.BasicUnitInfoMask} BasicUnitInfoMask
+         */
+        BasicUnitInfoMask.fromObject = function fromObject(object) {
+            if (object instanceof $root.dfproto.BasicUnitInfoMask)
+                return object;
+            var message = new $root.dfproto.BasicUnitInfoMask();
+            if (object.labors != null)
+                message.labors = Boolean(object.labors);
+            if (object.skills != null)
+                message.skills = Boolean(object.skills);
+            if (object.profession != null)
+                message.profession = Boolean(object.profession);
+            if (object.miscTraits != null)
+                message.miscTraits = Boolean(object.miscTraits);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a BasicUnitInfoMask message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof dfproto.BasicUnitInfoMask
+         * @static
+         * @param {dfproto.BasicUnitInfoMask} message BasicUnitInfoMask
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        BasicUnitInfoMask.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.labors = false;
+                object.skills = false;
+                object.profession = false;
+                object.miscTraits = false;
+            }
+            if (message.labors != null && message.hasOwnProperty("labors"))
+                object.labors = message.labors;
+            if (message.skills != null && message.hasOwnProperty("skills"))
+                object.skills = message.skills;
+            if (message.profession != null && message.hasOwnProperty("profession"))
+                object.profession = message.profession;
+            if (message.miscTraits != null && message.hasOwnProperty("miscTraits"))
+                object.miscTraits = message.miscTraits;
+            return object;
+        };
+
+        /**
+         * Converts this BasicUnitInfoMask to JSON.
+         * @function toJSON
+         * @memberof dfproto.BasicUnitInfoMask
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        BasicUnitInfoMask.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return BasicUnitInfoMask;
+    })();
+
+    dfproto.BasicSquadInfo = (function() {
+
+        /**
+         * Properties of a BasicSquadInfo.
+         * @memberof dfproto
+         * @interface IBasicSquadInfo
+         * @property {number} squadId BasicSquadInfo squadId
+         * @property {dfproto.INameInfo|null} [name] BasicSquadInfo name
+         * @property {string|null} [alias] BasicSquadInfo alias
+         * @property {Array.<number>|null} [members] BasicSquadInfo members
+         */
+
+        /**
+         * Constructs a new BasicSquadInfo.
+         * @memberof dfproto
+         * @classdesc Represents a BasicSquadInfo.
+         * @implements IBasicSquadInfo
+         * @constructor
+         * @param {dfproto.IBasicSquadInfo=} [properties] Properties to set
+         */
+        function BasicSquadInfo(properties) {
+            this.members = [];
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * BasicSquadInfo squadId.
+         * @member {number} squadId
+         * @memberof dfproto.BasicSquadInfo
+         * @instance
+         */
+        BasicSquadInfo.prototype.squadId = 0;
+
+        /**
+         * BasicSquadInfo name.
+         * @member {dfproto.INameInfo|null|undefined} name
+         * @memberof dfproto.BasicSquadInfo
+         * @instance
+         */
+        BasicSquadInfo.prototype.name = null;
+
+        /**
+         * BasicSquadInfo alias.
+         * @member {string} alias
+         * @memberof dfproto.BasicSquadInfo
+         * @instance
+         */
+        BasicSquadInfo.prototype.alias = "";
+
+        /**
+         * BasicSquadInfo members.
+         * @member {Array.<number>} members
+         * @memberof dfproto.BasicSquadInfo
+         * @instance
+         */
+        BasicSquadInfo.prototype.members = $util.emptyArray;
+
+        /**
+         * Creates a new BasicSquadInfo instance using the specified properties.
+         * @function create
+         * @memberof dfproto.BasicSquadInfo
+         * @static
+         * @param {dfproto.IBasicSquadInfo=} [properties] Properties to set
+         * @returns {dfproto.BasicSquadInfo} BasicSquadInfo instance
+         */
+        BasicSquadInfo.create = function create(properties) {
+            return new BasicSquadInfo(properties);
+        };
+
+        /**
+         * Encodes the specified BasicSquadInfo message. Does not implicitly {@link dfproto.BasicSquadInfo.verify|verify} messages.
+         * @function encode
+         * @memberof dfproto.BasicSquadInfo
+         * @static
+         * @param {dfproto.IBasicSquadInfo} message BasicSquadInfo message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        BasicSquadInfo.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            writer.uint32(/* id 1, wireType 0 =*/8).int32(message.squadId);
+            if (message.name != null && Object.hasOwnProperty.call(message, "name"))
+                $root.dfproto.NameInfo.encode(message.name, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+            if (message.alias != null && Object.hasOwnProperty.call(message, "alias"))
+                writer.uint32(/* id 3, wireType 2 =*/26).string(message.alias);
+            if (message.members != null && message.members.length)
+                for (var i = 0; i < message.members.length; ++i)
+                    writer.uint32(/* id 4, wireType 0 =*/32).sint32(message.members[i]);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified BasicSquadInfo message, length delimited. Does not implicitly {@link dfproto.BasicSquadInfo.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof dfproto.BasicSquadInfo
+         * @static
+         * @param {dfproto.IBasicSquadInfo} message BasicSquadInfo message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        BasicSquadInfo.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a BasicSquadInfo message from the specified reader or buffer.
+         * @function decode
+         * @memberof dfproto.BasicSquadInfo
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {dfproto.BasicSquadInfo} BasicSquadInfo
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        BasicSquadInfo.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.dfproto.BasicSquadInfo();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    message.squadId = reader.int32();
+                    break;
+                case 2:
+                    message.name = $root.dfproto.NameInfo.decode(reader, reader.uint32());
+                    break;
+                case 3:
+                    message.alias = reader.string();
+                    break;
+                case 4:
+                    if (!(message.members && message.members.length))
+                        message.members = [];
+                    if ((tag & 7) === 2) {
+                        var end2 = reader.uint32() + reader.pos;
+                        while (reader.pos < end2)
+                            message.members.push(reader.sint32());
+                    } else
+                        message.members.push(reader.sint32());
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            if (!message.hasOwnProperty("squadId"))
+                throw $util.ProtocolError("missing required 'squadId'", { instance: message });
+            return message;
+        };
+
+        /**
+         * Decodes a BasicSquadInfo message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof dfproto.BasicSquadInfo
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {dfproto.BasicSquadInfo} BasicSquadInfo
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        BasicSquadInfo.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a BasicSquadInfo message.
+         * @function verify
+         * @memberof dfproto.BasicSquadInfo
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        BasicSquadInfo.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (!$util.isInteger(message.squadId))
+                return "squadId: integer expected";
+            if (message.name != null && message.hasOwnProperty("name")) {
+                var error = $root.dfproto.NameInfo.verify(message.name);
+                if (error)
+                    return "name." + error;
+            }
+            if (message.alias != null && message.hasOwnProperty("alias"))
+                if (!$util.isString(message.alias))
+                    return "alias: string expected";
+            if (message.members != null && message.hasOwnProperty("members")) {
+                if (!Array.isArray(message.members))
+                    return "members: array expected";
+                for (var i = 0; i < message.members.length; ++i)
+                    if (!$util.isInteger(message.members[i]))
+                        return "members: integer[] expected";
+            }
+            return null;
+        };
+
+        /**
+         * Creates a BasicSquadInfo message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof dfproto.BasicSquadInfo
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {dfproto.BasicSquadInfo} BasicSquadInfo
+         */
+        BasicSquadInfo.fromObject = function fromObject(object) {
+            if (object instanceof $root.dfproto.BasicSquadInfo)
+                return object;
+            var message = new $root.dfproto.BasicSquadInfo();
+            if (object.squadId != null)
+                message.squadId = object.squadId | 0;
+            if (object.name != null) {
+                if (typeof object.name !== "object")
+                    throw TypeError(".dfproto.BasicSquadInfo.name: object expected");
+                message.name = $root.dfproto.NameInfo.fromObject(object.name);
+            }
+            if (object.alias != null)
+                message.alias = String(object.alias);
+            if (object.members) {
+                if (!Array.isArray(object.members))
+                    throw TypeError(".dfproto.BasicSquadInfo.members: array expected");
+                message.members = [];
+                for (var i = 0; i < object.members.length; ++i)
+                    message.members[i] = object.members[i] | 0;
+            }
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a BasicSquadInfo message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof dfproto.BasicSquadInfo
+         * @static
+         * @param {dfproto.BasicSquadInfo} message BasicSquadInfo
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        BasicSquadInfo.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.arrays || options.defaults)
+                object.members = [];
+            if (options.defaults) {
+                object.squadId = 0;
+                object.name = null;
+                object.alias = "";
+            }
+            if (message.squadId != null && message.hasOwnProperty("squadId"))
+                object.squadId = message.squadId;
+            if (message.name != null && message.hasOwnProperty("name"))
+                object.name = $root.dfproto.NameInfo.toObject(message.name, options);
+            if (message.alias != null && message.hasOwnProperty("alias"))
+                object.alias = message.alias;
+            if (message.members && message.members.length) {
+                object.members = [];
+                for (var j = 0; j < message.members.length; ++j)
+                    object.members[j] = message.members[j];
+            }
+            return object;
+        };
+
+        /**
+         * Converts this BasicSquadInfo to JSON.
+         * @function toJSON
+         * @memberof dfproto.BasicSquadInfo
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        BasicSquadInfo.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return BasicSquadInfo;
+    })();
+
+    dfproto.UnitLaborState = (function() {
+
+        /**
+         * Properties of an UnitLaborState.
+         * @memberof dfproto
+         * @interface IUnitLaborState
+         * @property {number} unitId UnitLaborState unitId
+         * @property {number} labor UnitLaborState labor
+         * @property {boolean} value UnitLaborState value
+         */
+
+        /**
+         * Constructs a new UnitLaborState.
+         * @memberof dfproto
+         * @classdesc Represents an UnitLaborState.
+         * @implements IUnitLaborState
+         * @constructor
+         * @param {dfproto.IUnitLaborState=} [properties] Properties to set
+         */
+        function UnitLaborState(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * UnitLaborState unitId.
+         * @member {number} unitId
+         * @memberof dfproto.UnitLaborState
+         * @instance
+         */
+        UnitLaborState.prototype.unitId = 0;
+
+        /**
+         * UnitLaborState labor.
+         * @member {number} labor
+         * @memberof dfproto.UnitLaborState
+         * @instance
+         */
+        UnitLaborState.prototype.labor = 0;
+
+        /**
+         * UnitLaborState value.
+         * @member {boolean} value
+         * @memberof dfproto.UnitLaborState
+         * @instance
+         */
+        UnitLaborState.prototype.value = false;
+
+        /**
+         * Creates a new UnitLaborState instance using the specified properties.
+         * @function create
+         * @memberof dfproto.UnitLaborState
+         * @static
+         * @param {dfproto.IUnitLaborState=} [properties] Properties to set
+         * @returns {dfproto.UnitLaborState} UnitLaborState instance
+         */
+        UnitLaborState.create = function create(properties) {
+            return new UnitLaborState(properties);
+        };
+
+        /**
+         * Encodes the specified UnitLaborState message. Does not implicitly {@link dfproto.UnitLaborState.verify|verify} messages.
+         * @function encode
+         * @memberof dfproto.UnitLaborState
+         * @static
+         * @param {dfproto.IUnitLaborState} message UnitLaborState message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        UnitLaborState.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            writer.uint32(/* id 1, wireType 0 =*/8).int32(message.unitId);
+            writer.uint32(/* id 2, wireType 0 =*/16).int32(message.labor);
+            writer.uint32(/* id 3, wireType 0 =*/24).bool(message.value);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified UnitLaborState message, length delimited. Does not implicitly {@link dfproto.UnitLaborState.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof dfproto.UnitLaborState
+         * @static
+         * @param {dfproto.IUnitLaborState} message UnitLaborState message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        UnitLaborState.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes an UnitLaborState message from the specified reader or buffer.
+         * @function decode
+         * @memberof dfproto.UnitLaborState
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {dfproto.UnitLaborState} UnitLaborState
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        UnitLaborState.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.dfproto.UnitLaborState();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    message.unitId = reader.int32();
+                    break;
+                case 2:
+                    message.labor = reader.int32();
+                    break;
+                case 3:
+                    message.value = reader.bool();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            if (!message.hasOwnProperty("unitId"))
+                throw $util.ProtocolError("missing required 'unitId'", { instance: message });
+            if (!message.hasOwnProperty("labor"))
+                throw $util.ProtocolError("missing required 'labor'", { instance: message });
+            if (!message.hasOwnProperty("value"))
+                throw $util.ProtocolError("missing required 'value'", { instance: message });
+            return message;
+        };
+
+        /**
+         * Decodes an UnitLaborState message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof dfproto.UnitLaborState
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {dfproto.UnitLaborState} UnitLaborState
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        UnitLaborState.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies an UnitLaborState message.
+         * @function verify
+         * @memberof dfproto.UnitLaborState
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        UnitLaborState.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (!$util.isInteger(message.unitId))
+                return "unitId: integer expected";
+            if (!$util.isInteger(message.labor))
+                return "labor: integer expected";
+            if (typeof message.value !== "boolean")
+                return "value: boolean expected";
+            return null;
+        };
+
+        /**
+         * Creates an UnitLaborState message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof dfproto.UnitLaborState
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {dfproto.UnitLaborState} UnitLaborState
+         */
+        UnitLaborState.fromObject = function fromObject(object) {
+            if (object instanceof $root.dfproto.UnitLaborState)
+                return object;
+            var message = new $root.dfproto.UnitLaborState();
+            if (object.unitId != null)
+                message.unitId = object.unitId | 0;
+            if (object.labor != null)
+                message.labor = object.labor | 0;
+            if (object.value != null)
+                message.value = Boolean(object.value);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from an UnitLaborState message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof dfproto.UnitLaborState
+         * @static
+         * @param {dfproto.UnitLaborState} message UnitLaborState
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        UnitLaborState.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.unitId = 0;
+                object.labor = 0;
+                object.value = false;
+            }
+            if (message.unitId != null && message.hasOwnProperty("unitId"))
+                object.unitId = message.unitId;
+            if (message.labor != null && message.hasOwnProperty("labor"))
+                object.labor = message.labor;
+            if (message.value != null && message.hasOwnProperty("value"))
+                object.value = message.value;
+            return object;
+        };
+
+        /**
+         * Converts this UnitLaborState to JSON.
+         * @function toJSON
+         * @memberof dfproto.UnitLaborState
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        UnitLaborState.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return UnitLaborState;
+    })();
+
+    dfproto.CoreTextFragment = (function() {
+
+        /**
+         * Properties of a CoreTextFragment.
+         * @memberof dfproto
+         * @interface ICoreTextFragment
+         * @property {string} text CoreTextFragment text
+         * @property {dfproto.CoreTextFragment.Color|null} [color] CoreTextFragment color
+         */
+
+        /**
+         * Constructs a new CoreTextFragment.
+         * @memberof dfproto
+         * @classdesc Represents a CoreTextFragment.
+         * @implements ICoreTextFragment
+         * @constructor
+         * @param {dfproto.ICoreTextFragment=} [properties] Properties to set
+         */
+        function CoreTextFragment(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * CoreTextFragment text.
+         * @member {string} text
+         * @memberof dfproto.CoreTextFragment
+         * @instance
+         */
+        CoreTextFragment.prototype.text = "";
+
+        /**
+         * CoreTextFragment color.
+         * @member {dfproto.CoreTextFragment.Color} color
+         * @memberof dfproto.CoreTextFragment
+         * @instance
+         */
+        CoreTextFragment.prototype.color = 0;
+
+        /**
+         * Creates a new CoreTextFragment instance using the specified properties.
+         * @function create
+         * @memberof dfproto.CoreTextFragment
+         * @static
+         * @param {dfproto.ICoreTextFragment=} [properties] Properties to set
+         * @returns {dfproto.CoreTextFragment} CoreTextFragment instance
+         */
+        CoreTextFragment.create = function create(properties) {
+            return new CoreTextFragment(properties);
+        };
+
+        /**
+         * Encodes the specified CoreTextFragment message. Does not implicitly {@link dfproto.CoreTextFragment.verify|verify} messages.
+         * @function encode
+         * @memberof dfproto.CoreTextFragment
+         * @static
+         * @param {dfproto.ICoreTextFragment} message CoreTextFragment message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        CoreTextFragment.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            writer.uint32(/* id 1, wireType 2 =*/10).string(message.text);
+            if (message.color != null && Object.hasOwnProperty.call(message, "color"))
+                writer.uint32(/* id 2, wireType 0 =*/16).int32(message.color);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified CoreTextFragment message, length delimited. Does not implicitly {@link dfproto.CoreTextFragment.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof dfproto.CoreTextFragment
+         * @static
+         * @param {dfproto.ICoreTextFragment} message CoreTextFragment message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        CoreTextFragment.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a CoreTextFragment message from the specified reader or buffer.
+         * @function decode
+         * @memberof dfproto.CoreTextFragment
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {dfproto.CoreTextFragment} CoreTextFragment
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        CoreTextFragment.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.dfproto.CoreTextFragment();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    message.text = reader.string();
+                    break;
+                case 2:
+                    message.color = reader.int32();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            if (!message.hasOwnProperty("text"))
+                throw $util.ProtocolError("missing required 'text'", { instance: message });
+            return message;
+        };
+
+        /**
+         * Decodes a CoreTextFragment message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof dfproto.CoreTextFragment
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {dfproto.CoreTextFragment} CoreTextFragment
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        CoreTextFragment.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a CoreTextFragment message.
+         * @function verify
+         * @memberof dfproto.CoreTextFragment
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        CoreTextFragment.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (!$util.isString(message.text))
+                return "text: string expected";
+            if (message.color != null && message.hasOwnProperty("color"))
+                switch (message.color) {
+                default:
+                    return "color: enum value expected";
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                case 5:
+                case 6:
+                case 7:
+                case 8:
+                case 9:
+                case 10:
+                case 11:
+                case 12:
+                case 13:
+                case 14:
+                case 15:
+                    break;
+                }
+            return null;
+        };
+
+        /**
+         * Creates a CoreTextFragment message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof dfproto.CoreTextFragment
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {dfproto.CoreTextFragment} CoreTextFragment
+         */
+        CoreTextFragment.fromObject = function fromObject(object) {
+            if (object instanceof $root.dfproto.CoreTextFragment)
+                return object;
+            var message = new $root.dfproto.CoreTextFragment();
+            if (object.text != null)
+                message.text = String(object.text);
+            switch (object.color) {
+            case "COLOR_BLACK":
+            case 0:
+                message.color = 0;
+                break;
+            case "COLOR_BLUE":
+            case 1:
+                message.color = 1;
+                break;
+            case "COLOR_GREEN":
+            case 2:
+                message.color = 2;
+                break;
+            case "COLOR_CYAN":
+            case 3:
+                message.color = 3;
+                break;
+            case "COLOR_RED":
+            case 4:
+                message.color = 4;
+                break;
+            case "COLOR_MAGENTA":
+            case 5:
+                message.color = 5;
+                break;
+            case "COLOR_BROWN":
+            case 6:
+                message.color = 6;
+                break;
+            case "COLOR_GREY":
+            case 7:
+                message.color = 7;
+                break;
+            case "COLOR_DARKGREY":
+            case 8:
+                message.color = 8;
+                break;
+            case "COLOR_LIGHTBLUE":
+            case 9:
+                message.color = 9;
+                break;
+            case "COLOR_LIGHTGREEN":
+            case 10:
+                message.color = 10;
+                break;
+            case "COLOR_LIGHTCYAN":
+            case 11:
+                message.color = 11;
+                break;
+            case "COLOR_LIGHTRED":
+            case 12:
+                message.color = 12;
+                break;
+            case "COLOR_LIGHTMAGENTA":
+            case 13:
+                message.color = 13;
+                break;
+            case "COLOR_YELLOW":
+            case 14:
+                message.color = 14;
+                break;
+            case "COLOR_WHITE":
+            case 15:
+                message.color = 15;
+                break;
+            }
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a CoreTextFragment message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof dfproto.CoreTextFragment
+         * @static
+         * @param {dfproto.CoreTextFragment} message CoreTextFragment
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        CoreTextFragment.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.text = "";
+                object.color = options.enums === String ? "COLOR_BLACK" : 0;
+            }
+            if (message.text != null && message.hasOwnProperty("text"))
+                object.text = message.text;
+            if (message.color != null && message.hasOwnProperty("color"))
+                object.color = options.enums === String ? $root.dfproto.CoreTextFragment.Color[message.color] : message.color;
+            return object;
+        };
+
+        /**
+         * Converts this CoreTextFragment to JSON.
+         * @function toJSON
+         * @memberof dfproto.CoreTextFragment
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        CoreTextFragment.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Color enum.
+         * @name dfproto.CoreTextFragment.Color
+         * @enum {string}
+         * @property {number} COLOR_BLACK=0 COLOR_BLACK value
+         * @property {number} COLOR_BLUE=1 COLOR_BLUE value
+         * @property {number} COLOR_GREEN=2 COLOR_GREEN value
+         * @property {number} COLOR_CYAN=3 COLOR_CYAN value
+         * @property {number} COLOR_RED=4 COLOR_RED value
+         * @property {number} COLOR_MAGENTA=5 COLOR_MAGENTA value
+         * @property {number} COLOR_BROWN=6 COLOR_BROWN value
+         * @property {number} COLOR_GREY=7 COLOR_GREY value
+         * @property {number} COLOR_DARKGREY=8 COLOR_DARKGREY value
+         * @property {number} COLOR_LIGHTBLUE=9 COLOR_LIGHTBLUE value
+         * @property {number} COLOR_LIGHTGREEN=10 COLOR_LIGHTGREEN value
+         * @property {number} COLOR_LIGHTCYAN=11 COLOR_LIGHTCYAN value
+         * @property {number} COLOR_LIGHTRED=12 COLOR_LIGHTRED value
+         * @property {number} COLOR_LIGHTMAGENTA=13 COLOR_LIGHTMAGENTA value
+         * @property {number} COLOR_YELLOW=14 COLOR_YELLOW value
+         * @property {number} COLOR_WHITE=15 COLOR_WHITE value
+         */
+        CoreTextFragment.Color = (function() {
+            var valuesById = {}, values = Object.create(valuesById);
+            values[valuesById[0] = "COLOR_BLACK"] = 0;
+            values[valuesById[1] = "COLOR_BLUE"] = 1;
+            values[valuesById[2] = "COLOR_GREEN"] = 2;
+            values[valuesById[3] = "COLOR_CYAN"] = 3;
+            values[valuesById[4] = "COLOR_RED"] = 4;
+            values[valuesById[5] = "COLOR_MAGENTA"] = 5;
+            values[valuesById[6] = "COLOR_BROWN"] = 6;
+            values[valuesById[7] = "COLOR_GREY"] = 7;
+            values[valuesById[8] = "COLOR_DARKGREY"] = 8;
+            values[valuesById[9] = "COLOR_LIGHTBLUE"] = 9;
+            values[valuesById[10] = "COLOR_LIGHTGREEN"] = 10;
+            values[valuesById[11] = "COLOR_LIGHTCYAN"] = 11;
+            values[valuesById[12] = "COLOR_LIGHTRED"] = 12;
+            values[valuesById[13] = "COLOR_LIGHTMAGENTA"] = 13;
+            values[valuesById[14] = "COLOR_YELLOW"] = 14;
+            values[valuesById[15] = "COLOR_WHITE"] = 15;
+            return values;
+        })();
+
+        return CoreTextFragment;
+    })();
+
+    dfproto.CoreTextNotification = (function() {
+
+        /**
+         * Properties of a CoreTextNotification.
+         * @memberof dfproto
+         * @interface ICoreTextNotification
+         * @property {Array.<dfproto.ICoreTextFragment>|null} [fragments] CoreTextNotification fragments
+         */
+
+        /**
+         * Constructs a new CoreTextNotification.
+         * @memberof dfproto
+         * @classdesc Represents a CoreTextNotification.
+         * @implements ICoreTextNotification
+         * @constructor
+         * @param {dfproto.ICoreTextNotification=} [properties] Properties to set
+         */
+        function CoreTextNotification(properties) {
+            this.fragments = [];
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * CoreTextNotification fragments.
+         * @member {Array.<dfproto.ICoreTextFragment>} fragments
+         * @memberof dfproto.CoreTextNotification
+         * @instance
+         */
+        CoreTextNotification.prototype.fragments = $util.emptyArray;
+
+        /**
+         * Creates a new CoreTextNotification instance using the specified properties.
+         * @function create
+         * @memberof dfproto.CoreTextNotification
+         * @static
+         * @param {dfproto.ICoreTextNotification=} [properties] Properties to set
+         * @returns {dfproto.CoreTextNotification} CoreTextNotification instance
+         */
+        CoreTextNotification.create = function create(properties) {
+            return new CoreTextNotification(properties);
+        };
+
+        /**
+         * Encodes the specified CoreTextNotification message. Does not implicitly {@link dfproto.CoreTextNotification.verify|verify} messages.
+         * @function encode
+         * @memberof dfproto.CoreTextNotification
+         * @static
+         * @param {dfproto.ICoreTextNotification} message CoreTextNotification message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        CoreTextNotification.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.fragments != null && message.fragments.length)
+                for (var i = 0; i < message.fragments.length; ++i)
+                    $root.dfproto.CoreTextFragment.encode(message.fragments[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+            return writer;
+        };
+
+        /**
+         * Encodes the specified CoreTextNotification message, length delimited. Does not implicitly {@link dfproto.CoreTextNotification.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof dfproto.CoreTextNotification
+         * @static
+         * @param {dfproto.ICoreTextNotification} message CoreTextNotification message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        CoreTextNotification.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a CoreTextNotification message from the specified reader or buffer.
+         * @function decode
+         * @memberof dfproto.CoreTextNotification
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {dfproto.CoreTextNotification} CoreTextNotification
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        CoreTextNotification.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.dfproto.CoreTextNotification();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    if (!(message.fragments && message.fragments.length))
+                        message.fragments = [];
+                    message.fragments.push($root.dfproto.CoreTextFragment.decode(reader, reader.uint32()));
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a CoreTextNotification message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof dfproto.CoreTextNotification
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {dfproto.CoreTextNotification} CoreTextNotification
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        CoreTextNotification.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a CoreTextNotification message.
+         * @function verify
+         * @memberof dfproto.CoreTextNotification
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        CoreTextNotification.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.fragments != null && message.hasOwnProperty("fragments")) {
+                if (!Array.isArray(message.fragments))
+                    return "fragments: array expected";
+                for (var i = 0; i < message.fragments.length; ++i) {
+                    var error = $root.dfproto.CoreTextFragment.verify(message.fragments[i]);
+                    if (error)
+                        return "fragments." + error;
+                }
+            }
+            return null;
+        };
+
+        /**
+         * Creates a CoreTextNotification message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof dfproto.CoreTextNotification
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {dfproto.CoreTextNotification} CoreTextNotification
+         */
+        CoreTextNotification.fromObject = function fromObject(object) {
+            if (object instanceof $root.dfproto.CoreTextNotification)
+                return object;
+            var message = new $root.dfproto.CoreTextNotification();
+            if (object.fragments) {
+                if (!Array.isArray(object.fragments))
+                    throw TypeError(".dfproto.CoreTextNotification.fragments: array expected");
+                message.fragments = [];
+                for (var i = 0; i < object.fragments.length; ++i) {
+                    if (typeof object.fragments[i] !== "object")
+                        throw TypeError(".dfproto.CoreTextNotification.fragments: object expected");
+                    message.fragments[i] = $root.dfproto.CoreTextFragment.fromObject(object.fragments[i]);
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a CoreTextNotification message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof dfproto.CoreTextNotification
+         * @static
+         * @param {dfproto.CoreTextNotification} message CoreTextNotification
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        CoreTextNotification.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.arrays || options.defaults)
+                object.fragments = [];
+            if (message.fragments && message.fragments.length) {
+                object.fragments = [];
+                for (var j = 0; j < message.fragments.length; ++j)
+                    object.fragments[j] = $root.dfproto.CoreTextFragment.toObject(message.fragments[j], options);
+            }
+            return object;
+        };
+
+        /**
+         * Converts this CoreTextNotification to JSON.
+         * @function toJSON
+         * @memberof dfproto.CoreTextNotification
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        CoreTextNotification.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return CoreTextNotification;
+    })();
+
+    dfproto.CoreErrorNotification = (function() {
+
+        /**
+         * Properties of a CoreErrorNotification.
+         * @memberof dfproto
+         * @interface ICoreErrorNotification
+         * @property {dfproto.CoreErrorNotification.ErrorCode} code CoreErrorNotification code
+         */
+
+        /**
+         * Constructs a new CoreErrorNotification.
+         * @memberof dfproto
+         * @classdesc Represents a CoreErrorNotification.
+         * @implements ICoreErrorNotification
+         * @constructor
+         * @param {dfproto.ICoreErrorNotification=} [properties] Properties to set
+         */
+        function CoreErrorNotification(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * CoreErrorNotification code.
+         * @member {dfproto.CoreErrorNotification.ErrorCode} code
+         * @memberof dfproto.CoreErrorNotification
+         * @instance
+         */
+        CoreErrorNotification.prototype.code = -3;
+
+        /**
+         * Creates a new CoreErrorNotification instance using the specified properties.
+         * @function create
+         * @memberof dfproto.CoreErrorNotification
+         * @static
+         * @param {dfproto.ICoreErrorNotification=} [properties] Properties to set
+         * @returns {dfproto.CoreErrorNotification} CoreErrorNotification instance
+         */
+        CoreErrorNotification.create = function create(properties) {
+            return new CoreErrorNotification(properties);
+        };
+
+        /**
+         * Encodes the specified CoreErrorNotification message. Does not implicitly {@link dfproto.CoreErrorNotification.verify|verify} messages.
+         * @function encode
+         * @memberof dfproto.CoreErrorNotification
+         * @static
+         * @param {dfproto.ICoreErrorNotification} message CoreErrorNotification message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        CoreErrorNotification.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            writer.uint32(/* id 1, wireType 0 =*/8).int32(message.code);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified CoreErrorNotification message, length delimited. Does not implicitly {@link dfproto.CoreErrorNotification.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof dfproto.CoreErrorNotification
+         * @static
+         * @param {dfproto.ICoreErrorNotification} message CoreErrorNotification message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        CoreErrorNotification.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a CoreErrorNotification message from the specified reader or buffer.
+         * @function decode
+         * @memberof dfproto.CoreErrorNotification
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {dfproto.CoreErrorNotification} CoreErrorNotification
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        CoreErrorNotification.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.dfproto.CoreErrorNotification();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    message.code = reader.int32();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            if (!message.hasOwnProperty("code"))
+                throw $util.ProtocolError("missing required 'code'", { instance: message });
+            return message;
+        };
+
+        /**
+         * Decodes a CoreErrorNotification message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof dfproto.CoreErrorNotification
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {dfproto.CoreErrorNotification} CoreErrorNotification
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        CoreErrorNotification.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a CoreErrorNotification message.
+         * @function verify
+         * @memberof dfproto.CoreErrorNotification
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        CoreErrorNotification.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            switch (message.code) {
+            default:
+                return "code: enum value expected";
+            case -3:
+            case -2:
+            case -1:
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+                break;
+            }
+            return null;
+        };
+
+        /**
+         * Creates a CoreErrorNotification message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof dfproto.CoreErrorNotification
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {dfproto.CoreErrorNotification} CoreErrorNotification
+         */
+        CoreErrorNotification.fromObject = function fromObject(object) {
+            if (object instanceof $root.dfproto.CoreErrorNotification)
+                return object;
+            var message = new $root.dfproto.CoreErrorNotification();
+            switch (object.code) {
+            case "CR_LINK_FAILURE":
+            case -3:
+                message.code = -3;
+                break;
+            case "CR_WOULD_BREAK":
+            case -2:
+                message.code = -2;
+                break;
+            case "CR_NOT_IMPLEMENTED":
+            case -1:
+                message.code = -1;
+                break;
+            case "CR_OK":
+            case 0:
+                message.code = 0;
+                break;
+            case "CR_FAILURE":
+            case 1:
+                message.code = 1;
+                break;
+            case "CR_WRONG_USAGE":
+            case 2:
+                message.code = 2;
+                break;
+            case "CR_NOT_FOUND":
+            case 3:
+                message.code = 3;
+                break;
+            }
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a CoreErrorNotification message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof dfproto.CoreErrorNotification
+         * @static
+         * @param {dfproto.CoreErrorNotification} message CoreErrorNotification
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        CoreErrorNotification.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults)
+                object.code = options.enums === String ? "CR_LINK_FAILURE" : -3;
+            if (message.code != null && message.hasOwnProperty("code"))
+                object.code = options.enums === String ? $root.dfproto.CoreErrorNotification.ErrorCode[message.code] : message.code;
+            return object;
+        };
+
+        /**
+         * Converts this CoreErrorNotification to JSON.
+         * @function toJSON
+         * @memberof dfproto.CoreErrorNotification
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        CoreErrorNotification.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * ErrorCode enum.
+         * @name dfproto.CoreErrorNotification.ErrorCode
+         * @enum {string}
+         * @property {number} CR_LINK_FAILURE=-3 CR_LINK_FAILURE value
+         * @property {number} CR_WOULD_BREAK=-2 CR_WOULD_BREAK value
+         * @property {number} CR_NOT_IMPLEMENTED=-1 CR_NOT_IMPLEMENTED value
+         * @property {number} CR_OK=0 CR_OK value
+         * @property {number} CR_FAILURE=1 CR_FAILURE value
+         * @property {number} CR_WRONG_USAGE=2 CR_WRONG_USAGE value
+         * @property {number} CR_NOT_FOUND=3 CR_NOT_FOUND value
+         */
+        CoreErrorNotification.ErrorCode = (function() {
+            var valuesById = {}, values = Object.create(valuesById);
+            values[valuesById[-3] = "CR_LINK_FAILURE"] = -3;
+            values[valuesById[-2] = "CR_WOULD_BREAK"] = -2;
+            values[valuesById[-1] = "CR_NOT_IMPLEMENTED"] = -1;
+            values[valuesById[0] = "CR_OK"] = 0;
+            values[valuesById[1] = "CR_FAILURE"] = 1;
+            values[valuesById[2] = "CR_WRONG_USAGE"] = 2;
+            values[valuesById[3] = "CR_NOT_FOUND"] = 3;
+            return values;
+        })();
+
+        return CoreErrorNotification;
+    })();
+
+    dfproto.EmptyMessage = (function() {
+
+        /**
+         * Properties of an EmptyMessage.
+         * @memberof dfproto
+         * @interface IEmptyMessage
+         */
+
+        /**
+         * Constructs a new EmptyMessage.
+         * @memberof dfproto
+         * @classdesc Represents an EmptyMessage.
+         * @implements IEmptyMessage
+         * @constructor
+         * @param {dfproto.IEmptyMessage=} [properties] Properties to set
+         */
+        function EmptyMessage(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * Creates a new EmptyMessage instance using the specified properties.
+         * @function create
+         * @memberof dfproto.EmptyMessage
+         * @static
+         * @param {dfproto.IEmptyMessage=} [properties] Properties to set
+         * @returns {dfproto.EmptyMessage} EmptyMessage instance
+         */
+        EmptyMessage.create = function create(properties) {
+            return new EmptyMessage(properties);
+        };
+
+        /**
+         * Encodes the specified EmptyMessage message. Does not implicitly {@link dfproto.EmptyMessage.verify|verify} messages.
+         * @function encode
+         * @memberof dfproto.EmptyMessage
+         * @static
+         * @param {dfproto.IEmptyMessage} message EmptyMessage message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        EmptyMessage.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            return writer;
+        };
+
+        /**
+         * Encodes the specified EmptyMessage message, length delimited. Does not implicitly {@link dfproto.EmptyMessage.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof dfproto.EmptyMessage
+         * @static
+         * @param {dfproto.IEmptyMessage} message EmptyMessage message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        EmptyMessage.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes an EmptyMessage message from the specified reader or buffer.
+         * @function decode
+         * @memberof dfproto.EmptyMessage
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {dfproto.EmptyMessage} EmptyMessage
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        EmptyMessage.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.dfproto.EmptyMessage();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes an EmptyMessage message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof dfproto.EmptyMessage
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {dfproto.EmptyMessage} EmptyMessage
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        EmptyMessage.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies an EmptyMessage message.
+         * @function verify
+         * @memberof dfproto.EmptyMessage
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        EmptyMessage.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            return null;
+        };
+
+        /**
+         * Creates an EmptyMessage message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof dfproto.EmptyMessage
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {dfproto.EmptyMessage} EmptyMessage
+         */
+        EmptyMessage.fromObject = function fromObject(object) {
+            if (object instanceof $root.dfproto.EmptyMessage)
+                return object;
+            return new $root.dfproto.EmptyMessage();
+        };
+
+        /**
+         * Creates a plain object from an EmptyMessage message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof dfproto.EmptyMessage
+         * @static
+         * @param {dfproto.EmptyMessage} message EmptyMessage
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        EmptyMessage.toObject = function toObject() {
+            return {};
+        };
+
+        /**
+         * Converts this EmptyMessage to JSON.
+         * @function toJSON
+         * @memberof dfproto.EmptyMessage
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        EmptyMessage.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return EmptyMessage;
+    })();
+
+    dfproto.IntMessage = (function() {
+
+        /**
+         * Properties of an IntMessage.
+         * @memberof dfproto
+         * @interface IIntMessage
+         * @property {number} value IntMessage value
+         */
+
+        /**
+         * Constructs a new IntMessage.
+         * @memberof dfproto
+         * @classdesc Represents an IntMessage.
+         * @implements IIntMessage
+         * @constructor
+         * @param {dfproto.IIntMessage=} [properties] Properties to set
+         */
+        function IntMessage(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * IntMessage value.
+         * @member {number} value
+         * @memberof dfproto.IntMessage
+         * @instance
+         */
+        IntMessage.prototype.value = 0;
+
+        /**
+         * Creates a new IntMessage instance using the specified properties.
+         * @function create
+         * @memberof dfproto.IntMessage
+         * @static
+         * @param {dfproto.IIntMessage=} [properties] Properties to set
+         * @returns {dfproto.IntMessage} IntMessage instance
+         */
+        IntMessage.create = function create(properties) {
+            return new IntMessage(properties);
+        };
+
+        /**
+         * Encodes the specified IntMessage message. Does not implicitly {@link dfproto.IntMessage.verify|verify} messages.
+         * @function encode
+         * @memberof dfproto.IntMessage
+         * @static
+         * @param {dfproto.IIntMessage} message IntMessage message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        IntMessage.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            writer.uint32(/* id 1, wireType 0 =*/8).int32(message.value);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified IntMessage message, length delimited. Does not implicitly {@link dfproto.IntMessage.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof dfproto.IntMessage
+         * @static
+         * @param {dfproto.IIntMessage} message IntMessage message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        IntMessage.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes an IntMessage message from the specified reader or buffer.
+         * @function decode
+         * @memberof dfproto.IntMessage
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {dfproto.IntMessage} IntMessage
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        IntMessage.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.dfproto.IntMessage();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    message.value = reader.int32();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            if (!message.hasOwnProperty("value"))
+                throw $util.ProtocolError("missing required 'value'", { instance: message });
+            return message;
+        };
+
+        /**
+         * Decodes an IntMessage message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof dfproto.IntMessage
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {dfproto.IntMessage} IntMessage
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        IntMessage.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies an IntMessage message.
+         * @function verify
+         * @memberof dfproto.IntMessage
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        IntMessage.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (!$util.isInteger(message.value))
+                return "value: integer expected";
+            return null;
+        };
+
+        /**
+         * Creates an IntMessage message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof dfproto.IntMessage
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {dfproto.IntMessage} IntMessage
+         */
+        IntMessage.fromObject = function fromObject(object) {
+            if (object instanceof $root.dfproto.IntMessage)
+                return object;
+            var message = new $root.dfproto.IntMessage();
+            if (object.value != null)
+                message.value = object.value | 0;
+            return message;
+        };
+
+        /**
+         * Creates a plain object from an IntMessage message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof dfproto.IntMessage
+         * @static
+         * @param {dfproto.IntMessage} message IntMessage
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        IntMessage.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults)
+                object.value = 0;
+            if (message.value != null && message.hasOwnProperty("value"))
+                object.value = message.value;
+            return object;
+        };
+
+        /**
+         * Converts this IntMessage to JSON.
+         * @function toJSON
+         * @memberof dfproto.IntMessage
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        IntMessage.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return IntMessage;
+    })();
+
+    dfproto.IntListMessage = (function() {
+
+        /**
+         * Properties of an IntListMessage.
+         * @memberof dfproto
+         * @interface IIntListMessage
+         * @property {Array.<number>|null} [value] IntListMessage value
+         */
+
+        /**
+         * Constructs a new IntListMessage.
+         * @memberof dfproto
+         * @classdesc Represents an IntListMessage.
+         * @implements IIntListMessage
+         * @constructor
+         * @param {dfproto.IIntListMessage=} [properties] Properties to set
+         */
+        function IntListMessage(properties) {
+            this.value = [];
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * IntListMessage value.
+         * @member {Array.<number>} value
+         * @memberof dfproto.IntListMessage
+         * @instance
+         */
+        IntListMessage.prototype.value = $util.emptyArray;
+
+        /**
+         * Creates a new IntListMessage instance using the specified properties.
+         * @function create
+         * @memberof dfproto.IntListMessage
+         * @static
+         * @param {dfproto.IIntListMessage=} [properties] Properties to set
+         * @returns {dfproto.IntListMessage} IntListMessage instance
+         */
+        IntListMessage.create = function create(properties) {
+            return new IntListMessage(properties);
+        };
+
+        /**
+         * Encodes the specified IntListMessage message. Does not implicitly {@link dfproto.IntListMessage.verify|verify} messages.
+         * @function encode
+         * @memberof dfproto.IntListMessage
+         * @static
+         * @param {dfproto.IIntListMessage} message IntListMessage message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        IntListMessage.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.value != null && message.value.length)
+                for (var i = 0; i < message.value.length; ++i)
+                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.value[i]);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified IntListMessage message, length delimited. Does not implicitly {@link dfproto.IntListMessage.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof dfproto.IntListMessage
+         * @static
+         * @param {dfproto.IIntListMessage} message IntListMessage message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        IntListMessage.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes an IntListMessage message from the specified reader or buffer.
+         * @function decode
+         * @memberof dfproto.IntListMessage
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {dfproto.IntListMessage} IntListMessage
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        IntListMessage.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.dfproto.IntListMessage();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    if (!(message.value && message.value.length))
+                        message.value = [];
+                    if ((tag & 7) === 2) {
+                        var end2 = reader.uint32() + reader.pos;
+                        while (reader.pos < end2)
+                            message.value.push(reader.int32());
+                    } else
+                        message.value.push(reader.int32());
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes an IntListMessage message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof dfproto.IntListMessage
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {dfproto.IntListMessage} IntListMessage
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        IntListMessage.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies an IntListMessage message.
+         * @function verify
+         * @memberof dfproto.IntListMessage
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        IntListMessage.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.value != null && message.hasOwnProperty("value")) {
+                if (!Array.isArray(message.value))
+                    return "value: array expected";
+                for (var i = 0; i < message.value.length; ++i)
+                    if (!$util.isInteger(message.value[i]))
+                        return "value: integer[] expected";
+            }
+            return null;
+        };
+
+        /**
+         * Creates an IntListMessage message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof dfproto.IntListMessage
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {dfproto.IntListMessage} IntListMessage
+         */
+        IntListMessage.fromObject = function fromObject(object) {
+            if (object instanceof $root.dfproto.IntListMessage)
+                return object;
+            var message = new $root.dfproto.IntListMessage();
+            if (object.value) {
+                if (!Array.isArray(object.value))
+                    throw TypeError(".dfproto.IntListMessage.value: array expected");
+                message.value = [];
+                for (var i = 0; i < object.value.length; ++i)
+                    message.value[i] = object.value[i] | 0;
+            }
+            return message;
+        };
+
+        /**
+         * Creates a plain object from an IntListMessage message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof dfproto.IntListMessage
+         * @static
+         * @param {dfproto.IntListMessage} message IntListMessage
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        IntListMessage.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.arrays || options.defaults)
+                object.value = [];
+            if (message.value && message.value.length) {
+                object.value = [];
+                for (var j = 0; j < message.value.length; ++j)
+                    object.value[j] = message.value[j];
+            }
+            return object;
+        };
+
+        /**
+         * Converts this IntListMessage to JSON.
+         * @function toJSON
+         * @memberof dfproto.IntListMessage
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        IntListMessage.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return IntListMessage;
+    })();
+
+    dfproto.StringMessage = (function() {
+
+        /**
+         * Properties of a StringMessage.
+         * @memberof dfproto
+         * @interface IStringMessage
+         * @property {string} value StringMessage value
+         */
+
+        /**
+         * Constructs a new StringMessage.
+         * @memberof dfproto
+         * @classdesc Represents a StringMessage.
+         * @implements IStringMessage
+         * @constructor
+         * @param {dfproto.IStringMessage=} [properties] Properties to set
+         */
+        function StringMessage(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * StringMessage value.
+         * @member {string} value
+         * @memberof dfproto.StringMessage
+         * @instance
+         */
+        StringMessage.prototype.value = "";
+
+        /**
+         * Creates a new StringMessage instance using the specified properties.
+         * @function create
+         * @memberof dfproto.StringMessage
+         * @static
+         * @param {dfproto.IStringMessage=} [properties] Properties to set
+         * @returns {dfproto.StringMessage} StringMessage instance
+         */
+        StringMessage.create = function create(properties) {
+            return new StringMessage(properties);
+        };
+
+        /**
+         * Encodes the specified StringMessage message. Does not implicitly {@link dfproto.StringMessage.verify|verify} messages.
+         * @function encode
+         * @memberof dfproto.StringMessage
+         * @static
+         * @param {dfproto.IStringMessage} message StringMessage message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        StringMessage.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            writer.uint32(/* id 1, wireType 2 =*/10).string(message.value);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified StringMessage message, length delimited. Does not implicitly {@link dfproto.StringMessage.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof dfproto.StringMessage
+         * @static
+         * @param {dfproto.IStringMessage} message StringMessage message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        StringMessage.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a StringMessage message from the specified reader or buffer.
+         * @function decode
+         * @memberof dfproto.StringMessage
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {dfproto.StringMessage} StringMessage
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        StringMessage.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.dfproto.StringMessage();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    message.value = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            if (!message.hasOwnProperty("value"))
+                throw $util.ProtocolError("missing required 'value'", { instance: message });
+            return message;
+        };
+
+        /**
+         * Decodes a StringMessage message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof dfproto.StringMessage
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {dfproto.StringMessage} StringMessage
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        StringMessage.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a StringMessage message.
+         * @function verify
+         * @memberof dfproto.StringMessage
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        StringMessage.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (!$util.isString(message.value))
+                return "value: string expected";
+            return null;
+        };
+
+        /**
+         * Creates a StringMessage message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof dfproto.StringMessage
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {dfproto.StringMessage} StringMessage
+         */
+        StringMessage.fromObject = function fromObject(object) {
+            if (object instanceof $root.dfproto.StringMessage)
+                return object;
+            var message = new $root.dfproto.StringMessage();
+            if (object.value != null)
+                message.value = String(object.value);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a StringMessage message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof dfproto.StringMessage
+         * @static
+         * @param {dfproto.StringMessage} message StringMessage
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        StringMessage.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults)
+                object.value = "";
+            if (message.value != null && message.hasOwnProperty("value"))
+                object.value = message.value;
+            return object;
+        };
+
+        /**
+         * Converts this StringMessage to JSON.
+         * @function toJSON
+         * @memberof dfproto.StringMessage
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        StringMessage.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return StringMessage;
+    })();
+
+    dfproto.StringListMessage = (function() {
+
+        /**
+         * Properties of a StringListMessage.
+         * @memberof dfproto
+         * @interface IStringListMessage
+         * @property {Array.<string>|null} [value] StringListMessage value
+         */
+
+        /**
+         * Constructs a new StringListMessage.
+         * @memberof dfproto
+         * @classdesc Represents a StringListMessage.
+         * @implements IStringListMessage
+         * @constructor
+         * @param {dfproto.IStringListMessage=} [properties] Properties to set
+         */
+        function StringListMessage(properties) {
+            this.value = [];
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * StringListMessage value.
+         * @member {Array.<string>} value
+         * @memberof dfproto.StringListMessage
+         * @instance
+         */
+        StringListMessage.prototype.value = $util.emptyArray;
+
+        /**
+         * Creates a new StringListMessage instance using the specified properties.
+         * @function create
+         * @memberof dfproto.StringListMessage
+         * @static
+         * @param {dfproto.IStringListMessage=} [properties] Properties to set
+         * @returns {dfproto.StringListMessage} StringListMessage instance
+         */
+        StringListMessage.create = function create(properties) {
+            return new StringListMessage(properties);
+        };
+
+        /**
+         * Encodes the specified StringListMessage message. Does not implicitly {@link dfproto.StringListMessage.verify|verify} messages.
+         * @function encode
+         * @memberof dfproto.StringListMessage
+         * @static
+         * @param {dfproto.IStringListMessage} message StringListMessage message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        StringListMessage.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.value != null && message.value.length)
+                for (var i = 0; i < message.value.length; ++i)
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.value[i]);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified StringListMessage message, length delimited. Does not implicitly {@link dfproto.StringListMessage.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof dfproto.StringListMessage
+         * @static
+         * @param {dfproto.IStringListMessage} message StringListMessage message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        StringListMessage.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a StringListMessage message from the specified reader or buffer.
+         * @function decode
+         * @memberof dfproto.StringListMessage
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {dfproto.StringListMessage} StringListMessage
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        StringListMessage.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.dfproto.StringListMessage();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    if (!(message.value && message.value.length))
+                        message.value = [];
+                    message.value.push(reader.string());
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a StringListMessage message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof dfproto.StringListMessage
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {dfproto.StringListMessage} StringListMessage
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        StringListMessage.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a StringListMessage message.
+         * @function verify
+         * @memberof dfproto.StringListMessage
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        StringListMessage.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.value != null && message.hasOwnProperty("value")) {
+                if (!Array.isArray(message.value))
+                    return "value: array expected";
+                for (var i = 0; i < message.value.length; ++i)
+                    if (!$util.isString(message.value[i]))
+                        return "value: string[] expected";
+            }
+            return null;
+        };
+
+        /**
+         * Creates a StringListMessage message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof dfproto.StringListMessage
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {dfproto.StringListMessage} StringListMessage
+         */
+        StringListMessage.fromObject = function fromObject(object) {
+            if (object instanceof $root.dfproto.StringListMessage)
+                return object;
+            var message = new $root.dfproto.StringListMessage();
+            if (object.value) {
+                if (!Array.isArray(object.value))
+                    throw TypeError(".dfproto.StringListMessage.value: array expected");
+                message.value = [];
+                for (var i = 0; i < object.value.length; ++i)
+                    message.value[i] = String(object.value[i]);
+            }
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a StringListMessage message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof dfproto.StringListMessage
+         * @static
+         * @param {dfproto.StringListMessage} message StringListMessage
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        StringListMessage.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.arrays || options.defaults)
+                object.value = [];
+            if (message.value && message.value.length) {
+                object.value = [];
+                for (var j = 0; j < message.value.length; ++j)
+                    object.value[j] = message.value[j];
+            }
+            return object;
+        };
+
+        /**
+         * Converts this StringListMessage to JSON.
+         * @function toJSON
+         * @memberof dfproto.StringListMessage
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        StringListMessage.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return StringListMessage;
+    })();
+
+    dfproto.CoreBindRequest = (function() {
+
+        /**
+         * Properties of a CoreBindRequest.
+         * @memberof dfproto
+         * @interface ICoreBindRequest
+         * @property {string} method CoreBindRequest method
+         * @property {string} inputMsg CoreBindRequest inputMsg
+         * @property {string} outputMsg CoreBindRequest outputMsg
+         * @property {string|null} [plugin] CoreBindRequest plugin
+         */
+
+        /**
+         * Constructs a new CoreBindRequest.
+         * @memberof dfproto
+         * @classdesc Represents a CoreBindRequest.
+         * @implements ICoreBindRequest
+         * @constructor
+         * @param {dfproto.ICoreBindRequest=} [properties] Properties to set
+         */
+        function CoreBindRequest(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * CoreBindRequest method.
+         * @member {string} method
+         * @memberof dfproto.CoreBindRequest
+         * @instance
+         */
+        CoreBindRequest.prototype.method = "";
+
+        /**
+         * CoreBindRequest inputMsg.
+         * @member {string} inputMsg
+         * @memberof dfproto.CoreBindRequest
+         * @instance
+         */
+        CoreBindRequest.prototype.inputMsg = "";
+
+        /**
+         * CoreBindRequest outputMsg.
+         * @member {string} outputMsg
+         * @memberof dfproto.CoreBindRequest
+         * @instance
+         */
+        CoreBindRequest.prototype.outputMsg = "";
+
+        /**
+         * CoreBindRequest plugin.
+         * @member {string} plugin
+         * @memberof dfproto.CoreBindRequest
+         * @instance
+         */
+        CoreBindRequest.prototype.plugin = "";
+
+        /**
+         * Creates a new CoreBindRequest instance using the specified properties.
+         * @function create
+         * @memberof dfproto.CoreBindRequest
+         * @static
+         * @param {dfproto.ICoreBindRequest=} [properties] Properties to set
+         * @returns {dfproto.CoreBindRequest} CoreBindRequest instance
+         */
+        CoreBindRequest.create = function create(properties) {
+            return new CoreBindRequest(properties);
+        };
+
+        /**
+         * Encodes the specified CoreBindRequest message. Does not implicitly {@link dfproto.CoreBindRequest.verify|verify} messages.
+         * @function encode
+         * @memberof dfproto.CoreBindRequest
+         * @static
+         * @param {dfproto.ICoreBindRequest} message CoreBindRequest message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        CoreBindRequest.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            writer.uint32(/* id 1, wireType 2 =*/10).string(message.method);
+            writer.uint32(/* id 2, wireType 2 =*/18).string(message.inputMsg);
+            writer.uint32(/* id 3, wireType 2 =*/26).string(message.outputMsg);
+            if (message.plugin != null && Object.hasOwnProperty.call(message, "plugin"))
+                writer.uint32(/* id 4, wireType 2 =*/34).string(message.plugin);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified CoreBindRequest message, length delimited. Does not implicitly {@link dfproto.CoreBindRequest.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof dfproto.CoreBindRequest
+         * @static
+         * @param {dfproto.ICoreBindRequest} message CoreBindRequest message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        CoreBindRequest.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a CoreBindRequest message from the specified reader or buffer.
+         * @function decode
+         * @memberof dfproto.CoreBindRequest
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {dfproto.CoreBindRequest} CoreBindRequest
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        CoreBindRequest.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.dfproto.CoreBindRequest();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    message.method = reader.string();
+                    break;
+                case 2:
+                    message.inputMsg = reader.string();
+                    break;
+                case 3:
+                    message.outputMsg = reader.string();
+                    break;
+                case 4:
+                    message.plugin = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            if (!message.hasOwnProperty("method"))
+                throw $util.ProtocolError("missing required 'method'", { instance: message });
+            if (!message.hasOwnProperty("inputMsg"))
+                throw $util.ProtocolError("missing required 'inputMsg'", { instance: message });
+            if (!message.hasOwnProperty("outputMsg"))
+                throw $util.ProtocolError("missing required 'outputMsg'", { instance: message });
+            return message;
+        };
+
+        /**
+         * Decodes a CoreBindRequest message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof dfproto.CoreBindRequest
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {dfproto.CoreBindRequest} CoreBindRequest
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        CoreBindRequest.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a CoreBindRequest message.
+         * @function verify
+         * @memberof dfproto.CoreBindRequest
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        CoreBindRequest.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (!$util.isString(message.method))
+                return "method: string expected";
+            if (!$util.isString(message.inputMsg))
+                return "inputMsg: string expected";
+            if (!$util.isString(message.outputMsg))
+                return "outputMsg: string expected";
+            if (message.plugin != null && message.hasOwnProperty("plugin"))
+                if (!$util.isString(message.plugin))
+                    return "plugin: string expected";
+            return null;
+        };
+
+        /**
+         * Creates a CoreBindRequest message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof dfproto.CoreBindRequest
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {dfproto.CoreBindRequest} CoreBindRequest
+         */
+        CoreBindRequest.fromObject = function fromObject(object) {
+            if (object instanceof $root.dfproto.CoreBindRequest)
+                return object;
+            var message = new $root.dfproto.CoreBindRequest();
+            if (object.method != null)
+                message.method = String(object.method);
+            if (object.inputMsg != null)
+                message.inputMsg = String(object.inputMsg);
+            if (object.outputMsg != null)
+                message.outputMsg = String(object.outputMsg);
+            if (object.plugin != null)
+                message.plugin = String(object.plugin);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a CoreBindRequest message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof dfproto.CoreBindRequest
+         * @static
+         * @param {dfproto.CoreBindRequest} message CoreBindRequest
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        CoreBindRequest.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.method = "";
+                object.inputMsg = "";
+                object.outputMsg = "";
+                object.plugin = "";
+            }
+            if (message.method != null && message.hasOwnProperty("method"))
+                object.method = message.method;
+            if (message.inputMsg != null && message.hasOwnProperty("inputMsg"))
+                object.inputMsg = message.inputMsg;
+            if (message.outputMsg != null && message.hasOwnProperty("outputMsg"))
+                object.outputMsg = message.outputMsg;
+            if (message.plugin != null && message.hasOwnProperty("plugin"))
+                object.plugin = message.plugin;
+            return object;
+        };
+
+        /**
+         * Converts this CoreBindRequest to JSON.
+         * @function toJSON
+         * @memberof dfproto.CoreBindRequest
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        CoreBindRequest.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return CoreBindRequest;
+    })();
+
+    dfproto.CoreBindReply = (function() {
+
+        /**
+         * Properties of a CoreBindReply.
+         * @memberof dfproto
+         * @interface ICoreBindReply
+         * @property {number} assignedId CoreBindReply assignedId
+         */
+
+        /**
+         * Constructs a new CoreBindReply.
+         * @memberof dfproto
+         * @classdesc Represents a CoreBindReply.
+         * @implements ICoreBindReply
+         * @constructor
+         * @param {dfproto.ICoreBindReply=} [properties] Properties to set
+         */
+        function CoreBindReply(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * CoreBindReply assignedId.
+         * @member {number} assignedId
+         * @memberof dfproto.CoreBindReply
+         * @instance
+         */
+        CoreBindReply.prototype.assignedId = 0;
+
+        /**
+         * Creates a new CoreBindReply instance using the specified properties.
+         * @function create
+         * @memberof dfproto.CoreBindReply
+         * @static
+         * @param {dfproto.ICoreBindReply=} [properties] Properties to set
+         * @returns {dfproto.CoreBindReply} CoreBindReply instance
+         */
+        CoreBindReply.create = function create(properties) {
+            return new CoreBindReply(properties);
+        };
+
+        /**
+         * Encodes the specified CoreBindReply message. Does not implicitly {@link dfproto.CoreBindReply.verify|verify} messages.
+         * @function encode
+         * @memberof dfproto.CoreBindReply
+         * @static
+         * @param {dfproto.ICoreBindReply} message CoreBindReply message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        CoreBindReply.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            writer.uint32(/* id 1, wireType 0 =*/8).int32(message.assignedId);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified CoreBindReply message, length delimited. Does not implicitly {@link dfproto.CoreBindReply.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof dfproto.CoreBindReply
+         * @static
+         * @param {dfproto.ICoreBindReply} message CoreBindReply message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        CoreBindReply.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a CoreBindReply message from the specified reader or buffer.
+         * @function decode
+         * @memberof dfproto.CoreBindReply
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {dfproto.CoreBindReply} CoreBindReply
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        CoreBindReply.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.dfproto.CoreBindReply();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    message.assignedId = reader.int32();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            if (!message.hasOwnProperty("assignedId"))
+                throw $util.ProtocolError("missing required 'assignedId'", { instance: message });
+            return message;
+        };
+
+        /**
+         * Decodes a CoreBindReply message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof dfproto.CoreBindReply
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {dfproto.CoreBindReply} CoreBindReply
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        CoreBindReply.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a CoreBindReply message.
+         * @function verify
+         * @memberof dfproto.CoreBindReply
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        CoreBindReply.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (!$util.isInteger(message.assignedId))
+                return "assignedId: integer expected";
+            return null;
+        };
+
+        /**
+         * Creates a CoreBindReply message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof dfproto.CoreBindReply
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {dfproto.CoreBindReply} CoreBindReply
+         */
+        CoreBindReply.fromObject = function fromObject(object) {
+            if (object instanceof $root.dfproto.CoreBindReply)
+                return object;
+            var message = new $root.dfproto.CoreBindReply();
+            if (object.assignedId != null)
+                message.assignedId = object.assignedId | 0;
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a CoreBindReply message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof dfproto.CoreBindReply
+         * @static
+         * @param {dfproto.CoreBindReply} message CoreBindReply
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        CoreBindReply.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults)
+                object.assignedId = 0;
+            if (message.assignedId != null && message.hasOwnProperty("assignedId"))
+                object.assignedId = message.assignedId;
+            return object;
+        };
+
+        /**
+         * Converts this CoreBindReply to JSON.
+         * @function toJSON
+         * @memberof dfproto.CoreBindReply
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        CoreBindReply.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return CoreBindReply;
+    })();
+
+    dfproto.CoreRunCommandRequest = (function() {
+
+        /**
+         * Properties of a CoreRunCommandRequest.
+         * @memberof dfproto
+         * @interface ICoreRunCommandRequest
+         * @property {string} command CoreRunCommandRequest command
+         * @property {Array.<string>|null} ["arguments"] CoreRunCommandRequest arguments
+         */
+
+        /**
+         * Constructs a new CoreRunCommandRequest.
+         * @memberof dfproto
+         * @classdesc Represents a CoreRunCommandRequest.
+         * @implements ICoreRunCommandRequest
+         * @constructor
+         * @param {dfproto.ICoreRunCommandRequest=} [properties] Properties to set
+         */
+        function CoreRunCommandRequest(properties) {
+            this["arguments"] = [];
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * CoreRunCommandRequest command.
+         * @member {string} command
+         * @memberof dfproto.CoreRunCommandRequest
+         * @instance
+         */
+        CoreRunCommandRequest.prototype.command = "";
+
+        /**
+         * CoreRunCommandRequest arguments.
+         * @member {Array.<string>} arguments
+         * @memberof dfproto.CoreRunCommandRequest
+         * @instance
+         */
+        CoreRunCommandRequest.prototype["arguments"] = $util.emptyArray;
+
+        /**
+         * Creates a new CoreRunCommandRequest instance using the specified properties.
+         * @function create
+         * @memberof dfproto.CoreRunCommandRequest
+         * @static
+         * @param {dfproto.ICoreRunCommandRequest=} [properties] Properties to set
+         * @returns {dfproto.CoreRunCommandRequest} CoreRunCommandRequest instance
+         */
+        CoreRunCommandRequest.create = function create(properties) {
+            return new CoreRunCommandRequest(properties);
+        };
+
+        /**
+         * Encodes the specified CoreRunCommandRequest message. Does not implicitly {@link dfproto.CoreRunCommandRequest.verify|verify} messages.
+         * @function encode
+         * @memberof dfproto.CoreRunCommandRequest
+         * @static
+         * @param {dfproto.ICoreRunCommandRequest} message CoreRunCommandRequest message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        CoreRunCommandRequest.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            writer.uint32(/* id 1, wireType 2 =*/10).string(message.command);
+            if (message["arguments"] != null && message["arguments"].length)
+                for (var i = 0; i < message["arguments"].length; ++i)
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message["arguments"][i]);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified CoreRunCommandRequest message, length delimited. Does not implicitly {@link dfproto.CoreRunCommandRequest.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof dfproto.CoreRunCommandRequest
+         * @static
+         * @param {dfproto.ICoreRunCommandRequest} message CoreRunCommandRequest message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        CoreRunCommandRequest.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a CoreRunCommandRequest message from the specified reader or buffer.
+         * @function decode
+         * @memberof dfproto.CoreRunCommandRequest
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {dfproto.CoreRunCommandRequest} CoreRunCommandRequest
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        CoreRunCommandRequest.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.dfproto.CoreRunCommandRequest();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    message.command = reader.string();
+                    break;
+                case 2:
+                    if (!(message["arguments"] && message["arguments"].length))
+                        message["arguments"] = [];
+                    message["arguments"].push(reader.string());
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            if (!message.hasOwnProperty("command"))
+                throw $util.ProtocolError("missing required 'command'", { instance: message });
+            return message;
+        };
+
+        /**
+         * Decodes a CoreRunCommandRequest message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof dfproto.CoreRunCommandRequest
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {dfproto.CoreRunCommandRequest} CoreRunCommandRequest
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        CoreRunCommandRequest.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a CoreRunCommandRequest message.
+         * @function verify
+         * @memberof dfproto.CoreRunCommandRequest
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        CoreRunCommandRequest.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (!$util.isString(message.command))
+                return "command: string expected";
+            if (message["arguments"] != null && message.hasOwnProperty("arguments")) {
+                if (!Array.isArray(message["arguments"]))
+                    return "arguments: array expected";
+                for (var i = 0; i < message["arguments"].length; ++i)
+                    if (!$util.isString(message["arguments"][i]))
+                        return "arguments: string[] expected";
+            }
+            return null;
+        };
+
+        /**
+         * Creates a CoreRunCommandRequest message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof dfproto.CoreRunCommandRequest
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {dfproto.CoreRunCommandRequest} CoreRunCommandRequest
+         */
+        CoreRunCommandRequest.fromObject = function fromObject(object) {
+            if (object instanceof $root.dfproto.CoreRunCommandRequest)
+                return object;
+            var message = new $root.dfproto.CoreRunCommandRequest();
+            if (object.command != null)
+                message.command = String(object.command);
+            if (object["arguments"]) {
+                if (!Array.isArray(object["arguments"]))
+                    throw TypeError(".dfproto.CoreRunCommandRequest.arguments: array expected");
+                message["arguments"] = [];
+                for (var i = 0; i < object["arguments"].length; ++i)
+                    message["arguments"][i] = String(object["arguments"][i]);
+            }
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a CoreRunCommandRequest message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof dfproto.CoreRunCommandRequest
+         * @static
+         * @param {dfproto.CoreRunCommandRequest} message CoreRunCommandRequest
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        CoreRunCommandRequest.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.arrays || options.defaults)
+                object["arguments"] = [];
+            if (options.defaults)
+                object.command = "";
+            if (message.command != null && message.hasOwnProperty("command"))
+                object.command = message.command;
+            if (message["arguments"] && message["arguments"].length) {
+                object["arguments"] = [];
+                for (var j = 0; j < message["arguments"].length; ++j)
+                    object["arguments"][j] = message["arguments"][j];
+            }
+            return object;
+        };
+
+        /**
+         * Converts this CoreRunCommandRequest to JSON.
+         * @function toJSON
+         * @memberof dfproto.CoreRunCommandRequest
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        CoreRunCommandRequest.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return CoreRunCommandRequest;
+    })();
+
+    dfproto.CoreRunLuaRequest = (function() {
+
+        /**
+         * Properties of a CoreRunLuaRequest.
+         * @memberof dfproto
+         * @interface ICoreRunLuaRequest
+         * @property {string} module CoreRunLuaRequest module
+         * @property {string} "function" CoreRunLuaRequest function
+         * @property {Array.<string>|null} ["arguments"] CoreRunLuaRequest arguments
+         */
+
+        /**
+         * Constructs a new CoreRunLuaRequest.
+         * @memberof dfproto
+         * @classdesc Represents a CoreRunLuaRequest.
+         * @implements ICoreRunLuaRequest
+         * @constructor
+         * @param {dfproto.ICoreRunLuaRequest=} [properties] Properties to set
+         */
+        function CoreRunLuaRequest(properties) {
+            this["arguments"] = [];
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * CoreRunLuaRequest module.
+         * @member {string} module
+         * @memberof dfproto.CoreRunLuaRequest
+         * @instance
+         */
+        CoreRunLuaRequest.prototype.module = "";
+
+        /**
+         * CoreRunLuaRequest function.
+         * @member {string} function
+         * @memberof dfproto.CoreRunLuaRequest
+         * @instance
+         */
+        CoreRunLuaRequest.prototype["function"] = "";
+
+        /**
+         * CoreRunLuaRequest arguments.
+         * @member {Array.<string>} arguments
+         * @memberof dfproto.CoreRunLuaRequest
+         * @instance
+         */
+        CoreRunLuaRequest.prototype["arguments"] = $util.emptyArray;
+
+        /**
+         * Creates a new CoreRunLuaRequest instance using the specified properties.
+         * @function create
+         * @memberof dfproto.CoreRunLuaRequest
+         * @static
+         * @param {dfproto.ICoreRunLuaRequest=} [properties] Properties to set
+         * @returns {dfproto.CoreRunLuaRequest} CoreRunLuaRequest instance
+         */
+        CoreRunLuaRequest.create = function create(properties) {
+            return new CoreRunLuaRequest(properties);
+        };
+
+        /**
+         * Encodes the specified CoreRunLuaRequest message. Does not implicitly {@link dfproto.CoreRunLuaRequest.verify|verify} messages.
+         * @function encode
+         * @memberof dfproto.CoreRunLuaRequest
+         * @static
+         * @param {dfproto.ICoreRunLuaRequest} message CoreRunLuaRequest message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        CoreRunLuaRequest.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            writer.uint32(/* id 1, wireType 2 =*/10).string(message.module);
+            writer.uint32(/* id 2, wireType 2 =*/18).string(message["function"]);
+            if (message["arguments"] != null && message["arguments"].length)
+                for (var i = 0; i < message["arguments"].length; ++i)
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message["arguments"][i]);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified CoreRunLuaRequest message, length delimited. Does not implicitly {@link dfproto.CoreRunLuaRequest.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof dfproto.CoreRunLuaRequest
+         * @static
+         * @param {dfproto.ICoreRunLuaRequest} message CoreRunLuaRequest message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        CoreRunLuaRequest.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a CoreRunLuaRequest message from the specified reader or buffer.
+         * @function decode
+         * @memberof dfproto.CoreRunLuaRequest
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {dfproto.CoreRunLuaRequest} CoreRunLuaRequest
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        CoreRunLuaRequest.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.dfproto.CoreRunLuaRequest();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    message.module = reader.string();
+                    break;
+                case 2:
+                    message["function"] = reader.string();
+                    break;
+                case 3:
+                    if (!(message["arguments"] && message["arguments"].length))
+                        message["arguments"] = [];
+                    message["arguments"].push(reader.string());
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            if (!message.hasOwnProperty("module"))
+                throw $util.ProtocolError("missing required 'module'", { instance: message });
+            if (!message.hasOwnProperty("function"))
+                throw $util.ProtocolError("missing required 'function'", { instance: message });
+            return message;
+        };
+
+        /**
+         * Decodes a CoreRunLuaRequest message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof dfproto.CoreRunLuaRequest
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {dfproto.CoreRunLuaRequest} CoreRunLuaRequest
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        CoreRunLuaRequest.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a CoreRunLuaRequest message.
+         * @function verify
+         * @memberof dfproto.CoreRunLuaRequest
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        CoreRunLuaRequest.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (!$util.isString(message.module))
+                return "module: string expected";
+            if (!$util.isString(message["function"]))
+                return "function: string expected";
+            if (message["arguments"] != null && message.hasOwnProperty("arguments")) {
+                if (!Array.isArray(message["arguments"]))
+                    return "arguments: array expected";
+                for (var i = 0; i < message["arguments"].length; ++i)
+                    if (!$util.isString(message["arguments"][i]))
+                        return "arguments: string[] expected";
+            }
+            return null;
+        };
+
+        /**
+         * Creates a CoreRunLuaRequest message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof dfproto.CoreRunLuaRequest
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {dfproto.CoreRunLuaRequest} CoreRunLuaRequest
+         */
+        CoreRunLuaRequest.fromObject = function fromObject(object) {
+            if (object instanceof $root.dfproto.CoreRunLuaRequest)
+                return object;
+            var message = new $root.dfproto.CoreRunLuaRequest();
+            if (object.module != null)
+                message.module = String(object.module);
+            if (object["function"] != null)
+                message["function"] = String(object["function"]);
+            if (object["arguments"]) {
+                if (!Array.isArray(object["arguments"]))
+                    throw TypeError(".dfproto.CoreRunLuaRequest.arguments: array expected");
+                message["arguments"] = [];
+                for (var i = 0; i < object["arguments"].length; ++i)
+                    message["arguments"][i] = String(object["arguments"][i]);
+            }
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a CoreRunLuaRequest message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof dfproto.CoreRunLuaRequest
+         * @static
+         * @param {dfproto.CoreRunLuaRequest} message CoreRunLuaRequest
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        CoreRunLuaRequest.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.arrays || options.defaults)
+                object["arguments"] = [];
+            if (options.defaults) {
+                object.module = "";
+                object["function"] = "";
+            }
+            if (message.module != null && message.hasOwnProperty("module"))
+                object.module = message.module;
+            if (message["function"] != null && message.hasOwnProperty("function"))
+                object["function"] = message["function"];
+            if (message["arguments"] && message["arguments"].length) {
+                object["arguments"] = [];
+                for (var j = 0; j < message["arguments"].length; ++j)
+                    object["arguments"][j] = message["arguments"][j];
+            }
+            return object;
+        };
+
+        /**
+         * Converts this CoreRunLuaRequest to JSON.
+         * @function toJSON
+         * @memberof dfproto.CoreRunLuaRequest
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        CoreRunLuaRequest.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return CoreRunLuaRequest;
+    })();
+
+    dfproto.RenameSquadIn = (function() {
+
+        /**
+         * Properties of a RenameSquadIn.
+         * @memberof dfproto
+         * @interface IRenameSquadIn
+         * @property {number} squadId RenameSquadIn squadId
+         * @property {string|null} [nickname] RenameSquadIn nickname
+         * @property {string|null} [alias] RenameSquadIn alias
+         */
+
+        /**
+         * Constructs a new RenameSquadIn.
+         * @memberof dfproto
+         * @classdesc Represents a RenameSquadIn.
+         * @implements IRenameSquadIn
+         * @constructor
+         * @param {dfproto.IRenameSquadIn=} [properties] Properties to set
+         */
+        function RenameSquadIn(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * RenameSquadIn squadId.
+         * @member {number} squadId
+         * @memberof dfproto.RenameSquadIn
+         * @instance
+         */
+        RenameSquadIn.prototype.squadId = 0;
+
+        /**
+         * RenameSquadIn nickname.
+         * @member {string} nickname
+         * @memberof dfproto.RenameSquadIn
+         * @instance
+         */
+        RenameSquadIn.prototype.nickname = "";
+
+        /**
+         * RenameSquadIn alias.
+         * @member {string} alias
+         * @memberof dfproto.RenameSquadIn
+         * @instance
+         */
+        RenameSquadIn.prototype.alias = "";
+
+        /**
+         * Creates a new RenameSquadIn instance using the specified properties.
+         * @function create
+         * @memberof dfproto.RenameSquadIn
+         * @static
+         * @param {dfproto.IRenameSquadIn=} [properties] Properties to set
+         * @returns {dfproto.RenameSquadIn} RenameSquadIn instance
+         */
+        RenameSquadIn.create = function create(properties) {
+            return new RenameSquadIn(properties);
+        };
+
+        /**
+         * Encodes the specified RenameSquadIn message. Does not implicitly {@link dfproto.RenameSquadIn.verify|verify} messages.
+         * @function encode
+         * @memberof dfproto.RenameSquadIn
+         * @static
+         * @param {dfproto.IRenameSquadIn} message RenameSquadIn message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        RenameSquadIn.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            writer.uint32(/* id 1, wireType 0 =*/8).int32(message.squadId);
+            if (message.nickname != null && Object.hasOwnProperty.call(message, "nickname"))
+                writer.uint32(/* id 2, wireType 2 =*/18).string(message.nickname);
+            if (message.alias != null && Object.hasOwnProperty.call(message, "alias"))
+                writer.uint32(/* id 3, wireType 2 =*/26).string(message.alias);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified RenameSquadIn message, length delimited. Does not implicitly {@link dfproto.RenameSquadIn.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof dfproto.RenameSquadIn
+         * @static
+         * @param {dfproto.IRenameSquadIn} message RenameSquadIn message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        RenameSquadIn.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a RenameSquadIn message from the specified reader or buffer.
+         * @function decode
+         * @memberof dfproto.RenameSquadIn
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {dfproto.RenameSquadIn} RenameSquadIn
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        RenameSquadIn.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.dfproto.RenameSquadIn();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    message.squadId = reader.int32();
+                    break;
+                case 2:
+                    message.nickname = reader.string();
+                    break;
+                case 3:
+                    message.alias = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            if (!message.hasOwnProperty("squadId"))
+                throw $util.ProtocolError("missing required 'squadId'", { instance: message });
+            return message;
+        };
+
+        /**
+         * Decodes a RenameSquadIn message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof dfproto.RenameSquadIn
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {dfproto.RenameSquadIn} RenameSquadIn
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        RenameSquadIn.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a RenameSquadIn message.
+         * @function verify
+         * @memberof dfproto.RenameSquadIn
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        RenameSquadIn.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (!$util.isInteger(message.squadId))
+                return "squadId: integer expected";
+            if (message.nickname != null && message.hasOwnProperty("nickname"))
+                if (!$util.isString(message.nickname))
+                    return "nickname: string expected";
+            if (message.alias != null && message.hasOwnProperty("alias"))
+                if (!$util.isString(message.alias))
+                    return "alias: string expected";
+            return null;
+        };
+
+        /**
+         * Creates a RenameSquadIn message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof dfproto.RenameSquadIn
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {dfproto.RenameSquadIn} RenameSquadIn
+         */
+        RenameSquadIn.fromObject = function fromObject(object) {
+            if (object instanceof $root.dfproto.RenameSquadIn)
+                return object;
+            var message = new $root.dfproto.RenameSquadIn();
+            if (object.squadId != null)
+                message.squadId = object.squadId | 0;
+            if (object.nickname != null)
+                message.nickname = String(object.nickname);
+            if (object.alias != null)
+                message.alias = String(object.alias);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a RenameSquadIn message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof dfproto.RenameSquadIn
+         * @static
+         * @param {dfproto.RenameSquadIn} message RenameSquadIn
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        RenameSquadIn.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.squadId = 0;
+                object.nickname = "";
+                object.alias = "";
+            }
+            if (message.squadId != null && message.hasOwnProperty("squadId"))
+                object.squadId = message.squadId;
+            if (message.nickname != null && message.hasOwnProperty("nickname"))
+                object.nickname = message.nickname;
+            if (message.alias != null && message.hasOwnProperty("alias"))
+                object.alias = message.alias;
+            return object;
+        };
+
+        /**
+         * Converts this RenameSquadIn to JSON.
+         * @function toJSON
+         * @memberof dfproto.RenameSquadIn
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        RenameSquadIn.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return RenameSquadIn;
+    })();
+
+    dfproto.RenameUnitIn = (function() {
+
+        /**
+         * Properties of a RenameUnitIn.
+         * @memberof dfproto
+         * @interface IRenameUnitIn
+         * @property {number} unitId RenameUnitIn unitId
+         * @property {string|null} [nickname] RenameUnitIn nickname
+         * @property {string|null} [profession] RenameUnitIn profession
+         */
+
+        /**
+         * Constructs a new RenameUnitIn.
+         * @memberof dfproto
+         * @classdesc Represents a RenameUnitIn.
+         * @implements IRenameUnitIn
+         * @constructor
+         * @param {dfproto.IRenameUnitIn=} [properties] Properties to set
+         */
+        function RenameUnitIn(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * RenameUnitIn unitId.
+         * @member {number} unitId
+         * @memberof dfproto.RenameUnitIn
+         * @instance
+         */
+        RenameUnitIn.prototype.unitId = 0;
+
+        /**
+         * RenameUnitIn nickname.
+         * @member {string} nickname
+         * @memberof dfproto.RenameUnitIn
+         * @instance
+         */
+        RenameUnitIn.prototype.nickname = "";
+
+        /**
+         * RenameUnitIn profession.
+         * @member {string} profession
+         * @memberof dfproto.RenameUnitIn
+         * @instance
+         */
+        RenameUnitIn.prototype.profession = "";
+
+        /**
+         * Creates a new RenameUnitIn instance using the specified properties.
+         * @function create
+         * @memberof dfproto.RenameUnitIn
+         * @static
+         * @param {dfproto.IRenameUnitIn=} [properties] Properties to set
+         * @returns {dfproto.RenameUnitIn} RenameUnitIn instance
+         */
+        RenameUnitIn.create = function create(properties) {
+            return new RenameUnitIn(properties);
+        };
+
+        /**
+         * Encodes the specified RenameUnitIn message. Does not implicitly {@link dfproto.RenameUnitIn.verify|verify} messages.
+         * @function encode
+         * @memberof dfproto.RenameUnitIn
+         * @static
+         * @param {dfproto.IRenameUnitIn} message RenameUnitIn message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        RenameUnitIn.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            writer.uint32(/* id 1, wireType 0 =*/8).int32(message.unitId);
+            if (message.nickname != null && Object.hasOwnProperty.call(message, "nickname"))
+                writer.uint32(/* id 2, wireType 2 =*/18).string(message.nickname);
+            if (message.profession != null && Object.hasOwnProperty.call(message, "profession"))
+                writer.uint32(/* id 3, wireType 2 =*/26).string(message.profession);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified RenameUnitIn message, length delimited. Does not implicitly {@link dfproto.RenameUnitIn.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof dfproto.RenameUnitIn
+         * @static
+         * @param {dfproto.IRenameUnitIn} message RenameUnitIn message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        RenameUnitIn.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a RenameUnitIn message from the specified reader or buffer.
+         * @function decode
+         * @memberof dfproto.RenameUnitIn
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {dfproto.RenameUnitIn} RenameUnitIn
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        RenameUnitIn.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.dfproto.RenameUnitIn();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    message.unitId = reader.int32();
+                    break;
+                case 2:
+                    message.nickname = reader.string();
+                    break;
+                case 3:
+                    message.profession = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            if (!message.hasOwnProperty("unitId"))
+                throw $util.ProtocolError("missing required 'unitId'", { instance: message });
+            return message;
+        };
+
+        /**
+         * Decodes a RenameUnitIn message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof dfproto.RenameUnitIn
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {dfproto.RenameUnitIn} RenameUnitIn
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        RenameUnitIn.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a RenameUnitIn message.
+         * @function verify
+         * @memberof dfproto.RenameUnitIn
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        RenameUnitIn.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (!$util.isInteger(message.unitId))
+                return "unitId: integer expected";
+            if (message.nickname != null && message.hasOwnProperty("nickname"))
+                if (!$util.isString(message.nickname))
+                    return "nickname: string expected";
+            if (message.profession != null && message.hasOwnProperty("profession"))
+                if (!$util.isString(message.profession))
+                    return "profession: string expected";
+            return null;
+        };
+
+        /**
+         * Creates a RenameUnitIn message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof dfproto.RenameUnitIn
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {dfproto.RenameUnitIn} RenameUnitIn
+         */
+        RenameUnitIn.fromObject = function fromObject(object) {
+            if (object instanceof $root.dfproto.RenameUnitIn)
+                return object;
+            var message = new $root.dfproto.RenameUnitIn();
+            if (object.unitId != null)
+                message.unitId = object.unitId | 0;
+            if (object.nickname != null)
+                message.nickname = String(object.nickname);
+            if (object.profession != null)
+                message.profession = String(object.profession);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a RenameUnitIn message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof dfproto.RenameUnitIn
+         * @static
+         * @param {dfproto.RenameUnitIn} message RenameUnitIn
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        RenameUnitIn.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.unitId = 0;
+                object.nickname = "";
+                object.profession = "";
+            }
+            if (message.unitId != null && message.hasOwnProperty("unitId"))
+                object.unitId = message.unitId;
+            if (message.nickname != null && message.hasOwnProperty("nickname"))
+                object.nickname = message.nickname;
+            if (message.profession != null && message.hasOwnProperty("profession"))
+                object.profession = message.profession;
+            return object;
+        };
+
+        /**
+         * Converts this RenameUnitIn to JSON.
+         * @function toJSON
+         * @memberof dfproto.RenameUnitIn
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        RenameUnitIn.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return RenameUnitIn;
+    })();
+
+    dfproto.RenameBuildingIn = (function() {
+
+        /**
+         * Properties of a RenameBuildingIn.
+         * @memberof dfproto
+         * @interface IRenameBuildingIn
+         * @property {number} buildingId RenameBuildingIn buildingId
+         * @property {string|null} [name] RenameBuildingIn name
+         */
+
+        /**
+         * Constructs a new RenameBuildingIn.
+         * @memberof dfproto
+         * @classdesc Represents a RenameBuildingIn.
+         * @implements IRenameBuildingIn
+         * @constructor
+         * @param {dfproto.IRenameBuildingIn=} [properties] Properties to set
+         */
+        function RenameBuildingIn(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * RenameBuildingIn buildingId.
+         * @member {number} buildingId
+         * @memberof dfproto.RenameBuildingIn
+         * @instance
+         */
+        RenameBuildingIn.prototype.buildingId = 0;
+
+        /**
+         * RenameBuildingIn name.
+         * @member {string} name
+         * @memberof dfproto.RenameBuildingIn
+         * @instance
+         */
+        RenameBuildingIn.prototype.name = "";
+
+        /**
+         * Creates a new RenameBuildingIn instance using the specified properties.
+         * @function create
+         * @memberof dfproto.RenameBuildingIn
+         * @static
+         * @param {dfproto.IRenameBuildingIn=} [properties] Properties to set
+         * @returns {dfproto.RenameBuildingIn} RenameBuildingIn instance
+         */
+        RenameBuildingIn.create = function create(properties) {
+            return new RenameBuildingIn(properties);
+        };
+
+        /**
+         * Encodes the specified RenameBuildingIn message. Does not implicitly {@link dfproto.RenameBuildingIn.verify|verify} messages.
+         * @function encode
+         * @memberof dfproto.RenameBuildingIn
+         * @static
+         * @param {dfproto.IRenameBuildingIn} message RenameBuildingIn message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        RenameBuildingIn.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            writer.uint32(/* id 1, wireType 0 =*/8).int32(message.buildingId);
+            if (message.name != null && Object.hasOwnProperty.call(message, "name"))
+                writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified RenameBuildingIn message, length delimited. Does not implicitly {@link dfproto.RenameBuildingIn.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof dfproto.RenameBuildingIn
+         * @static
+         * @param {dfproto.IRenameBuildingIn} message RenameBuildingIn message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        RenameBuildingIn.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a RenameBuildingIn message from the specified reader or buffer.
+         * @function decode
+         * @memberof dfproto.RenameBuildingIn
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {dfproto.RenameBuildingIn} RenameBuildingIn
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        RenameBuildingIn.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.dfproto.RenameBuildingIn();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    message.buildingId = reader.int32();
+                    break;
+                case 2:
+                    message.name = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            if (!message.hasOwnProperty("buildingId"))
+                throw $util.ProtocolError("missing required 'buildingId'", { instance: message });
+            return message;
+        };
+
+        /**
+         * Decodes a RenameBuildingIn message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof dfproto.RenameBuildingIn
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {dfproto.RenameBuildingIn} RenameBuildingIn
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        RenameBuildingIn.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a RenameBuildingIn message.
+         * @function verify
+         * @memberof dfproto.RenameBuildingIn
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        RenameBuildingIn.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (!$util.isInteger(message.buildingId))
+                return "buildingId: integer expected";
+            if (message.name != null && message.hasOwnProperty("name"))
+                if (!$util.isString(message.name))
+                    return "name: string expected";
+            return null;
+        };
+
+        /**
+         * Creates a RenameBuildingIn message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof dfproto.RenameBuildingIn
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {dfproto.RenameBuildingIn} RenameBuildingIn
+         */
+        RenameBuildingIn.fromObject = function fromObject(object) {
+            if (object instanceof $root.dfproto.RenameBuildingIn)
+                return object;
+            var message = new $root.dfproto.RenameBuildingIn();
+            if (object.buildingId != null)
+                message.buildingId = object.buildingId | 0;
+            if (object.name != null)
+                message.name = String(object.name);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a RenameBuildingIn message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof dfproto.RenameBuildingIn
+         * @static
+         * @param {dfproto.RenameBuildingIn} message RenameBuildingIn
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        RenameBuildingIn.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.buildingId = 0;
+                object.name = "";
+            }
+            if (message.buildingId != null && message.hasOwnProperty("buildingId"))
+                object.buildingId = message.buildingId;
+            if (message.name != null && message.hasOwnProperty("name"))
+                object.name = message.name;
+            return object;
+        };
+
+        /**
+         * Converts this RenameBuildingIn to JSON.
+         * @function toJSON
+         * @memberof dfproto.RenameBuildingIn
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        RenameBuildingIn.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return RenameBuildingIn;
+    })();
+
+    return dfproto;
+})();
+
+$root.AdventureControl = (function() {
+
+    /**
+     * Namespace AdventureControl.
+     * @exports AdventureControl
+     * @namespace
+     */
+    var AdventureControl = {};
+
+    /**
+     * AdvmodeMenu enum.
+     * @name AdventureControl.AdvmodeMenu
+     * @enum {string}
+     * @property {number} Default=0 Default value
+     * @property {number} Look=1 Look value
+     * @property {number} ConversationAddress=2 ConversationAddress value
+     * @property {number} ConversationSelect=3 ConversationSelect value
+     * @property {number} ConversationSpeak=4 ConversationSpeak value
+     * @property {number} Inventory=5 Inventory value
+     * @property {number} Drop=6 Drop value
+     * @property {number} ThrowItem=7 ThrowItem value
+     * @property {number} Wear=8 Wear value
+     * @property {number} Remove=9 Remove value
+     * @property {number} Interact=10 Interact value
+     * @property {number} Put=11 Put value
+     * @property {number} PutContainer=12 PutContainer value
+     * @property {number} Eat=13 Eat value
+     * @property {number} ThrowAim=14 ThrowAim value
+     * @property {number} Fire=15 Fire value
+     * @property {number} Get=16 Get value
+     * @property {number} Unk17=17 Unk17 value
+     * @property {number} CombatPrefs=18 CombatPrefs value
+     * @property {number} Companions=19 Companions value
+     * @property {number} MovementPrefs=20 MovementPrefs value
+     * @property {number} SpeedPrefs=21 SpeedPrefs value
+     * @property {number} InteractAction=22 InteractAction value
+     * @property {number} MoveCarefully=23 MoveCarefully value
+     * @property {number} Announcements=24 Announcements value
+     * @property {number} UseBuilding=25 UseBuilding value
+     * @property {number} Travel=26 Travel value
+     * @property {number} Unk27=27 Unk27 value
+     * @property {number} Unk28=28 Unk28 value
+     * @property {number} SleepConfirm=29 SleepConfirm value
+     * @property {number} SelectInteractionTarget=30 SelectInteractionTarget value
+     * @property {number} Unk31=31 Unk31 value
+     * @property {number} Unk32=32 Unk32 value
+     * @property {number} FallAction=33 FallAction value
+     * @property {number} ViewTracks=34 ViewTracks value
+     * @property {number} Jump=35 Jump value
+     * @property {number} Unk36=36 Unk36 value
+     * @property {number} AttackConfirm=37 AttackConfirm value
+     * @property {number} AttackType=38 AttackType value
+     * @property {number} AttackBodypart=39 AttackBodypart value
+     * @property {number} AttackStrike=40 AttackStrike value
+     * @property {number} Unk41=41 Unk41 value
+     * @property {number} Unk42=42 Unk42 value
+     * @property {number} DodgeDirection=43 DodgeDirection value
+     * @property {number} Unk44=44 Unk44 value
+     * @property {number} Unk45=45 Unk45 value
+     * @property {number} Build=46 Build value
+     */
+    AdventureControl.AdvmodeMenu = (function() {
+        var valuesById = {}, values = Object.create(valuesById);
+        values[valuesById[0] = "Default"] = 0;
+        values[valuesById[1] = "Look"] = 1;
+        values[valuesById[2] = "ConversationAddress"] = 2;
+        values[valuesById[3] = "ConversationSelect"] = 3;
+        values[valuesById[4] = "ConversationSpeak"] = 4;
+        values[valuesById[5] = "Inventory"] = 5;
+        values[valuesById[6] = "Drop"] = 6;
+        values[valuesById[7] = "ThrowItem"] = 7;
+        values[valuesById[8] = "Wear"] = 8;
+        values[valuesById[9] = "Remove"] = 9;
+        values[valuesById[10] = "Interact"] = 10;
+        values[valuesById[11] = "Put"] = 11;
+        values[valuesById[12] = "PutContainer"] = 12;
+        values[valuesById[13] = "Eat"] = 13;
+        values[valuesById[14] = "ThrowAim"] = 14;
+        values[valuesById[15] = "Fire"] = 15;
+        values[valuesById[16] = "Get"] = 16;
+        values[valuesById[17] = "Unk17"] = 17;
+        values[valuesById[18] = "CombatPrefs"] = 18;
+        values[valuesById[19] = "Companions"] = 19;
+        values[valuesById[20] = "MovementPrefs"] = 20;
+        values[valuesById[21] = "SpeedPrefs"] = 21;
+        values[valuesById[22] = "InteractAction"] = 22;
+        values[valuesById[23] = "MoveCarefully"] = 23;
+        values[valuesById[24] = "Announcements"] = 24;
+        values[valuesById[25] = "UseBuilding"] = 25;
+        values[valuesById[26] = "Travel"] = 26;
+        values[valuesById[27] = "Unk27"] = 27;
+        values[valuesById[28] = "Unk28"] = 28;
+        values[valuesById[29] = "SleepConfirm"] = 29;
+        values[valuesById[30] = "SelectInteractionTarget"] = 30;
+        values[valuesById[31] = "Unk31"] = 31;
+        values[valuesById[32] = "Unk32"] = 32;
+        values[valuesById[33] = "FallAction"] = 33;
+        values[valuesById[34] = "ViewTracks"] = 34;
+        values[valuesById[35] = "Jump"] = 35;
+        values[valuesById[36] = "Unk36"] = 36;
+        values[valuesById[37] = "AttackConfirm"] = 37;
+        values[valuesById[38] = "AttackType"] = 38;
+        values[valuesById[39] = "AttackBodypart"] = 39;
+        values[valuesById[40] = "AttackStrike"] = 40;
+        values[valuesById[41] = "Unk41"] = 41;
+        values[valuesById[42] = "Unk42"] = 42;
+        values[valuesById[43] = "DodgeDirection"] = 43;
+        values[valuesById[44] = "Unk44"] = 44;
+        values[valuesById[45] = "Unk45"] = 45;
+        values[valuesById[46] = "Build"] = 46;
+        return values;
+    })();
+
+    /**
+     * CarefulMovementType enum.
+     * @name AdventureControl.CarefulMovementType
+     * @enum {string}
+     * @property {number} DEFAULT_MOVEMENT=0 DEFAULT_MOVEMENT value
+     * @property {number} RELEASE_ITEM_HOLD=1 RELEASE_ITEM_HOLD value
+     * @property {number} RELEASE_TILE_HOLD=2 RELEASE_TILE_HOLD value
+     * @property {number} ATTACK_CREATURE=3 ATTACK_CREATURE value
+     * @property {number} HOLD_TILE=4 HOLD_TILE value
+     * @property {number} MOVE=5 MOVE value
+     * @property {number} CLIMB=6 CLIMB value
+     * @property {number} HOLD_ITEM=7 HOLD_ITEM value
+     * @property {number} BUILDING_INTERACT=8 BUILDING_INTERACT value
+     * @property {number} ITEM_INTERACT=9 ITEM_INTERACT value
+     * @property {number} ITEM_INTERACT_GUIDE=10 ITEM_INTERACT_GUIDE value
+     * @property {number} ITEM_INTERACT_RIDE=11 ITEM_INTERACT_RIDE value
+     * @property {number} ITEM_INTERACT_PUSH=12 ITEM_INTERACT_PUSH value
+     */
+    AdventureControl.CarefulMovementType = (function() {
+        var valuesById = {}, values = Object.create(valuesById);
+        values[valuesById[0] = "DEFAULT_MOVEMENT"] = 0;
+        values[valuesById[1] = "RELEASE_ITEM_HOLD"] = 1;
+        values[valuesById[2] = "RELEASE_TILE_HOLD"] = 2;
+        values[valuesById[3] = "ATTACK_CREATURE"] = 3;
+        values[valuesById[4] = "HOLD_TILE"] = 4;
+        values[valuesById[5] = "MOVE"] = 5;
+        values[valuesById[6] = "CLIMB"] = 6;
+        values[valuesById[7] = "HOLD_ITEM"] = 7;
+        values[valuesById[8] = "BUILDING_INTERACT"] = 8;
+        values[valuesById[9] = "ITEM_INTERACT"] = 9;
+        values[valuesById[10] = "ITEM_INTERACT_GUIDE"] = 10;
+        values[valuesById[11] = "ITEM_INTERACT_RIDE"] = 11;
+        values[valuesById[12] = "ITEM_INTERACT_PUSH"] = 12;
+        return values;
+    })();
+
+    /**
+     * MiscMoveType enum.
+     * @name AdventureControl.MiscMoveType
+     * @enum {string}
+     * @property {number} SET_CLIMB=0 SET_CLIMB value
+     * @property {number} SET_STAND=1 SET_STAND value
+     * @property {number} SET_CANCEL=2 SET_CANCEL value
+     */
+    AdventureControl.MiscMoveType = (function() {
+        var valuesById = {}, values = Object.create(valuesById);
+        values[valuesById[0] = "SET_CLIMB"] = 0;
+        values[valuesById[1] = "SET_STAND"] = 1;
+        values[valuesById[2] = "SET_CANCEL"] = 2;
+        return values;
+    })();
+
+    AdventureControl.MoveCommandParams = (function() {
+
+        /**
+         * Properties of a MoveCommandParams.
+         * @memberof AdventureControl
+         * @interface IMoveCommandParams
+         * @property {RemoteFortressReader.ICoord|null} [direction] MoveCommandParams direction
+         */
+
+        /**
+         * Constructs a new MoveCommandParams.
+         * @memberof AdventureControl
+         * @classdesc Represents a MoveCommandParams.
+         * @implements IMoveCommandParams
+         * @constructor
+         * @param {AdventureControl.IMoveCommandParams=} [properties] Properties to set
+         */
+        function MoveCommandParams(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * MoveCommandParams direction.
+         * @member {RemoteFortressReader.ICoord|null|undefined} direction
+         * @memberof AdventureControl.MoveCommandParams
+         * @instance
+         */
+        MoveCommandParams.prototype.direction = null;
+
+        /**
+         * Creates a new MoveCommandParams instance using the specified properties.
+         * @function create
+         * @memberof AdventureControl.MoveCommandParams
+         * @static
+         * @param {AdventureControl.IMoveCommandParams=} [properties] Properties to set
+         * @returns {AdventureControl.MoveCommandParams} MoveCommandParams instance
+         */
+        MoveCommandParams.create = function create(properties) {
+            return new MoveCommandParams(properties);
+        };
+
+        /**
+         * Encodes the specified MoveCommandParams message. Does not implicitly {@link AdventureControl.MoveCommandParams.verify|verify} messages.
+         * @function encode
+         * @memberof AdventureControl.MoveCommandParams
+         * @static
+         * @param {AdventureControl.IMoveCommandParams} message MoveCommandParams message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        MoveCommandParams.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.direction != null && Object.hasOwnProperty.call(message, "direction"))
+                $root.RemoteFortressReader.Coord.encode(message.direction, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+            return writer;
+        };
+
+        /**
+         * Encodes the specified MoveCommandParams message, length delimited. Does not implicitly {@link AdventureControl.MoveCommandParams.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof AdventureControl.MoveCommandParams
+         * @static
+         * @param {AdventureControl.IMoveCommandParams} message MoveCommandParams message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        MoveCommandParams.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a MoveCommandParams message from the specified reader or buffer.
+         * @function decode
+         * @memberof AdventureControl.MoveCommandParams
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {AdventureControl.MoveCommandParams} MoveCommandParams
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        MoveCommandParams.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AdventureControl.MoveCommandParams();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    message.direction = $root.RemoteFortressReader.Coord.decode(reader, reader.uint32());
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a MoveCommandParams message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof AdventureControl.MoveCommandParams
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {AdventureControl.MoveCommandParams} MoveCommandParams
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        MoveCommandParams.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a MoveCommandParams message.
+         * @function verify
+         * @memberof AdventureControl.MoveCommandParams
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        MoveCommandParams.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.direction != null && message.hasOwnProperty("direction")) {
+                var error = $root.RemoteFortressReader.Coord.verify(message.direction);
+                if (error)
+                    return "direction." + error;
+            }
+            return null;
+        };
+
+        /**
+         * Creates a MoveCommandParams message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof AdventureControl.MoveCommandParams
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {AdventureControl.MoveCommandParams} MoveCommandParams
+         */
+        MoveCommandParams.fromObject = function fromObject(object) {
+            if (object instanceof $root.AdventureControl.MoveCommandParams)
+                return object;
+            var message = new $root.AdventureControl.MoveCommandParams();
+            if (object.direction != null) {
+                if (typeof object.direction !== "object")
+                    throw TypeError(".AdventureControl.MoveCommandParams.direction: object expected");
+                message.direction = $root.RemoteFortressReader.Coord.fromObject(object.direction);
+            }
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a MoveCommandParams message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof AdventureControl.MoveCommandParams
+         * @static
+         * @param {AdventureControl.MoveCommandParams} message MoveCommandParams
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        MoveCommandParams.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults)
+                object.direction = null;
+            if (message.direction != null && message.hasOwnProperty("direction"))
+                object.direction = $root.RemoteFortressReader.Coord.toObject(message.direction, options);
+            return object;
+        };
+
+        /**
+         * Converts this MoveCommandParams to JSON.
+         * @function toJSON
+         * @memberof AdventureControl.MoveCommandParams
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        MoveCommandParams.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return MoveCommandParams;
+    })();
+
+    AdventureControl.MovementOption = (function() {
+
+        /**
+         * Properties of a MovementOption.
+         * @memberof AdventureControl
+         * @interface IMovementOption
+         * @property {RemoteFortressReader.ICoord|null} [dest] MovementOption dest
+         * @property {RemoteFortressReader.ICoord|null} [source] MovementOption source
+         * @property {RemoteFortressReader.ICoord|null} [grab] MovementOption grab
+         * @property {AdventureControl.CarefulMovementType|null} [movementType] MovementOption movementType
+         */
+
+        /**
+         * Constructs a new MovementOption.
+         * @memberof AdventureControl
+         * @classdesc Represents a MovementOption.
+         * @implements IMovementOption
+         * @constructor
+         * @param {AdventureControl.IMovementOption=} [properties] Properties to set
+         */
+        function MovementOption(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * MovementOption dest.
+         * @member {RemoteFortressReader.ICoord|null|undefined} dest
+         * @memberof AdventureControl.MovementOption
+         * @instance
+         */
+        MovementOption.prototype.dest = null;
+
+        /**
+         * MovementOption source.
+         * @member {RemoteFortressReader.ICoord|null|undefined} source
+         * @memberof AdventureControl.MovementOption
+         * @instance
+         */
+        MovementOption.prototype.source = null;
+
+        /**
+         * MovementOption grab.
+         * @member {RemoteFortressReader.ICoord|null|undefined} grab
+         * @memberof AdventureControl.MovementOption
+         * @instance
+         */
+        MovementOption.prototype.grab = null;
+
+        /**
+         * MovementOption movementType.
+         * @member {AdventureControl.CarefulMovementType} movementType
+         * @memberof AdventureControl.MovementOption
+         * @instance
+         */
+        MovementOption.prototype.movementType = 0;
+
+        /**
+         * Creates a new MovementOption instance using the specified properties.
+         * @function create
+         * @memberof AdventureControl.MovementOption
+         * @static
+         * @param {AdventureControl.IMovementOption=} [properties] Properties to set
+         * @returns {AdventureControl.MovementOption} MovementOption instance
+         */
+        MovementOption.create = function create(properties) {
+            return new MovementOption(properties);
+        };
+
+        /**
+         * Encodes the specified MovementOption message. Does not implicitly {@link AdventureControl.MovementOption.verify|verify} messages.
+         * @function encode
+         * @memberof AdventureControl.MovementOption
+         * @static
+         * @param {AdventureControl.IMovementOption} message MovementOption message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        MovementOption.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.dest != null && Object.hasOwnProperty.call(message, "dest"))
+                $root.RemoteFortressReader.Coord.encode(message.dest, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+            if (message.source != null && Object.hasOwnProperty.call(message, "source"))
+                $root.RemoteFortressReader.Coord.encode(message.source, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+            if (message.grab != null && Object.hasOwnProperty.call(message, "grab"))
+                $root.RemoteFortressReader.Coord.encode(message.grab, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+            if (message.movementType != null && Object.hasOwnProperty.call(message, "movementType"))
+                writer.uint32(/* id 4, wireType 0 =*/32).int32(message.movementType);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified MovementOption message, length delimited. Does not implicitly {@link AdventureControl.MovementOption.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof AdventureControl.MovementOption
+         * @static
+         * @param {AdventureControl.IMovementOption} message MovementOption message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        MovementOption.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a MovementOption message from the specified reader or buffer.
+         * @function decode
+         * @memberof AdventureControl.MovementOption
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {AdventureControl.MovementOption} MovementOption
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        MovementOption.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AdventureControl.MovementOption();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    message.dest = $root.RemoteFortressReader.Coord.decode(reader, reader.uint32());
+                    break;
+                case 2:
+                    message.source = $root.RemoteFortressReader.Coord.decode(reader, reader.uint32());
+                    break;
+                case 3:
+                    message.grab = $root.RemoteFortressReader.Coord.decode(reader, reader.uint32());
+                    break;
+                case 4:
+                    message.movementType = reader.int32();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a MovementOption message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof AdventureControl.MovementOption
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {AdventureControl.MovementOption} MovementOption
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        MovementOption.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a MovementOption message.
+         * @function verify
+         * @memberof AdventureControl.MovementOption
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        MovementOption.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.dest != null && message.hasOwnProperty("dest")) {
+                var error = $root.RemoteFortressReader.Coord.verify(message.dest);
+                if (error)
+                    return "dest." + error;
+            }
+            if (message.source != null && message.hasOwnProperty("source")) {
+                var error = $root.RemoteFortressReader.Coord.verify(message.source);
+                if (error)
+                    return "source." + error;
+            }
+            if (message.grab != null && message.hasOwnProperty("grab")) {
+                var error = $root.RemoteFortressReader.Coord.verify(message.grab);
+                if (error)
+                    return "grab." + error;
+            }
+            if (message.movementType != null && message.hasOwnProperty("movementType"))
+                switch (message.movementType) {
+                default:
+                    return "movementType: enum value expected";
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                case 5:
+                case 6:
+                case 7:
+                case 8:
+                case 9:
+                case 10:
+                case 11:
+                case 12:
+                    break;
+                }
+            return null;
+        };
+
+        /**
+         * Creates a MovementOption message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof AdventureControl.MovementOption
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {AdventureControl.MovementOption} MovementOption
+         */
+        MovementOption.fromObject = function fromObject(object) {
+            if (object instanceof $root.AdventureControl.MovementOption)
+                return object;
+            var message = new $root.AdventureControl.MovementOption();
+            if (object.dest != null) {
+                if (typeof object.dest !== "object")
+                    throw TypeError(".AdventureControl.MovementOption.dest: object expected");
+                message.dest = $root.RemoteFortressReader.Coord.fromObject(object.dest);
+            }
+            if (object.source != null) {
+                if (typeof object.source !== "object")
+                    throw TypeError(".AdventureControl.MovementOption.source: object expected");
+                message.source = $root.RemoteFortressReader.Coord.fromObject(object.source);
+            }
+            if (object.grab != null) {
+                if (typeof object.grab !== "object")
+                    throw TypeError(".AdventureControl.MovementOption.grab: object expected");
+                message.grab = $root.RemoteFortressReader.Coord.fromObject(object.grab);
+            }
+            switch (object.movementType) {
+            case "DEFAULT_MOVEMENT":
+            case 0:
+                message.movementType = 0;
+                break;
+            case "RELEASE_ITEM_HOLD":
+            case 1:
+                message.movementType = 1;
+                break;
+            case "RELEASE_TILE_HOLD":
+            case 2:
+                message.movementType = 2;
+                break;
+            case "ATTACK_CREATURE":
+            case 3:
+                message.movementType = 3;
+                break;
+            case "HOLD_TILE":
+            case 4:
+                message.movementType = 4;
+                break;
+            case "MOVE":
+            case 5:
+                message.movementType = 5;
+                break;
+            case "CLIMB":
+            case 6:
+                message.movementType = 6;
+                break;
+            case "HOLD_ITEM":
+            case 7:
+                message.movementType = 7;
+                break;
+            case "BUILDING_INTERACT":
+            case 8:
+                message.movementType = 8;
+                break;
+            case "ITEM_INTERACT":
+            case 9:
+                message.movementType = 9;
+                break;
+            case "ITEM_INTERACT_GUIDE":
+            case 10:
+                message.movementType = 10;
+                break;
+            case "ITEM_INTERACT_RIDE":
+            case 11:
+                message.movementType = 11;
+                break;
+            case "ITEM_INTERACT_PUSH":
+            case 12:
+                message.movementType = 12;
+                break;
+            }
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a MovementOption message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof AdventureControl.MovementOption
+         * @static
+         * @param {AdventureControl.MovementOption} message MovementOption
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        MovementOption.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.dest = null;
+                object.source = null;
+                object.grab = null;
+                object.movementType = options.enums === String ? "DEFAULT_MOVEMENT" : 0;
+            }
+            if (message.dest != null && message.hasOwnProperty("dest"))
+                object.dest = $root.RemoteFortressReader.Coord.toObject(message.dest, options);
+            if (message.source != null && message.hasOwnProperty("source"))
+                object.source = $root.RemoteFortressReader.Coord.toObject(message.source, options);
+            if (message.grab != null && message.hasOwnProperty("grab"))
+                object.grab = $root.RemoteFortressReader.Coord.toObject(message.grab, options);
+            if (message.movementType != null && message.hasOwnProperty("movementType"))
+                object.movementType = options.enums === String ? $root.AdventureControl.CarefulMovementType[message.movementType] : message.movementType;
+            return object;
+        };
+
+        /**
+         * Converts this MovementOption to JSON.
+         * @function toJSON
+         * @memberof AdventureControl.MovementOption
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        MovementOption.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return MovementOption;
+    })();
+
+    AdventureControl.MenuContents = (function() {
+
+        /**
+         * Properties of a MenuContents.
+         * @memberof AdventureControl
+         * @interface IMenuContents
+         * @property {AdventureControl.AdvmodeMenu|null} [currentMenu] MenuContents currentMenu
+         * @property {Array.<AdventureControl.IMovementOption>|null} [movements] MenuContents movements
+         */
+
+        /**
+         * Constructs a new MenuContents.
+         * @memberof AdventureControl
+         * @classdesc Represents a MenuContents.
+         * @implements IMenuContents
+         * @constructor
+         * @param {AdventureControl.IMenuContents=} [properties] Properties to set
+         */
+        function MenuContents(properties) {
+            this.movements = [];
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * MenuContents currentMenu.
+         * @member {AdventureControl.AdvmodeMenu} currentMenu
+         * @memberof AdventureControl.MenuContents
+         * @instance
+         */
+        MenuContents.prototype.currentMenu = 0;
+
+        /**
+         * MenuContents movements.
+         * @member {Array.<AdventureControl.IMovementOption>} movements
+         * @memberof AdventureControl.MenuContents
+         * @instance
+         */
+        MenuContents.prototype.movements = $util.emptyArray;
+
+        /**
+         * Creates a new MenuContents instance using the specified properties.
+         * @function create
+         * @memberof AdventureControl.MenuContents
+         * @static
+         * @param {AdventureControl.IMenuContents=} [properties] Properties to set
+         * @returns {AdventureControl.MenuContents} MenuContents instance
+         */
+        MenuContents.create = function create(properties) {
+            return new MenuContents(properties);
+        };
+
+        /**
+         * Encodes the specified MenuContents message. Does not implicitly {@link AdventureControl.MenuContents.verify|verify} messages.
+         * @function encode
+         * @memberof AdventureControl.MenuContents
+         * @static
+         * @param {AdventureControl.IMenuContents} message MenuContents message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        MenuContents.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.currentMenu != null && Object.hasOwnProperty.call(message, "currentMenu"))
+                writer.uint32(/* id 1, wireType 0 =*/8).int32(message.currentMenu);
+            if (message.movements != null && message.movements.length)
+                for (var i = 0; i < message.movements.length; ++i)
+                    $root.AdventureControl.MovementOption.encode(message.movements[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+            return writer;
+        };
+
+        /**
+         * Encodes the specified MenuContents message, length delimited. Does not implicitly {@link AdventureControl.MenuContents.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof AdventureControl.MenuContents
+         * @static
+         * @param {AdventureControl.IMenuContents} message MenuContents message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        MenuContents.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a MenuContents message from the specified reader or buffer.
+         * @function decode
+         * @memberof AdventureControl.MenuContents
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {AdventureControl.MenuContents} MenuContents
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        MenuContents.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AdventureControl.MenuContents();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    message.currentMenu = reader.int32();
+                    break;
+                case 2:
+                    if (!(message.movements && message.movements.length))
+                        message.movements = [];
+                    message.movements.push($root.AdventureControl.MovementOption.decode(reader, reader.uint32()));
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a MenuContents message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof AdventureControl.MenuContents
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {AdventureControl.MenuContents} MenuContents
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        MenuContents.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a MenuContents message.
+         * @function verify
+         * @memberof AdventureControl.MenuContents
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        MenuContents.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.currentMenu != null && message.hasOwnProperty("currentMenu"))
+                switch (message.currentMenu) {
+                default:
+                    return "currentMenu: enum value expected";
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                case 5:
+                case 6:
+                case 7:
+                case 8:
+                case 9:
+                case 10:
+                case 11:
+                case 12:
+                case 13:
+                case 14:
+                case 15:
+                case 16:
+                case 17:
+                case 18:
+                case 19:
+                case 20:
+                case 21:
+                case 22:
+                case 23:
+                case 24:
+                case 25:
+                case 26:
+                case 27:
+                case 28:
+                case 29:
+                case 30:
+                case 31:
+                case 32:
+                case 33:
+                case 34:
+                case 35:
+                case 36:
+                case 37:
+                case 38:
+                case 39:
+                case 40:
+                case 41:
+                case 42:
+                case 43:
+                case 44:
+                case 45:
+                case 46:
+                    break;
+                }
+            if (message.movements != null && message.hasOwnProperty("movements")) {
+                if (!Array.isArray(message.movements))
+                    return "movements: array expected";
+                for (var i = 0; i < message.movements.length; ++i) {
+                    var error = $root.AdventureControl.MovementOption.verify(message.movements[i]);
+                    if (error)
+                        return "movements." + error;
+                }
+            }
+            return null;
+        };
+
+        /**
+         * Creates a MenuContents message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof AdventureControl.MenuContents
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {AdventureControl.MenuContents} MenuContents
+         */
+        MenuContents.fromObject = function fromObject(object) {
+            if (object instanceof $root.AdventureControl.MenuContents)
+                return object;
+            var message = new $root.AdventureControl.MenuContents();
+            switch (object.currentMenu) {
+            case "Default":
+            case 0:
+                message.currentMenu = 0;
+                break;
+            case "Look":
+            case 1:
+                message.currentMenu = 1;
+                break;
+            case "ConversationAddress":
+            case 2:
+                message.currentMenu = 2;
+                break;
+            case "ConversationSelect":
+            case 3:
+                message.currentMenu = 3;
+                break;
+            case "ConversationSpeak":
+            case 4:
+                message.currentMenu = 4;
+                break;
+            case "Inventory":
+            case 5:
+                message.currentMenu = 5;
+                break;
+            case "Drop":
+            case 6:
+                message.currentMenu = 6;
+                break;
+            case "ThrowItem":
+            case 7:
+                message.currentMenu = 7;
+                break;
+            case "Wear":
+            case 8:
+                message.currentMenu = 8;
+                break;
+            case "Remove":
+            case 9:
+                message.currentMenu = 9;
+                break;
+            case "Interact":
+            case 10:
+                message.currentMenu = 10;
+                break;
+            case "Put":
+            case 11:
+                message.currentMenu = 11;
+                break;
+            case "PutContainer":
+            case 12:
+                message.currentMenu = 12;
+                break;
+            case "Eat":
+            case 13:
+                message.currentMenu = 13;
+                break;
+            case "ThrowAim":
+            case 14:
+                message.currentMenu = 14;
+                break;
+            case "Fire":
+            case 15:
+                message.currentMenu = 15;
+                break;
+            case "Get":
+            case 16:
+                message.currentMenu = 16;
+                break;
+            case "Unk17":
+            case 17:
+                message.currentMenu = 17;
+                break;
+            case "CombatPrefs":
+            case 18:
+                message.currentMenu = 18;
+                break;
+            case "Companions":
+            case 19:
+                message.currentMenu = 19;
+                break;
+            case "MovementPrefs":
+            case 20:
+                message.currentMenu = 20;
+                break;
+            case "SpeedPrefs":
+            case 21:
+                message.currentMenu = 21;
+                break;
+            case "InteractAction":
+            case 22:
+                message.currentMenu = 22;
+                break;
+            case "MoveCarefully":
+            case 23:
+                message.currentMenu = 23;
+                break;
+            case "Announcements":
+            case 24:
+                message.currentMenu = 24;
+                break;
+            case "UseBuilding":
+            case 25:
+                message.currentMenu = 25;
+                break;
+            case "Travel":
+            case 26:
+                message.currentMenu = 26;
+                break;
+            case "Unk27":
+            case 27:
+                message.currentMenu = 27;
+                break;
+            case "Unk28":
+            case 28:
+                message.currentMenu = 28;
+                break;
+            case "SleepConfirm":
+            case 29:
+                message.currentMenu = 29;
+                break;
+            case "SelectInteractionTarget":
+            case 30:
+                message.currentMenu = 30;
+                break;
+            case "Unk31":
+            case 31:
+                message.currentMenu = 31;
+                break;
+            case "Unk32":
+            case 32:
+                message.currentMenu = 32;
+                break;
+            case "FallAction":
+            case 33:
+                message.currentMenu = 33;
+                break;
+            case "ViewTracks":
+            case 34:
+                message.currentMenu = 34;
+                break;
+            case "Jump":
+            case 35:
+                message.currentMenu = 35;
+                break;
+            case "Unk36":
+            case 36:
+                message.currentMenu = 36;
+                break;
+            case "AttackConfirm":
+            case 37:
+                message.currentMenu = 37;
+                break;
+            case "AttackType":
+            case 38:
+                message.currentMenu = 38;
+                break;
+            case "AttackBodypart":
+            case 39:
+                message.currentMenu = 39;
+                break;
+            case "AttackStrike":
+            case 40:
+                message.currentMenu = 40;
+                break;
+            case "Unk41":
+            case 41:
+                message.currentMenu = 41;
+                break;
+            case "Unk42":
+            case 42:
+                message.currentMenu = 42;
+                break;
+            case "DodgeDirection":
+            case 43:
+                message.currentMenu = 43;
+                break;
+            case "Unk44":
+            case 44:
+                message.currentMenu = 44;
+                break;
+            case "Unk45":
+            case 45:
+                message.currentMenu = 45;
+                break;
+            case "Build":
+            case 46:
+                message.currentMenu = 46;
+                break;
+            }
+            if (object.movements) {
+                if (!Array.isArray(object.movements))
+                    throw TypeError(".AdventureControl.MenuContents.movements: array expected");
+                message.movements = [];
+                for (var i = 0; i < object.movements.length; ++i) {
+                    if (typeof object.movements[i] !== "object")
+                        throw TypeError(".AdventureControl.MenuContents.movements: object expected");
+                    message.movements[i] = $root.AdventureControl.MovementOption.fromObject(object.movements[i]);
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a MenuContents message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof AdventureControl.MenuContents
+         * @static
+         * @param {AdventureControl.MenuContents} message MenuContents
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        MenuContents.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.arrays || options.defaults)
+                object.movements = [];
+            if (options.defaults)
+                object.currentMenu = options.enums === String ? "Default" : 0;
+            if (message.currentMenu != null && message.hasOwnProperty("currentMenu"))
+                object.currentMenu = options.enums === String ? $root.AdventureControl.AdvmodeMenu[message.currentMenu] : message.currentMenu;
+            if (message.movements && message.movements.length) {
+                object.movements = [];
+                for (var j = 0; j < message.movements.length; ++j)
+                    object.movements[j] = $root.AdventureControl.MovementOption.toObject(message.movements[j], options);
+            }
+            return object;
+        };
+
+        /**
+         * Converts this MenuContents to JSON.
+         * @function toJSON
+         * @memberof AdventureControl.MenuContents
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        MenuContents.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return MenuContents;
+    })();
+
+    AdventureControl.MiscMoveParams = (function() {
+
+        /**
+         * Properties of a MiscMoveParams.
+         * @memberof AdventureControl
+         * @interface IMiscMoveParams
+         * @property {AdventureControl.MiscMoveType|null} [type] MiscMoveParams type
+         */
+
+        /**
+         * Constructs a new MiscMoveParams.
+         * @memberof AdventureControl
+         * @classdesc Represents a MiscMoveParams.
+         * @implements IMiscMoveParams
+         * @constructor
+         * @param {AdventureControl.IMiscMoveParams=} [properties] Properties to set
+         */
+        function MiscMoveParams(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * MiscMoveParams type.
+         * @member {AdventureControl.MiscMoveType} type
+         * @memberof AdventureControl.MiscMoveParams
+         * @instance
+         */
+        MiscMoveParams.prototype.type = 0;
+
+        /**
+         * Creates a new MiscMoveParams instance using the specified properties.
+         * @function create
+         * @memberof AdventureControl.MiscMoveParams
+         * @static
+         * @param {AdventureControl.IMiscMoveParams=} [properties] Properties to set
+         * @returns {AdventureControl.MiscMoveParams} MiscMoveParams instance
+         */
+        MiscMoveParams.create = function create(properties) {
+            return new MiscMoveParams(properties);
+        };
+
+        /**
+         * Encodes the specified MiscMoveParams message. Does not implicitly {@link AdventureControl.MiscMoveParams.verify|verify} messages.
+         * @function encode
+         * @memberof AdventureControl.MiscMoveParams
+         * @static
+         * @param {AdventureControl.IMiscMoveParams} message MiscMoveParams message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        MiscMoveParams.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.type != null && Object.hasOwnProperty.call(message, "type"))
+                writer.uint32(/* id 1, wireType 0 =*/8).int32(message.type);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified MiscMoveParams message, length delimited. Does not implicitly {@link AdventureControl.MiscMoveParams.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof AdventureControl.MiscMoveParams
+         * @static
+         * @param {AdventureControl.IMiscMoveParams} message MiscMoveParams message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        MiscMoveParams.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a MiscMoveParams message from the specified reader or buffer.
+         * @function decode
+         * @memberof AdventureControl.MiscMoveParams
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {AdventureControl.MiscMoveParams} MiscMoveParams
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        MiscMoveParams.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AdventureControl.MiscMoveParams();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    message.type = reader.int32();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a MiscMoveParams message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof AdventureControl.MiscMoveParams
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {AdventureControl.MiscMoveParams} MiscMoveParams
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        MiscMoveParams.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a MiscMoveParams message.
+         * @function verify
+         * @memberof AdventureControl.MiscMoveParams
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        MiscMoveParams.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.type != null && message.hasOwnProperty("type"))
+                switch (message.type) {
+                default:
+                    return "type: enum value expected";
+                case 0:
+                case 1:
+                case 2:
+                    break;
+                }
+            return null;
+        };
+
+        /**
+         * Creates a MiscMoveParams message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof AdventureControl.MiscMoveParams
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {AdventureControl.MiscMoveParams} MiscMoveParams
+         */
+        MiscMoveParams.fromObject = function fromObject(object) {
+            if (object instanceof $root.AdventureControl.MiscMoveParams)
+                return object;
+            var message = new $root.AdventureControl.MiscMoveParams();
+            switch (object.type) {
+            case "SET_CLIMB":
+            case 0:
+                message.type = 0;
+                break;
+            case "SET_STAND":
+            case 1:
+                message.type = 1;
+                break;
+            case "SET_CANCEL":
+            case 2:
+                message.type = 2;
+                break;
+            }
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a MiscMoveParams message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof AdventureControl.MiscMoveParams
+         * @static
+         * @param {AdventureControl.MiscMoveParams} message MiscMoveParams
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        MiscMoveParams.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults)
+                object.type = options.enums === String ? "SET_CLIMB" : 0;
+            if (message.type != null && message.hasOwnProperty("type"))
+                object.type = options.enums === String ? $root.AdventureControl.MiscMoveType[message.type] : message.type;
+            return object;
+        };
+
+        /**
+         * Converts this MiscMoveParams to JSON.
+         * @function toJSON
+         * @memberof AdventureControl.MiscMoveParams
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        MiscMoveParams.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return MiscMoveParams;
+    })();
+
+    return AdventureControl;
 })();
 
 $root.RemoteFortressReader = (function() {
@@ -4981,11 +15117,11 @@ $root.RemoteFortressReader = (function() {
         Coord.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.x != null && message.hasOwnProperty("x"))
+            if (message.x != null && Object.hasOwnProperty.call(message, "x"))
                 writer.uint32(/* id 1, wireType 0 =*/8).int32(message.x);
-            if (message.y != null && message.hasOwnProperty("y"))
+            if (message.y != null && Object.hasOwnProperty.call(message, "y"))
                 writer.uint32(/* id 2, wireType 0 =*/16).int32(message.y);
-            if (message.z != null && message.hasOwnProperty("z"))
+            if (message.z != null && Object.hasOwnProperty.call(message, "z"))
                 writer.uint32(/* id 3, wireType 0 =*/24).int32(message.z);
             return writer;
         };
@@ -5259,19 +15395,19 @@ $root.RemoteFortressReader = (function() {
             if (!writer)
                 writer = $Writer.create();
             writer.uint32(/* id 1, wireType 0 =*/8).int32(message.id);
-            if (message.name != null && message.hasOwnProperty("name"))
+            if (message.name != null && Object.hasOwnProperty.call(message, "name"))
                 writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
-            if (message.caption != null && message.hasOwnProperty("caption"))
+            if (message.caption != null && Object.hasOwnProperty.call(message, "caption"))
                 writer.uint32(/* id 3, wireType 2 =*/26).string(message.caption);
-            if (message.shape != null && message.hasOwnProperty("shape"))
+            if (message.shape != null && Object.hasOwnProperty.call(message, "shape"))
                 writer.uint32(/* id 4, wireType 0 =*/32).int32(message.shape);
-            if (message.special != null && message.hasOwnProperty("special"))
+            if (message.special != null && Object.hasOwnProperty.call(message, "special"))
                 writer.uint32(/* id 5, wireType 0 =*/40).int32(message.special);
-            if (message.material != null && message.hasOwnProperty("material"))
+            if (message.material != null && Object.hasOwnProperty.call(message, "material"))
                 writer.uint32(/* id 6, wireType 0 =*/48).int32(message.material);
-            if (message.variant != null && message.hasOwnProperty("variant"))
+            if (message.variant != null && Object.hasOwnProperty.call(message, "variant"))
                 writer.uint32(/* id 7, wireType 0 =*/56).int32(message.variant);
-            if (message.direction != null && message.hasOwnProperty("direction"))
+            if (message.direction != null && Object.hasOwnProperty.call(message, "direction"))
                 writer.uint32(/* id 8, wireType 2 =*/66).string(message.direction);
             return writer;
         };
@@ -6394,9 +16530,9 @@ $root.RemoteFortressReader = (function() {
         BuildingItem.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.item != null && message.hasOwnProperty("item"))
+            if (message.item != null && Object.hasOwnProperty.call(message, "item"))
                 $root.RemoteFortressReader.Item.encode(message.item, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-            if (message.mode != null && message.hasOwnProperty("mode"))
+            if (message.mode != null && Object.hasOwnProperty.call(message, "mode"))
                 writer.uint32(/* id 2, wireType 0 =*/16).int32(message.mode);
             return writer;
         };
@@ -6728,34 +16864,34 @@ $root.RemoteFortressReader = (function() {
             if (!writer)
                 writer = $Writer.create();
             writer.uint32(/* id 1, wireType 0 =*/8).int32(message.index);
-            if (message.posXMin != null && message.hasOwnProperty("posXMin"))
+            if (message.posXMin != null && Object.hasOwnProperty.call(message, "posXMin"))
                 writer.uint32(/* id 2, wireType 0 =*/16).int32(message.posXMin);
-            if (message.posYMin != null && message.hasOwnProperty("posYMin"))
+            if (message.posYMin != null && Object.hasOwnProperty.call(message, "posYMin"))
                 writer.uint32(/* id 3, wireType 0 =*/24).int32(message.posYMin);
-            if (message.posZMin != null && message.hasOwnProperty("posZMin"))
+            if (message.posZMin != null && Object.hasOwnProperty.call(message, "posZMin"))
                 writer.uint32(/* id 4, wireType 0 =*/32).int32(message.posZMin);
-            if (message.posXMax != null && message.hasOwnProperty("posXMax"))
+            if (message.posXMax != null && Object.hasOwnProperty.call(message, "posXMax"))
                 writer.uint32(/* id 5, wireType 0 =*/40).int32(message.posXMax);
-            if (message.posYMax != null && message.hasOwnProperty("posYMax"))
+            if (message.posYMax != null && Object.hasOwnProperty.call(message, "posYMax"))
                 writer.uint32(/* id 6, wireType 0 =*/48).int32(message.posYMax);
-            if (message.posZMax != null && message.hasOwnProperty("posZMax"))
+            if (message.posZMax != null && Object.hasOwnProperty.call(message, "posZMax"))
                 writer.uint32(/* id 7, wireType 0 =*/56).int32(message.posZMax);
-            if (message.buildingType != null && message.hasOwnProperty("buildingType"))
+            if (message.buildingType != null && Object.hasOwnProperty.call(message, "buildingType"))
                 $root.RemoteFortressReader.BuildingType.encode(message.buildingType, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
-            if (message.material != null && message.hasOwnProperty("material"))
+            if (message.material != null && Object.hasOwnProperty.call(message, "material"))
                 $root.RemoteFortressReader.MatPair.encode(message.material, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
-            if (message.buildingFlags != null && message.hasOwnProperty("buildingFlags"))
+            if (message.buildingFlags != null && Object.hasOwnProperty.call(message, "buildingFlags"))
                 writer.uint32(/* id 10, wireType 0 =*/80).uint32(message.buildingFlags);
-            if (message.isRoom != null && message.hasOwnProperty("isRoom"))
+            if (message.isRoom != null && Object.hasOwnProperty.call(message, "isRoom"))
                 writer.uint32(/* id 11, wireType 0 =*/88).bool(message.isRoom);
-            if (message.room != null && message.hasOwnProperty("room"))
+            if (message.room != null && Object.hasOwnProperty.call(message, "room"))
                 $root.RemoteFortressReader.BuildingExtents.encode(message.room, writer.uint32(/* id 12, wireType 2 =*/98).fork()).ldelim();
-            if (message.direction != null && message.hasOwnProperty("direction"))
+            if (message.direction != null && Object.hasOwnProperty.call(message, "direction"))
                 writer.uint32(/* id 13, wireType 0 =*/104).int32(message.direction);
             if (message.items != null && message.items.length)
                 for (var i = 0; i < message.items.length; ++i)
                     $root.RemoteFortressReader.BuildingItem.encode(message.items[i], writer.uint32(/* id 14, wireType 2 =*/114).fork()).ldelim();
-            if (message.active != null && message.hasOwnProperty("active"))
+            if (message.active != null && Object.hasOwnProperty.call(message, "active"))
                 writer.uint32(/* id 15, wireType 0 =*/120).int32(message.active);
             return writer;
         };
@@ -7188,13 +17324,13 @@ $root.RemoteFortressReader = (function() {
         RiverEdge.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.minPos != null && message.hasOwnProperty("minPos"))
+            if (message.minPos != null && Object.hasOwnProperty.call(message, "minPos"))
                 writer.uint32(/* id 1, wireType 0 =*/8).int32(message.minPos);
-            if (message.maxPos != null && message.hasOwnProperty("maxPos"))
+            if (message.maxPos != null && Object.hasOwnProperty.call(message, "maxPos"))
                 writer.uint32(/* id 2, wireType 0 =*/16).int32(message.maxPos);
-            if (message.active != null && message.hasOwnProperty("active"))
+            if (message.active != null && Object.hasOwnProperty.call(message, "active"))
                 writer.uint32(/* id 3, wireType 0 =*/24).int32(message.active);
-            if (message.elevation != null && message.hasOwnProperty("elevation"))
+            if (message.elevation != null && Object.hasOwnProperty.call(message, "elevation"))
                 writer.uint32(/* id 4, wireType 0 =*/32).int32(message.elevation);
             return writer;
         };
@@ -7442,13 +17578,13 @@ $root.RemoteFortressReader = (function() {
         RiverTile.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.north != null && message.hasOwnProperty("north"))
+            if (message.north != null && Object.hasOwnProperty.call(message, "north"))
                 $root.RemoteFortressReader.RiverEdge.encode(message.north, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-            if (message.south != null && message.hasOwnProperty("south"))
+            if (message.south != null && Object.hasOwnProperty.call(message, "south"))
                 $root.RemoteFortressReader.RiverEdge.encode(message.south, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-            if (message.east != null && message.hasOwnProperty("east"))
+            if (message.east != null && Object.hasOwnProperty.call(message, "east"))
                 $root.RemoteFortressReader.RiverEdge.encode(message.east, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-            if (message.west != null && message.hasOwnProperty("west"))
+            if (message.west != null && Object.hasOwnProperty.call(message, "west"))
                 $root.RemoteFortressReader.RiverEdge.encode(message.west, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
             return writer;
         };
@@ -7738,13 +17874,13 @@ $root.RemoteFortressReader = (function() {
         Spatter.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.material != null && message.hasOwnProperty("material"))
+            if (message.material != null && Object.hasOwnProperty.call(message, "material"))
                 $root.RemoteFortressReader.MatPair.encode(message.material, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-            if (message.amount != null && message.hasOwnProperty("amount"))
+            if (message.amount != null && Object.hasOwnProperty.call(message, "amount"))
                 writer.uint32(/* id 2, wireType 0 =*/16).int32(message.amount);
-            if (message.state != null && message.hasOwnProperty("state"))
+            if (message.state != null && Object.hasOwnProperty.call(message, "state"))
                 writer.uint32(/* id 3, wireType 0 =*/24).int32(message.state);
-            if (message.item != null && message.hasOwnProperty("item"))
+            if (message.item != null && Object.hasOwnProperty.call(message, "item"))
                 $root.RemoteFortressReader.MatPair.encode(message.item, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
             return writer;
         };
@@ -8370,42 +18506,42 @@ $root.RemoteFortressReader = (function() {
         Item.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.id != null && message.hasOwnProperty("id"))
+            if (message.id != null && Object.hasOwnProperty.call(message, "id"))
                 writer.uint32(/* id 1, wireType 0 =*/8).int32(message.id);
-            if (message.pos != null && message.hasOwnProperty("pos"))
+            if (message.pos != null && Object.hasOwnProperty.call(message, "pos"))
                 $root.RemoteFortressReader.Coord.encode(message.pos, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-            if (message.flags1 != null && message.hasOwnProperty("flags1"))
+            if (message.flags1 != null && Object.hasOwnProperty.call(message, "flags1"))
                 writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.flags1);
-            if (message.flags2 != null && message.hasOwnProperty("flags2"))
+            if (message.flags2 != null && Object.hasOwnProperty.call(message, "flags2"))
                 writer.uint32(/* id 4, wireType 0 =*/32).uint32(message.flags2);
-            if (message.type != null && message.hasOwnProperty("type"))
+            if (message.type != null && Object.hasOwnProperty.call(message, "type"))
                 $root.RemoteFortressReader.MatPair.encode(message.type, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
-            if (message.material != null && message.hasOwnProperty("material"))
+            if (message.material != null && Object.hasOwnProperty.call(message, "material"))
                 $root.RemoteFortressReader.MatPair.encode(message.material, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
-            if (message.dye != null && message.hasOwnProperty("dye"))
+            if (message.dye != null && Object.hasOwnProperty.call(message, "dye"))
                 $root.RemoteFortressReader.ColorDefinition.encode(message.dye, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
-            if (message.stackSize != null && message.hasOwnProperty("stackSize"))
+            if (message.stackSize != null && Object.hasOwnProperty.call(message, "stackSize"))
                 writer.uint32(/* id 8, wireType 0 =*/64).int32(message.stackSize);
-            if (message.subposX != null && message.hasOwnProperty("subposX"))
+            if (message.subposX != null && Object.hasOwnProperty.call(message, "subposX"))
                 writer.uint32(/* id 9, wireType 5 =*/77).float(message.subposX);
-            if (message.subposY != null && message.hasOwnProperty("subposY"))
+            if (message.subposY != null && Object.hasOwnProperty.call(message, "subposY"))
                 writer.uint32(/* id 10, wireType 5 =*/85).float(message.subposY);
-            if (message.subposZ != null && message.hasOwnProperty("subposZ"))
+            if (message.subposZ != null && Object.hasOwnProperty.call(message, "subposZ"))
                 writer.uint32(/* id 11, wireType 5 =*/93).float(message.subposZ);
-            if (message.projectile != null && message.hasOwnProperty("projectile"))
+            if (message.projectile != null && Object.hasOwnProperty.call(message, "projectile"))
                 writer.uint32(/* id 12, wireType 0 =*/96).bool(message.projectile);
-            if (message.velocityX != null && message.hasOwnProperty("velocityX"))
+            if (message.velocityX != null && Object.hasOwnProperty.call(message, "velocityX"))
                 writer.uint32(/* id 13, wireType 5 =*/109).float(message.velocityX);
-            if (message.velocityY != null && message.hasOwnProperty("velocityY"))
+            if (message.velocityY != null && Object.hasOwnProperty.call(message, "velocityY"))
                 writer.uint32(/* id 14, wireType 5 =*/117).float(message.velocityY);
-            if (message.velocityZ != null && message.hasOwnProperty("velocityZ"))
+            if (message.velocityZ != null && Object.hasOwnProperty.call(message, "velocityZ"))
                 writer.uint32(/* id 15, wireType 5 =*/125).float(message.velocityZ);
-            if (message.volume != null && message.hasOwnProperty("volume"))
+            if (message.volume != null && Object.hasOwnProperty.call(message, "volume"))
                 writer.uint32(/* id 16, wireType 0 =*/128).int32(message.volume);
             if (message.improvements != null && message.improvements.length)
                 for (var i = 0; i < message.improvements.length; ++i)
                     $root.RemoteFortressReader.ItemImprovement.encode(message.improvements[i], writer.uint32(/* id 17, wireType 2 =*/138).fork()).ldelim();
-            if (message.image != null && message.hasOwnProperty("image"))
+            if (message.image != null && Object.hasOwnProperty.call(message, "image"))
                 $root.RemoteFortressReader.ArtImage.encode(message.image, writer.uint32(/* id 18, wireType 2 =*/146).fork()).ldelim();
             return writer;
         };
@@ -10739,13 +20875,13 @@ $root.RemoteFortressReader = (function() {
             if (!writer)
                 writer = $Writer.create();
             $root.RemoteFortressReader.MatPair.encode(message.matPair, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-            if (message.id != null && message.hasOwnProperty("id"))
+            if (message.id != null && Object.hasOwnProperty.call(message, "id"))
                 writer.uint32(/* id 2, wireType 2 =*/18).string(message.id);
-            if (message.name != null && message.hasOwnProperty("name"))
+            if (message.name != null && Object.hasOwnProperty.call(message, "name"))
                 writer.uint32(/* id 3, wireType 2 =*/26).string(message.name);
-            if (message.stateColor != null && message.hasOwnProperty("stateColor"))
+            if (message.stateColor != null && Object.hasOwnProperty.call(message, "stateColor"))
                 $root.RemoteFortressReader.ColorDefinition.encode(message.stateColor, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-            if (message.instrument != null && message.hasOwnProperty("instrument"))
+            if (message.instrument != null && Object.hasOwnProperty.call(message, "instrument"))
                 $root.ItemdefInstrument.InstrumentDef.encode(message.instrument, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
             return writer;
         };
@@ -11245,9 +21381,9 @@ $root.RemoteFortressReader = (function() {
             if (!writer)
                 writer = $Writer.create();
             $root.RemoteFortressReader.BuildingType.encode(message.buildingType, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-            if (message.id != null && message.hasOwnProperty("id"))
+            if (message.id != null && Object.hasOwnProperty.call(message, "id"))
                 writer.uint32(/* id 2, wireType 2 =*/18).string(message.id);
-            if (message.name != null && message.hasOwnProperty("name"))
+            if (message.name != null && Object.hasOwnProperty.call(message, "name"))
                 writer.uint32(/* id 3, wireType 2 =*/26).string(message.name);
             return writer;
         };
@@ -11889,9 +22025,9 @@ $root.RemoteFortressReader = (function() {
         Hair.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.length != null && message.hasOwnProperty("length"))
+            if (message.length != null && Object.hasOwnProperty.call(message, "length"))
                 writer.uint32(/* id 1, wireType 0 =*/8).int32(message.length);
-            if (message.style != null && message.hasOwnProperty("style"))
+            if (message.style != null && Object.hasOwnProperty.call(message, "style"))
                 writer.uint32(/* id 2, wireType 0 =*/16).int32(message.style);
             return writer;
         };
@@ -12168,17 +22304,17 @@ $root.RemoteFortressReader = (function() {
         BodySizeInfo.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.sizeCur != null && message.hasOwnProperty("sizeCur"))
+            if (message.sizeCur != null && Object.hasOwnProperty.call(message, "sizeCur"))
                 writer.uint32(/* id 1, wireType 0 =*/8).int32(message.sizeCur);
-            if (message.sizeBase != null && message.hasOwnProperty("sizeBase"))
+            if (message.sizeBase != null && Object.hasOwnProperty.call(message, "sizeBase"))
                 writer.uint32(/* id 2, wireType 0 =*/16).int32(message.sizeBase);
-            if (message.areaCur != null && message.hasOwnProperty("areaCur"))
+            if (message.areaCur != null && Object.hasOwnProperty.call(message, "areaCur"))
                 writer.uint32(/* id 3, wireType 0 =*/24).int32(message.areaCur);
-            if (message.areaBase != null && message.hasOwnProperty("areaBase"))
+            if (message.areaBase != null && Object.hasOwnProperty.call(message, "areaBase"))
                 writer.uint32(/* id 4, wireType 0 =*/32).int32(message.areaBase);
-            if (message.lengthCur != null && message.hasOwnProperty("lengthCur"))
+            if (message.lengthCur != null && Object.hasOwnProperty.call(message, "lengthCur"))
                 writer.uint32(/* id 5, wireType 0 =*/40).int32(message.lengthCur);
-            if (message.lengthBase != null && message.hasOwnProperty("lengthBase"))
+            if (message.lengthBase != null && Object.hasOwnProperty.call(message, "lengthBase"))
                 writer.uint32(/* id 6, wireType 0 =*/48).int32(message.lengthBase);
             return writer;
         };
@@ -12493,18 +22629,18 @@ $root.RemoteFortressReader = (function() {
             if (message.bpModifiers != null && message.bpModifiers.length)
                 for (var i = 0; i < message.bpModifiers.length; ++i)
                     writer.uint32(/* id 2, wireType 0 =*/16).int32(message.bpModifiers[i]);
-            if (message.sizeModifier != null && message.hasOwnProperty("sizeModifier"))
+            if (message.sizeModifier != null && Object.hasOwnProperty.call(message, "sizeModifier"))
                 writer.uint32(/* id 3, wireType 0 =*/24).int32(message.sizeModifier);
             if (message.colors != null && message.colors.length)
                 for (var i = 0; i < message.colors.length; ++i)
                     writer.uint32(/* id 4, wireType 0 =*/32).int32(message.colors[i]);
-            if (message.hair != null && message.hasOwnProperty("hair"))
+            if (message.hair != null && Object.hasOwnProperty.call(message, "hair"))
                 $root.RemoteFortressReader.Hair.encode(message.hair, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
-            if (message.beard != null && message.hasOwnProperty("beard"))
+            if (message.beard != null && Object.hasOwnProperty.call(message, "beard"))
                 $root.RemoteFortressReader.Hair.encode(message.beard, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
-            if (message.moustache != null && message.hasOwnProperty("moustache"))
+            if (message.moustache != null && Object.hasOwnProperty.call(message, "moustache"))
                 $root.RemoteFortressReader.Hair.encode(message.moustache, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
-            if (message.sideburns != null && message.hasOwnProperty("sideburns"))
+            if (message.sideburns != null && Object.hasOwnProperty.call(message, "sideburns"))
                 $root.RemoteFortressReader.Hair.encode(message.sideburns, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
             return writer;
         };
@@ -12857,9 +22993,9 @@ $root.RemoteFortressReader = (function() {
         InventoryItem.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.mode != null && message.hasOwnProperty("mode"))
+            if (message.mode != null && Object.hasOwnProperty.call(message, "mode"))
                 writer.uint32(/* id 1, wireType 0 =*/8).int32(message.mode);
-            if (message.item != null && message.hasOwnProperty("item"))
+            if (message.item != null && Object.hasOwnProperty.call(message, "item"))
                 $root.RemoteFortressReader.Item.encode(message.item, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
             return writer;
         };
@@ -13322,51 +23458,51 @@ $root.RemoteFortressReader = (function() {
             if (!writer)
                 writer = $Writer.create();
             writer.uint32(/* id 1, wireType 0 =*/8).int32(message.id);
-            if (message.isValid != null && message.hasOwnProperty("isValid"))
+            if (message.isValid != null && Object.hasOwnProperty.call(message, "isValid"))
                 writer.uint32(/* id 2, wireType 0 =*/16).bool(message.isValid);
-            if (message.posX != null && message.hasOwnProperty("posX"))
+            if (message.posX != null && Object.hasOwnProperty.call(message, "posX"))
                 writer.uint32(/* id 3, wireType 0 =*/24).int32(message.posX);
-            if (message.posY != null && message.hasOwnProperty("posY"))
+            if (message.posY != null && Object.hasOwnProperty.call(message, "posY"))
                 writer.uint32(/* id 4, wireType 0 =*/32).int32(message.posY);
-            if (message.posZ != null && message.hasOwnProperty("posZ"))
+            if (message.posZ != null && Object.hasOwnProperty.call(message, "posZ"))
                 writer.uint32(/* id 5, wireType 0 =*/40).int32(message.posZ);
-            if (message.race != null && message.hasOwnProperty("race"))
+            if (message.race != null && Object.hasOwnProperty.call(message, "race"))
                 $root.RemoteFortressReader.MatPair.encode(message.race, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
-            if (message.professionColor != null && message.hasOwnProperty("professionColor"))
+            if (message.professionColor != null && Object.hasOwnProperty.call(message, "professionColor"))
                 $root.RemoteFortressReader.ColorDefinition.encode(message.professionColor, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
-            if (message.flags1 != null && message.hasOwnProperty("flags1"))
+            if (message.flags1 != null && Object.hasOwnProperty.call(message, "flags1"))
                 writer.uint32(/* id 8, wireType 0 =*/64).uint32(message.flags1);
-            if (message.flags2 != null && message.hasOwnProperty("flags2"))
+            if (message.flags2 != null && Object.hasOwnProperty.call(message, "flags2"))
                 writer.uint32(/* id 9, wireType 0 =*/72).uint32(message.flags2);
-            if (message.flags3 != null && message.hasOwnProperty("flags3"))
+            if (message.flags3 != null && Object.hasOwnProperty.call(message, "flags3"))
                 writer.uint32(/* id 10, wireType 0 =*/80).uint32(message.flags3);
-            if (message.isSoldier != null && message.hasOwnProperty("isSoldier"))
+            if (message.isSoldier != null && Object.hasOwnProperty.call(message, "isSoldier"))
                 writer.uint32(/* id 11, wireType 0 =*/88).bool(message.isSoldier);
-            if (message.sizeInfo != null && message.hasOwnProperty("sizeInfo"))
+            if (message.sizeInfo != null && Object.hasOwnProperty.call(message, "sizeInfo"))
                 $root.RemoteFortressReader.BodySizeInfo.encode(message.sizeInfo, writer.uint32(/* id 12, wireType 2 =*/98).fork()).ldelim();
-            if (message.name != null && message.hasOwnProperty("name"))
+            if (message.name != null && Object.hasOwnProperty.call(message, "name"))
                 writer.uint32(/* id 13, wireType 2 =*/106).string(message.name);
-            if (message.bloodMax != null && message.hasOwnProperty("bloodMax"))
+            if (message.bloodMax != null && Object.hasOwnProperty.call(message, "bloodMax"))
                 writer.uint32(/* id 14, wireType 0 =*/112).int32(message.bloodMax);
-            if (message.bloodCount != null && message.hasOwnProperty("bloodCount"))
+            if (message.bloodCount != null && Object.hasOwnProperty.call(message, "bloodCount"))
                 writer.uint32(/* id 15, wireType 0 =*/120).int32(message.bloodCount);
-            if (message.appearance != null && message.hasOwnProperty("appearance"))
+            if (message.appearance != null && Object.hasOwnProperty.call(message, "appearance"))
                 $root.RemoteFortressReader.UnitAppearance.encode(message.appearance, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
-            if (message.professionId != null && message.hasOwnProperty("professionId"))
+            if (message.professionId != null && Object.hasOwnProperty.call(message, "professionId"))
                 writer.uint32(/* id 17, wireType 0 =*/136).int32(message.professionId);
             if (message.noblePositions != null && message.noblePositions.length)
                 for (var i = 0; i < message.noblePositions.length; ++i)
                     writer.uint32(/* id 18, wireType 2 =*/146).string(message.noblePositions[i]);
-            if (message.riderId != null && message.hasOwnProperty("riderId"))
+            if (message.riderId != null && Object.hasOwnProperty.call(message, "riderId"))
                 writer.uint32(/* id 19, wireType 0 =*/152).int32(message.riderId);
             if (message.inventory != null && message.inventory.length)
                 for (var i = 0; i < message.inventory.length; ++i)
                     $root.RemoteFortressReader.InventoryItem.encode(message.inventory[i], writer.uint32(/* id 20, wireType 2 =*/162).fork()).ldelim();
-            if (message.subposX != null && message.hasOwnProperty("subposX"))
+            if (message.subposX != null && Object.hasOwnProperty.call(message, "subposX"))
                 writer.uint32(/* id 21, wireType 5 =*/173).float(message.subposX);
-            if (message.subposY != null && message.hasOwnProperty("subposY"))
+            if (message.subposY != null && Object.hasOwnProperty.call(message, "subposY"))
                 writer.uint32(/* id 22, wireType 5 =*/181).float(message.subposY);
-            if (message.subposZ != null && message.hasOwnProperty("subposZ"))
+            if (message.subposZ != null && Object.hasOwnProperty.call(message, "subposZ"))
                 writer.uint32(/* id 23, wireType 5 =*/189).float(message.subposZ);
             return writer;
         };
@@ -14114,19 +24250,19 @@ $root.RemoteFortressReader = (function() {
         BlockRequest.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.blocksNeeded != null && message.hasOwnProperty("blocksNeeded"))
+            if (message.blocksNeeded != null && Object.hasOwnProperty.call(message, "blocksNeeded"))
                 writer.uint32(/* id 1, wireType 0 =*/8).int32(message.blocksNeeded);
-            if (message.minX != null && message.hasOwnProperty("minX"))
+            if (message.minX != null && Object.hasOwnProperty.call(message, "minX"))
                 writer.uint32(/* id 2, wireType 0 =*/16).int32(message.minX);
-            if (message.maxX != null && message.hasOwnProperty("maxX"))
+            if (message.maxX != null && Object.hasOwnProperty.call(message, "maxX"))
                 writer.uint32(/* id 3, wireType 0 =*/24).int32(message.maxX);
-            if (message.minY != null && message.hasOwnProperty("minY"))
+            if (message.minY != null && Object.hasOwnProperty.call(message, "minY"))
                 writer.uint32(/* id 4, wireType 0 =*/32).int32(message.minY);
-            if (message.maxY != null && message.hasOwnProperty("maxY"))
+            if (message.maxY != null && Object.hasOwnProperty.call(message, "maxY"))
                 writer.uint32(/* id 5, wireType 0 =*/40).int32(message.maxY);
-            if (message.minZ != null && message.hasOwnProperty("minZ"))
+            if (message.minZ != null && Object.hasOwnProperty.call(message, "minZ"))
                 writer.uint32(/* id 6, wireType 0 =*/48).int32(message.minZ);
-            if (message.maxZ != null && message.hasOwnProperty("maxZ"))
+            if (message.maxZ != null && Object.hasOwnProperty.call(message, "maxZ"))
                 writer.uint32(/* id 7, wireType 0 =*/56).int32(message.maxZ);
             return writer;
         };
@@ -14422,9 +24558,9 @@ $root.RemoteFortressReader = (function() {
             if (message.mapBlocks != null && message.mapBlocks.length)
                 for (var i = 0; i < message.mapBlocks.length; ++i)
                     $root.RemoteFortressReader.MapBlock.encode(message.mapBlocks[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-            if (message.mapX != null && message.hasOwnProperty("mapX"))
+            if (message.mapX != null && Object.hasOwnProperty.call(message, "mapX"))
                 writer.uint32(/* id 2, wireType 0 =*/16).int32(message.mapX);
-            if (message.mapY != null && message.hasOwnProperty("mapY"))
+            if (message.mapY != null && Object.hasOwnProperty.call(message, "mapY"))
                 writer.uint32(/* id 3, wireType 0 =*/24).int32(message.mapY);
             if (message.engravings != null && message.engravings.length)
                 for (var i = 0; i < message.engravings.length; ++i)
@@ -15264,25 +25400,25 @@ $root.RemoteFortressReader = (function() {
         ViewInfo.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.viewPosX != null && message.hasOwnProperty("viewPosX"))
+            if (message.viewPosX != null && Object.hasOwnProperty.call(message, "viewPosX"))
                 writer.uint32(/* id 1, wireType 0 =*/8).int32(message.viewPosX);
-            if (message.viewPosY != null && message.hasOwnProperty("viewPosY"))
+            if (message.viewPosY != null && Object.hasOwnProperty.call(message, "viewPosY"))
                 writer.uint32(/* id 2, wireType 0 =*/16).int32(message.viewPosY);
-            if (message.viewPosZ != null && message.hasOwnProperty("viewPosZ"))
+            if (message.viewPosZ != null && Object.hasOwnProperty.call(message, "viewPosZ"))
                 writer.uint32(/* id 3, wireType 0 =*/24).int32(message.viewPosZ);
-            if (message.viewSizeX != null && message.hasOwnProperty("viewSizeX"))
+            if (message.viewSizeX != null && Object.hasOwnProperty.call(message, "viewSizeX"))
                 writer.uint32(/* id 4, wireType 0 =*/32).int32(message.viewSizeX);
-            if (message.viewSizeY != null && message.hasOwnProperty("viewSizeY"))
+            if (message.viewSizeY != null && Object.hasOwnProperty.call(message, "viewSizeY"))
                 writer.uint32(/* id 5, wireType 0 =*/40).int32(message.viewSizeY);
-            if (message.cursorPosX != null && message.hasOwnProperty("cursorPosX"))
+            if (message.cursorPosX != null && Object.hasOwnProperty.call(message, "cursorPosX"))
                 writer.uint32(/* id 6, wireType 0 =*/48).int32(message.cursorPosX);
-            if (message.cursorPosY != null && message.hasOwnProperty("cursorPosY"))
+            if (message.cursorPosY != null && Object.hasOwnProperty.call(message, "cursorPosY"))
                 writer.uint32(/* id 7, wireType 0 =*/56).int32(message.cursorPosY);
-            if (message.cursorPosZ != null && message.hasOwnProperty("cursorPosZ"))
+            if (message.cursorPosZ != null && Object.hasOwnProperty.call(message, "cursorPosZ"))
                 writer.uint32(/* id 8, wireType 0 =*/64).int32(message.cursorPosZ);
-            if (message.followUnitId != null && message.hasOwnProperty("followUnitId"))
+            if (message.followUnitId != null && Object.hasOwnProperty.call(message, "followUnitId"))
                 writer.uint32(/* id 9, wireType 0 =*/72).int32(message.followUnitId);
-            if (message.followItemId != null && message.hasOwnProperty("followItemId"))
+            if (message.followItemId != null && Object.hasOwnProperty.call(message, "followItemId"))
                 writer.uint32(/* id 10, wireType 0 =*/80).int32(message.followItemId);
             return writer;
         };
@@ -15641,23 +25777,23 @@ $root.RemoteFortressReader = (function() {
         MapInfo.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.blockSizeX != null && message.hasOwnProperty("blockSizeX"))
+            if (message.blockSizeX != null && Object.hasOwnProperty.call(message, "blockSizeX"))
                 writer.uint32(/* id 1, wireType 0 =*/8).int32(message.blockSizeX);
-            if (message.blockSizeY != null && message.hasOwnProperty("blockSizeY"))
+            if (message.blockSizeY != null && Object.hasOwnProperty.call(message, "blockSizeY"))
                 writer.uint32(/* id 2, wireType 0 =*/16).int32(message.blockSizeY);
-            if (message.blockSizeZ != null && message.hasOwnProperty("blockSizeZ"))
+            if (message.blockSizeZ != null && Object.hasOwnProperty.call(message, "blockSizeZ"))
                 writer.uint32(/* id 3, wireType 0 =*/24).int32(message.blockSizeZ);
-            if (message.blockPosX != null && message.hasOwnProperty("blockPosX"))
+            if (message.blockPosX != null && Object.hasOwnProperty.call(message, "blockPosX"))
                 writer.uint32(/* id 4, wireType 0 =*/32).int32(message.blockPosX);
-            if (message.blockPosY != null && message.hasOwnProperty("blockPosY"))
+            if (message.blockPosY != null && Object.hasOwnProperty.call(message, "blockPosY"))
                 writer.uint32(/* id 5, wireType 0 =*/40).int32(message.blockPosY);
-            if (message.blockPosZ != null && message.hasOwnProperty("blockPosZ"))
+            if (message.blockPosZ != null && Object.hasOwnProperty.call(message, "blockPosZ"))
                 writer.uint32(/* id 6, wireType 0 =*/48).int32(message.blockPosZ);
-            if (message.worldName != null && message.hasOwnProperty("worldName"))
+            if (message.worldName != null && Object.hasOwnProperty.call(message, "worldName"))
                 writer.uint32(/* id 7, wireType 2 =*/58).string(message.worldName);
-            if (message.worldNameEnglish != null && message.hasOwnProperty("worldNameEnglish"))
+            if (message.worldNameEnglish != null && Object.hasOwnProperty.call(message, "worldNameEnglish"))
                 writer.uint32(/* id 8, wireType 2 =*/66).string(message.worldNameEnglish);
-            if (message.saveName != null && message.hasOwnProperty("saveName"))
+            if (message.saveName != null && Object.hasOwnProperty.call(message, "saveName"))
                 writer.uint32(/* id 9, wireType 2 =*/74).string(message.saveName);
             return writer;
         };
@@ -16041,15 +26177,15 @@ $root.RemoteFortressReader = (function() {
         Cloud.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.front != null && message.hasOwnProperty("front"))
+            if (message.front != null && Object.hasOwnProperty.call(message, "front"))
                 writer.uint32(/* id 1, wireType 0 =*/8).int32(message.front);
-            if (message.cumulus != null && message.hasOwnProperty("cumulus"))
+            if (message.cumulus != null && Object.hasOwnProperty.call(message, "cumulus"))
                 writer.uint32(/* id 2, wireType 0 =*/16).int32(message.cumulus);
-            if (message.cirrus != null && message.hasOwnProperty("cirrus"))
+            if (message.cirrus != null && Object.hasOwnProperty.call(message, "cirrus"))
                 writer.uint32(/* id 3, wireType 0 =*/24).bool(message.cirrus);
-            if (message.stratus != null && message.hasOwnProperty("stratus"))
+            if (message.stratus != null && Object.hasOwnProperty.call(message, "stratus"))
                 writer.uint32(/* id 4, wireType 0 =*/32).int32(message.stratus);
-            if (message.fog != null && message.hasOwnProperty("fog"))
+            if (message.fog != null && Object.hasOwnProperty.call(message, "fog"))
                 writer.uint32(/* id 5, wireType 0 =*/40).int32(message.fog);
             return writer;
         };
@@ -16604,9 +26740,9 @@ $root.RemoteFortressReader = (function() {
                 writer = $Writer.create();
             writer.uint32(/* id 1, wireType 0 =*/8).int32(message.worldWidth);
             writer.uint32(/* id 2, wireType 0 =*/16).int32(message.worldHeight);
-            if (message.name != null && message.hasOwnProperty("name"))
+            if (message.name != null && Object.hasOwnProperty.call(message, "name"))
                 writer.uint32(/* id 3, wireType 2 =*/26).string(message.name);
-            if (message.nameEnglish != null && message.hasOwnProperty("nameEnglish"))
+            if (message.nameEnglish != null && Object.hasOwnProperty.call(message, "nameEnglish"))
                 writer.uint32(/* id 4, wireType 2 =*/34).string(message.nameEnglish);
             if (message.elevation != null && message.elevation.length)
                 for (var i = 0; i < message.elevation.length; ++i)
@@ -16638,21 +26774,21 @@ $root.RemoteFortressReader = (function() {
             if (message.salinity != null && message.salinity.length)
                 for (var i = 0; i < message.salinity.length; ++i)
                     writer.uint32(/* id 14, wireType 0 =*/112).int32(message.salinity[i]);
-            if (message.mapX != null && message.hasOwnProperty("mapX"))
+            if (message.mapX != null && Object.hasOwnProperty.call(message, "mapX"))
                 writer.uint32(/* id 15, wireType 0 =*/120).int32(message.mapX);
-            if (message.mapY != null && message.hasOwnProperty("mapY"))
+            if (message.mapY != null && Object.hasOwnProperty.call(message, "mapY"))
                 writer.uint32(/* id 16, wireType 0 =*/128).int32(message.mapY);
-            if (message.centerX != null && message.hasOwnProperty("centerX"))
+            if (message.centerX != null && Object.hasOwnProperty.call(message, "centerX"))
                 writer.uint32(/* id 17, wireType 0 =*/136).int32(message.centerX);
-            if (message.centerY != null && message.hasOwnProperty("centerY"))
+            if (message.centerY != null && Object.hasOwnProperty.call(message, "centerY"))
                 writer.uint32(/* id 18, wireType 0 =*/144).int32(message.centerY);
-            if (message.centerZ != null && message.hasOwnProperty("centerZ"))
+            if (message.centerZ != null && Object.hasOwnProperty.call(message, "centerZ"))
                 writer.uint32(/* id 19, wireType 0 =*/152).int32(message.centerZ);
-            if (message.curYear != null && message.hasOwnProperty("curYear"))
+            if (message.curYear != null && Object.hasOwnProperty.call(message, "curYear"))
                 writer.uint32(/* id 20, wireType 0 =*/160).int32(message.curYear);
-            if (message.curYearTick != null && message.hasOwnProperty("curYearTick"))
+            if (message.curYearTick != null && Object.hasOwnProperty.call(message, "curYearTick"))
                 writer.uint32(/* id 21, wireType 0 =*/168).int32(message.curYearTick);
-            if (message.worldPoles != null && message.hasOwnProperty("worldPoles"))
+            if (message.worldPoles != null && Object.hasOwnProperty.call(message, "worldPoles"))
                 writer.uint32(/* id 22, wireType 0 =*/176).int32(message.worldPoles);
             if (message.riverTiles != null && message.riverTiles.length)
                 for (var i = 0; i < message.riverTiles.length; ++i)
@@ -17488,17 +27624,17 @@ $root.RemoteFortressReader = (function() {
         SiteRealizationBuildingWall.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.startX != null && message.hasOwnProperty("startX"))
+            if (message.startX != null && Object.hasOwnProperty.call(message, "startX"))
                 writer.uint32(/* id 1, wireType 0 =*/8).int32(message.startX);
-            if (message.startY != null && message.hasOwnProperty("startY"))
+            if (message.startY != null && Object.hasOwnProperty.call(message, "startY"))
                 writer.uint32(/* id 2, wireType 0 =*/16).int32(message.startY);
-            if (message.startZ != null && message.hasOwnProperty("startZ"))
+            if (message.startZ != null && Object.hasOwnProperty.call(message, "startZ"))
                 writer.uint32(/* id 3, wireType 0 =*/24).int32(message.startZ);
-            if (message.endX != null && message.hasOwnProperty("endX"))
+            if (message.endX != null && Object.hasOwnProperty.call(message, "endX"))
                 writer.uint32(/* id 4, wireType 0 =*/32).int32(message.endX);
-            if (message.endY != null && message.hasOwnProperty("endY"))
+            if (message.endY != null && Object.hasOwnProperty.call(message, "endY"))
                 writer.uint32(/* id 5, wireType 0 =*/40).int32(message.endY);
-            if (message.endZ != null && message.hasOwnProperty("endZ"))
+            if (message.endZ != null && Object.hasOwnProperty.call(message, "endZ"))
                 writer.uint32(/* id 6, wireType 0 =*/48).int32(message.endZ);
             return writer;
         };
@@ -17759,11 +27895,11 @@ $root.RemoteFortressReader = (function() {
         SiteRealizationBuildingTower.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.roofZ != null && message.hasOwnProperty("roofZ"))
+            if (message.roofZ != null && Object.hasOwnProperty.call(message, "roofZ"))
                 writer.uint32(/* id 1, wireType 0 =*/8).int32(message.roofZ);
-            if (message.round != null && message.hasOwnProperty("round"))
+            if (message.round != null && Object.hasOwnProperty.call(message, "round"))
                 writer.uint32(/* id 2, wireType 0 =*/16).bool(message.round);
-            if (message.goblin != null && message.hasOwnProperty("goblin"))
+            if (message.goblin != null && Object.hasOwnProperty.call(message, "goblin"))
                 writer.uint32(/* id 3, wireType 0 =*/24).bool(message.goblin);
             return writer;
         };
@@ -18000,13 +28136,13 @@ $root.RemoteFortressReader = (function() {
         TrenchSpoke.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.moundStart != null && message.hasOwnProperty("moundStart"))
+            if (message.moundStart != null && Object.hasOwnProperty.call(message, "moundStart"))
                 writer.uint32(/* id 1, wireType 0 =*/8).int32(message.moundStart);
-            if (message.trenchStart != null && message.hasOwnProperty("trenchStart"))
+            if (message.trenchStart != null && Object.hasOwnProperty.call(message, "trenchStart"))
                 writer.uint32(/* id 2, wireType 0 =*/16).int32(message.trenchStart);
-            if (message.trenchEnd != null && message.hasOwnProperty("trenchEnd"))
+            if (message.trenchEnd != null && Object.hasOwnProperty.call(message, "trenchEnd"))
                 writer.uint32(/* id 3, wireType 0 =*/24).int32(message.trenchEnd);
-            if (message.moundEnd != null && message.hasOwnProperty("moundEnd"))
+            if (message.moundEnd != null && Object.hasOwnProperty.call(message, "moundEnd"))
                 writer.uint32(/* id 4, wireType 0 =*/32).int32(message.moundEnd);
             return writer;
         };
@@ -18516,25 +28652,25 @@ $root.RemoteFortressReader = (function() {
         SiteRealizationBuilding.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.id != null && message.hasOwnProperty("id"))
+            if (message.id != null && Object.hasOwnProperty.call(message, "id"))
                 writer.uint32(/* id 1, wireType 0 =*/8).int32(message.id);
-            if (message.type != null && message.hasOwnProperty("type"))
+            if (message.type != null && Object.hasOwnProperty.call(message, "type"))
                 writer.uint32(/* id 2, wireType 0 =*/16).int32(message.type);
-            if (message.minX != null && message.hasOwnProperty("minX"))
+            if (message.minX != null && Object.hasOwnProperty.call(message, "minX"))
                 writer.uint32(/* id 3, wireType 0 =*/24).int32(message.minX);
-            if (message.minY != null && message.hasOwnProperty("minY"))
+            if (message.minY != null && Object.hasOwnProperty.call(message, "minY"))
                 writer.uint32(/* id 4, wireType 0 =*/32).int32(message.minY);
-            if (message.maxX != null && message.hasOwnProperty("maxX"))
+            if (message.maxX != null && Object.hasOwnProperty.call(message, "maxX"))
                 writer.uint32(/* id 5, wireType 0 =*/40).int32(message.maxX);
-            if (message.maxY != null && message.hasOwnProperty("maxY"))
+            if (message.maxY != null && Object.hasOwnProperty.call(message, "maxY"))
                 writer.uint32(/* id 6, wireType 0 =*/48).int32(message.maxY);
-            if (message.material != null && message.hasOwnProperty("material"))
+            if (message.material != null && Object.hasOwnProperty.call(message, "material"))
                 $root.RemoteFortressReader.MatPair.encode(message.material, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
-            if (message.wallInfo != null && message.hasOwnProperty("wallInfo"))
+            if (message.wallInfo != null && Object.hasOwnProperty.call(message, "wallInfo"))
                 $root.RemoteFortressReader.SiteRealizationBuildingWall.encode(message.wallInfo, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
-            if (message.towerInfo != null && message.hasOwnProperty("towerInfo"))
+            if (message.towerInfo != null && Object.hasOwnProperty.call(message, "towerInfo"))
                 $root.RemoteFortressReader.SiteRealizationBuildingTower.encode(message.towerInfo, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
-            if (message.trenchInfo != null && message.hasOwnProperty("trenchInfo"))
+            if (message.trenchInfo != null && Object.hasOwnProperty.call(message, "trenchInfo"))
                 $root.RemoteFortressReader.SiteRealizationBuildingTrenches.encode(message.trenchInfo, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
             return writer;
         };
@@ -19107,29 +29243,29 @@ $root.RemoteFortressReader = (function() {
         RegionTile.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.elevation != null && message.hasOwnProperty("elevation"))
+            if (message.elevation != null && Object.hasOwnProperty.call(message, "elevation"))
                 writer.uint32(/* id 1, wireType 0 =*/8).int32(message.elevation);
-            if (message.rainfall != null && message.hasOwnProperty("rainfall"))
+            if (message.rainfall != null && Object.hasOwnProperty.call(message, "rainfall"))
                 writer.uint32(/* id 2, wireType 0 =*/16).int32(message.rainfall);
-            if (message.vegetation != null && message.hasOwnProperty("vegetation"))
+            if (message.vegetation != null && Object.hasOwnProperty.call(message, "vegetation"))
                 writer.uint32(/* id 3, wireType 0 =*/24).int32(message.vegetation);
-            if (message.temperature != null && message.hasOwnProperty("temperature"))
+            if (message.temperature != null && Object.hasOwnProperty.call(message, "temperature"))
                 writer.uint32(/* id 4, wireType 0 =*/32).int32(message.temperature);
-            if (message.evilness != null && message.hasOwnProperty("evilness"))
+            if (message.evilness != null && Object.hasOwnProperty.call(message, "evilness"))
                 writer.uint32(/* id 5, wireType 0 =*/40).int32(message.evilness);
-            if (message.drainage != null && message.hasOwnProperty("drainage"))
+            if (message.drainage != null && Object.hasOwnProperty.call(message, "drainage"))
                 writer.uint32(/* id 6, wireType 0 =*/48).int32(message.drainage);
-            if (message.volcanism != null && message.hasOwnProperty("volcanism"))
+            if (message.volcanism != null && Object.hasOwnProperty.call(message, "volcanism"))
                 writer.uint32(/* id 7, wireType 0 =*/56).int32(message.volcanism);
-            if (message.savagery != null && message.hasOwnProperty("savagery"))
+            if (message.savagery != null && Object.hasOwnProperty.call(message, "savagery"))
                 writer.uint32(/* id 8, wireType 0 =*/64).int32(message.savagery);
-            if (message.salinity != null && message.hasOwnProperty("salinity"))
+            if (message.salinity != null && Object.hasOwnProperty.call(message, "salinity"))
                 writer.uint32(/* id 9, wireType 0 =*/72).int32(message.salinity);
-            if (message.riverTiles != null && message.hasOwnProperty("riverTiles"))
+            if (message.riverTiles != null && Object.hasOwnProperty.call(message, "riverTiles"))
                 $root.RemoteFortressReader.RiverTile.encode(message.riverTiles, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
-            if (message.waterElevation != null && message.hasOwnProperty("waterElevation"))
+            if (message.waterElevation != null && Object.hasOwnProperty.call(message, "waterElevation"))
                 writer.uint32(/* id 11, wireType 0 =*/88).int32(message.waterElevation);
-            if (message.surfaceMaterial != null && message.hasOwnProperty("surfaceMaterial"))
+            if (message.surfaceMaterial != null && Object.hasOwnProperty.call(message, "surfaceMaterial"))
                 $root.RemoteFortressReader.MatPair.encode(message.surfaceMaterial, writer.uint32(/* id 12, wireType 2 =*/98).fork()).ldelim();
             if (message.plantMaterials != null && message.plantMaterials.length)
                 for (var i = 0; i < message.plantMaterials.length; ++i)
@@ -19143,7 +29279,7 @@ $root.RemoteFortressReader = (function() {
             if (message.treeMaterials != null && message.treeMaterials.length)
                 for (var i = 0; i < message.treeMaterials.length; ++i)
                     $root.RemoteFortressReader.MatPair.encode(message.treeMaterials[i], writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
-            if (message.snow != null && message.hasOwnProperty("snow"))
+            if (message.snow != null && Object.hasOwnProperty.call(message, "snow"))
                 writer.uint32(/* id 17, wireType 0 =*/136).int32(message.snow);
             return writer;
         };
@@ -19632,13 +29768,13 @@ $root.RemoteFortressReader = (function() {
         RegionMap.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.mapX != null && message.hasOwnProperty("mapX"))
+            if (message.mapX != null && Object.hasOwnProperty.call(message, "mapX"))
                 writer.uint32(/* id 1, wireType 0 =*/8).int32(message.mapX);
-            if (message.mapY != null && message.hasOwnProperty("mapY"))
+            if (message.mapY != null && Object.hasOwnProperty.call(message, "mapY"))
                 writer.uint32(/* id 2, wireType 0 =*/16).int32(message.mapY);
-            if (message.name != null && message.hasOwnProperty("name"))
+            if (message.name != null && Object.hasOwnProperty.call(message, "name"))
                 writer.uint32(/* id 3, wireType 2 =*/26).string(message.name);
-            if (message.nameEnglish != null && message.hasOwnProperty("nameEnglish"))
+            if (message.nameEnglish != null && Object.hasOwnProperty.call(message, "nameEnglish"))
                 writer.uint32(/* id 4, wireType 2 =*/34).string(message.nameEnglish);
             if (message.tiles != null && message.tiles.length)
                 for (var i = 0; i < message.tiles.length; ++i)
@@ -20186,12 +30322,12 @@ $root.RemoteFortressReader = (function() {
         PatternDescriptor.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.id != null && message.hasOwnProperty("id"))
+            if (message.id != null && Object.hasOwnProperty.call(message, "id"))
                 writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
             if (message.colors != null && message.colors.length)
                 for (var i = 0; i < message.colors.length; ++i)
                     $root.RemoteFortressReader.ColorDefinition.encode(message.colors[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-            if (message.pattern != null && message.hasOwnProperty("pattern"))
+            if (message.pattern != null && Object.hasOwnProperty.call(message, "pattern"))
                 writer.uint32(/* id 3, wireType 0 =*/24).int32(message.pattern);
             return writer;
         };
@@ -20511,11 +30647,11 @@ $root.RemoteFortressReader = (function() {
             if (message.tissueLayerId != null && message.tissueLayerId.length)
                 for (var i = 0; i < message.tissueLayerId.length; ++i)
                     writer.uint32(/* id 3, wireType 0 =*/24).int32(message.tissueLayerId[i]);
-            if (message.startDate != null && message.hasOwnProperty("startDate"))
+            if (message.startDate != null && Object.hasOwnProperty.call(message, "startDate"))
                 writer.uint32(/* id 4, wireType 0 =*/32).int32(message.startDate);
-            if (message.endDate != null && message.hasOwnProperty("endDate"))
+            if (message.endDate != null && Object.hasOwnProperty.call(message, "endDate"))
                 writer.uint32(/* id 5, wireType 0 =*/40).int32(message.endDate);
-            if (message.part != null && message.hasOwnProperty("part"))
+            if (message.part != null && Object.hasOwnProperty.call(message, "part"))
                 writer.uint32(/* id 6, wireType 2 =*/50).string(message.part);
             return writer;
         };
@@ -20845,11 +30981,11 @@ $root.RemoteFortressReader = (function() {
         BodyPartLayerRaw.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.layerName != null && message.hasOwnProperty("layerName"))
+            if (message.layerName != null && Object.hasOwnProperty.call(message, "layerName"))
                 writer.uint32(/* id 1, wireType 2 =*/10).string(message.layerName);
-            if (message.tissueId != null && message.hasOwnProperty("tissueId"))
+            if (message.tissueId != null && Object.hasOwnProperty.call(message, "tissueId"))
                 writer.uint32(/* id 2, wireType 0 =*/16).int32(message.tissueId);
-            if (message.layerDepth != null && message.hasOwnProperty("layerDepth"))
+            if (message.layerDepth != null && Object.hasOwnProperty.call(message, "layerDepth"))
                 writer.uint32(/* id 3, wireType 0 =*/24).int32(message.layerDepth);
             if (message.bpModifiers != null && message.bpModifiers.length)
                 for (var i = 0; i < message.bpModifiers.length; ++i)
@@ -21140,11 +31276,11 @@ $root.RemoteFortressReader = (function() {
         BodyPartRaw.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.token != null && message.hasOwnProperty("token"))
+            if (message.token != null && Object.hasOwnProperty.call(message, "token"))
                 writer.uint32(/* id 1, wireType 2 =*/10).string(message.token);
-            if (message.category != null && message.hasOwnProperty("category"))
+            if (message.category != null && Object.hasOwnProperty.call(message, "category"))
                 writer.uint32(/* id 2, wireType 2 =*/18).string(message.category);
-            if (message.parent != null && message.hasOwnProperty("parent"))
+            if (message.parent != null && Object.hasOwnProperty.call(message, "parent"))
                 writer.uint32(/* id 3, wireType 0 =*/24).int32(message.parent);
             if (message.flags != null && message.flags.length)
                 for (var i = 0; i < message.flags.length; ++i)
@@ -21152,7 +31288,7 @@ $root.RemoteFortressReader = (function() {
             if (message.layers != null && message.layers.length)
                 for (var i = 0; i < message.layers.length; ++i)
                     $root.RemoteFortressReader.BodyPartLayerRaw.encode(message.layers[i], writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
-            if (message.relsize != null && message.hasOwnProperty("relsize"))
+            if (message.relsize != null && Object.hasOwnProperty.call(message, "relsize"))
                 writer.uint32(/* id 6, wireType 0 =*/48).int32(message.relsize);
             return writer;
         };
@@ -21453,11 +31589,11 @@ $root.RemoteFortressReader = (function() {
         BpAppearanceModifier.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.type != null && message.hasOwnProperty("type"))
+            if (message.type != null && Object.hasOwnProperty.call(message, "type"))
                 writer.uint32(/* id 1, wireType 2 =*/10).string(message.type);
-            if (message.modMin != null && message.hasOwnProperty("modMin"))
+            if (message.modMin != null && Object.hasOwnProperty.call(message, "modMin"))
                 writer.uint32(/* id 2, wireType 0 =*/16).int32(message.modMin);
-            if (message.modMax != null && message.hasOwnProperty("modMax"))
+            if (message.modMax != null && Object.hasOwnProperty.call(message, "modMax"))
                 writer.uint32(/* id 3, wireType 0 =*/24).int32(message.modMax);
             return writer;
         };
@@ -21694,13 +31830,13 @@ $root.RemoteFortressReader = (function() {
         TissueRaw.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.id != null && message.hasOwnProperty("id"))
+            if (message.id != null && Object.hasOwnProperty.call(message, "id"))
                 writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
-            if (message.name != null && message.hasOwnProperty("name"))
+            if (message.name != null && Object.hasOwnProperty.call(message, "name"))
                 writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
-            if (message.material != null && message.hasOwnProperty("material"))
+            if (message.material != null && Object.hasOwnProperty.call(message, "material"))
                 $root.RemoteFortressReader.MatPair.encode(message.material, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-            if (message.subordinateToTissue != null && message.hasOwnProperty("subordinateToTissue"))
+            if (message.subordinateToTissue != null && Object.hasOwnProperty.call(message, "subordinateToTissue"))
                 writer.uint32(/* id 4, wireType 2 =*/34).string(message.subordinateToTissue);
             return writer;
         };
@@ -22071,9 +32207,9 @@ $root.RemoteFortressReader = (function() {
         CasteRaw.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.index != null && message.hasOwnProperty("index"))
+            if (message.index != null && Object.hasOwnProperty.call(message, "index"))
                 writer.uint32(/* id 1, wireType 0 =*/8).int32(message.index);
-            if (message.casteId != null && message.hasOwnProperty("casteId"))
+            if (message.casteId != null && Object.hasOwnProperty.call(message, "casteId"))
                 writer.uint32(/* id 2, wireType 2 =*/18).string(message.casteId);
             if (message.casteName != null && message.casteName.length)
                 for (var i = 0; i < message.casteName.length; ++i)
@@ -22084,12 +32220,12 @@ $root.RemoteFortressReader = (function() {
             if (message.childName != null && message.childName.length)
                 for (var i = 0; i < message.childName.length; ++i)
                     writer.uint32(/* id 5, wireType 2 =*/42).string(message.childName[i]);
-            if (message.gender != null && message.hasOwnProperty("gender"))
+            if (message.gender != null && Object.hasOwnProperty.call(message, "gender"))
                 writer.uint32(/* id 6, wireType 0 =*/48).int32(message.gender);
             if (message.bodyParts != null && message.bodyParts.length)
                 for (var i = 0; i < message.bodyParts.length; ++i)
                     $root.RemoteFortressReader.BodyPartRaw.encode(message.bodyParts[i], writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
-            if (message.totalRelsize != null && message.hasOwnProperty("totalRelsize"))
+            if (message.totalRelsize != null && Object.hasOwnProperty.call(message, "totalRelsize"))
                 writer.uint32(/* id 8, wireType 0 =*/64).int32(message.totalRelsize);
             if (message.modifiers != null && message.modifiers.length)
                 for (var i = 0; i < message.modifiers.length; ++i)
@@ -22109,9 +32245,9 @@ $root.RemoteFortressReader = (function() {
             if (message.colorModifiers != null && message.colorModifiers.length)
                 for (var i = 0; i < message.colorModifiers.length; ++i)
                     $root.RemoteFortressReader.ColorModifierRaw.encode(message.colorModifiers[i], writer.uint32(/* id 14, wireType 2 =*/114).fork()).ldelim();
-            if (message.description != null && message.hasOwnProperty("description"))
+            if (message.description != null && Object.hasOwnProperty.call(message, "description"))
                 writer.uint32(/* id 15, wireType 2 =*/122).string(message.description);
-            if (message.adultSize != null && message.hasOwnProperty("adultSize"))
+            if (message.adultSize != null && Object.hasOwnProperty.call(message, "adultSize"))
                 writer.uint32(/* id 16, wireType 0 =*/128).int32(message.adultSize);
             return writer;
         };
@@ -22736,9 +32872,9 @@ $root.RemoteFortressReader = (function() {
         CreatureRaw.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.index != null && message.hasOwnProperty("index"))
+            if (message.index != null && Object.hasOwnProperty.call(message, "index"))
                 writer.uint32(/* id 1, wireType 0 =*/8).int32(message.index);
-            if (message.creatureId != null && message.hasOwnProperty("creatureId"))
+            if (message.creatureId != null && Object.hasOwnProperty.call(message, "creatureId"))
                 writer.uint32(/* id 2, wireType 2 =*/18).string(message.creatureId);
             if (message.name != null && message.name.length)
                 for (var i = 0; i < message.name.length; ++i)
@@ -22749,13 +32885,13 @@ $root.RemoteFortressReader = (function() {
             if (message.generalChildName != null && message.generalChildName.length)
                 for (var i = 0; i < message.generalChildName.length; ++i)
                     writer.uint32(/* id 5, wireType 2 =*/42).string(message.generalChildName[i]);
-            if (message.creatureTile != null && message.hasOwnProperty("creatureTile"))
+            if (message.creatureTile != null && Object.hasOwnProperty.call(message, "creatureTile"))
                 writer.uint32(/* id 6, wireType 0 =*/48).int32(message.creatureTile);
-            if (message.creatureSoldierTile != null && message.hasOwnProperty("creatureSoldierTile"))
+            if (message.creatureSoldierTile != null && Object.hasOwnProperty.call(message, "creatureSoldierTile"))
                 writer.uint32(/* id 7, wireType 0 =*/56).int32(message.creatureSoldierTile);
-            if (message.color != null && message.hasOwnProperty("color"))
+            if (message.color != null && Object.hasOwnProperty.call(message, "color"))
                 $root.RemoteFortressReader.ColorDefinition.encode(message.color, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
-            if (message.adultsize != null && message.hasOwnProperty("adultsize"))
+            if (message.adultsize != null && Object.hasOwnProperty.call(message, "adultsize"))
                 writer.uint32(/* id 9, wireType 0 =*/72).int32(message.adultsize);
             if (message.caste != null && message.caste.length)
                 for (var i = 0; i < message.caste.length; ++i)
@@ -23409,20 +33545,20 @@ $root.RemoteFortressReader = (function() {
         Army.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.id != null && message.hasOwnProperty("id"))
+            if (message.id != null && Object.hasOwnProperty.call(message, "id"))
                 writer.uint32(/* id 1, wireType 0 =*/8).int32(message.id);
-            if (message.posX != null && message.hasOwnProperty("posX"))
+            if (message.posX != null && Object.hasOwnProperty.call(message, "posX"))
                 writer.uint32(/* id 2, wireType 0 =*/16).int32(message.posX);
-            if (message.posY != null && message.hasOwnProperty("posY"))
+            if (message.posY != null && Object.hasOwnProperty.call(message, "posY"))
                 writer.uint32(/* id 3, wireType 0 =*/24).int32(message.posY);
-            if (message.posZ != null && message.hasOwnProperty("posZ"))
+            if (message.posZ != null && Object.hasOwnProperty.call(message, "posZ"))
                 writer.uint32(/* id 4, wireType 0 =*/32).int32(message.posZ);
-            if (message.leader != null && message.hasOwnProperty("leader"))
+            if (message.leader != null && Object.hasOwnProperty.call(message, "leader"))
                 $root.RemoteFortressReader.UnitDefinition.encode(message.leader, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
             if (message.members != null && message.members.length)
                 for (var i = 0; i < message.members.length; ++i)
                     $root.RemoteFortressReader.UnitDefinition.encode(message.members[i], writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
-            if (message.flags != null && message.hasOwnProperty("flags"))
+            if (message.flags != null && Object.hasOwnProperty.call(message, "flags"))
                 writer.uint32(/* id 7, wireType 0 =*/56).uint32(message.flags);
             return writer;
         };
@@ -23945,15 +34081,15 @@ $root.RemoteFortressReader = (function() {
         GrowthPrint.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.priority != null && message.hasOwnProperty("priority"))
+            if (message.priority != null && Object.hasOwnProperty.call(message, "priority"))
                 writer.uint32(/* id 1, wireType 0 =*/8).int32(message.priority);
-            if (message.color != null && message.hasOwnProperty("color"))
+            if (message.color != null && Object.hasOwnProperty.call(message, "color"))
                 writer.uint32(/* id 2, wireType 0 =*/16).int32(message.color);
-            if (message.timingStart != null && message.hasOwnProperty("timingStart"))
+            if (message.timingStart != null && Object.hasOwnProperty.call(message, "timingStart"))
                 writer.uint32(/* id 3, wireType 0 =*/24).int32(message.timingStart);
-            if (message.timingEnd != null && message.hasOwnProperty("timingEnd"))
+            if (message.timingEnd != null && Object.hasOwnProperty.call(message, "timingEnd"))
                 writer.uint32(/* id 4, wireType 0 =*/32).int32(message.timingEnd);
-            if (message.tile != null && message.hasOwnProperty("tile"))
+            if (message.tile != null && Object.hasOwnProperty.call(message, "tile"))
                 writer.uint32(/* id 5, wireType 0 =*/40).int32(message.tile);
             return writer;
         };
@@ -24321,38 +34457,38 @@ $root.RemoteFortressReader = (function() {
         TreeGrowth.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.index != null && message.hasOwnProperty("index"))
+            if (message.index != null && Object.hasOwnProperty.call(message, "index"))
                 writer.uint32(/* id 1, wireType 0 =*/8).int32(message.index);
-            if (message.id != null && message.hasOwnProperty("id"))
+            if (message.id != null && Object.hasOwnProperty.call(message, "id"))
                 writer.uint32(/* id 2, wireType 2 =*/18).string(message.id);
-            if (message.name != null && message.hasOwnProperty("name"))
+            if (message.name != null && Object.hasOwnProperty.call(message, "name"))
                 writer.uint32(/* id 3, wireType 2 =*/26).string(message.name);
-            if (message.mat != null && message.hasOwnProperty("mat"))
+            if (message.mat != null && Object.hasOwnProperty.call(message, "mat"))
                 $root.RemoteFortressReader.MatPair.encode(message.mat, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
             if (message.prints != null && message.prints.length)
                 for (var i = 0; i < message.prints.length; ++i)
                     $root.RemoteFortressReader.GrowthPrint.encode(message.prints[i], writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
-            if (message.timingStart != null && message.hasOwnProperty("timingStart"))
+            if (message.timingStart != null && Object.hasOwnProperty.call(message, "timingStart"))
                 writer.uint32(/* id 6, wireType 0 =*/48).int32(message.timingStart);
-            if (message.timingEnd != null && message.hasOwnProperty("timingEnd"))
+            if (message.timingEnd != null && Object.hasOwnProperty.call(message, "timingEnd"))
                 writer.uint32(/* id 7, wireType 0 =*/56).int32(message.timingEnd);
-            if (message.twigs != null && message.hasOwnProperty("twigs"))
+            if (message.twigs != null && Object.hasOwnProperty.call(message, "twigs"))
                 writer.uint32(/* id 8, wireType 0 =*/64).bool(message.twigs);
-            if (message.lightBranches != null && message.hasOwnProperty("lightBranches"))
+            if (message.lightBranches != null && Object.hasOwnProperty.call(message, "lightBranches"))
                 writer.uint32(/* id 9, wireType 0 =*/72).bool(message.lightBranches);
-            if (message.heavyBranches != null && message.hasOwnProperty("heavyBranches"))
+            if (message.heavyBranches != null && Object.hasOwnProperty.call(message, "heavyBranches"))
                 writer.uint32(/* id 10, wireType 0 =*/80).bool(message.heavyBranches);
-            if (message.trunk != null && message.hasOwnProperty("trunk"))
+            if (message.trunk != null && Object.hasOwnProperty.call(message, "trunk"))
                 writer.uint32(/* id 11, wireType 0 =*/88).bool(message.trunk);
-            if (message.roots != null && message.hasOwnProperty("roots"))
+            if (message.roots != null && Object.hasOwnProperty.call(message, "roots"))
                 writer.uint32(/* id 12, wireType 0 =*/96).bool(message.roots);
-            if (message.cap != null && message.hasOwnProperty("cap"))
+            if (message.cap != null && Object.hasOwnProperty.call(message, "cap"))
                 writer.uint32(/* id 13, wireType 0 =*/104).bool(message.cap);
-            if (message.sapling != null && message.hasOwnProperty("sapling"))
+            if (message.sapling != null && Object.hasOwnProperty.call(message, "sapling"))
                 writer.uint32(/* id 14, wireType 0 =*/112).bool(message.sapling);
-            if (message.trunkHeightStart != null && message.hasOwnProperty("trunkHeightStart"))
+            if (message.trunkHeightStart != null && Object.hasOwnProperty.call(message, "trunkHeightStart"))
                 writer.uint32(/* id 15, wireType 0 =*/120).int32(message.trunkHeightStart);
-            if (message.trunkHeightEnd != null && message.hasOwnProperty("trunkHeightEnd"))
+            if (message.trunkHeightEnd != null && Object.hasOwnProperty.call(message, "trunkHeightEnd"))
                 writer.uint32(/* id 16, wireType 0 =*/128).int32(message.trunkHeightEnd);
             return writer;
         };
@@ -24767,16 +34903,16 @@ $root.RemoteFortressReader = (function() {
         PlantRaw.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.index != null && message.hasOwnProperty("index"))
+            if (message.index != null && Object.hasOwnProperty.call(message, "index"))
                 writer.uint32(/* id 1, wireType 0 =*/8).int32(message.index);
-            if (message.id != null && message.hasOwnProperty("id"))
+            if (message.id != null && Object.hasOwnProperty.call(message, "id"))
                 writer.uint32(/* id 2, wireType 2 =*/18).string(message.id);
-            if (message.name != null && message.hasOwnProperty("name"))
+            if (message.name != null && Object.hasOwnProperty.call(message, "name"))
                 writer.uint32(/* id 3, wireType 2 =*/26).string(message.name);
             if (message.growths != null && message.growths.length)
                 for (var i = 0; i < message.growths.length; ++i)
                     $root.RemoteFortressReader.TreeGrowth.encode(message.growths[i], writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-            if (message.tile != null && message.hasOwnProperty("tile"))
+            if (message.tile != null && Object.hasOwnProperty.call(message, "tile"))
                 writer.uint32(/* id 5, wireType 0 =*/40).int32(message.tile);
             return writer;
         };
@@ -25254,11 +35390,11 @@ $root.RemoteFortressReader = (function() {
         ScreenTile.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.character != null && message.hasOwnProperty("character"))
+            if (message.character != null && Object.hasOwnProperty.call(message, "character"))
                 writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.character);
-            if (message.foreground != null && message.hasOwnProperty("foreground"))
+            if (message.foreground != null && Object.hasOwnProperty.call(message, "foreground"))
                 writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.foreground);
-            if (message.background != null && message.hasOwnProperty("background"))
+            if (message.background != null && Object.hasOwnProperty.call(message, "background"))
                 writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.background);
             return writer;
         };
@@ -25487,9 +35623,9 @@ $root.RemoteFortressReader = (function() {
         ScreenCapture.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.width != null && message.hasOwnProperty("width"))
+            if (message.width != null && Object.hasOwnProperty.call(message, "width"))
                 writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.width);
-            if (message.height != null && message.hasOwnProperty("height"))
+            if (message.height != null && Object.hasOwnProperty.call(message, "height"))
                 writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.height);
             if (message.tiles != null && message.tiles.length)
                 for (var i = 0; i < message.tiles.length; ++i)
@@ -25776,19 +35912,19 @@ $root.RemoteFortressReader = (function() {
         KeyboardEvent.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.type != null && message.hasOwnProperty("type"))
+            if (message.type != null && Object.hasOwnProperty.call(message, "type"))
                 writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.type);
-            if (message.which != null && message.hasOwnProperty("which"))
+            if (message.which != null && Object.hasOwnProperty.call(message, "which"))
                 writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.which);
-            if (message.state != null && message.hasOwnProperty("state"))
+            if (message.state != null && Object.hasOwnProperty.call(message, "state"))
                 writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.state);
-            if (message.scancode != null && message.hasOwnProperty("scancode"))
+            if (message.scancode != null && Object.hasOwnProperty.call(message, "scancode"))
                 writer.uint32(/* id 4, wireType 0 =*/32).uint32(message.scancode);
-            if (message.sym != null && message.hasOwnProperty("sym"))
+            if (message.sym != null && Object.hasOwnProperty.call(message, "sym"))
                 writer.uint32(/* id 5, wireType 0 =*/40).uint32(message.sym);
-            if (message.mod != null && message.hasOwnProperty("mod"))
+            if (message.mod != null && Object.hasOwnProperty.call(message, "mod"))
                 writer.uint32(/* id 6, wireType 0 =*/48).uint32(message.mod);
-            if (message.unicode != null && message.hasOwnProperty("unicode"))
+            if (message.unicode != null && Object.hasOwnProperty.call(message, "unicode"))
                 writer.uint32(/* id 7, wireType 0 =*/56).uint32(message.unicode);
             return writer;
         };
@@ -26052,7 +36188,7 @@ $root.RemoteFortressReader = (function() {
         DigCommand.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.designation != null && message.hasOwnProperty("designation"))
+            if (message.designation != null && Object.hasOwnProperty.call(message, "designation"))
                 writer.uint32(/* id 1, wireType 0 =*/8).int32(message.designation);
             if (message.locations != null && message.locations.length)
                 for (var i = 0; i < message.locations.length; ++i)
@@ -26311,7 +36447,7 @@ $root.RemoteFortressReader = (function() {
         SingleBool.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.Value != null && message.hasOwnProperty("Value"))
+            if (message.Value != null && Object.hasOwnProperty.call(message, "Value"))
                 writer.uint32(/* id 1, wireType 0 =*/8).bool(message.Value);
             return writer;
         };
@@ -26516,11 +36652,11 @@ $root.RemoteFortressReader = (function() {
         VersionInfo.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.dwarfFortressVersion != null && message.hasOwnProperty("dwarfFortressVersion"))
+            if (message.dwarfFortressVersion != null && Object.hasOwnProperty.call(message, "dwarfFortressVersion"))
                 writer.uint32(/* id 1, wireType 2 =*/10).string(message.dwarfFortressVersion);
-            if (message.dfhackVersion != null && message.hasOwnProperty("dfhackVersion"))
+            if (message.dfhackVersion != null && Object.hasOwnProperty.call(message, "dfhackVersion"))
                 writer.uint32(/* id 2, wireType 2 =*/18).string(message.dfhackVersion);
-            if (message.remoteFortressReaderVersion != null && message.hasOwnProperty("remoteFortressReaderVersion"))
+            if (message.remoteFortressReaderVersion != null && Object.hasOwnProperty.call(message, "remoteFortressReaderVersion"))
                 writer.uint32(/* id 3, wireType 2 =*/26).string(message.remoteFortressReaderVersion);
             return writer;
         };
@@ -26739,9 +36875,9 @@ $root.RemoteFortressReader = (function() {
         ListRequest.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.listStart != null && message.hasOwnProperty("listStart"))
+            if (message.listStart != null && Object.hasOwnProperty.call(message, "listStart"))
                 writer.uint32(/* id 1, wireType 0 =*/8).int32(message.listStart);
-            if (message.listEnd != null && message.hasOwnProperty("listEnd"))
+            if (message.listEnd != null && Object.hasOwnProperty.call(message, "listEnd"))
                 writer.uint32(/* id 2, wireType 0 =*/16).int32(message.listEnd);
             return writer;
         };
@@ -27039,29 +37175,29 @@ $root.RemoteFortressReader = (function() {
         Report.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.type != null && message.hasOwnProperty("type"))
+            if (message.type != null && Object.hasOwnProperty.call(message, "type"))
                 writer.uint32(/* id 1, wireType 0 =*/8).int32(message.type);
-            if (message.text != null && message.hasOwnProperty("text"))
+            if (message.text != null && Object.hasOwnProperty.call(message, "text"))
                 writer.uint32(/* id 2, wireType 2 =*/18).string(message.text);
-            if (message.color != null && message.hasOwnProperty("color"))
+            if (message.color != null && Object.hasOwnProperty.call(message, "color"))
                 $root.RemoteFortressReader.ColorDefinition.encode(message.color, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-            if (message.duration != null && message.hasOwnProperty("duration"))
+            if (message.duration != null && Object.hasOwnProperty.call(message, "duration"))
                 writer.uint32(/* id 4, wireType 0 =*/32).int32(message.duration);
-            if (message.continuation != null && message.hasOwnProperty("continuation"))
+            if (message.continuation != null && Object.hasOwnProperty.call(message, "continuation"))
                 writer.uint32(/* id 5, wireType 0 =*/40).bool(message.continuation);
-            if (message.unconscious != null && message.hasOwnProperty("unconscious"))
+            if (message.unconscious != null && Object.hasOwnProperty.call(message, "unconscious"))
                 writer.uint32(/* id 6, wireType 0 =*/48).bool(message.unconscious);
-            if (message.announcement != null && message.hasOwnProperty("announcement"))
+            if (message.announcement != null && Object.hasOwnProperty.call(message, "announcement"))
                 writer.uint32(/* id 7, wireType 0 =*/56).bool(message.announcement);
-            if (message.repeatCount != null && message.hasOwnProperty("repeatCount"))
+            if (message.repeatCount != null && Object.hasOwnProperty.call(message, "repeatCount"))
                 writer.uint32(/* id 8, wireType 0 =*/64).int32(message.repeatCount);
-            if (message.pos != null && message.hasOwnProperty("pos"))
+            if (message.pos != null && Object.hasOwnProperty.call(message, "pos"))
                 $root.RemoteFortressReader.Coord.encode(message.pos, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
-            if (message.id != null && message.hasOwnProperty("id"))
+            if (message.id != null && Object.hasOwnProperty.call(message, "id"))
                 writer.uint32(/* id 10, wireType 0 =*/80).int32(message.id);
-            if (message.year != null && message.hasOwnProperty("year"))
+            if (message.year != null && Object.hasOwnProperty.call(message, "year"))
                 writer.uint32(/* id 11, wireType 0 =*/88).int32(message.year);
-            if (message.time != null && message.hasOwnProperty("time"))
+            if (message.time != null && Object.hasOwnProperty.call(message, "time"))
                 writer.uint32(/* id 12, wireType 0 =*/96).int32(message.time);
             return writer;
         };
@@ -27597,9 +37733,9 @@ $root.RemoteFortressReader = (function() {
         ShapeDescriptior.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.id != null && message.hasOwnProperty("id"))
+            if (message.id != null && Object.hasOwnProperty.call(message, "id"))
                 writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
-            if (message.tile != null && message.hasOwnProperty("tile"))
+            if (message.tile != null && Object.hasOwnProperty.call(message, "tile"))
                 writer.uint32(/* id 2, wireType 0 =*/16).int32(message.tile);
             return writer;
         };
@@ -28078,15 +38214,15 @@ $root.RemoteFortressReader = (function() {
         ItemImprovement.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.material != null && message.hasOwnProperty("material"))
+            if (message.material != null && Object.hasOwnProperty.call(message, "material"))
                 $root.RemoteFortressReader.MatPair.encode(message.material, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-            if (message.type != null && message.hasOwnProperty("type"))
+            if (message.type != null && Object.hasOwnProperty.call(message, "type"))
                 writer.uint32(/* id 2, wireType 0 =*/16).int32(message.type);
-            if (message.shape != null && message.hasOwnProperty("shape"))
+            if (message.shape != null && Object.hasOwnProperty.call(message, "shape"))
                 writer.uint32(/* id 3, wireType 0 =*/24).int32(message.shape);
-            if (message.specificType != null && message.hasOwnProperty("specificType"))
+            if (message.specificType != null && Object.hasOwnProperty.call(message, "specificType"))
                 writer.uint32(/* id 4, wireType 0 =*/32).int32(message.specificType);
-            if (message.image != null && message.hasOwnProperty("image"))
+            if (message.image != null && Object.hasOwnProperty.call(message, "image"))
                 $root.RemoteFortressReader.ArtImage.encode(message.image, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
             return writer;
         };
@@ -28452,15 +38588,15 @@ $root.RemoteFortressReader = (function() {
         ArtImageElement.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.count != null && message.hasOwnProperty("count"))
+            if (message.count != null && Object.hasOwnProperty.call(message, "count"))
                 writer.uint32(/* id 1, wireType 0 =*/8).int32(message.count);
-            if (message.type != null && message.hasOwnProperty("type"))
+            if (message.type != null && Object.hasOwnProperty.call(message, "type"))
                 writer.uint32(/* id 2, wireType 0 =*/16).int32(message.type);
-            if (message.creatureItem != null && message.hasOwnProperty("creatureItem"))
+            if (message.creatureItem != null && Object.hasOwnProperty.call(message, "creatureItem"))
                 $root.RemoteFortressReader.MatPair.encode(message.creatureItem, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-            if (message.material != null && message.hasOwnProperty("material"))
+            if (message.material != null && Object.hasOwnProperty.call(message, "material"))
                 $root.RemoteFortressReader.MatPair.encode(message.material, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
-            if (message.id != null && message.hasOwnProperty("id"))
+            if (message.id != null && Object.hasOwnProperty.call(message, "id"))
                 writer.uint32(/* id 6, wireType 0 =*/48).int32(message.id);
             return writer;
         };
@@ -28771,13 +38907,13 @@ $root.RemoteFortressReader = (function() {
         ArtImageProperty.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.subject != null && message.hasOwnProperty("subject"))
+            if (message.subject != null && Object.hasOwnProperty.call(message, "subject"))
                 writer.uint32(/* id 1, wireType 0 =*/8).int32(message.subject);
-            if (message.object != null && message.hasOwnProperty("object"))
+            if (message.object != null && Object.hasOwnProperty.call(message, "object"))
                 writer.uint32(/* id 2, wireType 0 =*/16).int32(message.object);
-            if (message.verb != null && message.hasOwnProperty("verb"))
+            if (message.verb != null && Object.hasOwnProperty.call(message, "verb"))
                 writer.uint32(/* id 3, wireType 0 =*/24).int32(message.verb);
-            if (message.type != null && message.hasOwnProperty("type"))
+            if (message.type != null && Object.hasOwnProperty.call(message, "type"))
                 writer.uint32(/* id 4, wireType 0 =*/32).int32(message.type);
             return writer;
         };
@@ -29277,7 +39413,7 @@ $root.RemoteFortressReader = (function() {
             if (message.elements != null && message.elements.length)
                 for (var i = 0; i < message.elements.length; ++i)
                     $root.RemoteFortressReader.ArtImageElement.encode(message.elements[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-            if (message.id != null && message.hasOwnProperty("id"))
+            if (message.id != null && Object.hasOwnProperty.call(message, "id"))
                 $root.RemoteFortressReader.MatPair.encode(message.id, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
             if (message.properties != null && message.properties.length)
                 for (var i = 0; i < message.properties.length; ++i)
@@ -29651,33 +39787,33 @@ $root.RemoteFortressReader = (function() {
         Engraving.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.pos != null && message.hasOwnProperty("pos"))
+            if (message.pos != null && Object.hasOwnProperty.call(message, "pos"))
                 $root.RemoteFortressReader.Coord.encode(message.pos, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-            if (message.quality != null && message.hasOwnProperty("quality"))
+            if (message.quality != null && Object.hasOwnProperty.call(message, "quality"))
                 writer.uint32(/* id 2, wireType 0 =*/16).int32(message.quality);
-            if (message.tile != null && message.hasOwnProperty("tile"))
+            if (message.tile != null && Object.hasOwnProperty.call(message, "tile"))
                 writer.uint32(/* id 3, wireType 0 =*/24).int32(message.tile);
-            if (message.image != null && message.hasOwnProperty("image"))
+            if (message.image != null && Object.hasOwnProperty.call(message, "image"))
                 $root.RemoteFortressReader.ArtImage.encode(message.image, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-            if (message.floor != null && message.hasOwnProperty("floor"))
+            if (message.floor != null && Object.hasOwnProperty.call(message, "floor"))
                 writer.uint32(/* id 5, wireType 0 =*/40).bool(message.floor);
-            if (message.west != null && message.hasOwnProperty("west"))
+            if (message.west != null && Object.hasOwnProperty.call(message, "west"))
                 writer.uint32(/* id 6, wireType 0 =*/48).bool(message.west);
-            if (message.east != null && message.hasOwnProperty("east"))
+            if (message.east != null && Object.hasOwnProperty.call(message, "east"))
                 writer.uint32(/* id 7, wireType 0 =*/56).bool(message.east);
-            if (message.north != null && message.hasOwnProperty("north"))
+            if (message.north != null && Object.hasOwnProperty.call(message, "north"))
                 writer.uint32(/* id 8, wireType 0 =*/64).bool(message.north);
-            if (message.south != null && message.hasOwnProperty("south"))
+            if (message.south != null && Object.hasOwnProperty.call(message, "south"))
                 writer.uint32(/* id 9, wireType 0 =*/72).bool(message.south);
-            if (message.hidden != null && message.hasOwnProperty("hidden"))
+            if (message.hidden != null && Object.hasOwnProperty.call(message, "hidden"))
                 writer.uint32(/* id 10, wireType 0 =*/80).bool(message.hidden);
-            if (message.northwest != null && message.hasOwnProperty("northwest"))
+            if (message.northwest != null && Object.hasOwnProperty.call(message, "northwest"))
                 writer.uint32(/* id 11, wireType 0 =*/88).bool(message.northwest);
-            if (message.northeast != null && message.hasOwnProperty("northeast"))
+            if (message.northeast != null && Object.hasOwnProperty.call(message, "northeast"))
                 writer.uint32(/* id 12, wireType 0 =*/96).bool(message.northeast);
-            if (message.southwest != null && message.hasOwnProperty("southwest"))
+            if (message.southwest != null && Object.hasOwnProperty.call(message, "southwest"))
                 writer.uint32(/* id 13, wireType 0 =*/104).bool(message.southwest);
-            if (message.southeast != null && message.hasOwnProperty("southeast"))
+            if (message.southeast != null && Object.hasOwnProperty.call(message, "southeast"))
                 writer.uint32(/* id 14, wireType 0 =*/112).bool(message.southeast);
             return writer;
         };
@@ -30245,25 +40381,25 @@ $root.RemoteFortressReader = (function() {
         FlowInfo.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.index != null && message.hasOwnProperty("index"))
+            if (message.index != null && Object.hasOwnProperty.call(message, "index"))
                 writer.uint32(/* id 1, wireType 0 =*/8).int32(message.index);
-            if (message.type != null && message.hasOwnProperty("type"))
+            if (message.type != null && Object.hasOwnProperty.call(message, "type"))
                 writer.uint32(/* id 2, wireType 0 =*/16).int32(message.type);
-            if (message.density != null && message.hasOwnProperty("density"))
+            if (message.density != null && Object.hasOwnProperty.call(message, "density"))
                 writer.uint32(/* id 3, wireType 0 =*/24).int32(message.density);
-            if (message.pos != null && message.hasOwnProperty("pos"))
+            if (message.pos != null && Object.hasOwnProperty.call(message, "pos"))
                 $root.RemoteFortressReader.Coord.encode(message.pos, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-            if (message.dest != null && message.hasOwnProperty("dest"))
+            if (message.dest != null && Object.hasOwnProperty.call(message, "dest"))
                 $root.RemoteFortressReader.Coord.encode(message.dest, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
-            if (message.expanding != null && message.hasOwnProperty("expanding"))
+            if (message.expanding != null && Object.hasOwnProperty.call(message, "expanding"))
                 writer.uint32(/* id 6, wireType 0 =*/48).bool(message.expanding);
-            if (message.reuse != null && message.hasOwnProperty("reuse"))
+            if (message.reuse != null && Object.hasOwnProperty.call(message, "reuse"))
                 writer.uint32(/* id 7, wireType 0 =*/56).bool(message.reuse);
-            if (message.guideId != null && message.hasOwnProperty("guideId"))
+            if (message.guideId != null && Object.hasOwnProperty.call(message, "guideId"))
                 writer.uint32(/* id 8, wireType 0 =*/64).int32(message.guideId);
-            if (message.material != null && message.hasOwnProperty("material"))
+            if (message.material != null && Object.hasOwnProperty.call(message, "material"))
                 $root.RemoteFortressReader.MatPair.encode(message.material, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
-            if (message.item != null && message.hasOwnProperty("item"))
+            if (message.item != null && Object.hasOwnProperty.call(message, "item"))
                 $root.RemoteFortressReader.MatPair.encode(message.item, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
             return writer;
         };
@@ -30657,9 +40793,9 @@ $root.RemoteFortressReader = (function() {
         Wave.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.dest != null && message.hasOwnProperty("dest"))
+            if (message.dest != null && Object.hasOwnProperty.call(message, "dest"))
                 $root.RemoteFortressReader.Coord.encode(message.dest, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-            if (message.pos != null && message.hasOwnProperty("pos"))
+            if (message.pos != null && Object.hasOwnProperty.call(message, "pos"))
                 $root.RemoteFortressReader.Coord.encode(message.pos, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
             return writer;
         };
@@ -30952,23 +41088,23 @@ $root.ItemdefInstrument = (function() {
         InstrumentFlags.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.indefinitePitch != null && message.hasOwnProperty("indefinitePitch"))
+            if (message.indefinitePitch != null && Object.hasOwnProperty.call(message, "indefinitePitch"))
                 writer.uint32(/* id 1, wireType 0 =*/8).bool(message.indefinitePitch);
-            if (message.placedAsBuilding != null && message.hasOwnProperty("placedAsBuilding"))
+            if (message.placedAsBuilding != null && Object.hasOwnProperty.call(message, "placedAsBuilding"))
                 writer.uint32(/* id 2, wireType 0 =*/16).bool(message.placedAsBuilding);
-            if (message.metalMat != null && message.hasOwnProperty("metalMat"))
+            if (message.metalMat != null && Object.hasOwnProperty.call(message, "metalMat"))
                 writer.uint32(/* id 3, wireType 0 =*/24).bool(message.metalMat);
-            if (message.stoneMat != null && message.hasOwnProperty("stoneMat"))
+            if (message.stoneMat != null && Object.hasOwnProperty.call(message, "stoneMat"))
                 writer.uint32(/* id 4, wireType 0 =*/32).bool(message.stoneMat);
-            if (message.woodMat != null && message.hasOwnProperty("woodMat"))
+            if (message.woodMat != null && Object.hasOwnProperty.call(message, "woodMat"))
                 writer.uint32(/* id 5, wireType 0 =*/40).bool(message.woodMat);
-            if (message.glassMat != null && message.hasOwnProperty("glassMat"))
+            if (message.glassMat != null && Object.hasOwnProperty.call(message, "glassMat"))
                 writer.uint32(/* id 6, wireType 0 =*/48).bool(message.glassMat);
-            if (message.ceramicMat != null && message.hasOwnProperty("ceramicMat"))
+            if (message.ceramicMat != null && Object.hasOwnProperty.call(message, "ceramicMat"))
                 writer.uint32(/* id 7, wireType 0 =*/56).bool(message.ceramicMat);
-            if (message.shellMat != null && message.hasOwnProperty("shellMat"))
+            if (message.shellMat != null && Object.hasOwnProperty.call(message, "shellMat"))
                 writer.uint32(/* id 8, wireType 0 =*/64).bool(message.shellMat);
-            if (message.boneMat != null && message.hasOwnProperty("boneMat"))
+            if (message.boneMat != null && Object.hasOwnProperty.call(message, "boneMat"))
                 writer.uint32(/* id 9, wireType 0 =*/72).bool(message.boneMat);
             return writer;
         };
@@ -31377,13 +41513,13 @@ $root.ItemdefInstrument = (function() {
         InstrumentPiece.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.type != null && message.hasOwnProperty("type"))
+            if (message.type != null && Object.hasOwnProperty.call(message, "type"))
                 writer.uint32(/* id 1, wireType 2 =*/10).string(message.type);
-            if (message.id != null && message.hasOwnProperty("id"))
+            if (message.id != null && Object.hasOwnProperty.call(message, "id"))
                 writer.uint32(/* id 2, wireType 2 =*/18).string(message.id);
-            if (message.name != null && message.hasOwnProperty("name"))
+            if (message.name != null && Object.hasOwnProperty.call(message, "name"))
                 writer.uint32(/* id 3, wireType 2 =*/26).string(message.name);
-            if (message.namePlural != null && message.hasOwnProperty("namePlural"))
+            if (message.namePlural != null && Object.hasOwnProperty.call(message, "namePlural"))
                 writer.uint32(/* id 4, wireType 2 =*/34).string(message.namePlural);
             return writer;
         };
@@ -31613,9 +41749,9 @@ $root.ItemdefInstrument = (function() {
         InstrumentRegister.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.pitchRangeMin != null && message.hasOwnProperty("pitchRangeMin"))
+            if (message.pitchRangeMin != null && Object.hasOwnProperty.call(message, "pitchRangeMin"))
                 writer.uint32(/* id 1, wireType 0 =*/8).int32(message.pitchRangeMin);
-            if (message.pitchRangeMax != null && message.hasOwnProperty("pitchRangeMax"))
+            if (message.pitchRangeMax != null && Object.hasOwnProperty.call(message, "pitchRangeMax"))
                 writer.uint32(/* id 2, wireType 0 =*/16).int32(message.pitchRangeMax);
             return writer;
         };
@@ -31986,24 +42122,24 @@ $root.ItemdefInstrument = (function() {
         InstrumentDef.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.flags != null && message.hasOwnProperty("flags"))
+            if (message.flags != null && Object.hasOwnProperty.call(message, "flags"))
                 $root.ItemdefInstrument.InstrumentFlags.encode(message.flags, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-            if (message.size != null && message.hasOwnProperty("size"))
+            if (message.size != null && Object.hasOwnProperty.call(message, "size"))
                 writer.uint32(/* id 2, wireType 0 =*/16).int32(message.size);
-            if (message.value != null && message.hasOwnProperty("value"))
+            if (message.value != null && Object.hasOwnProperty.call(message, "value"))
                 writer.uint32(/* id 3, wireType 0 =*/24).int32(message.value);
-            if (message.materialSize != null && message.hasOwnProperty("materialSize"))
+            if (message.materialSize != null && Object.hasOwnProperty.call(message, "materialSize"))
                 writer.uint32(/* id 4, wireType 0 =*/32).int32(message.materialSize);
             if (message.pieces != null && message.pieces.length)
                 for (var i = 0; i < message.pieces.length; ++i)
                     $root.ItemdefInstrument.InstrumentPiece.encode(message.pieces[i], writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
-            if (message.pitchRangeMin != null && message.hasOwnProperty("pitchRangeMin"))
+            if (message.pitchRangeMin != null && Object.hasOwnProperty.call(message, "pitchRangeMin"))
                 writer.uint32(/* id 6, wireType 0 =*/48).int32(message.pitchRangeMin);
-            if (message.pitchRangeMax != null && message.hasOwnProperty("pitchRangeMax"))
+            if (message.pitchRangeMax != null && Object.hasOwnProperty.call(message, "pitchRangeMax"))
                 writer.uint32(/* id 7, wireType 0 =*/56).int32(message.pitchRangeMax);
-            if (message.volumeMbMin != null && message.hasOwnProperty("volumeMbMin"))
+            if (message.volumeMbMin != null && Object.hasOwnProperty.call(message, "volumeMbMin"))
                 writer.uint32(/* id 8, wireType 0 =*/64).int32(message.volumeMbMin);
-            if (message.volumeMbMax != null && message.hasOwnProperty("volumeMbMax"))
+            if (message.volumeMbMax != null && Object.hasOwnProperty.call(message, "volumeMbMax"))
                 writer.uint32(/* id 9, wireType 0 =*/72).int32(message.volumeMbMax);
             if (message.soundProduction != null && message.soundProduction.length)
                 for (var i = 0; i < message.soundProduction.length; ++i)
@@ -32032,7 +42168,7 @@ $root.ItemdefInstrument = (function() {
             if (message.registers != null && message.registers.length)
                 for (var i = 0; i < message.registers.length; ++i)
                     $root.ItemdefInstrument.InstrumentRegister.encode(message.registers[i], writer.uint32(/* id 18, wireType 2 =*/146).fork()).ldelim();
-            if (message.description != null && message.hasOwnProperty("description"))
+            if (message.description != null && Object.hasOwnProperty.call(message, "description"))
                 writer.uint32(/* id 19, wireType 2 =*/154).string(message.description);
             return writer;
         };
@@ -32742,35 +42878,95 @@ $root.ItemdefInstrument = (function() {
     return ItemdefInstrument;
 })();
 
-$root.dfproto = (function() {
+$root.isoworldremote = (function() {
 
     /**
-     * Namespace dfproto.
-     * @exports dfproto
+     * Namespace isoworldremote.
+     * @exports isoworldremote
      * @namespace
      */
-    var dfproto = {};
+    var isoworldremote = {};
 
-    dfproto.RenameSquadIn = (function() {
+    /**
+     * BasicMaterial enum.
+     * @name isoworldremote.BasicMaterial
+     * @enum {string}
+     * @property {number} AIR=0 AIR value
+     * @property {number} OTHER=1 OTHER value
+     * @property {number} INORGANIC=2 INORGANIC value
+     * @property {number} LIQUID=3 LIQUID value
+     * @property {number} PLANT=4 PLANT value
+     * @property {number} WOOD=5 WOOD value
+     */
+    isoworldremote.BasicMaterial = (function() {
+        var valuesById = {}, values = Object.create(valuesById);
+        values[valuesById[0] = "AIR"] = 0;
+        values[valuesById[1] = "OTHER"] = 1;
+        values[valuesById[2] = "INORGANIC"] = 2;
+        values[valuesById[3] = "LIQUID"] = 3;
+        values[valuesById[4] = "PLANT"] = 4;
+        values[valuesById[5] = "WOOD"] = 5;
+        return values;
+    })();
+
+    /**
+     * LiquidType enum.
+     * @name isoworldremote.LiquidType
+     * @enum {string}
+     * @property {number} ICE=0 ICE value
+     * @property {number} WATER=1 WATER value
+     * @property {number} MAGMA=2 MAGMA value
+     */
+    isoworldremote.LiquidType = (function() {
+        var valuesById = {}, values = Object.create(valuesById);
+        values[valuesById[0] = "ICE"] = 0;
+        values[valuesById[1] = "WATER"] = 1;
+        values[valuesById[2] = "MAGMA"] = 2;
+        return values;
+    })();
+
+    /**
+     * BasicShape enum.
+     * @name isoworldremote.BasicShape
+     * @enum {string}
+     * @property {number} NONE=0 NONE value
+     * @property {number} OPEN=1 OPEN value
+     * @property {number} WALL=3 WALL value
+     * @property {number} FLOOR=4 FLOOR value
+     * @property {number} RAMP_UP=5 RAMP_UP value
+     * @property {number} RAMP_DOWN=6 RAMP_DOWN value
+     */
+    isoworldremote.BasicShape = (function() {
+        var valuesById = {}, values = Object.create(valuesById);
+        values[valuesById[0] = "NONE"] = 0;
+        values[valuesById[1] = "OPEN"] = 1;
+        values[valuesById[3] = "WALL"] = 3;
+        values[valuesById[4] = "FLOOR"] = 4;
+        values[valuesById[5] = "RAMP_UP"] = 5;
+        values[valuesById[6] = "RAMP_DOWN"] = 6;
+        return values;
+    })();
+
+    isoworldremote.ColorDefinition = (function() {
 
         /**
-         * Properties of a RenameSquadIn.
-         * @memberof dfproto
-         * @interface IRenameSquadIn
-         * @property {number} squadId RenameSquadIn squadId
-         * @property {string|null} [nickname] RenameSquadIn nickname
-         * @property {string|null} [alias] RenameSquadIn alias
+         * Properties of a ColorDefinition.
+         * @memberof isoworldremote
+         * @interface IColorDefinition
+         * @property {number} red ColorDefinition red
+         * @property {number} green ColorDefinition green
+         * @property {number} blue ColorDefinition blue
          */
 
         /**
-         * Constructs a new RenameSquadIn.
-         * @memberof dfproto
-         * @classdesc Represents a RenameSquadIn.
-         * @implements IRenameSquadIn
+         * Constructs a new ColorDefinition.
+         * @memberof isoworldremote
+         * @classdesc Represents a ColorDefinition.
+         * @implements IColorDefinition
          * @constructor
-         * @param {dfproto.IRenameSquadIn=} [properties] Properties to set
+         * @param {isoworldremote.IColorDefinition=} [properties] Properties to set
          */
-        function RenameSquadIn(properties) {
+        function ColorDefinition(properties) {
             if (properties)
                 for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
@@ -32778,231 +42974,236 @@ $root.dfproto = (function() {
         }
 
         /**
-         * RenameSquadIn squadId.
-         * @member {number} squadId
-         * @memberof dfproto.RenameSquadIn
+         * ColorDefinition red.
+         * @member {number} red
+         * @memberof isoworldremote.ColorDefinition
          * @instance
          */
-        RenameSquadIn.prototype.squadId = 0;
+        ColorDefinition.prototype.red = 0;
 
         /**
-         * RenameSquadIn nickname.
-         * @member {string} nickname
-         * @memberof dfproto.RenameSquadIn
+         * ColorDefinition green.
+         * @member {number} green
+         * @memberof isoworldremote.ColorDefinition
          * @instance
          */
-        RenameSquadIn.prototype.nickname = "";
+        ColorDefinition.prototype.green = 0;
 
         /**
-         * RenameSquadIn alias.
-         * @member {string} alias
-         * @memberof dfproto.RenameSquadIn
+         * ColorDefinition blue.
+         * @member {number} blue
+         * @memberof isoworldremote.ColorDefinition
          * @instance
          */
-        RenameSquadIn.prototype.alias = "";
+        ColorDefinition.prototype.blue = 0;
 
         /**
-         * Creates a new RenameSquadIn instance using the specified properties.
+         * Creates a new ColorDefinition instance using the specified properties.
          * @function create
-         * @memberof dfproto.RenameSquadIn
+         * @memberof isoworldremote.ColorDefinition
          * @static
-         * @param {dfproto.IRenameSquadIn=} [properties] Properties to set
-         * @returns {dfproto.RenameSquadIn} RenameSquadIn instance
+         * @param {isoworldremote.IColorDefinition=} [properties] Properties to set
+         * @returns {isoworldremote.ColorDefinition} ColorDefinition instance
          */
-        RenameSquadIn.create = function create(properties) {
-            return new RenameSquadIn(properties);
+        ColorDefinition.create = function create(properties) {
+            return new ColorDefinition(properties);
         };
 
         /**
-         * Encodes the specified RenameSquadIn message. Does not implicitly {@link dfproto.RenameSquadIn.verify|verify} messages.
+         * Encodes the specified ColorDefinition message. Does not implicitly {@link isoworldremote.ColorDefinition.verify|verify} messages.
          * @function encode
-         * @memberof dfproto.RenameSquadIn
+         * @memberof isoworldremote.ColorDefinition
          * @static
-         * @param {dfproto.IRenameSquadIn} message RenameSquadIn message or plain object to encode
+         * @param {isoworldremote.IColorDefinition} message ColorDefinition message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        RenameSquadIn.encode = function encode(message, writer) {
+        ColorDefinition.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            writer.uint32(/* id 1, wireType 0 =*/8).int32(message.squadId);
-            if (message.nickname != null && message.hasOwnProperty("nickname"))
-                writer.uint32(/* id 2, wireType 2 =*/18).string(message.nickname);
-            if (message.alias != null && message.hasOwnProperty("alias"))
-                writer.uint32(/* id 3, wireType 2 =*/26).string(message.alias);
+            writer.uint32(/* id 1, wireType 0 =*/8).int32(message.red);
+            writer.uint32(/* id 2, wireType 0 =*/16).int32(message.green);
+            writer.uint32(/* id 3, wireType 0 =*/24).int32(message.blue);
             return writer;
         };
 
         /**
-         * Encodes the specified RenameSquadIn message, length delimited. Does not implicitly {@link dfproto.RenameSquadIn.verify|verify} messages.
+         * Encodes the specified ColorDefinition message, length delimited. Does not implicitly {@link isoworldremote.ColorDefinition.verify|verify} messages.
          * @function encodeDelimited
-         * @memberof dfproto.RenameSquadIn
+         * @memberof isoworldremote.ColorDefinition
          * @static
-         * @param {dfproto.IRenameSquadIn} message RenameSquadIn message or plain object to encode
+         * @param {isoworldremote.IColorDefinition} message ColorDefinition message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        RenameSquadIn.encodeDelimited = function encodeDelimited(message, writer) {
+        ColorDefinition.encodeDelimited = function encodeDelimited(message, writer) {
             return this.encode(message, writer).ldelim();
         };
 
         /**
-         * Decodes a RenameSquadIn message from the specified reader or buffer.
+         * Decodes a ColorDefinition message from the specified reader or buffer.
          * @function decode
-         * @memberof dfproto.RenameSquadIn
+         * @memberof isoworldremote.ColorDefinition
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {dfproto.RenameSquadIn} RenameSquadIn
+         * @returns {isoworldremote.ColorDefinition} ColorDefinition
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        RenameSquadIn.decode = function decode(reader, length) {
+        ColorDefinition.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.dfproto.RenameSquadIn();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.isoworldremote.ColorDefinition();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.squadId = reader.int32();
+                    message.red = reader.int32();
                     break;
                 case 2:
-                    message.nickname = reader.string();
+                    message.green = reader.int32();
                     break;
                 case 3:
-                    message.alias = reader.string();
+                    message.blue = reader.int32();
                     break;
                 default:
                     reader.skipType(tag & 7);
                     break;
                 }
             }
-            if (!message.hasOwnProperty("squadId"))
-                throw $util.ProtocolError("missing required 'squadId'", { instance: message });
+            if (!message.hasOwnProperty("red"))
+                throw $util.ProtocolError("missing required 'red'", { instance: message });
+            if (!message.hasOwnProperty("green"))
+                throw $util.ProtocolError("missing required 'green'", { instance: message });
+            if (!message.hasOwnProperty("blue"))
+                throw $util.ProtocolError("missing required 'blue'", { instance: message });
             return message;
         };
 
         /**
-         * Decodes a RenameSquadIn message from the specified reader or buffer, length delimited.
+         * Decodes a ColorDefinition message from the specified reader or buffer, length delimited.
          * @function decodeDelimited
-         * @memberof dfproto.RenameSquadIn
+         * @memberof isoworldremote.ColorDefinition
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {dfproto.RenameSquadIn} RenameSquadIn
+         * @returns {isoworldremote.ColorDefinition} ColorDefinition
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        RenameSquadIn.decodeDelimited = function decodeDelimited(reader) {
+        ColorDefinition.decodeDelimited = function decodeDelimited(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
         };
 
         /**
-         * Verifies a RenameSquadIn message.
+         * Verifies a ColorDefinition message.
          * @function verify
-         * @memberof dfproto.RenameSquadIn
+         * @memberof isoworldremote.ColorDefinition
          * @static
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        RenameSquadIn.verify = function verify(message) {
+        ColorDefinition.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
-            if (!$util.isInteger(message.squadId))
-                return "squadId: integer expected";
-            if (message.nickname != null && message.hasOwnProperty("nickname"))
-                if (!$util.isString(message.nickname))
-                    return "nickname: string expected";
-            if (message.alias != null && message.hasOwnProperty("alias"))
-                if (!$util.isString(message.alias))
-                    return "alias: string expected";
+            if (!$util.isInteger(message.red))
+                return "red: integer expected";
+            if (!$util.isInteger(message.green))
+                return "green: integer expected";
+            if (!$util.isInteger(message.blue))
+                return "blue: integer expected";
             return null;
         };
 
         /**
-         * Creates a RenameSquadIn message from a plain object. Also converts values to their respective internal types.
+         * Creates a ColorDefinition message from a plain object. Also converts values to their respective internal types.
          * @function fromObject
-         * @memberof dfproto.RenameSquadIn
+         * @memberof isoworldremote.ColorDefinition
          * @static
          * @param {Object.<string,*>} object Plain object
-         * @returns {dfproto.RenameSquadIn} RenameSquadIn
+         * @returns {isoworldremote.ColorDefinition} ColorDefinition
          */
-        RenameSquadIn.fromObject = function fromObject(object) {
-            if (object instanceof $root.dfproto.RenameSquadIn)
+        ColorDefinition.fromObject = function fromObject(object) {
+            if (object instanceof $root.isoworldremote.ColorDefinition)
                 return object;
-            var message = new $root.dfproto.RenameSquadIn();
-            if (object.squadId != null)
-                message.squadId = object.squadId | 0;
-            if (object.nickname != null)
-                message.nickname = String(object.nickname);
-            if (object.alias != null)
-                message.alias = String(object.alias);
+            var message = new $root.isoworldremote.ColorDefinition();
+            if (object.red != null)
+                message.red = object.red | 0;
+            if (object.green != null)
+                message.green = object.green | 0;
+            if (object.blue != null)
+                message.blue = object.blue | 0;
             return message;
         };
 
         /**
-         * Creates a plain object from a RenameSquadIn message. Also converts values to other types if specified.
+         * Creates a plain object from a ColorDefinition message. Also converts values to other types if specified.
          * @function toObject
-         * @memberof dfproto.RenameSquadIn
+         * @memberof isoworldremote.ColorDefinition
          * @static
-         * @param {dfproto.RenameSquadIn} message RenameSquadIn
+         * @param {isoworldremote.ColorDefinition} message ColorDefinition
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        RenameSquadIn.toObject = function toObject(message, options) {
+        ColorDefinition.toObject = function toObject(message, options) {
             if (!options)
                 options = {};
             var object = {};
             if (options.defaults) {
-                object.squadId = 0;
-                object.nickname = "";
-                object.alias = "";
+                object.red = 0;
+                object.green = 0;
+                object.blue = 0;
             }
-            if (message.squadId != null && message.hasOwnProperty("squadId"))
-                object.squadId = message.squadId;
-            if (message.nickname != null && message.hasOwnProperty("nickname"))
-                object.nickname = message.nickname;
-            if (message.alias != null && message.hasOwnProperty("alias"))
-                object.alias = message.alias;
+            if (message.red != null && message.hasOwnProperty("red"))
+                object.red = message.red;
+            if (message.green != null && message.hasOwnProperty("green"))
+                object.green = message.green;
+            if (message.blue != null && message.hasOwnProperty("blue"))
+                object.blue = message.blue;
             return object;
         };
 
         /**
-         * Converts this RenameSquadIn to JSON.
+         * Converts this ColorDefinition to JSON.
          * @function toJSON
-         * @memberof dfproto.RenameSquadIn
+         * @memberof isoworldremote.ColorDefinition
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        RenameSquadIn.prototype.toJSON = function toJSON() {
+        ColorDefinition.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
-        return RenameSquadIn;
+        return ColorDefinition;
     })();
 
-    dfproto.RenameUnitIn = (function() {
+    isoworldremote.EmbarkTileLayer = (function() {
 
         /**
-         * Properties of a RenameUnitIn.
-         * @memberof dfproto
-         * @interface IRenameUnitIn
-         * @property {number} unitId RenameUnitIn unitId
-         * @property {string|null} [nickname] RenameUnitIn nickname
-         * @property {string|null} [profession] RenameUnitIn profession
+         * Properties of an EmbarkTileLayer.
+         * @memberof isoworldremote
+         * @interface IEmbarkTileLayer
+         * @property {Array.<isoworldremote.BasicMaterial>|null} [matTypeTable] EmbarkTileLayer matTypeTable
+         * @property {Array.<number>|null} [matSubtypeTable] EmbarkTileLayer matSubtypeTable
+         * @property {Array.<isoworldremote.BasicShape>|null} [tileShapeTable] EmbarkTileLayer tileShapeTable
+         * @property {Array.<isoworldremote.IColorDefinition>|null} [tileColorTable] EmbarkTileLayer tileColorTable
          */
 
         /**
-         * Constructs a new RenameUnitIn.
-         * @memberof dfproto
-         * @classdesc Represents a RenameUnitIn.
-         * @implements IRenameUnitIn
+         * Constructs a new EmbarkTileLayer.
+         * @memberof isoworldremote
+         * @classdesc Represents an EmbarkTileLayer.
+         * @implements IEmbarkTileLayer
          * @constructor
-         * @param {dfproto.IRenameUnitIn=} [properties] Properties to set
+         * @param {isoworldremote.IEmbarkTileLayer=} [properties] Properties to set
          */
-        function RenameUnitIn(properties) {
+        function EmbarkTileLayer(properties) {
+            this.matTypeTable = [];
+            this.matSubtypeTable = [];
+            this.tileShapeTable = [];
+            this.tileColorTable = [];
             if (properties)
                 for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
@@ -33010,230 +43211,752 @@ $root.dfproto = (function() {
         }
 
         /**
-         * RenameUnitIn unitId.
-         * @member {number} unitId
-         * @memberof dfproto.RenameUnitIn
+         * EmbarkTileLayer matTypeTable.
+         * @member {Array.<isoworldremote.BasicMaterial>} matTypeTable
+         * @memberof isoworldremote.EmbarkTileLayer
          * @instance
          */
-        RenameUnitIn.prototype.unitId = 0;
+        EmbarkTileLayer.prototype.matTypeTable = $util.emptyArray;
 
         /**
-         * RenameUnitIn nickname.
-         * @member {string} nickname
-         * @memberof dfproto.RenameUnitIn
+         * EmbarkTileLayer matSubtypeTable.
+         * @member {Array.<number>} matSubtypeTable
+         * @memberof isoworldremote.EmbarkTileLayer
          * @instance
          */
-        RenameUnitIn.prototype.nickname = "";
+        EmbarkTileLayer.prototype.matSubtypeTable = $util.emptyArray;
 
         /**
-         * RenameUnitIn profession.
-         * @member {string} profession
-         * @memberof dfproto.RenameUnitIn
+         * EmbarkTileLayer tileShapeTable.
+         * @member {Array.<isoworldremote.BasicShape>} tileShapeTable
+         * @memberof isoworldremote.EmbarkTileLayer
          * @instance
          */
-        RenameUnitIn.prototype.profession = "";
+        EmbarkTileLayer.prototype.tileShapeTable = $util.emptyArray;
 
         /**
-         * Creates a new RenameUnitIn instance using the specified properties.
+         * EmbarkTileLayer tileColorTable.
+         * @member {Array.<isoworldremote.IColorDefinition>} tileColorTable
+         * @memberof isoworldremote.EmbarkTileLayer
+         * @instance
+         */
+        EmbarkTileLayer.prototype.tileColorTable = $util.emptyArray;
+
+        /**
+         * Creates a new EmbarkTileLayer instance using the specified properties.
          * @function create
-         * @memberof dfproto.RenameUnitIn
+         * @memberof isoworldremote.EmbarkTileLayer
          * @static
-         * @param {dfproto.IRenameUnitIn=} [properties] Properties to set
-         * @returns {dfproto.RenameUnitIn} RenameUnitIn instance
+         * @param {isoworldremote.IEmbarkTileLayer=} [properties] Properties to set
+         * @returns {isoworldremote.EmbarkTileLayer} EmbarkTileLayer instance
          */
-        RenameUnitIn.create = function create(properties) {
-            return new RenameUnitIn(properties);
+        EmbarkTileLayer.create = function create(properties) {
+            return new EmbarkTileLayer(properties);
         };
 
         /**
-         * Encodes the specified RenameUnitIn message. Does not implicitly {@link dfproto.RenameUnitIn.verify|verify} messages.
+         * Encodes the specified EmbarkTileLayer message. Does not implicitly {@link isoworldremote.EmbarkTileLayer.verify|verify} messages.
          * @function encode
-         * @memberof dfproto.RenameUnitIn
+         * @memberof isoworldremote.EmbarkTileLayer
          * @static
-         * @param {dfproto.IRenameUnitIn} message RenameUnitIn message or plain object to encode
+         * @param {isoworldremote.IEmbarkTileLayer} message EmbarkTileLayer message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        RenameUnitIn.encode = function encode(message, writer) {
+        EmbarkTileLayer.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            writer.uint32(/* id 1, wireType 0 =*/8).int32(message.unitId);
-            if (message.nickname != null && message.hasOwnProperty("nickname"))
-                writer.uint32(/* id 2, wireType 2 =*/18).string(message.nickname);
-            if (message.profession != null && message.hasOwnProperty("profession"))
-                writer.uint32(/* id 3, wireType 2 =*/26).string(message.profession);
+            if (message.matTypeTable != null && message.matTypeTable.length) {
+                writer.uint32(/* id 4, wireType 2 =*/34).fork();
+                for (var i = 0; i < message.matTypeTable.length; ++i)
+                    writer.int32(message.matTypeTable[i]);
+                writer.ldelim();
+            }
+            if (message.matSubtypeTable != null && message.matSubtypeTable.length) {
+                writer.uint32(/* id 5, wireType 2 =*/42).fork();
+                for (var i = 0; i < message.matSubtypeTable.length; ++i)
+                    writer.int32(message.matSubtypeTable[i]);
+                writer.ldelim();
+            }
+            if (message.tileShapeTable != null && message.tileShapeTable.length) {
+                writer.uint32(/* id 6, wireType 2 =*/50).fork();
+                for (var i = 0; i < message.tileShapeTable.length; ++i)
+                    writer.int32(message.tileShapeTable[i]);
+                writer.ldelim();
+            }
+            if (message.tileColorTable != null && message.tileColorTable.length)
+                for (var i = 0; i < message.tileColorTable.length; ++i)
+                    $root.isoworldremote.ColorDefinition.encode(message.tileColorTable[i], writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
             return writer;
         };
 
         /**
-         * Encodes the specified RenameUnitIn message, length delimited. Does not implicitly {@link dfproto.RenameUnitIn.verify|verify} messages.
+         * Encodes the specified EmbarkTileLayer message, length delimited. Does not implicitly {@link isoworldremote.EmbarkTileLayer.verify|verify} messages.
          * @function encodeDelimited
-         * @memberof dfproto.RenameUnitIn
+         * @memberof isoworldremote.EmbarkTileLayer
          * @static
-         * @param {dfproto.IRenameUnitIn} message RenameUnitIn message or plain object to encode
+         * @param {isoworldremote.IEmbarkTileLayer} message EmbarkTileLayer message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        RenameUnitIn.encodeDelimited = function encodeDelimited(message, writer) {
+        EmbarkTileLayer.encodeDelimited = function encodeDelimited(message, writer) {
             return this.encode(message, writer).ldelim();
         };
 
         /**
-         * Decodes a RenameUnitIn message from the specified reader or buffer.
+         * Decodes an EmbarkTileLayer message from the specified reader or buffer.
          * @function decode
-         * @memberof dfproto.RenameUnitIn
+         * @memberof isoworldremote.EmbarkTileLayer
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {dfproto.RenameUnitIn} RenameUnitIn
+         * @returns {isoworldremote.EmbarkTileLayer} EmbarkTileLayer
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        RenameUnitIn.decode = function decode(reader, length) {
+        EmbarkTileLayer.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.dfproto.RenameUnitIn();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.isoworldremote.EmbarkTileLayer();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 4:
+                    if (!(message.matTypeTable && message.matTypeTable.length))
+                        message.matTypeTable = [];
+                    if ((tag & 7) === 2) {
+                        var end2 = reader.uint32() + reader.pos;
+                        while (reader.pos < end2)
+                            message.matTypeTable.push(reader.int32());
+                    } else
+                        message.matTypeTable.push(reader.int32());
+                    break;
+                case 5:
+                    if (!(message.matSubtypeTable && message.matSubtypeTable.length))
+                        message.matSubtypeTable = [];
+                    if ((tag & 7) === 2) {
+                        var end2 = reader.uint32() + reader.pos;
+                        while (reader.pos < end2)
+                            message.matSubtypeTable.push(reader.int32());
+                    } else
+                        message.matSubtypeTable.push(reader.int32());
+                    break;
+                case 6:
+                    if (!(message.tileShapeTable && message.tileShapeTable.length))
+                        message.tileShapeTable = [];
+                    if ((tag & 7) === 2) {
+                        var end2 = reader.uint32() + reader.pos;
+                        while (reader.pos < end2)
+                            message.tileShapeTable.push(reader.int32());
+                    } else
+                        message.tileShapeTable.push(reader.int32());
+                    break;
+                case 7:
+                    if (!(message.tileColorTable && message.tileColorTable.length))
+                        message.tileColorTable = [];
+                    message.tileColorTable.push($root.isoworldremote.ColorDefinition.decode(reader, reader.uint32()));
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes an EmbarkTileLayer message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof isoworldremote.EmbarkTileLayer
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {isoworldremote.EmbarkTileLayer} EmbarkTileLayer
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        EmbarkTileLayer.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies an EmbarkTileLayer message.
+         * @function verify
+         * @memberof isoworldremote.EmbarkTileLayer
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        EmbarkTileLayer.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.matTypeTable != null && message.hasOwnProperty("matTypeTable")) {
+                if (!Array.isArray(message.matTypeTable))
+                    return "matTypeTable: array expected";
+                for (var i = 0; i < message.matTypeTable.length; ++i)
+                    switch (message.matTypeTable[i]) {
+                    default:
+                        return "matTypeTable: enum value[] expected";
+                    case 0:
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 5:
+                        break;
+                    }
+            }
+            if (message.matSubtypeTable != null && message.hasOwnProperty("matSubtypeTable")) {
+                if (!Array.isArray(message.matSubtypeTable))
+                    return "matSubtypeTable: array expected";
+                for (var i = 0; i < message.matSubtypeTable.length; ++i)
+                    if (!$util.isInteger(message.matSubtypeTable[i]))
+                        return "matSubtypeTable: integer[] expected";
+            }
+            if (message.tileShapeTable != null && message.hasOwnProperty("tileShapeTable")) {
+                if (!Array.isArray(message.tileShapeTable))
+                    return "tileShapeTable: array expected";
+                for (var i = 0; i < message.tileShapeTable.length; ++i)
+                    switch (message.tileShapeTable[i]) {
+                    default:
+                        return "tileShapeTable: enum value[] expected";
+                    case 0:
+                    case 1:
+                    case 3:
+                    case 4:
+                    case 5:
+                    case 6:
+                        break;
+                    }
+            }
+            if (message.tileColorTable != null && message.hasOwnProperty("tileColorTable")) {
+                if (!Array.isArray(message.tileColorTable))
+                    return "tileColorTable: array expected";
+                for (var i = 0; i < message.tileColorTable.length; ++i) {
+                    var error = $root.isoworldremote.ColorDefinition.verify(message.tileColorTable[i]);
+                    if (error)
+                        return "tileColorTable." + error;
+                }
+            }
+            return null;
+        };
+
+        /**
+         * Creates an EmbarkTileLayer message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof isoworldremote.EmbarkTileLayer
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {isoworldremote.EmbarkTileLayer} EmbarkTileLayer
+         */
+        EmbarkTileLayer.fromObject = function fromObject(object) {
+            if (object instanceof $root.isoworldremote.EmbarkTileLayer)
+                return object;
+            var message = new $root.isoworldremote.EmbarkTileLayer();
+            if (object.matTypeTable) {
+                if (!Array.isArray(object.matTypeTable))
+                    throw TypeError(".isoworldremote.EmbarkTileLayer.matTypeTable: array expected");
+                message.matTypeTable = [];
+                for (var i = 0; i < object.matTypeTable.length; ++i)
+                    switch (object.matTypeTable[i]) {
+                    default:
+                    case "AIR":
+                    case 0:
+                        message.matTypeTable[i] = 0;
+                        break;
+                    case "OTHER":
+                    case 1:
+                        message.matTypeTable[i] = 1;
+                        break;
+                    case "INORGANIC":
+                    case 2:
+                        message.matTypeTable[i] = 2;
+                        break;
+                    case "LIQUID":
+                    case 3:
+                        message.matTypeTable[i] = 3;
+                        break;
+                    case "PLANT":
+                    case 4:
+                        message.matTypeTable[i] = 4;
+                        break;
+                    case "WOOD":
+                    case 5:
+                        message.matTypeTable[i] = 5;
+                        break;
+                    }
+            }
+            if (object.matSubtypeTable) {
+                if (!Array.isArray(object.matSubtypeTable))
+                    throw TypeError(".isoworldremote.EmbarkTileLayer.matSubtypeTable: array expected");
+                message.matSubtypeTable = [];
+                for (var i = 0; i < object.matSubtypeTable.length; ++i)
+                    message.matSubtypeTable[i] = object.matSubtypeTable[i] | 0;
+            }
+            if (object.tileShapeTable) {
+                if (!Array.isArray(object.tileShapeTable))
+                    throw TypeError(".isoworldremote.EmbarkTileLayer.tileShapeTable: array expected");
+                message.tileShapeTable = [];
+                for (var i = 0; i < object.tileShapeTable.length; ++i)
+                    switch (object.tileShapeTable[i]) {
+                    default:
+                    case "NONE":
+                    case 0:
+                        message.tileShapeTable[i] = 0;
+                        break;
+                    case "OPEN":
+                    case 1:
+                        message.tileShapeTable[i] = 1;
+                        break;
+                    case "WALL":
+                    case 3:
+                        message.tileShapeTable[i] = 3;
+                        break;
+                    case "FLOOR":
+                    case 4:
+                        message.tileShapeTable[i] = 4;
+                        break;
+                    case "RAMP_UP":
+                    case 5:
+                        message.tileShapeTable[i] = 5;
+                        break;
+                    case "RAMP_DOWN":
+                    case 6:
+                        message.tileShapeTable[i] = 6;
+                        break;
+                    }
+            }
+            if (object.tileColorTable) {
+                if (!Array.isArray(object.tileColorTable))
+                    throw TypeError(".isoworldremote.EmbarkTileLayer.tileColorTable: array expected");
+                message.tileColorTable = [];
+                for (var i = 0; i < object.tileColorTable.length; ++i) {
+                    if (typeof object.tileColorTable[i] !== "object")
+                        throw TypeError(".isoworldremote.EmbarkTileLayer.tileColorTable: object expected");
+                    message.tileColorTable[i] = $root.isoworldremote.ColorDefinition.fromObject(object.tileColorTable[i]);
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Creates a plain object from an EmbarkTileLayer message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof isoworldremote.EmbarkTileLayer
+         * @static
+         * @param {isoworldremote.EmbarkTileLayer} message EmbarkTileLayer
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        EmbarkTileLayer.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.arrays || options.defaults) {
+                object.matTypeTable = [];
+                object.matSubtypeTable = [];
+                object.tileShapeTable = [];
+                object.tileColorTable = [];
+            }
+            if (message.matTypeTable && message.matTypeTable.length) {
+                object.matTypeTable = [];
+                for (var j = 0; j < message.matTypeTable.length; ++j)
+                    object.matTypeTable[j] = options.enums === String ? $root.isoworldremote.BasicMaterial[message.matTypeTable[j]] : message.matTypeTable[j];
+            }
+            if (message.matSubtypeTable && message.matSubtypeTable.length) {
+                object.matSubtypeTable = [];
+                for (var j = 0; j < message.matSubtypeTable.length; ++j)
+                    object.matSubtypeTable[j] = message.matSubtypeTable[j];
+            }
+            if (message.tileShapeTable && message.tileShapeTable.length) {
+                object.tileShapeTable = [];
+                for (var j = 0; j < message.tileShapeTable.length; ++j)
+                    object.tileShapeTable[j] = options.enums === String ? $root.isoworldremote.BasicShape[message.tileShapeTable[j]] : message.tileShapeTable[j];
+            }
+            if (message.tileColorTable && message.tileColorTable.length) {
+                object.tileColorTable = [];
+                for (var j = 0; j < message.tileColorTable.length; ++j)
+                    object.tileColorTable[j] = $root.isoworldremote.ColorDefinition.toObject(message.tileColorTable[j], options);
+            }
+            return object;
+        };
+
+        /**
+         * Converts this EmbarkTileLayer to JSON.
+         * @function toJSON
+         * @memberof isoworldremote.EmbarkTileLayer
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        EmbarkTileLayer.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return EmbarkTileLayer;
+    })();
+
+    isoworldremote.EmbarkTile = (function() {
+
+        /**
+         * Properties of an EmbarkTile.
+         * @memberof isoworldremote
+         * @interface IEmbarkTile
+         * @property {number} worldX EmbarkTile worldX
+         * @property {number} worldY EmbarkTile worldY
+         * @property {number} worldZ EmbarkTile worldZ
+         * @property {Array.<isoworldremote.IEmbarkTileLayer>|null} [tileLayer] EmbarkTile tileLayer
+         * @property {number|null} [currentYear] EmbarkTile currentYear
+         * @property {number|null} [currentSeason] EmbarkTile currentSeason
+         * @property {boolean|null} [isValid] EmbarkTile isValid
+         */
+
+        /**
+         * Constructs a new EmbarkTile.
+         * @memberof isoworldremote
+         * @classdesc Represents an EmbarkTile.
+         * @implements IEmbarkTile
+         * @constructor
+         * @param {isoworldremote.IEmbarkTile=} [properties] Properties to set
+         */
+        function EmbarkTile(properties) {
+            this.tileLayer = [];
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * EmbarkTile worldX.
+         * @member {number} worldX
+         * @memberof isoworldremote.EmbarkTile
+         * @instance
+         */
+        EmbarkTile.prototype.worldX = 0;
+
+        /**
+         * EmbarkTile worldY.
+         * @member {number} worldY
+         * @memberof isoworldremote.EmbarkTile
+         * @instance
+         */
+        EmbarkTile.prototype.worldY = 0;
+
+        /**
+         * EmbarkTile worldZ.
+         * @member {number} worldZ
+         * @memberof isoworldremote.EmbarkTile
+         * @instance
+         */
+        EmbarkTile.prototype.worldZ = 0;
+
+        /**
+         * EmbarkTile tileLayer.
+         * @member {Array.<isoworldremote.IEmbarkTileLayer>} tileLayer
+         * @memberof isoworldremote.EmbarkTile
+         * @instance
+         */
+        EmbarkTile.prototype.tileLayer = $util.emptyArray;
+
+        /**
+         * EmbarkTile currentYear.
+         * @member {number} currentYear
+         * @memberof isoworldremote.EmbarkTile
+         * @instance
+         */
+        EmbarkTile.prototype.currentYear = 0;
+
+        /**
+         * EmbarkTile currentSeason.
+         * @member {number} currentSeason
+         * @memberof isoworldremote.EmbarkTile
+         * @instance
+         */
+        EmbarkTile.prototype.currentSeason = 0;
+
+        /**
+         * EmbarkTile isValid.
+         * @member {boolean} isValid
+         * @memberof isoworldremote.EmbarkTile
+         * @instance
+         */
+        EmbarkTile.prototype.isValid = false;
+
+        /**
+         * Creates a new EmbarkTile instance using the specified properties.
+         * @function create
+         * @memberof isoworldremote.EmbarkTile
+         * @static
+         * @param {isoworldremote.IEmbarkTile=} [properties] Properties to set
+         * @returns {isoworldremote.EmbarkTile} EmbarkTile instance
+         */
+        EmbarkTile.create = function create(properties) {
+            return new EmbarkTile(properties);
+        };
+
+        /**
+         * Encodes the specified EmbarkTile message. Does not implicitly {@link isoworldremote.EmbarkTile.verify|verify} messages.
+         * @function encode
+         * @memberof isoworldremote.EmbarkTile
+         * @static
+         * @param {isoworldremote.IEmbarkTile} message EmbarkTile message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        EmbarkTile.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            writer.uint32(/* id 1, wireType 0 =*/8).int32(message.worldX);
+            writer.uint32(/* id 2, wireType 0 =*/16).int32(message.worldY);
+            writer.uint32(/* id 3, wireType 0 =*/24).sint32(message.worldZ);
+            if (message.tileLayer != null && message.tileLayer.length)
+                for (var i = 0; i < message.tileLayer.length; ++i)
+                    $root.isoworldremote.EmbarkTileLayer.encode(message.tileLayer[i], writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+            if (message.currentYear != null && Object.hasOwnProperty.call(message, "currentYear"))
+                writer.uint32(/* id 5, wireType 0 =*/40).int32(message.currentYear);
+            if (message.currentSeason != null && Object.hasOwnProperty.call(message, "currentSeason"))
+                writer.uint32(/* id 6, wireType 0 =*/48).int32(message.currentSeason);
+            if (message.isValid != null && Object.hasOwnProperty.call(message, "isValid"))
+                writer.uint32(/* id 7, wireType 0 =*/56).bool(message.isValid);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified EmbarkTile message, length delimited. Does not implicitly {@link isoworldremote.EmbarkTile.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof isoworldremote.EmbarkTile
+         * @static
+         * @param {isoworldremote.IEmbarkTile} message EmbarkTile message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        EmbarkTile.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes an EmbarkTile message from the specified reader or buffer.
+         * @function decode
+         * @memberof isoworldremote.EmbarkTile
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {isoworldremote.EmbarkTile} EmbarkTile
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        EmbarkTile.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.isoworldremote.EmbarkTile();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.unitId = reader.int32();
+                    message.worldX = reader.int32();
                     break;
                 case 2:
-                    message.nickname = reader.string();
+                    message.worldY = reader.int32();
                     break;
                 case 3:
-                    message.profession = reader.string();
+                    message.worldZ = reader.sint32();
+                    break;
+                case 4:
+                    if (!(message.tileLayer && message.tileLayer.length))
+                        message.tileLayer = [];
+                    message.tileLayer.push($root.isoworldremote.EmbarkTileLayer.decode(reader, reader.uint32()));
+                    break;
+                case 5:
+                    message.currentYear = reader.int32();
+                    break;
+                case 6:
+                    message.currentSeason = reader.int32();
+                    break;
+                case 7:
+                    message.isValid = reader.bool();
                     break;
                 default:
                     reader.skipType(tag & 7);
                     break;
                 }
             }
-            if (!message.hasOwnProperty("unitId"))
-                throw $util.ProtocolError("missing required 'unitId'", { instance: message });
+            if (!message.hasOwnProperty("worldX"))
+                throw $util.ProtocolError("missing required 'worldX'", { instance: message });
+            if (!message.hasOwnProperty("worldY"))
+                throw $util.ProtocolError("missing required 'worldY'", { instance: message });
+            if (!message.hasOwnProperty("worldZ"))
+                throw $util.ProtocolError("missing required 'worldZ'", { instance: message });
             return message;
         };
 
         /**
-         * Decodes a RenameUnitIn message from the specified reader or buffer, length delimited.
+         * Decodes an EmbarkTile message from the specified reader or buffer, length delimited.
          * @function decodeDelimited
-         * @memberof dfproto.RenameUnitIn
+         * @memberof isoworldremote.EmbarkTile
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {dfproto.RenameUnitIn} RenameUnitIn
+         * @returns {isoworldremote.EmbarkTile} EmbarkTile
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        RenameUnitIn.decodeDelimited = function decodeDelimited(reader) {
+        EmbarkTile.decodeDelimited = function decodeDelimited(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
         };
 
         /**
-         * Verifies a RenameUnitIn message.
+         * Verifies an EmbarkTile message.
          * @function verify
-         * @memberof dfproto.RenameUnitIn
+         * @memberof isoworldremote.EmbarkTile
          * @static
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        RenameUnitIn.verify = function verify(message) {
+        EmbarkTile.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
-            if (!$util.isInteger(message.unitId))
-                return "unitId: integer expected";
-            if (message.nickname != null && message.hasOwnProperty("nickname"))
-                if (!$util.isString(message.nickname))
-                    return "nickname: string expected";
-            if (message.profession != null && message.hasOwnProperty("profession"))
-                if (!$util.isString(message.profession))
-                    return "profession: string expected";
+            if (!$util.isInteger(message.worldX))
+                return "worldX: integer expected";
+            if (!$util.isInteger(message.worldY))
+                return "worldY: integer expected";
+            if (!$util.isInteger(message.worldZ))
+                return "worldZ: integer expected";
+            if (message.tileLayer != null && message.hasOwnProperty("tileLayer")) {
+                if (!Array.isArray(message.tileLayer))
+                    return "tileLayer: array expected";
+                for (var i = 0; i < message.tileLayer.length; ++i) {
+                    var error = $root.isoworldremote.EmbarkTileLayer.verify(message.tileLayer[i]);
+                    if (error)
+                        return "tileLayer." + error;
+                }
+            }
+            if (message.currentYear != null && message.hasOwnProperty("currentYear"))
+                if (!$util.isInteger(message.currentYear))
+                    return "currentYear: integer expected";
+            if (message.currentSeason != null && message.hasOwnProperty("currentSeason"))
+                if (!$util.isInteger(message.currentSeason))
+                    return "currentSeason: integer expected";
+            if (message.isValid != null && message.hasOwnProperty("isValid"))
+                if (typeof message.isValid !== "boolean")
+                    return "isValid: boolean expected";
             return null;
         };
 
         /**
-         * Creates a RenameUnitIn message from a plain object. Also converts values to their respective internal types.
+         * Creates an EmbarkTile message from a plain object. Also converts values to their respective internal types.
          * @function fromObject
-         * @memberof dfproto.RenameUnitIn
+         * @memberof isoworldremote.EmbarkTile
          * @static
          * @param {Object.<string,*>} object Plain object
-         * @returns {dfproto.RenameUnitIn} RenameUnitIn
+         * @returns {isoworldremote.EmbarkTile} EmbarkTile
          */
-        RenameUnitIn.fromObject = function fromObject(object) {
-            if (object instanceof $root.dfproto.RenameUnitIn)
+        EmbarkTile.fromObject = function fromObject(object) {
+            if (object instanceof $root.isoworldremote.EmbarkTile)
                 return object;
-            var message = new $root.dfproto.RenameUnitIn();
-            if (object.unitId != null)
-                message.unitId = object.unitId | 0;
-            if (object.nickname != null)
-                message.nickname = String(object.nickname);
-            if (object.profession != null)
-                message.profession = String(object.profession);
+            var message = new $root.isoworldremote.EmbarkTile();
+            if (object.worldX != null)
+                message.worldX = object.worldX | 0;
+            if (object.worldY != null)
+                message.worldY = object.worldY | 0;
+            if (object.worldZ != null)
+                message.worldZ = object.worldZ | 0;
+            if (object.tileLayer) {
+                if (!Array.isArray(object.tileLayer))
+                    throw TypeError(".isoworldremote.EmbarkTile.tileLayer: array expected");
+                message.tileLayer = [];
+                for (var i = 0; i < object.tileLayer.length; ++i) {
+                    if (typeof object.tileLayer[i] !== "object")
+                        throw TypeError(".isoworldremote.EmbarkTile.tileLayer: object expected");
+                    message.tileLayer[i] = $root.isoworldremote.EmbarkTileLayer.fromObject(object.tileLayer[i]);
+                }
+            }
+            if (object.currentYear != null)
+                message.currentYear = object.currentYear | 0;
+            if (object.currentSeason != null)
+                message.currentSeason = object.currentSeason | 0;
+            if (object.isValid != null)
+                message.isValid = Boolean(object.isValid);
             return message;
         };
 
         /**
-         * Creates a plain object from a RenameUnitIn message. Also converts values to other types if specified.
+         * Creates a plain object from an EmbarkTile message. Also converts values to other types if specified.
          * @function toObject
-         * @memberof dfproto.RenameUnitIn
+         * @memberof isoworldremote.EmbarkTile
          * @static
-         * @param {dfproto.RenameUnitIn} message RenameUnitIn
+         * @param {isoworldremote.EmbarkTile} message EmbarkTile
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        RenameUnitIn.toObject = function toObject(message, options) {
+        EmbarkTile.toObject = function toObject(message, options) {
             if (!options)
                 options = {};
             var object = {};
+            if (options.arrays || options.defaults)
+                object.tileLayer = [];
             if (options.defaults) {
-                object.unitId = 0;
-                object.nickname = "";
-                object.profession = "";
+                object.worldX = 0;
+                object.worldY = 0;
+                object.worldZ = 0;
+                object.currentYear = 0;
+                object.currentSeason = 0;
+                object.isValid = false;
             }
-            if (message.unitId != null && message.hasOwnProperty("unitId"))
-                object.unitId = message.unitId;
-            if (message.nickname != null && message.hasOwnProperty("nickname"))
-                object.nickname = message.nickname;
-            if (message.profession != null && message.hasOwnProperty("profession"))
-                object.profession = message.profession;
+            if (message.worldX != null && message.hasOwnProperty("worldX"))
+                object.worldX = message.worldX;
+            if (message.worldY != null && message.hasOwnProperty("worldY"))
+                object.worldY = message.worldY;
+            if (message.worldZ != null && message.hasOwnProperty("worldZ"))
+                object.worldZ = message.worldZ;
+            if (message.tileLayer && message.tileLayer.length) {
+                object.tileLayer = [];
+                for (var j = 0; j < message.tileLayer.length; ++j)
+                    object.tileLayer[j] = $root.isoworldremote.EmbarkTileLayer.toObject(message.tileLayer[j], options);
+            }
+            if (message.currentYear != null && message.hasOwnProperty("currentYear"))
+                object.currentYear = message.currentYear;
+            if (message.currentSeason != null && message.hasOwnProperty("currentSeason"))
+                object.currentSeason = message.currentSeason;
+            if (message.isValid != null && message.hasOwnProperty("isValid"))
+                object.isValid = message.isValid;
             return object;
         };
 
         /**
-         * Converts this RenameUnitIn to JSON.
+         * Converts this EmbarkTile to JSON.
          * @function toJSON
-         * @memberof dfproto.RenameUnitIn
+         * @memberof isoworldremote.EmbarkTile
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        RenameUnitIn.prototype.toJSON = function toJSON() {
+        EmbarkTile.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
-        return RenameUnitIn;
+        return EmbarkTile;
     })();
 
-    dfproto.RenameBuildingIn = (function() {
+    isoworldremote.TileRequest = (function() {
 
         /**
-         * Properties of a RenameBuildingIn.
-         * @memberof dfproto
-         * @interface IRenameBuildingIn
-         * @property {number} buildingId RenameBuildingIn buildingId
-         * @property {string|null} [name] RenameBuildingIn name
+         * Properties of a TileRequest.
+         * @memberof isoworldremote
+         * @interface ITileRequest
+         * @property {number|null} [wantX] TileRequest wantX
+         * @property {number|null} [wantY] TileRequest wantY
          */
 
         /**
-         * Constructs a new RenameBuildingIn.
-         * @memberof dfproto
-         * @classdesc Represents a RenameBuildingIn.
-         * @implements IRenameBuildingIn
+         * Constructs a new TileRequest.
+         * @memberof isoworldremote
+         * @classdesc Represents a TileRequest.
+         * @implements ITileRequest
          * @constructor
-         * @param {dfproto.IRenameBuildingIn=} [properties] Properties to set
+         * @param {isoworldremote.ITileRequest=} [properties] Properties to set
          */
-        function RenameBuildingIn(properties) {
+        function TileRequest(properties) {
             if (properties)
                 for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
@@ -33241,191 +43964,963 @@ $root.dfproto = (function() {
         }
 
         /**
-         * RenameBuildingIn buildingId.
-         * @member {number} buildingId
-         * @memberof dfproto.RenameBuildingIn
+         * TileRequest wantX.
+         * @member {number} wantX
+         * @memberof isoworldremote.TileRequest
          * @instance
          */
-        RenameBuildingIn.prototype.buildingId = 0;
+        TileRequest.prototype.wantX = 0;
 
         /**
-         * RenameBuildingIn name.
-         * @member {string} name
-         * @memberof dfproto.RenameBuildingIn
+         * TileRequest wantY.
+         * @member {number} wantY
+         * @memberof isoworldremote.TileRequest
          * @instance
          */
-        RenameBuildingIn.prototype.name = "";
+        TileRequest.prototype.wantY = 0;
 
         /**
-         * Creates a new RenameBuildingIn instance using the specified properties.
+         * Creates a new TileRequest instance using the specified properties.
          * @function create
-         * @memberof dfproto.RenameBuildingIn
+         * @memberof isoworldremote.TileRequest
          * @static
-         * @param {dfproto.IRenameBuildingIn=} [properties] Properties to set
-         * @returns {dfproto.RenameBuildingIn} RenameBuildingIn instance
+         * @param {isoworldremote.ITileRequest=} [properties] Properties to set
+         * @returns {isoworldremote.TileRequest} TileRequest instance
          */
-        RenameBuildingIn.create = function create(properties) {
-            return new RenameBuildingIn(properties);
+        TileRequest.create = function create(properties) {
+            return new TileRequest(properties);
         };
 
         /**
-         * Encodes the specified RenameBuildingIn message. Does not implicitly {@link dfproto.RenameBuildingIn.verify|verify} messages.
+         * Encodes the specified TileRequest message. Does not implicitly {@link isoworldremote.TileRequest.verify|verify} messages.
          * @function encode
-         * @memberof dfproto.RenameBuildingIn
+         * @memberof isoworldremote.TileRequest
          * @static
-         * @param {dfproto.IRenameBuildingIn} message RenameBuildingIn message or plain object to encode
+         * @param {isoworldremote.ITileRequest} message TileRequest message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        RenameBuildingIn.encode = function encode(message, writer) {
+        TileRequest.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            writer.uint32(/* id 1, wireType 0 =*/8).int32(message.buildingId);
-            if (message.name != null && message.hasOwnProperty("name"))
-                writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
+            if (message.wantX != null && Object.hasOwnProperty.call(message, "wantX"))
+                writer.uint32(/* id 1, wireType 0 =*/8).int32(message.wantX);
+            if (message.wantY != null && Object.hasOwnProperty.call(message, "wantY"))
+                writer.uint32(/* id 2, wireType 0 =*/16).int32(message.wantY);
             return writer;
         };
 
         /**
-         * Encodes the specified RenameBuildingIn message, length delimited. Does not implicitly {@link dfproto.RenameBuildingIn.verify|verify} messages.
+         * Encodes the specified TileRequest message, length delimited. Does not implicitly {@link isoworldremote.TileRequest.verify|verify} messages.
          * @function encodeDelimited
-         * @memberof dfproto.RenameBuildingIn
+         * @memberof isoworldremote.TileRequest
          * @static
-         * @param {dfproto.IRenameBuildingIn} message RenameBuildingIn message or plain object to encode
+         * @param {isoworldremote.ITileRequest} message TileRequest message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        RenameBuildingIn.encodeDelimited = function encodeDelimited(message, writer) {
+        TileRequest.encodeDelimited = function encodeDelimited(message, writer) {
             return this.encode(message, writer).ldelim();
         };
 
         /**
-         * Decodes a RenameBuildingIn message from the specified reader or buffer.
+         * Decodes a TileRequest message from the specified reader or buffer.
          * @function decode
-         * @memberof dfproto.RenameBuildingIn
+         * @memberof isoworldremote.TileRequest
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {dfproto.RenameBuildingIn} RenameBuildingIn
+         * @returns {isoworldremote.TileRequest} TileRequest
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        RenameBuildingIn.decode = function decode(reader, length) {
+        TileRequest.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.dfproto.RenameBuildingIn();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.isoworldremote.TileRequest();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.buildingId = reader.int32();
+                    message.wantX = reader.int32();
                     break;
                 case 2:
-                    message.name = reader.string();
+                    message.wantY = reader.int32();
                     break;
                 default:
                     reader.skipType(tag & 7);
                     break;
                 }
             }
-            if (!message.hasOwnProperty("buildingId"))
-                throw $util.ProtocolError("missing required 'buildingId'", { instance: message });
             return message;
         };
 
         /**
-         * Decodes a RenameBuildingIn message from the specified reader or buffer, length delimited.
+         * Decodes a TileRequest message from the specified reader or buffer, length delimited.
          * @function decodeDelimited
-         * @memberof dfproto.RenameBuildingIn
+         * @memberof isoworldremote.TileRequest
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {dfproto.RenameBuildingIn} RenameBuildingIn
+         * @returns {isoworldremote.TileRequest} TileRequest
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        RenameBuildingIn.decodeDelimited = function decodeDelimited(reader) {
+        TileRequest.decodeDelimited = function decodeDelimited(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
         };
 
         /**
-         * Verifies a RenameBuildingIn message.
+         * Verifies a TileRequest message.
          * @function verify
-         * @memberof dfproto.RenameBuildingIn
+         * @memberof isoworldremote.TileRequest
          * @static
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        RenameBuildingIn.verify = function verify(message) {
+        TileRequest.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
-            if (!$util.isInteger(message.buildingId))
-                return "buildingId: integer expected";
-            if (message.name != null && message.hasOwnProperty("name"))
-                if (!$util.isString(message.name))
-                    return "name: string expected";
+            if (message.wantX != null && message.hasOwnProperty("wantX"))
+                if (!$util.isInteger(message.wantX))
+                    return "wantX: integer expected";
+            if (message.wantY != null && message.hasOwnProperty("wantY"))
+                if (!$util.isInteger(message.wantY))
+                    return "wantY: integer expected";
             return null;
         };
 
         /**
-         * Creates a RenameBuildingIn message from a plain object. Also converts values to their respective internal types.
+         * Creates a TileRequest message from a plain object. Also converts values to their respective internal types.
          * @function fromObject
-         * @memberof dfproto.RenameBuildingIn
+         * @memberof isoworldremote.TileRequest
          * @static
          * @param {Object.<string,*>} object Plain object
-         * @returns {dfproto.RenameBuildingIn} RenameBuildingIn
+         * @returns {isoworldremote.TileRequest} TileRequest
          */
-        RenameBuildingIn.fromObject = function fromObject(object) {
-            if (object instanceof $root.dfproto.RenameBuildingIn)
+        TileRequest.fromObject = function fromObject(object) {
+            if (object instanceof $root.isoworldremote.TileRequest)
                 return object;
-            var message = new $root.dfproto.RenameBuildingIn();
-            if (object.buildingId != null)
-                message.buildingId = object.buildingId | 0;
-            if (object.name != null)
-                message.name = String(object.name);
+            var message = new $root.isoworldremote.TileRequest();
+            if (object.wantX != null)
+                message.wantX = object.wantX | 0;
+            if (object.wantY != null)
+                message.wantY = object.wantY | 0;
             return message;
         };
 
         /**
-         * Creates a plain object from a RenameBuildingIn message. Also converts values to other types if specified.
+         * Creates a plain object from a TileRequest message. Also converts values to other types if specified.
          * @function toObject
-         * @memberof dfproto.RenameBuildingIn
+         * @memberof isoworldremote.TileRequest
          * @static
-         * @param {dfproto.RenameBuildingIn} message RenameBuildingIn
+         * @param {isoworldremote.TileRequest} message TileRequest
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        RenameBuildingIn.toObject = function toObject(message, options) {
+        TileRequest.toObject = function toObject(message, options) {
             if (!options)
                 options = {};
             var object = {};
             if (options.defaults) {
-                object.buildingId = 0;
-                object.name = "";
+                object.wantX = 0;
+                object.wantY = 0;
             }
-            if (message.buildingId != null && message.hasOwnProperty("buildingId"))
-                object.buildingId = message.buildingId;
-            if (message.name != null && message.hasOwnProperty("name"))
-                object.name = message.name;
+            if (message.wantX != null && message.hasOwnProperty("wantX"))
+                object.wantX = message.wantX;
+            if (message.wantY != null && message.hasOwnProperty("wantY"))
+                object.wantY = message.wantY;
             return object;
         };
 
         /**
-         * Converts this RenameBuildingIn to JSON.
+         * Converts this TileRequest to JSON.
          * @function toJSON
-         * @memberof dfproto.RenameBuildingIn
+         * @memberof isoworldremote.TileRequest
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        RenameBuildingIn.prototype.toJSON = function toJSON() {
+        TileRequest.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
-        return RenameBuildingIn;
+        return TileRequest;
     })();
 
-    return dfproto;
+    isoworldremote.MapRequest = (function() {
+
+        /**
+         * Properties of a MapRequest.
+         * @memberof isoworldremote
+         * @interface IMapRequest
+         * @property {string|null} [saveFolder] MapRequest saveFolder
+         */
+
+        /**
+         * Constructs a new MapRequest.
+         * @memberof isoworldremote
+         * @classdesc Represents a MapRequest.
+         * @implements IMapRequest
+         * @constructor
+         * @param {isoworldremote.IMapRequest=} [properties] Properties to set
+         */
+        function MapRequest(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * MapRequest saveFolder.
+         * @member {string} saveFolder
+         * @memberof isoworldremote.MapRequest
+         * @instance
+         */
+        MapRequest.prototype.saveFolder = "";
+
+        /**
+         * Creates a new MapRequest instance using the specified properties.
+         * @function create
+         * @memberof isoworldremote.MapRequest
+         * @static
+         * @param {isoworldremote.IMapRequest=} [properties] Properties to set
+         * @returns {isoworldremote.MapRequest} MapRequest instance
+         */
+        MapRequest.create = function create(properties) {
+            return new MapRequest(properties);
+        };
+
+        /**
+         * Encodes the specified MapRequest message. Does not implicitly {@link isoworldremote.MapRequest.verify|verify} messages.
+         * @function encode
+         * @memberof isoworldremote.MapRequest
+         * @static
+         * @param {isoworldremote.IMapRequest} message MapRequest message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        MapRequest.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.saveFolder != null && Object.hasOwnProperty.call(message, "saveFolder"))
+                writer.uint32(/* id 1, wireType 2 =*/10).string(message.saveFolder);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified MapRequest message, length delimited. Does not implicitly {@link isoworldremote.MapRequest.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof isoworldremote.MapRequest
+         * @static
+         * @param {isoworldremote.IMapRequest} message MapRequest message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        MapRequest.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a MapRequest message from the specified reader or buffer.
+         * @function decode
+         * @memberof isoworldremote.MapRequest
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {isoworldremote.MapRequest} MapRequest
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        MapRequest.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.isoworldremote.MapRequest();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    message.saveFolder = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a MapRequest message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof isoworldremote.MapRequest
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {isoworldremote.MapRequest} MapRequest
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        MapRequest.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a MapRequest message.
+         * @function verify
+         * @memberof isoworldremote.MapRequest
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        MapRequest.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.saveFolder != null && message.hasOwnProperty("saveFolder"))
+                if (!$util.isString(message.saveFolder))
+                    return "saveFolder: string expected";
+            return null;
+        };
+
+        /**
+         * Creates a MapRequest message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof isoworldremote.MapRequest
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {isoworldremote.MapRequest} MapRequest
+         */
+        MapRequest.fromObject = function fromObject(object) {
+            if (object instanceof $root.isoworldremote.MapRequest)
+                return object;
+            var message = new $root.isoworldremote.MapRequest();
+            if (object.saveFolder != null)
+                message.saveFolder = String(object.saveFolder);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a MapRequest message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof isoworldremote.MapRequest
+         * @static
+         * @param {isoworldremote.MapRequest} message MapRequest
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        MapRequest.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults)
+                object.saveFolder = "";
+            if (message.saveFolder != null && message.hasOwnProperty("saveFolder"))
+                object.saveFolder = message.saveFolder;
+            return object;
+        };
+
+        /**
+         * Converts this MapRequest to JSON.
+         * @function toJSON
+         * @memberof isoworldremote.MapRequest
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        MapRequest.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return MapRequest;
+    })();
+
+    isoworldremote.MapReply = (function() {
+
+        /**
+         * Properties of a MapReply.
+         * @memberof isoworldremote
+         * @interface IMapReply
+         * @property {boolean} available MapReply available
+         * @property {number|null} [regionX] MapReply regionX
+         * @property {number|null} [regionY] MapReply regionY
+         * @property {number|null} [regionSizeX] MapReply regionSizeX
+         * @property {number|null} [regionSizeY] MapReply regionSizeY
+         * @property {number|null} [currentYear] MapReply currentYear
+         * @property {number|null} [currentSeason] MapReply currentSeason
+         */
+
+        /**
+         * Constructs a new MapReply.
+         * @memberof isoworldremote
+         * @classdesc Represents a MapReply.
+         * @implements IMapReply
+         * @constructor
+         * @param {isoworldremote.IMapReply=} [properties] Properties to set
+         */
+        function MapReply(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * MapReply available.
+         * @member {boolean} available
+         * @memberof isoworldremote.MapReply
+         * @instance
+         */
+        MapReply.prototype.available = false;
+
+        /**
+         * MapReply regionX.
+         * @member {number} regionX
+         * @memberof isoworldremote.MapReply
+         * @instance
+         */
+        MapReply.prototype.regionX = 0;
+
+        /**
+         * MapReply regionY.
+         * @member {number} regionY
+         * @memberof isoworldremote.MapReply
+         * @instance
+         */
+        MapReply.prototype.regionY = 0;
+
+        /**
+         * MapReply regionSizeX.
+         * @member {number} regionSizeX
+         * @memberof isoworldremote.MapReply
+         * @instance
+         */
+        MapReply.prototype.regionSizeX = 0;
+
+        /**
+         * MapReply regionSizeY.
+         * @member {number} regionSizeY
+         * @memberof isoworldremote.MapReply
+         * @instance
+         */
+        MapReply.prototype.regionSizeY = 0;
+
+        /**
+         * MapReply currentYear.
+         * @member {number} currentYear
+         * @memberof isoworldremote.MapReply
+         * @instance
+         */
+        MapReply.prototype.currentYear = 0;
+
+        /**
+         * MapReply currentSeason.
+         * @member {number} currentSeason
+         * @memberof isoworldremote.MapReply
+         * @instance
+         */
+        MapReply.prototype.currentSeason = 0;
+
+        /**
+         * Creates a new MapReply instance using the specified properties.
+         * @function create
+         * @memberof isoworldremote.MapReply
+         * @static
+         * @param {isoworldremote.IMapReply=} [properties] Properties to set
+         * @returns {isoworldremote.MapReply} MapReply instance
+         */
+        MapReply.create = function create(properties) {
+            return new MapReply(properties);
+        };
+
+        /**
+         * Encodes the specified MapReply message. Does not implicitly {@link isoworldremote.MapReply.verify|verify} messages.
+         * @function encode
+         * @memberof isoworldremote.MapReply
+         * @static
+         * @param {isoworldremote.IMapReply} message MapReply message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        MapReply.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            writer.uint32(/* id 1, wireType 0 =*/8).bool(message.available);
+            if (message.regionX != null && Object.hasOwnProperty.call(message, "regionX"))
+                writer.uint32(/* id 2, wireType 0 =*/16).int32(message.regionX);
+            if (message.regionY != null && Object.hasOwnProperty.call(message, "regionY"))
+                writer.uint32(/* id 3, wireType 0 =*/24).int32(message.regionY);
+            if (message.regionSizeX != null && Object.hasOwnProperty.call(message, "regionSizeX"))
+                writer.uint32(/* id 4, wireType 0 =*/32).int32(message.regionSizeX);
+            if (message.regionSizeY != null && Object.hasOwnProperty.call(message, "regionSizeY"))
+                writer.uint32(/* id 5, wireType 0 =*/40).int32(message.regionSizeY);
+            if (message.currentYear != null && Object.hasOwnProperty.call(message, "currentYear"))
+                writer.uint32(/* id 6, wireType 0 =*/48).int32(message.currentYear);
+            if (message.currentSeason != null && Object.hasOwnProperty.call(message, "currentSeason"))
+                writer.uint32(/* id 7, wireType 0 =*/56).int32(message.currentSeason);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified MapReply message, length delimited. Does not implicitly {@link isoworldremote.MapReply.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof isoworldremote.MapReply
+         * @static
+         * @param {isoworldremote.IMapReply} message MapReply message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        MapReply.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a MapReply message from the specified reader or buffer.
+         * @function decode
+         * @memberof isoworldremote.MapReply
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {isoworldremote.MapReply} MapReply
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        MapReply.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.isoworldremote.MapReply();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    message.available = reader.bool();
+                    break;
+                case 2:
+                    message.regionX = reader.int32();
+                    break;
+                case 3:
+                    message.regionY = reader.int32();
+                    break;
+                case 4:
+                    message.regionSizeX = reader.int32();
+                    break;
+                case 5:
+                    message.regionSizeY = reader.int32();
+                    break;
+                case 6:
+                    message.currentYear = reader.int32();
+                    break;
+                case 7:
+                    message.currentSeason = reader.int32();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            if (!message.hasOwnProperty("available"))
+                throw $util.ProtocolError("missing required 'available'", { instance: message });
+            return message;
+        };
+
+        /**
+         * Decodes a MapReply message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof isoworldremote.MapReply
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {isoworldremote.MapReply} MapReply
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        MapReply.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a MapReply message.
+         * @function verify
+         * @memberof isoworldremote.MapReply
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        MapReply.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (typeof message.available !== "boolean")
+                return "available: boolean expected";
+            if (message.regionX != null && message.hasOwnProperty("regionX"))
+                if (!$util.isInteger(message.regionX))
+                    return "regionX: integer expected";
+            if (message.regionY != null && message.hasOwnProperty("regionY"))
+                if (!$util.isInteger(message.regionY))
+                    return "regionY: integer expected";
+            if (message.regionSizeX != null && message.hasOwnProperty("regionSizeX"))
+                if (!$util.isInteger(message.regionSizeX))
+                    return "regionSizeX: integer expected";
+            if (message.regionSizeY != null && message.hasOwnProperty("regionSizeY"))
+                if (!$util.isInteger(message.regionSizeY))
+                    return "regionSizeY: integer expected";
+            if (message.currentYear != null && message.hasOwnProperty("currentYear"))
+                if (!$util.isInteger(message.currentYear))
+                    return "currentYear: integer expected";
+            if (message.currentSeason != null && message.hasOwnProperty("currentSeason"))
+                if (!$util.isInteger(message.currentSeason))
+                    return "currentSeason: integer expected";
+            return null;
+        };
+
+        /**
+         * Creates a MapReply message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof isoworldremote.MapReply
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {isoworldremote.MapReply} MapReply
+         */
+        MapReply.fromObject = function fromObject(object) {
+            if (object instanceof $root.isoworldremote.MapReply)
+                return object;
+            var message = new $root.isoworldremote.MapReply();
+            if (object.available != null)
+                message.available = Boolean(object.available);
+            if (object.regionX != null)
+                message.regionX = object.regionX | 0;
+            if (object.regionY != null)
+                message.regionY = object.regionY | 0;
+            if (object.regionSizeX != null)
+                message.regionSizeX = object.regionSizeX | 0;
+            if (object.regionSizeY != null)
+                message.regionSizeY = object.regionSizeY | 0;
+            if (object.currentYear != null)
+                message.currentYear = object.currentYear | 0;
+            if (object.currentSeason != null)
+                message.currentSeason = object.currentSeason | 0;
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a MapReply message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof isoworldremote.MapReply
+         * @static
+         * @param {isoworldremote.MapReply} message MapReply
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        MapReply.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.available = false;
+                object.regionX = 0;
+                object.regionY = 0;
+                object.regionSizeX = 0;
+                object.regionSizeY = 0;
+                object.currentYear = 0;
+                object.currentSeason = 0;
+            }
+            if (message.available != null && message.hasOwnProperty("available"))
+                object.available = message.available;
+            if (message.regionX != null && message.hasOwnProperty("regionX"))
+                object.regionX = message.regionX;
+            if (message.regionY != null && message.hasOwnProperty("regionY"))
+                object.regionY = message.regionY;
+            if (message.regionSizeX != null && message.hasOwnProperty("regionSizeX"))
+                object.regionSizeX = message.regionSizeX;
+            if (message.regionSizeY != null && message.hasOwnProperty("regionSizeY"))
+                object.regionSizeY = message.regionSizeY;
+            if (message.currentYear != null && message.hasOwnProperty("currentYear"))
+                object.currentYear = message.currentYear;
+            if (message.currentSeason != null && message.hasOwnProperty("currentSeason"))
+                object.currentSeason = message.currentSeason;
+            return object;
+        };
+
+        /**
+         * Converts this MapReply to JSON.
+         * @function toJSON
+         * @memberof isoworldremote.MapReply
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        MapReply.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return MapReply;
+    })();
+
+    isoworldremote.RawNames = (function() {
+
+        /**
+         * Properties of a RawNames.
+         * @memberof isoworldremote
+         * @interface IRawNames
+         * @property {boolean} available RawNames available
+         * @property {Array.<string>|null} [inorganic] RawNames inorganic
+         * @property {Array.<string>|null} [organic] RawNames organic
+         */
+
+        /**
+         * Constructs a new RawNames.
+         * @memberof isoworldremote
+         * @classdesc Represents a RawNames.
+         * @implements IRawNames
+         * @constructor
+         * @param {isoworldremote.IRawNames=} [properties] Properties to set
+         */
+        function RawNames(properties) {
+            this.inorganic = [];
+            this.organic = [];
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * RawNames available.
+         * @member {boolean} available
+         * @memberof isoworldremote.RawNames
+         * @instance
+         */
+        RawNames.prototype.available = false;
+
+        /**
+         * RawNames inorganic.
+         * @member {Array.<string>} inorganic
+         * @memberof isoworldremote.RawNames
+         * @instance
+         */
+        RawNames.prototype.inorganic = $util.emptyArray;
+
+        /**
+         * RawNames organic.
+         * @member {Array.<string>} organic
+         * @memberof isoworldremote.RawNames
+         * @instance
+         */
+        RawNames.prototype.organic = $util.emptyArray;
+
+        /**
+         * Creates a new RawNames instance using the specified properties.
+         * @function create
+         * @memberof isoworldremote.RawNames
+         * @static
+         * @param {isoworldremote.IRawNames=} [properties] Properties to set
+         * @returns {isoworldremote.RawNames} RawNames instance
+         */
+        RawNames.create = function create(properties) {
+            return new RawNames(properties);
+        };
+
+        /**
+         * Encodes the specified RawNames message. Does not implicitly {@link isoworldremote.RawNames.verify|verify} messages.
+         * @function encode
+         * @memberof isoworldremote.RawNames
+         * @static
+         * @param {isoworldremote.IRawNames} message RawNames message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        RawNames.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            writer.uint32(/* id 1, wireType 0 =*/8).bool(message.available);
+            if (message.inorganic != null && message.inorganic.length)
+                for (var i = 0; i < message.inorganic.length; ++i)
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.inorganic[i]);
+            if (message.organic != null && message.organic.length)
+                for (var i = 0; i < message.organic.length; ++i)
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.organic[i]);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified RawNames message, length delimited. Does not implicitly {@link isoworldremote.RawNames.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof isoworldremote.RawNames
+         * @static
+         * @param {isoworldremote.IRawNames} message RawNames message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        RawNames.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a RawNames message from the specified reader or buffer.
+         * @function decode
+         * @memberof isoworldremote.RawNames
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {isoworldremote.RawNames} RawNames
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        RawNames.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.isoworldremote.RawNames();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    message.available = reader.bool();
+                    break;
+                case 2:
+                    if (!(message.inorganic && message.inorganic.length))
+                        message.inorganic = [];
+                    message.inorganic.push(reader.string());
+                    break;
+                case 3:
+                    if (!(message.organic && message.organic.length))
+                        message.organic = [];
+                    message.organic.push(reader.string());
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            if (!message.hasOwnProperty("available"))
+                throw $util.ProtocolError("missing required 'available'", { instance: message });
+            return message;
+        };
+
+        /**
+         * Decodes a RawNames message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof isoworldremote.RawNames
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {isoworldremote.RawNames} RawNames
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        RawNames.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a RawNames message.
+         * @function verify
+         * @memberof isoworldremote.RawNames
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        RawNames.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (typeof message.available !== "boolean")
+                return "available: boolean expected";
+            if (message.inorganic != null && message.hasOwnProperty("inorganic")) {
+                if (!Array.isArray(message.inorganic))
+                    return "inorganic: array expected";
+                for (var i = 0; i < message.inorganic.length; ++i)
+                    if (!$util.isString(message.inorganic[i]))
+                        return "inorganic: string[] expected";
+            }
+            if (message.organic != null && message.hasOwnProperty("organic")) {
+                if (!Array.isArray(message.organic))
+                    return "organic: array expected";
+                for (var i = 0; i < message.organic.length; ++i)
+                    if (!$util.isString(message.organic[i]))
+                        return "organic: string[] expected";
+            }
+            return null;
+        };
+
+        /**
+         * Creates a RawNames message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof isoworldremote.RawNames
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {isoworldremote.RawNames} RawNames
+         */
+        RawNames.fromObject = function fromObject(object) {
+            if (object instanceof $root.isoworldremote.RawNames)
+                return object;
+            var message = new $root.isoworldremote.RawNames();
+            if (object.available != null)
+                message.available = Boolean(object.available);
+            if (object.inorganic) {
+                if (!Array.isArray(object.inorganic))
+                    throw TypeError(".isoworldremote.RawNames.inorganic: array expected");
+                message.inorganic = [];
+                for (var i = 0; i < object.inorganic.length; ++i)
+                    message.inorganic[i] = String(object.inorganic[i]);
+            }
+            if (object.organic) {
+                if (!Array.isArray(object.organic))
+                    throw TypeError(".isoworldremote.RawNames.organic: array expected");
+                message.organic = [];
+                for (var i = 0; i < object.organic.length; ++i)
+                    message.organic[i] = String(object.organic[i]);
+            }
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a RawNames message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof isoworldremote.RawNames
+         * @static
+         * @param {isoworldremote.RawNames} message RawNames
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        RawNames.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.arrays || options.defaults) {
+                object.inorganic = [];
+                object.organic = [];
+            }
+            if (options.defaults)
+                object.available = false;
+            if (message.available != null && message.hasOwnProperty("available"))
+                object.available = message.available;
+            if (message.inorganic && message.inorganic.length) {
+                object.inorganic = [];
+                for (var j = 0; j < message.inorganic.length; ++j)
+                    object.inorganic[j] = message.inorganic[j];
+            }
+            if (message.organic && message.organic.length) {
+                object.organic = [];
+                for (var j = 0; j < message.organic.length; ++j)
+                    object.organic[j] = message.organic[j];
+            }
+            return object;
+        };
+
+        /**
+         * Converts this RawNames to JSON.
+         * @function toJSON
+         * @memberof isoworldremote.RawNames
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        RawNames.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return RawNames;
+    })();
+
+    return isoworldremote;
 })();
 
 module.exports = $root;

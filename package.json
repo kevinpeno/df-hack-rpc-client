@@ -7,20 +7,23 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dfhack:add-remote": "git remote add -f -t master --no-tags df-hack git@github.com:DFHack/dfhack.git",
     "dfhack:get": "git fetch df-hack",
-    "dfhack:mktmp": "make-dir .tmp && git read-tree --prefix=.tmp/df-hack/plugins/proto/ -u FETCH_HEAD:plugins/proto",
+    "dfhack:mktmp": "make-dir .tmp",
+    "dfhack:get-core": "git read-tree --prefix=.tmp/df-hack/plugins/proto/ -u FETCH_HEAD:plugins/proto",
+    "dfhack:get-plugins": "git read-tree --prefix=.tmp/df-hack/library/proto/ -u FETCH_HEAD:library/proto",
     "dfhack:apply": "cpy .tmp/df-hack dfhack-protos",
     "dfhack:clean": "rimraf .tmp && git reset",
-    "dfhack:update": "npm run dfhack:mktmp && npm run dfhack:apply && npm run dfhack:clean",
-    "proto:setup": "make-dir .tmp/protoc && rimraf src/generated",
+    "dfhack:update": "npm run dfhack:mktmp && npm run dfhack:get-core && npm run dfhack:get-plugins && npm run dfhack:apply && npm run dfhack:clean",
+    "proto:setup": "make-dir .tmp && rimraf src/generated",
     "proto:clean": "rimraf .tmp",
     "proto:generate": "pbjs -t static-module -p ./dfhack-protos --out ./.tmp/service.js -w commonjs src/service.proto",
     "proto:mv": "cpy .tmp src/generated",
-    "proto:build": "npm run proto:setup && npm run proto:generate && npm run proto:mv && npm run proto:clean"
+    "proto:update": "npm run proto:setup && npm run proto:generate && npm run proto:mv && npm run proto:clean",
+    "build:proto": "npm run dfhack:update && npm run proto:update"
   },
   "author": "",
   "license": "Unlicense",
   "dependencies": {
-    "protobufjs": "^6.8.8"
+    "protobufjs": "github:kevinpeno/protobuf.js#master"
   },
   "devDependencies": {
     "cpy-cli": "^2.0.0",

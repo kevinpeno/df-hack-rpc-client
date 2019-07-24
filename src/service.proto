@@ -1,44 +1,35 @@
 syntax = "proto2";
 option optimize_for = LITE_RUNTIME;
 
-// import "AdventureControl.proto";
+// Core
+import "BasicApi.proto";
+import "CoreProtocol.proto";
+
+// Plugins
+import "AdventureControl.proto";
 import "isoworldremote.proto";
 import "RemoteFortressReader.proto";
 import "rename.proto";
 
-// missing definitions used by dfhack
-message EmptyMessage {}
-
-message IntMessage {
-  required int32 value = 1;
-}
-
-message StringMessage {
-  required string value = 1;
-}
-
-message CoreBindRequest {
-  required string method = 1;
-  required string input_msg = 2;
-  required string output_msg = 3;
-  optional string plugin = 4;
-}
-message CoreBindReply {
-  required int32 assigned_id = 1;
-}
-
-message CoreRunCommandRequest {
-  required string c = 1;
-  repeated string arguments = 2;
-}
-
 service DFHackRPCService {
-  // Core undocumented
-  rpc BindMethod(CoreBindRequest) returns (CoreBindReply);
-  rpc RunCommand(CoreRunCommandRequest) returns (EmptyMessage);
-  // 
-  rpc CoreResume(EmptyMessage) returns (IntMessage);
-  rpc GetVersion(EmptyMessage) returns (StringMessage);
+  // CoreProtocol
+  rpc BindMethod(dfproto.CoreBindRequest) returns (dfproto.CoreBindReply);
+  rpc RunCommand(dfproto.CoreRunCommandRequest) returns (dfproto.EmptyMessage);
+  rpc CoreSuspend(dfproto.EmptyMessage) returns (dfproto.IntMessage);
+  rpc CoreResume(dfproto.EmptyMessage) returns (dfproto.IntMessage);
+  rpc RunLua(dfproto.CoreRunLuaRequest) returns (dfproto.StringListMessage);
+
+  // BasicApi
+  rpc GetVersion(dfproto.EmptyMessage) returns (dfproto.StringMessage);
+  rpc GetDFVersion(dfproto.EmptyMessage) returns (dfproto.StringMessage);
+  rpc GetWorldInfo(dfproto.EmptyMessage) returns (dfproto.GetWorldInfoOut);
+  rpc ListEnums(dfproto.EmptyMessage) returns (dfproto.ListEnumsOut);
+  rpc ListJobSkills(dfproto.EmptyMessage) returns (dfproto.ListJobSkillsOut);
+  rpc ListMaterials(dfproto.ListMaterialsIn) returns (dfproto.ListMaterialsOut);
+  rpc ListUnits(dfproto.ListUnitsIn) returns (dfproto.ListUnitsOut);
+  rpc ListSquads(dfproto.ListSquadsIn) returns (dfproto.ListSquadsOut);
+  rpc SetUnitLabors(dfproto.SetUnitLaborsIn) returns (dfproto.EmptyMessage);
+
   // AdventureControl
   // ???
 
@@ -48,52 +39,52 @@ service DFHackRPCService {
   rpc GetRawNames(isoworldremote.MapRequest) returns (isoworldremote.RawNames);
 
   // RemoteFortressReader
-  rpc GetMaterialList(EmptyMessage) returns (RemoteFortressReader.MaterialList);
-  rpc GetGrowthList(EmptyMessage) returns (RemoteFortressReader.MaterialList);
+  rpc GetMaterialList(dfproto.EmptyMessage) returns (RemoteFortressReader.MaterialList);
+  rpc GetGrowthList(dfproto.EmptyMessage) returns (RemoteFortressReader.MaterialList);
   rpc GetBlockList(RemoteFortressReader.BlockRequest) returns (RemoteFortressReader.BlockList);
-  rpc CheckHashes(EmptyMessage) returns (EmptyMessage);
-  rpc GetTiletypeList(EmptyMessage) returns (RemoteFortressReader.TiletypeList);
+  rpc CheckHashes(dfproto.EmptyMessage) returns (dfproto.EmptyMessage);
+  rpc GetTiletypeList(dfproto.EmptyMessage) returns (RemoteFortressReader.TiletypeList);
   rpc GetPlantList(RemoteFortressReader.BlockRequest) returns (RemoteFortressReader.PlantList);
-  rpc GetUnitList(EmptyMessage) returns (RemoteFortressReader.UnitList);
+  rpc GetUnitList(dfproto.EmptyMessage) returns (RemoteFortressReader.UnitList);
   rpc GetUnitListInside(RemoteFortressReader.BlockRequest) returns (RemoteFortressReader.UnitList);
-  rpc GetViewInfo(EmptyMessage) returns (RemoteFortressReader.ViewInfo);
-  rpc GetMapInfo(EmptyMessage) returns (RemoteFortressReader.MapInfo);
-  rpc ResetMapHashes(EmptyMessage) returns (EmptyMessage);
-  rpc GetItemList(EmptyMessage) returns (RemoteFortressReader.MaterialList);
-  rpc GetBuildingDefList(EmptyMessage) returns (RemoteFortressReader.BuildingList);
-  rpc GetWorldMap(EmptyMessage) returns (RemoteFortressReader.WorldMap);
-  rpc GetWorldMapNew(EmptyMessage) returns (RemoteFortressReader.WorldMap);
-  rpc GetRegionMaps(EmptyMessage) returns (RemoteFortressReader.RegionMaps);
-  rpc GetRegionMapsNew(EmptyMessage) returns (RemoteFortressReader.RegionMaps);
-  rpc GetCreatureRaws(EmptyMessage) returns (RemoteFortressReader.CreatureRawList);
+  rpc GetViewInfo(dfproto.EmptyMessage) returns (RemoteFortressReader.ViewInfo);
+  rpc GetMapInfo(dfproto.EmptyMessage) returns (RemoteFortressReader.MapInfo);
+  rpc ResetMapHashes(dfproto.EmptyMessage) returns (dfproto.EmptyMessage);
+  rpc GetItemList(dfproto.EmptyMessage) returns (RemoteFortressReader.MaterialList);
+  rpc GetBuildingDefList(dfproto.EmptyMessage) returns (RemoteFortressReader.BuildingList);
+  rpc GetWorldMap(dfproto.EmptyMessage) returns (RemoteFortressReader.WorldMap);
+  rpc GetWorldMapNew(dfproto.EmptyMessage) returns (RemoteFortressReader.WorldMap);
+  rpc GetRegionMaps(dfproto.EmptyMessage) returns (RemoteFortressReader.RegionMaps);
+  rpc GetRegionMapsNew(dfproto.EmptyMessage) returns (RemoteFortressReader.RegionMaps);
+  rpc GetCreatureRaws(dfproto.EmptyMessage) returns (RemoteFortressReader.CreatureRawList);
   rpc GetPartialCreatureRaws(RemoteFortressReader.ListRequest) returns (RemoteFortressReader.CreatureRawList);
-  rpc GetWorldMapCenter(EmptyMessage) returns (RemoteFortressReader.WorldMap);
-  rpc GetPlantRaws(EmptyMessage) returns (RemoteFortressReader.PlantRawList);
+  rpc GetWorldMapCenter(dfproto.EmptyMessage) returns (RemoteFortressReader.WorldMap);
+  rpc GetPlantRaws(dfproto.EmptyMessage) returns (RemoteFortressReader.PlantRawList);
   rpc GetPartialPlantRaws(RemoteFortressReader.ListRequest) returns (RemoteFortressReader.PlantRawList);
-  rpc CopyScreen(EmptyMessage) returns (RemoteFortressReader.ScreenCapture);
-  rpc PassKeyboardEvent(RemoteFortressReader.KeyboardEvent) returns (EmptyMessage);
-  rpc SendDigCommand(RemoteFortressReader.DigCommand) returns (EmptyMessage);
-  rpc SetPauseState(RemoteFortressReader.SingleBool) returns (EmptyMessage);
-  rpc GetPauseState(EmptyMessage) returns (RemoteFortressReader.SingleBool);
-  rpc GetVersionInfo(EmptyMessage) returns (RemoteFortressReader.VersionInfo);
-  rpc GetReports(EmptyMessage) returns (RemoteFortressReader.Status);
+  rpc CopyScreen(dfproto.EmptyMessage) returns (RemoteFortressReader.ScreenCapture);
+  rpc PassKeyboardEvent(RemoteFortressReader.KeyboardEvent) returns (dfproto.EmptyMessage);
+  rpc SendDigCommand(RemoteFortressReader.DigCommand) returns (dfproto.EmptyMessage);
+  rpc SetPauseState(RemoteFortressReader.SingleBool) returns (dfproto.EmptyMessage);
+  rpc GetPauseState(dfproto.EmptyMessage) returns (RemoteFortressReader.SingleBool);
+  rpc GetVersionInfo(dfproto.EmptyMessage) returns (RemoteFortressReader.VersionInfo);
+  rpc GetReports(dfproto.EmptyMessage) returns (RemoteFortressReader.Status);
 
   // missing message MoveCommandParams
-  // rpc MoveCommand(RemoteFortressReader.MoveCommandParams) returns (EmptyMessage);
-  // rpc JumpCommand(RemoteFortressReader.MoveCommandParams) returns (EmptyMessage);
+  // rpc MoveCommand(RemoteFortressReader.MoveCommandParams) returns (dfproto.EmptyMessage);
+  // rpc JumpCommand(RemoteFortressReader.MoveCommandParams) returns (dfproto.EmptyMessage);
 
   // missing message MenuContents
-  // rpc MenuQuery(EmptyMessage) returns (RemoteFortressReader.MenuContents);
+  // rpc MenuQuery(dfproto.EmptyMessage) returns (RemoteFortressReader.MenuContents);
 
-  // missing message IntMessage
-  // rpc MovementSelectCommand(RemoteFortressReader.IntMessage) returns (EmptyMessage);
+  // missing message dfproto.IntMessage
+  // rpc MovementSelectCommand(RemoteFortressReader.dfproto.IntMessage) returns (dfproto.EmptyMessage);
   
   // missing message MiscMoveParams
-  //rpc MiscMoveCommand(RemoteFortressReader.MiscMoveParams) returns (EmptyMessage);
-  rpc GetLanguage(EmptyMessage) returns (RemoteFortressReader.Language);
+  //rpc MiscMoveCommand(RemoteFortressReader.MiscMoveParams) returns (dfproto.EmptyMessage);
+  rpc GetLanguage(dfproto.EmptyMessage) returns (RemoteFortressReader.Language);
 
   // rename
-  rpc RenameSquad(dfproto.RenameSquadIn) returns (EmptyMessage);
-  rpc RenameUnit(dfproto.RenameUnitIn) returns (EmptyMessage);
-  rpc RenameBuilding(dfproto.RenameBuildingIn) returns (EmptyMessage);
+  rpc RenameSquad(dfproto.RenameSquadIn) returns (dfproto.EmptyMessage);
+  rpc RenameUnit(dfproto.RenameUnitIn) returns (dfproto.EmptyMessage);
+  rpc RenameBuilding(dfproto.RenameBuildingIn) returns (dfproto.EmptyMessage);
 }
